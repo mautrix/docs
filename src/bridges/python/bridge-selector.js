@@ -1,8 +1,23 @@
+const allowedBridges = ["$bridge", "telegram", "facebook", "hangouts", "twitter", "signal", "instagram"]
+
 const updateBridgeSelection = () => {
     const selector = document.getElementById("bridge-selector")
+    if (!allowedBridges.includes(selector.value)) {
+        selector.value = "$bridge"
+        return
+    }
+
     for (const elem of document.getElementsByClassName("bridge-type")) {
         elem.innerText = selector.value
     }
+
+    const url = new URL(window.location)
+    if (selector.value === "$bridge") {
+        url.searchParams.delete("bridge")
+    } else {
+        url.searchParams.set("bridge", selector.value)
+    }
+    history.pushState({}, "", url)
 
     for (const elem of document.getElementsByClassName("bridge-filter")) {
         const showItem = (selector.value === "$bridge" && !elem.hasAttribute("bridge-no-generic")) ||
@@ -31,6 +46,13 @@ const updateBridgeSelection = () => {
 
 const selector = document.getElementById("bridge-selector")
 if (selector) {
+    const url = new URL(window.location)
+    if (url.searchParams.has("bridge")) {
+        selector.value = url.searchParams.get("bridge")
+        if (!allowedBridges.includes(selector.value)) {
+            selector.value = "$bridge"
+        }
+    }
     selector.addEventListener("change", updateBridgeSelection)
 
     for (const node of document.getElementsByTagName("code")) {
