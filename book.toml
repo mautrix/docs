@@ -17,3 +17,4 @@ additional-js = ["src/bridges/python/bridge-selector.js"]
 #no-section-label = true
 
 [output.linkcheck]
+optional = true

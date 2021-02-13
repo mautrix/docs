@@ -1,5 +1,5 @@
 deploy:
-  image: ghcr.io/peaceiris/mdbook:v0.4.6
+  image: dock.mau.dev/tulir/docker-mdbook
   tags: [webdeploy]
   script:
   - mdbook build
