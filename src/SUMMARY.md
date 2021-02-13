@@ -29,6 +29,7 @@
   - [Authentication](./bridges/python/hangouts/authentication.md)
 - [mautrix-twitter](./bridges/python/twitter/index.md)
 - [mautrix-signal](./bridges/python/signal/index.md)
+  - [Authentication](./bridges/python/signal/authentication.md)
 - [mautrix-instagram](./bridges/python/instagram/index.md)
 
 # Go-based bridges
