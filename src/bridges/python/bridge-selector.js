@@ -5,17 +5,26 @@ const updateBridgeSelection = () => {
     }
 
     for (const elem of document.getElementsByClassName("bridge-filter")) {
-        const showItem = selector.value === "$bridge" ||
+        const showItem = (selector.value === "$bridge" && !elem.hasAttribute("bridge-no-generic")) ||
             elem.getAttribute("bridges").split(",").includes(selector.value)
-        if (showItem) {
-            elem.parentElement.style.removeProperty("display")
-            if (selector.value === "$bridge") {
+        if (elem.tagName === "SPAN") {
+            if (showItem) {
+                elem.parentElement.style.removeProperty("display")
+                if (selector.value === "$bridge") {
+                    elem.style.removeProperty("display")
+                } else {
+                    elem.style.display = "none"
+                }
+            } else {
+                elem.parentElement.style.display = "none"
+            }
+        } else {
+            console.log(showItem)
+            if (showItem) {
                 elem.style.removeProperty("display")
             } else {
                 elem.style.display = "none"
             }
-        } else {
-            elem.parentElement.style.display = "none"
         }
     }
 }

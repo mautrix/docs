@@ -2,6 +2,12 @@
 
 {{ #include ../selector.html }}
 
+<p class="bridge-filter" bridges="signal" bridge-no-generic>
+  <strong>The Signal bridge requires a second docker container for signald.
+  Instructions for setting up everything can be found on the
+  <a href="../signal/setup-docker.md">Signal-specific Bridge setup with Docker page</a></strong>
+</p>
+
 ## Requirements
 * Docker
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse))

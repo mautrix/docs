@@ -30,6 +30,7 @@
 - [mautrix-twitter](./bridges/python/twitter/index.md)
 - [mautrix-signal](./bridges/python/signal/index.md)
   - [Authentication](./bridges/python/signal/authentication.md)
+  - [Bridge setup with Docker](./bridges/python/signal/setup-docker.md)
 - [mautrix-instagram](./bridges/python/instagram/index.md)
 
 # Go-based bridges
