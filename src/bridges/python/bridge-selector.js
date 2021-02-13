@@ -34,7 +34,6 @@ const updateBridgeSelection = () => {
                 elem.parentElement.style.display = "none"
             }
         } else {
-            console.log(showItem)
             if (showItem) {
                 elem.style.removeProperty("display")
             } else {
