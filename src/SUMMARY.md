@@ -28,10 +28,12 @@
 - [mautrix-hangouts](./bridges/python/hangouts/index.md)
   - [Authentication](./bridges/python/hangouts/authentication.md)
 - [mautrix-twitter](./bridges/python/twitter/index.md)
+  - [Authentication](./bridges/python/twitter/authentication.md)
 - [mautrix-signal](./bridges/python/signal/index.md)
   - [Authentication](./bridges/python/signal/authentication.md)
   - [Bridge setup with Docker](./bridges/python/signal/setup-docker.md)
 - [mautrix-instagram](./bridges/python/instagram/index.md)
+  - [Authentication](./bridges/python/instagram/authentication.md)
 
 # Go-based bridges
 - [mautrix-whatsapp](./bridges/go/whatsapp/index.md)
