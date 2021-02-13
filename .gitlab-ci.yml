@@ -1,0 +1,7 @@
+deploy:
+  image: ghcr.io/peaceiris/mdbook:v0.4.6
+  tags: [webdeploy]
+  script:
+  - mdbook build
+  - rm -rf /srv/web/docs.mau.fi/*
+  - mv dist/html/* /srv/web/docs.mau.fi/

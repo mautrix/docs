@@ -1,0 +1,19 @@
+[book]
+authors = ["Tulir Asokan"]
+language = "en"
+multilingual = false
+src = "src"
+title = "mautrix-docs"
+
+[build]
+build-dir = "dist"
+
+[preprocessor.links]
+
+[output.html]
+git-repository-url = "https://github.com/tulir/mautrix-docs"
+git-repository-icon = "fa-github"
+additional-js = ["src/bridges/python/bridge-selector.js"]
+#no-section-label = true
+
+[output.linkcheck]
