@@ -1,8 +1,8 @@
 # mautrix-telegram
 Welcome to the mautrix-telegram docs!
 
-Use the sidebar to find the relevant pages. Things that are the same for all 
-bridges, like setting up the bridge, are right below the "Python-based bridges" 
+Use the sidebar to find the relevant pages. Things that are the same for all
+bridges, like setting up the bridge, are right below the "Python-based bridges"
 header. Things specific to mautrix-telegram are under this page.
 
 These docs are mostly targeted towards people who are hosting the bridge 

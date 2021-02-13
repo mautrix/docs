@@ -53,37 +53,6 @@ and the bridge should start creating portal rooms for all your Telegram groups
 and invite you to them. The bridge won't automatically create rooms for private
 chats: see "Private messages" at the bottom of [Creating and managing chats](./creating-and-managing-chats.md#private-messages)
 
-## Double puppeting
-_New in version 0.3.0_
-
-_Changed in version 0.9.0: double puppeting is no longer limited to users on the
-same homeserver as the bridge_
-
-When you are logged in with your Telegram account, you can replace the Matrix
-ghost of your Telegram account with your Matrix account. This is called
-double-puppeting: the bridge will puppet (have control of) both your Telegram
-account and your Matrix account. When you do so, messages that you send from
-other Telegram clients will be sent from your Matrix account.
-
-Also, in servers that don't support [MSC2409] (i.e. Synapse before v1.22), it is
-the only way to enable bridging of ephemeral events, such as presence, typing
-notifications and read receipts.
-
-[MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
-
-Since version 0.7.0, you can also enable automatic double puppeting using shared
-secret login (see [`bridge.login_shared_secret_map`], or [`bridge.login_shared_secret`]
-before 0.9.0 in the config). This way the login is completely transparent to users.
-
-[`bridge.login_shared_secret_map`]: https://github.com/tulir/mautrix-telegram/blob/v0.9.0/mautrix_telegram/example-config.yaml#L186-L194
-[`bridge.login_shared_secret`]: https://github.com/tulir/mautrix-telegram/blob/v0.8.0/mautrix_telegram/example-config.yaml#L166-L171
-
-1. Ask for login methods with `login-matrix`
-2. Either send your access token to the room, or click the link sent by the bot
-   and fill the login form.
-3. After logging in, the default Matrix ghost of your Telegram account should
-   leave rooms, and your account should join all rooms the ghost was in.
-
 ## Registering
 _New in version 0.2.0_
 

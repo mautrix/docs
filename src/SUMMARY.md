@@ -12,6 +12,7 @@
   - [with systemd](./bridges/python/setup/systemd.md)
 - [Optional dependencies](./bridges/python/optional-dependencies.md)
 - [Manhole](./bridges/python/manhole.md)
+- [Double puppeting](./bridges/python/double-puppeting.md)
 ---
 - [mautrix-telegram](./bridges/python/telegram/index.md)
   - [Authentication](./bridges/python/telegram/authentication.md)
@@ -25,6 +26,7 @@
   - [Authentication](./bridges/python/facebook/authentication.md)
   - [Upgrading to v0.2.0](./bridges/python/facebook/upgrading-to-v0.2.0.md)
 - [mautrix-hangouts](./bridges/python/hangouts/index.md)
+  - [Authentication](./bridges/python/hangouts/authentication.md)
 - [mautrix-twitter](./bridges/python/twitter/index.md)
 - [mautrix-signal](./bridges/python/signal/index.md)
 - [mautrix-instagram](./bridges/python/instagram/index.md)
