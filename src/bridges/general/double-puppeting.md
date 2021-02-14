@@ -5,7 +5,9 @@ from your Matrix account instead of the default ghost user.
 
 Also, in servers that don't support [MSC2409] (i.e. Synapse before v1.22), it is
 the only way to enable bridging of ephemeral events, such as presence, typing
-notifications and read receipts.
+notifications and read receipts. All of my Python-based bridges support MSC2409.
+However, mautrix-whatsapp does not, and therefore double puppeting is still the
+only way to enable bridging of ephemeral events.
 
 [MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
 
@@ -36,8 +38,9 @@ bridge can simply automatically relogin.
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
 1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
    config file under the correct server name.
-   * In past bridge versions, the field was called `login_shared_secret`, as
-     double puppeting was only supported for local users.
+   * In Go-based bridges (WhatsApp and iMessage) and in past versions of
+     Python-based bridges, the field is called `login_shared_secret`, as double
+     puppeting was only supported for local users.
 2. The bridge will now automatically enable double puppeting for all local users
    when they log into the bridge.
 

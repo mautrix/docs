@@ -5,6 +5,7 @@
 # Bridges in general
 - [Troubleshooting](./bridges/general/troubleshooting.md)
 - [End-to-bridge encryption](./bridges/general/end-to-bridge-encryption.md)
+- [Double puppeting](./bridges/general/double-puppeting.md)
 
 # Python-based bridges
 - [Bridge setup](./bridges/python/setup/index.md)
@@ -12,7 +13,6 @@
   - [with systemd](./bridges/python/setup/systemd.md)
 - [Optional dependencies](./bridges/python/optional-dependencies.md)
 - [Manhole](./bridges/python/manhole.md)
-- [Double puppeting](./bridges/python/double-puppeting.md)
 ---
 - [mautrix-telegram](./bridges/python/telegram/index.md)
   - [Authentication](./bridges/python/telegram/authentication.md)
