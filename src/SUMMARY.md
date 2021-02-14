@@ -37,7 +37,14 @@
 
 # Go-based bridges
 - [mautrix-whatsapp](./bridges/go/whatsapp/index.md)
+  - [Bridge setup](./bridges/go/whatsapp/setup/index.md)
+    - [with Docker](./bridges/go/whatsapp/setup/docker.md)
+    - [with systemd](./bridges/go/whatsapp/setup/systemd.md)
+  - [Android VM setup](./bridges/go/whatsapp/android-vm-setup.md)
+  - [Authentication](./bridges/go/whatsapp/authentication.md)
+  - [Relaybot](./bridges/go/whatsapp/relaybot.md)
 - [mautrix-imessage](./bridges/go/imessage/index.md)
+  - [Bridge setup](./bridges/go/imessage/setup.md)
 
 # Libraries
 - [mautrix-python](./libraries/python/index.md)
