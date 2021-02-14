@@ -12,7 +12,7 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      font-family: 'Open Sans', sans-serif;
+      font-family: "Open Sans", sans-serif;
       color: #313131;
     }
 
@@ -21,7 +21,7 @@
     }
 
     .project {
-      display: flex;
+      display: grid;
       border: 3px solid #f5f5f5;
       border-radius: 6px;
       padding: 30px;
@@ -29,6 +29,13 @@
       width: 80%;
       margin: 1rem auto;
       text-decoration: none;
+
+      grid-template:
+        "icon title" 60px
+        "icon description" 1fr
+        / 120px 1fr;
+      grid-column-gap: 20px;
+      align-items: center;
     }
 
     .project:hover {
@@ -36,31 +43,54 @@
     }
 
     .project .emojicon {
-      display: inline-block;
+      grid-area: icon;
       font-size: 120px;
       line-height: 1;
     }
 
     .project img {
-      width: 120px;
-      height: 120px;
+      grid-area: icon;
+      width: 100%;
+    }
+
+    .project h2 {
+      grid-area: title;
+      font-size: 2em;
+      margin: 0;
     }
 
     .project p {
+      grid-area: description;
       color: #313131;
       padding: 0;
       margin: 0;
       font-size: 1.1em;
     }
 
-    .project div {
-      margin-left: 30px;
+    @media screen and (max-width: 600px) {
+      .project {
+        padding: 20px;
+
+        grid-template:
+          "icon title" 60px
+          "description description" 1fr
+          / 45px 1fr;
+        grid-column-gap: 10px;
+      }
+
+      .project .emojicon {
+        font-size: 45px;
+      }
     }
 
-    .project h2 {
-      font-size: 2em;
-      padding: 0;
-      margin: 15px 0 20px;
+    @media screen and (max-width: 450px) {
+      .project {
+        padding: 10px;
+      }
+
+      body {
+        padding: 0;
+      }
     }
   </style>
 </head>
@@ -68,17 +98,13 @@
   <h1>mautrix-docs</h1>
   <a href="bridges/" class="project">
     <span class="emojicon">🌉</span>
-    <div>
-      <h2>Bridges</h2>
-      <p>Documentation for administering the mautrix bridges</p>
-    </div>
+    <h2>Bridges</h2>
+    <p>Documentation for administering the mautrix bridges</p>
   </a>
   <!--<a href="maubot/" class="project">
     <img src="./maubot.png" alt="🐈‍⬛"/>
-    <div>
-      <h2>maubot</h2>
-      <p>Documentation for administering and developing plugins for maubot</p>
-    </div>
+    <h2>maubot</h2>
+    <p>Documentation for administering and developing plugins for maubot</p>
   </a>-->
 </body>
 </html>
