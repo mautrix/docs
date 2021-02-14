@@ -1,6 +1,6 @@
 # Authentication
-
 0. Open a private chat with the bridge bot. Usually `@facebookbot:your.server`
+   * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Send `login <email> <password>`
 2. If you have 2FA enabled, the bot will ask you to send the 2FA token.
 3. Recent chats should now get portals automatically. Other chats will get

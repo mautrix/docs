@@ -1,6 +1,6 @@
 # Authentication
-
 0. Open a private chat with the bridge bot. Usually `@twitterbot:your.server`.
+   * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Log into [Twitter](https://twitter.com) in a private browser window.
 2. Send `login-cookie` to start the login.
 3. The bot will send you these instructions to extract required cookies.

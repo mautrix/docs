@@ -1,5 +1,6 @@
 # Authentication
 0. Open a private chat with the bridge bot. Usually `@signalbot:your.server`
+   * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 
 ## Linking as secondary device
 1. Go to "Linked Devices" in the Signal app settings and add a new device.

@@ -9,6 +9,7 @@ should use the web login, as otherwise the homeserver database will likely
 contain your password/token in plaintext form.
 
 0. Start a chat with the bridge bot (`@telegrambot:example.com` by default)
+   * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Initiate the login process with `login`.
 2. The bot should tell you to use the web interface or login in-Matrix. If you
    have enabled both login modes in the config, the bot will give you both

@@ -1,6 +1,6 @@
 # Authentication
-
 0. Open a private chat with the bridge bot. Usually `@hangoutsbot:your.server`.
+   * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Send `login`.
 2. Open the link sent by the bot and follow the instructions.
    * Automatic login may not work. If it does not, reload the page and select
