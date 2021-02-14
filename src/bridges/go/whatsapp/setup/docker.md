@@ -1,4 +1,4 @@
-# Bridge setup with Docker
+# WhatsApp bridge setup with Docker
 ## Requirements
 * Docker
 * A Matrix homeserver that supports application services

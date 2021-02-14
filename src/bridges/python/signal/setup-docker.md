@@ -1,4 +1,4 @@
-# Bridge setup with Docker
+# Signal bridge setup with Docker
 ## Requirements
 * Docker
 * [Docker Compose](https://docs.docker.com/compose/install/), or knowledge how

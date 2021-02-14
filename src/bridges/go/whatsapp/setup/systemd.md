@@ -1,4 +1,4 @@
-# Bridge setup with systemd
+# WhatsApp bridge setup with systemd
 1. Create a user for the bridge:
    ```shell
    $ sudo adduser --system mautrix-whatsapp --home /opt/mautrix-whatsapp
