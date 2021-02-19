@@ -1,4 +1,8 @@
 # Troubleshooting
+Debugging setup issues should be done in the Matrix rooms for the bridges
+(linked in the READMEs), rather than in GitHub issues. Additionally, this
+page will collect some of the most common issues.
+
 ## Why is the bridge bot not accepting invites?
 
 If the bridge starts up successfully, but inviting the bot doesn't work and the
