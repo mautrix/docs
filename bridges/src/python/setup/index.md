@@ -42,7 +42,7 @@ with this virtualenv setup.
    your Synapse's `homeserver.yaml` under `app_service_config_files`.
    Restart Synapse to apply changes.
 7. <span class="bridge-filter" bridges="telegram,hangouts">**For mautrix-telegram and mautrix-hangouts only:**</span>
-   Create the database with `alembic upgrade head`. If you have a custom config
+   Initialize the database with `alembic upgrade head`. If you have a custom config
    path, use `alembic -x config=/path/to/config.yaml upgrade head`.
 8. Run the bridge `python -m mautrix_$bridge`.
 
