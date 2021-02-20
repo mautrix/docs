@@ -32,9 +32,10 @@ packages in parentheses indicate a large dependency of the other packages.
 | †`metrics`          | prometheus_client | Prometheus metrics.                                                |
 | †`e2be`             | asyncpg<br>python-olm<br>pycryptodome<br>unpaddedbase64 | End-to-bridge encryption support (see native dependency below). |
 
-**N.B.** python-olm requires libolm3 with dev headers, and a C compiler. This 
-means `libolm-dev` and `build-essential` on Debian 11+ and Ubuntu 19.10+. On 
-older Debian-based distros, install `libolm-dev` from backports.
+**N.B.** python-olm requires libolm3 with dev headers, Python dev headers, and
+a C compiler. This means `libolm-dev`, `python3-dev` and `build-essential` on
+Debian 11+ and Ubuntu 19.10+. On  older Debian-based distros, install
+`libolm-dev` from backports.
 
 ### mautrix-telegram
 | pip extra name      | Required packages | Description                                                        |
