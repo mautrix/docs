@@ -1,13 +1,11 @@
 # Upgrading to v0.2.0
-**The new version is on master, but is not in a tagged release yet**
-
 Version 0.2.0 of the bridge includes some major breaking changes:
 
 * It uses a completely different Messenger API, which means that all users will
   have to log in again to keep using the bridge. Logging in happens using email
-  and password instead of stealing cookies like before. The bridge might include
-  a web-based login interface that encrypts your password in-browser to prevent
-  the bridge from seeing it.
+  and password instead of stealing cookies like before.
+  * A future release will include a web-based login interface that encrypts
+    your password in-browser to prevent the bridge from seeing it.
 * There are database schema changes that can not be reversed. Taking a backup
   before upgrading is recommended. Additionally, only PostgreSQL is supported,
   see below for SQLite migration instructions.
