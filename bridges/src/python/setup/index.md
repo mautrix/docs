@@ -25,8 +25,8 @@ with this virtualenv setup.
       the environment.**
    2. Activate with `source ./bin/activate`
 2. Install the bridge with `pip install --upgrade mautrix-$bridge[all]`
-   * `[all]` at the end will install all optional dependencies. **Some optional
-     dependencies require additional native packages.** See the
+   * `[all]` at the end will install all optional dependencies. **This includes
+     end-to-bridge encryption, which requires libolm3.** See the
      [optional dependencies page](../optional-dependencies.md) for more info.
    * If you want the master branch instead of a release, use
      `pip install --upgrade git+https://github.com/tulir/mautrix-$bridge.git#egg=mautrix-$bridge[all]`.
