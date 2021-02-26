@@ -1,4 +1,12 @@
 # WhatsApp bridge setup
+This page contains instructions for setting up the bridge by running the
+executable yourself. You may also want to look at the other ways to run
+the bridge:
+
+* [Docker](./docker.md)
+* [YunoHost](https://github.com/YunoHost-Apps/mautrix_whatsapp_ynh)
+* [systemd service](./systemd.md)
+
 ## Requirements
 ### Compilation (optional)
 * Go 1.13+ (download & installation instructions at <https://golang.org/dl/>)
