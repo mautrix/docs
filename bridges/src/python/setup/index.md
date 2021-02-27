@@ -22,7 +22,7 @@ with this virtualenv setup.
    1. Create with `virtualenv -p /usr/bin/python3 .`  
       **N.B.** Do not use a subdirectory for the virtualenv in this production
       setup. The `pip install` step places some required files at the root of
-      the environment.**
+      the environment.
    2. Activate with `source ./bin/activate`
 2. Install the bridge with `pip install --upgrade mautrix-$bridge[all]`
    * `[all]` at the end will install all optional dependencies. **This includes
