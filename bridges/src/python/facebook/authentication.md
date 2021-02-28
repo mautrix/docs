@@ -15,6 +15,8 @@ click the link it gives, and use the login form on the website to log in.
 
 ## In-Matrix login
 1. Send `login <email>` to the bridge bot.
+   * **N.B.** Prior to v0.2.1, the syntax is `login <email> <password>`, rather
+     than sending the password in a separate message.
 2. Send your password to the room.
 3. If you have 2FA enabled, the bot will ask you to send the 2FA token.
 4. Recent chats should now get portals automatically. Other chats will get
