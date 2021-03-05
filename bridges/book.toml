@@ -15,6 +15,7 @@ build-dir = "dist"
 git-repository-url = "https://github.com/tulir/mautrix-docs"
 git-repository-icon = "fa-github"
 additional-js = ["src/python/bridge-selector.js"]
+additional-css = ["src/additional.css"]
 #no-section-label = true
 
 [output.linkcheck]

@@ -18,9 +18,9 @@ When the manhole is open, you can open a connection with `nc -NU
 /var/tmp/mautrix-telegram.manhole`. Alternatively, you can mount the socket to
 the host and connect with the hosts netcat and rlwrap.
 
-To close the connection, use `ctrl+C` or `exit()`. To close the manhole, use 
-the `close-manhole` management command or use `bridge.manhole.close()` inside 
-the manhole.
+To close the connection, use <kbd>Ctrl</kbd>+<kbd>C</kbd> or `exit()`. To close
+the manhole, use the `close-manhole` management command or use
+`bridge.manhole.close()` inside the manhole.
 
 Inside the manhole, `bridge` refers to the main class instance. Refer to the 
 source code to see how everything works. The manhole supports top-level `await`
