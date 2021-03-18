@@ -41,11 +41,12 @@ from the mau.dev CI.
    * You can use the `-c` and `-r` flags to change the location of the config
      and registration files. They default to `config.yaml` and
      `registration.yaml` respectively.
-4. Set up [mautrix-wsproxy](https://github.com/tulir/mautrix-wsproxy) and update
-   the generated registration file to point to it. Also update the
-   `websocket_proxy` field in the bridge config if you didn't do that already.
-5. Add the path to the registration file (`registration.yaml` by default) to
+4. Set up [mautrix-wsproxy](https://github.com/tulir/mautrix-wsproxy).
+5. Update your registration file so the `url` field points to wsproxy (e.g.
+   `http://localhost:29331`), and make sure the `websocket_proxy` field in the
+   bridge config also points to wsproxy (e.g. `ws://matrix.example.com:29331`).
+6. Add the path to the registration file (`registration.yaml` by default) to
    your synapse `homeserver.yaml` under `app_service_config_files`. You will
    then need to restart the synapse server. Remember to restart it every time
    the registration file is regenerated.
-6. Run the bridge with `./mautrix-imessage`.
+7. Run the bridge with `./mautrix-imessage`.
