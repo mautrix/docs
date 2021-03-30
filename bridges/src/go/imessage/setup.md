@@ -6,6 +6,8 @@
 
 ### Runtime
 * A computer running a reasonably new version of macOS.
+  * The bridge requires full disk access in privacy settings to read your chat
+    database.
 * A Matrix homeserver that supports application services
   (e.g. [Synapse](https://github.com/matrix-org/synapse)).
 * A [websocket proxy](https://github.com/tulir/mautrix-wsproxy) to receive
@@ -50,3 +52,7 @@ from the mau.dev CI.
    then need to restart the synapse server. Remember to restart it every time
    the registration file is regenerated.
 7. Run the bridge with `./mautrix-imessage`.
+8. If/when the bridge fails to initialize the iMessage connector with the
+   `operation not permitted` error, go to System Preferences -> Security &
+   Privacy -> Privacy -> Full Disk Access and grant access to the terminal
+   you're running the bridge in.
