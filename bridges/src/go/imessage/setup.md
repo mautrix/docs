@@ -1,4 +1,4 @@
-# iMessage bridge setup
+# iMessage bridge setup (macOS)
 ## Requirements
 ### Compilation (optional)
 * Go 1.13+ (download & installation instructions at https://golang.org/dl/)

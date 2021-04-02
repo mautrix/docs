@@ -44,4 +44,5 @@
   - [Authentication](./go/whatsapp/authentication.md)
   - [Relaybot](./go/whatsapp/relaybot.md)
 - [mautrix-imessage](./go/imessage/index.md)
-  - [Bridge setup](./go/imessage/setup.md)
+  - [Bridge setup (macOS)](./go/imessage/setup.md)
+  - [Bridge setup (iOS)]()
