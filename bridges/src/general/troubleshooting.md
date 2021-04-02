@@ -1,4 +1,4 @@
-# Troubleshooting
+# Troubleshooting & FAQ
 Debugging setup issues should be done in the Matrix rooms for the bridges
 (linked in the READMEs), rather than in GitHub issues. Additionally, this
 page will collect some of the most common issues.
@@ -20,3 +20,16 @@ events to the appservice. There are a few potential reasons this can happen:
 * Synapse messed up and silently broke the appservice. This is quite rare, but
   you should check [matrix-org/synapse#1834](https://github.com/matrix-org/synapse/issues/1834)
   if nothing else works.
+
+## `fatal error: olm/olm.h: no such file or directory`
+When building with end-to-bridge encryption, you must have libolm3 with dev
+headers installed.
+
+If you want to build without encryption:
+* For Python bridges, don't install the `e2be`
+  [optional dependency](../python/optional-dependencies.md).
+* For Go bridges, either build with `-tags nocrypto` or disable cgo with the
+  `CGO_ENABLED=0` env var.
+
+### `fatal error: olm/pk.h: no such file or directory`
+libolm2 is too old, you need libolm3.
