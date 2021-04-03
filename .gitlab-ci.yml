@@ -10,7 +10,7 @@ deploy:
   - rsync -rcthvl --delete dist/html/ /srv/web/docs.mau.fi/bridges/
   - cd ..
   # maubot (TODO)
-#  - cd maubot
-#  - mdbook build
-#  - rsync -rcthvl --delete dist/html/ /srv/web/docs.mau.fi/maubot/
-#  - cd ..
+  - cd maubot
+  - mdbook build
+  - rsync -rcthvl --delete dist/html/ /srv/web/docs.mau.fi/maubot/
+  - cd ..
