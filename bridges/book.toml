@@ -18,6 +18,9 @@ additional-js = ["src/python/bridge-selector.js"]
 additional-css = ["src/additional.css"]
 #no-section-label = true
 
+[output.html.redirect]
+"/go/imessage/setup.html" = "./mac/setup.html"
+
 [output.linkcheck]
 optional = true
 user-agent = "Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"
