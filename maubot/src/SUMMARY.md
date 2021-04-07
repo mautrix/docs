@@ -9,7 +9,13 @@
 - [Encryption](./usage/encryption.md)
 - [maubot cli](./usage/cli/index.md)
   - [mbc auth](./usage/cli/auth.md)
+  - [mbc build](./usage/cli/build.md)
 - [Management API](./management-api.md)
 
 # Plugin development
-- [TODO]()
+- [Getting started](./dev/quick-start.md)
+- [Plugin metadata](./dev/plugin-metadata.md)
+- [Handlers](./dev/handlers/index.md)
+  - [Commands]()
+  - [Events](./dev/handlers/events.md)
+  - [HTTP]()
