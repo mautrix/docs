@@ -1,13 +1,15 @@
 # mbc auth
-The `mbc auth` command can be used to log into Matrix accounts.
-It also has a `--register` flag, but that's currently broken.
+
+The `mbc auth` command can be used to log into Matrix accounts. It also has
+a `--register` flag, but that's currently broken.
 
 To log in with `mbc auth`, first make sure you have your homeserver listed in
 the `registration_secrets` section in the maubot config (the secret can be
 empty). If you haven't used the `mbc` tool before, log into your maubot instance
-with `mbc login`.  Finally, run `mbc auth` and fill in the parameters:
+with `mbc login`. Finally, run `mbc auth` and fill in the parameters:
 
-* The homeserver is the *key* (not URL) from the `registration_secrets` config.
+* The homeserver is the dictionary key, i.e. server name (not URL) from
+  the `registration_secrets` config.
 * The username can be either the username or full user ID, that doesn't matter.
 * The password is the password.
 
