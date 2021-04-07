@@ -13,12 +13,12 @@
 - [Management API](./management-api.md)
 
 # Plugin development
-- [Getting started](./dev/quick-start.md)
+- [Getting started](./dev/getting-started.md)
 - [Plugin metadata](./dev/plugin-metadata.md)
-- [Lifecycle methods]()
+- [Fields and lifecycle](./dev/fields-and-lifecycle.md)
 - [Handlers](./dev/handlers/index.md)
   - [Commands]()
   - [Events](./dev/handlers/events.md)
-  - [HTTP]()
+  - [Web](./dev/handlers/web.md)
 - [Configuration]()
 - [Database]()

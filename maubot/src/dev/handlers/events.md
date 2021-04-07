@@ -1,4 +1,4 @@
-# Events
+# Raw event handlers
 
 Raw event handlers can be used to handle any incoming Matrix events. They don't
 have any kind of filters, so make sure to ignore echo events from the bot itself
