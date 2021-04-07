@@ -15,7 +15,10 @@
 # Plugin development
 - [Getting started](./dev/quick-start.md)
 - [Plugin metadata](./dev/plugin-metadata.md)
+- [Lifecycle methods]()
 - [Handlers](./dev/handlers/index.md)
   - [Commands]()
   - [Events](./dev/handlers/events.md)
   - [HTTP]()
+- [Configuration]()
+- [Database]()
