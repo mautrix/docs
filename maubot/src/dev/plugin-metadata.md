@@ -27,3 +27,10 @@ The `maubot.yaml` file can contain the following fields:
   offer to automatically install dependencies when uploading a plugin.
 * `soft_dependencies` - Same as `dependencies`, but not required for the plugin
   to function.
+* `config` - Whether the plugin has a [configuration]
+* `webapp` - Whether the plugin registers [custom HTTP handlers]
+* `database` - Whether the plugin has a [database]
+
+[configuration]: <> (./configuration.md)
+[custom HTTP handlers]: ./handlers/web.md
+[database]: <> (./database.md)
