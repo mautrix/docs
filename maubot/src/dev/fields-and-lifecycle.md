@@ -6,7 +6,9 @@ useful for plugins.
 ## Fields
 
 * `client` - The mautrix client instance for the bot, can be used to make
-  arbitrary API requests.
+  arbitrary Matrix API requests.
+* `http` - An [aiohttp client] instance, can be used to make arbitrary HTTP
+  requests.
 * `id` - The ID of the plugin instance.
 * `log` - A logger for the plugin instance.
 * `loop` - The asyncio event loop.
@@ -19,6 +21,7 @@ useful for plugins.
 * `webapp_url` - If the HTTP handlers are enabled, the public base URL where the
   endpoints are exposed.
 
+[aiohttp client]: https://docs.aiohttp.org/en/stable/client.html
 [Configuration]: <> (./configuration.md)
 [Database]: <> (./database.md)
 [HTTP handlers]: ./handlers/web.md
