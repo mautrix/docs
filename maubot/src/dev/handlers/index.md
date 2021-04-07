@@ -7,7 +7,7 @@ Currently, there are three types of handlers:
 
 * `command` for conveniently defining command handlers.
 * `event` for handling raw Matrix events.
-* `http` for adding custom HTTP endpoints.
+* `web` for adding custom HTTP endpoints.
 
 ## Splitting handlers into multiple files
 
