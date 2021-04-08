@@ -10,6 +10,7 @@ It can be ran using
 ```bash
 $ python -m mautrix_telegram.scripts.dbms_migrate -f <source db> -t <target db>
 ```
+(use `python3` instead of `python` if you are using Docker)
 
 Both `<source db>` and `<target db>` are full database URLs,
 e.g. `sqlite:///mautrix-telegram.db`
