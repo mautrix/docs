@@ -22,16 +22,18 @@ useful for plugins.
   endpoints are exposed.
 
 [aiohttp client]: https://docs.aiohttp.org/en/stable/client.html
-[Configuration]: <> (./configuration.md)
-[Database]: <> (./database.md)
-[HTTP handlers]: ./handlers/web.md
+[Configuration]: <> (../configuration.md)
+[Database]: <> (../database.md)
+[HTTP handlers]: ../handlers/web.md
 
 ## Methods
 
 * `register_handler_class(object)` - Register another object where handlers are
-  read from (see the [Handlers](./handlers/index.md) page).
+  read from (see the [Handlers](../handlers/index.md) page).
 
 ## Lifecycle methods
+
+These are methods that the plugin itself can override.
 
 * `async def start()` - Called when the plugin instance is starting.
 * `async def stop()` - Called when the plugin instance is stopping.
