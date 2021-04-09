@@ -8,7 +8,7 @@ database.
 The  script is located in [mautrix_telegram/scripts/dbms_migrate](https://github.com/tulir/mautrix-telegram/tree/master/mautrix_telegram/scripts/dbms_migrate).
 It can be ran using
 ```bash
-$ python -m mautrix_telegram.scripts.dbms_migrate -f <source db> -t <target db>
+$ python3 -m mautrix_telegram.scripts.dbms_migrate -f <source db> -t <target db>
 ```
 
 Both `<source db>` and `<target db>` are full database URLs,
