@@ -14,9 +14,6 @@ build-dir = "../../dist/maubot"
 [output.html]
 git-repository-url = "https://github.com/tulir/mautrix-docs"
 git-repository-icon = "fa-github"
-#additional-js = []
-#additional-css = ["src/additional.css"]
-#no-section-label = true
 
 [output.linkcheck]
 optional = true
