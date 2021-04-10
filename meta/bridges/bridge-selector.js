@@ -1,1 +1,0 @@
-../../bridges/python/bridge-selector.js

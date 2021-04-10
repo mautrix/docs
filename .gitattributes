@@ -1,2 +1,2 @@
 *.md linguist-detectable
-meta/*/theme/* linguist-vendored
+theme/*/index.hbs linguist-vendored

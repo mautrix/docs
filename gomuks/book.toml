@@ -2,22 +2,24 @@
 authors = ["Tulir Asokan"]
 language = "en"
 multilingual = false
-src = "../../maubot"
-title = "maubot"
-site-url = "/maubot/"
+src = "."
+title = "gomuks"
+site-url = "/gomuks/"
 
 [build]
-build-dir = "../../dist/maubot"
+build-dir = "../dist/gomuks"
 
 [preprocessor.links]
 
 [output.html]
 git-repository-url = "https://github.com/tulir/mautrix-docs"
 git-repository-icon = "fa-github"
+additional-css = ["../bridges/additional.css"]
+theme = "../theme/gomuks"
 
 [output.linkcheck]
 optional = true
 user-agent = "Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"
 cache-timeout = 604800
-exclude = [ "http://localhost:29316" ]
+exclude = []
 traverse-parent-directories = false

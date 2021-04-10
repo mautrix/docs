@@ -2,23 +2,28 @@
 authors = ["Tulir Asokan"]
 language = "en"
 multilingual = false
-src = "../../gomuks"
-title = "gomuks"
-site-url = "/gomuks/"
+src = "."
+title = "mautrix-bridges"
+site-url = "/bridges/"
 
 [build]
-build-dir = "../../dist/gomuks"
+build-dir = "../dist/bridges"
 
 [preprocessor.links]
 
 [output.html]
 git-repository-url = "https://github.com/tulir/mautrix-docs"
 git-repository-icon = "fa-github"
+additional-js = ["./python/bridge-selector.js"]
 additional-css = ["additional.css"]
+theme = "../theme/bridges"
+
+[output.html.redirect]
+"/go/imessage/setup.html" = "./mac/setup.html"
 
 [output.linkcheck]
 optional = true
 user-agent = "Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"
 cache-timeout = 604800
-exclude = []
+exclude = [ 'developer\.android\.com' ]
 traverse-parent-directories = false
