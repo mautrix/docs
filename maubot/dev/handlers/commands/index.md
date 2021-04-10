@@ -49,7 +49,7 @@ Here `get_command_name` is a function that takes one argument, `self`. It then
 gets the `command_prefix` config field and returns that as the command prefix.
 See the [Configuration] page for details on how to have a config for the plugin.
 
-[Configuration]: <> (../configuration.md)
+[Configuration]: ../../configuration.md
 
 ```python
 from maubot import Plugin, MessageEvent

@@ -26,5 +26,5 @@
     - [Passive commands](./dev/handlers/commands/passive.md)
   - [Events](./dev/handlers/events.md)
   - [Web](./dev/handlers/web.md)
-- [Configuration]()
+- [Configuration](./dev/configuration.md)
 - [Database]()

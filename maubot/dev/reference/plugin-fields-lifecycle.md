@@ -22,7 +22,7 @@ useful for plugins.
   endpoints are exposed.
 
 [aiohttp client]: https://docs.aiohttp.org/en/stable/client.html
-[Configuration]: <> (../configuration.md)
+[Configuration]: ../configuration.md
 [Database]: <> (../database.md)
 [HTTP handlers]: ../handlers/web.md
 
