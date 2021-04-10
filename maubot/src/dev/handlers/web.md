@@ -38,5 +38,4 @@ The `maubot.handlers.web` module is designed to work like
 aiohttp's `RouteTableDef`, but there may be minor differences.
 
 [aiohttp]: https://github.com/aio-libs/aiohttp
-
 [aiohttp server docs]: https://docs.aiohttp.org/en/stable/web.html

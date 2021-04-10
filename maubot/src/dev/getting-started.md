@@ -6,8 +6,8 @@ A maubot plugin file (`.mbp`) is a zip file that contains `maubot.yaml` and some
 Python modules. The `maubot.yaml` file contains metadata for maubot, such as the
 plugin's ID and what Python modules it contains.
 
-The [Plugin metadata](./plugin-metadata.md) page documents all options available
-in `maubot.yaml`. A minimal meta file looks like this:
+The [Plugin metadata](./reference/plugin-metadata.md) page documents all options
+available in `maubot.yaml`. A minimal meta file looks like this:
 
 ```yaml
 maubot: 0.1.0

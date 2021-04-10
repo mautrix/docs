@@ -31,6 +31,6 @@ The `maubot.yaml` file can contain the following fields:
 * `webapp` - Whether the plugin registers [custom HTTP handlers]
 * `database` - Whether the plugin has a [database]
 
-[configuration]: <> (./configuration.md)
-[custom HTTP handlers]: ./handlers/web.md
-[database]: <> (./database.md)
+[configuration]: <> (../configuration.md)
+[custom HTTP handlers]: ../handlers/web.md
+[database]: <> (../database.md)

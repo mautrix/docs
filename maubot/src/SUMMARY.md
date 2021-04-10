@@ -14,8 +14,9 @@
 
 # Plugin development
 - [Getting started](./dev/getting-started.md)
-- [Plugin metadata](./dev/plugin-metadata.md)
+- [Python tips](./dev/python-tips.md)
 - [API reference](./dev/reference/index.md)
+  - [Plugin metadata](./dev/reference/plugin-metadata.md)
   - [Plugin fields & lifecycle](./dev/reference/plugin-fields-lifecycle.md)
   - [MessageEvent methods](./dev/reference/message-event.md)
 - [Handlers](./dev/handlers/index.md)
