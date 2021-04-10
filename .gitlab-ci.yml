@@ -2,14 +2,7 @@ deploy:
   image: dock.mau.dev/tulir/docker-mdbook
   tags: [webdeploy]
   script:
-  # Front page
   - rsync -rcthvl bookshelf/ /srv/web/docs.mau.fi/
-
-  - mdbook build meta/bridges
-  - rsync -rcthvl --delete dist/bridges/html/ /srv/web/docs.mau.fi/bridges/
-
-  - mdbook build meta/maubot
-  - rsync -rcthvl --delete dist/maubot/html/ /srv/web/docs.mau.fi/maubot/
-
-  - mdbook build meta/gomuks
-  - rsync -rcthvl --delete dist/gomuks/html/ /srv/web/docs.mau.fi/gomuks/
+  - mdbook build meta/bridges && rsync -rcthvl --delete dist/bridges/html/ /srv/web/docs.mau.fi/bridges/
+  - mdbook build meta/maubot && rsync -rcthvl --delete dist/maubot/html/ /srv/web/docs.mau.fi/maubot/
+  - mdbook build meta/gomuks && rsync -rcthvl --delete dist/gomuks/html/ /srv/web/docs.mau.fi/gomuks/
