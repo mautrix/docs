@@ -2,25 +2,28 @@
 authors = ["Tulir Asokan"]
 language = "en"
 multilingual = false
-src = "src"
-title = "maubot"
-site-url = "/maubot/"
+src = "../../bridges"
+title = "mautrix-bridges"
+site-url = "/bridges/"
 
 [build]
-build-dir = "dist"
+build-dir = "../../dist/bridges"
 
 [preprocessor.links]
 
 [output.html]
 git-repository-url = "https://github.com/tulir/mautrix-docs"
 git-repository-icon = "fa-github"
-#additional-js = []
-#additional-css = ["src/additional.css"]
+additional-js = ["bridge-selector.js"]
+additional-css = ["additional.css"]
 #no-section-label = true
+
+[output.html.redirect]
+"/go/imessage/setup.html" = "./mac/setup.html"
 
 [output.linkcheck]
 optional = true
 user-agent = "Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"
 cache-timeout = 604800
-exclude = [ "http://localhost:29316" ]
+exclude = [ 'developer\.android\.com' ]
 traverse-parent-directories = false

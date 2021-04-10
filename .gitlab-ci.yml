@@ -5,12 +5,8 @@ deploy:
   # Front page
   - rsync -rcthvl bookshelf/ /srv/web/docs.mau.fi/
   # Bridges
-  - cd bridges
-  - mdbook build
-  - rsync -rcthvl --delete dist/html/ /srv/web/docs.mau.fi/bridges/
-  - cd ..
-  # maubot (TODO)
-  - cd maubot
-  - mdbook build
-  - rsync -rcthvl --delete dist/html/ /srv/web/docs.mau.fi/maubot/
-  - cd ..
+  - mdbook build meta/bridges
+  - rsync -rcthvl --delete dist/bridges/html/ /srv/web/docs.mau.fi/bridges/
+  # maubot
+  - mdbook build meta/maubot
+  - rsync -rcthvl --delete dist/maubot/html/ /srv/web/docs.mau.fi/maubot/

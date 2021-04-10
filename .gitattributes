@@ -1,3 +1,2 @@
 *.md linguist-detectable
-bridges/theme/* linguist-vendored
-maubot/theme/* linguist-vendored
+meta/*/theme/* linguist-vendored
