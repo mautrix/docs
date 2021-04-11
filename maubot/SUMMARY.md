@@ -22,7 +22,7 @@
 - [Handlers](./dev/handlers/index.md)
   - [Commands](./dev/handlers/commands/index.md)
     - [Arguments]()
-    - [Subcommands]()
+    - [Subcommands](./dev/handlers/commands/subcommands.md)
     - [Passive commands](./dev/handlers/commands/passive.md)
   - [Events](./dev/handlers/events.md)
   - [Web](./dev/handlers/web.md)
