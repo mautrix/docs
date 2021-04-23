@@ -37,7 +37,7 @@ from the mau.dev CI.
 [`build.sh`]: https://github.com/tulir/mautrix-whatsapp/blob/master/build.sh
 
 ### Downloading a prebuilt executable
-1. Go to https://mau.dev/tulir/mautrix-whatsapp/pipelines?scope=branches&page=1
+1. Go to <https://mau.dev/tulir/mautrix-whatsapp/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list.
    * The builds are all static with olm included, but SQLite may not work.
