@@ -1,4 +1,4 @@
-const allowedBridges = ["$bridge", "telegram", "facebook", "hangouts", "twitter", "signal", "instagram"]
+const allowedBridges = ["$bridge", "telegram", "facebook", "hangouts", "twitter", "signal", "instagram", "amp"]
 
 const updateBridgeSelection = () => {
     const selector = document.getElementById("bridge-selector")

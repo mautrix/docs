@@ -15,6 +15,8 @@ with this virtualenv setup.
   Telegram app ID and hash (get from [my.telegram.org](https://my.telegram.org/apps)).
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   An instance of [signald](https://gitlab.com/signald/signald).
+* <span class="bridge-filter" bridges="amp">**mautrix-amp**: <span>
+  Node 15 or higher with `yarn` (for puppet script).
 
 ## Production setup
 0. Create a directory for the bridge.
@@ -44,6 +46,9 @@ with this virtualenv setup.
 7. <span class="bridge-filter" bridges="telegram,hangouts">**For mautrix-telegram and mautrix-hangouts only:**</span>
    Initialize the database with `alembic upgrade head`. If you have a custom config
    path, use `alembic -x config=/path/to/config.yaml upgrade head`.
+7. <span class="bridge-filter" bridges="amp">**For mautrix-amp only:**</span>
+   1. Navigate to `puppet` and run `yarn --production` to install dependencies.
+   2. Start the puppet script with `yarn start`.
 8. Run the bridge `python -m mautrix_$bridge`.
 
 ### Upgrading
