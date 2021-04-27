@@ -47,7 +47,7 @@ with this virtualenv setup.
    Initialize the database with `alembic upgrade head`. If you have a custom config
    path, use `alembic -x config=/path/to/config.yaml upgrade head`.
 7. <span class="bridge-filter" bridges="amp">**For mautrix-amp only:**</span>
-   Set up tyhe puppet script:
+   Set up the puppet script:
    1. Navigate to `puppet` and run `yarn --production` to install dependencies.
    2. Start the puppet script with `yarn start`.
 8. Run the bridge `python -m mautrix_$bridge`.
