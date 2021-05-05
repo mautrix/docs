@@ -42,9 +42,15 @@ TODO: cydia repo
 5. Serve the config file with the webserver of your choice. It's recommended
    to use a random file name or add HTTP basic auth to prevent other people
    from reading your config.
+   * HTTP basic auth documentation:
+     [Caddy](https://caddyserver.com/docs/caddyfile/directives/basicauth),
+     [nginx](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/),
+     [Apache](https://httpd.apache.org/docs/2.4/howto/auth.html)
+   * **N.B.** Due to [a bug in Brooklyn], the URL must be lowercase.
 6. Generate a QR code with the URL to your config
-   (e.g. `echo https://example.com/your-config.yaml | qrencode -t ansiutf8`).
+   (e.g. `echo -n https://user:pass@example.com/your-config.yaml | qrencode -t ansiutf8`).
 7. Scan the QR code with Brooklyn.
 
 [example config]: https://github.com/tulir/mautrix-imessage/blob/master/example-config.yaml
 [example registration]: https://github.com/tulir/mautrix-imessage/blob/master/example-registration.yaml
+[a bug in Brooklyn]: https://gitlab.com/beeper/brooklyn/-/issues/7
