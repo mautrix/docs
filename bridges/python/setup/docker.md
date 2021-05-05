@@ -47,7 +47,9 @@ arm64 images.
 2. Start the new version (setup step 7)
 
 ## Docker compose
-Create a directory as in step #0 and create `docker-compose.yml` that contains something like this:
+Create a directory as in step #0 and create `docker-compose.yml` that contains
+something like this:
+
 ```yaml
 version: "3.7"
 
@@ -60,4 +62,6 @@ services:
     - .:/data
 ```
 
-Use `docker-compose up -d` to start, `docker-compose stop` to stop and `docker-compose pull` to update.
+Follow the rest of the Docker setup, but use compose commands instead of the
+raw `docker` commands: `docker-compose up -d` to start, `docker-compose stop`
+to stop and `docker-compose pull` to update.
