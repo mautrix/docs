@@ -45,5 +45,5 @@
   - [Relaybot](./go/whatsapp/relaybot.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
-  - [Bridge setup (iOS)]()
-    - [SMS forwarding]()
+  - [Bridge setup (iOS)](./go/imessage/ios/setup.md)
+    - [SMS forwarding](./go/imessage/ios/sms-forwarding.md)
