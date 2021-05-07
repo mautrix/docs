@@ -25,9 +25,10 @@ currently documented. For more recent devices (i.e. armv8/arm64), it should
 be as simple as compiling mautrix-imessage on a Mac with Apple Silicon.
 
 ### Precompiled builds
-You can get the Brooklyn app with a bundled mautrix-imessage from the Cydia repo:
-
-TODO: cydia repo
+You can get the Brooklyn app with a bundled mautrix-imessage from the Cydia
+repo. The repo is currently available at <http://beeper.gitlab.io/brooklyn/>.
+After adding the repo in Cydia, simply install the "Brooklyn" package from
+the repo.
 
 ## Configuring and running
 1. Get the [example config] and fill it out. You'll at least need to:
