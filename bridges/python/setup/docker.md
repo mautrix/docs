@@ -7,6 +7,9 @@
   Instructions for setting up everything can be found on the
   <a href="../signal/setup-docker.md">Signal-specific Bridge setup with Docker page</a></strong>
 </p>
+<p class="bridge-filter" bridges="amp" bridge-no-generic>
+  <strong>The Android Messages bridge requires a second docker container for the puppet script.</strong>
+</p>
 
 ## Requirements
 * Docker
