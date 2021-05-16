@@ -14,6 +14,8 @@
    Description=mautrix-$bridge bridge
 
    [Service]
+   # N.B. If you didn't create a user with the correct home directory, set this
+   #      to the directory where config.yaml is (e.g. /opt/mautrix-$bridge).
    WorkingDirectory=~
    ExecStart=/opt/mautrix-$bridge/bin/python -m mautrix_$bridge
    User=mautrix-$bridge
