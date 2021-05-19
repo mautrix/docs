@@ -49,8 +49,7 @@ from the mau.dev CI.
 2. Update the config to your liking.
    * You need to make sure that the `address` and `domain` field point to your
      homeserver.
-   * You will also need to add your user of admin user under the `permissions`
-     section.
+   * You will also need to add your user under the `permissions` section.
 3. Generate the appservice registration file by running `./mautrix-whatsapp -g`.
    * You can use the `-c` and `-r` flags to change the location of the config
      and registration files. They default to `config.yaml` and
