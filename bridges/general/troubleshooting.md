@@ -24,9 +24,11 @@ events to the appservice. There are a few potential reasons this can happen:
   [matrix-org/synapse#1834](https://github.com/matrix-org/synapse/issues/1834)
   if nothing else works.
 
-## `fatal error: olm/olm.h: no such file or directory`
-When building with end-to-bridge encryption, you must have libolm3 with dev
-headers installed.
+## `pip` failed building wheel for python-olm
+
+### `fatal error: olm/olm.h: no such file or directory`
+When building with end-to-bridge encryption, you must have a C compiler,
+python3 dev headers and libolm3 with dev headers installed.
 
 If you want to build without encryption:
 * For Python bridges, don't install the `e2be`
@@ -36,3 +38,9 @@ If you want to build without encryption:
 
 ### `fatal error: olm/pk.h: no such file or directory`
 libolm2 is too old, you need libolm3.
+
+### `fatal error: pyconfig.h: no such file or directory`
+python3-dev is required.
+
+### `error: command 'gcc' failed: No such file or directory
+build-essential is required.
