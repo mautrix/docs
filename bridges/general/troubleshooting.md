@@ -26,7 +26,7 @@ events to the appservice. There are a few potential reasons this can happen:
 
 ## `pip` failed building wheel for python-olm
 
-### `fatal error: olm/olm.h: no such file or directory`
+#### `fatal error: olm/olm.h: no such file or directory`
 When building with end-to-bridge encryption, you must have a C compiler,
 python3 dev headers and libolm3 with dev headers installed.
 
@@ -36,11 +36,11 @@ If you want to build without encryption:
 * For Go bridges, either build with `-tags nocrypto` or disable cgo with the
   `CGO_ENABLED=0` env var.
 
-### `fatal error: olm/pk.h: no such file or directory`
+#### `fatal error: olm/pk.h: no such file or directory`
 libolm2 is too old, you need libolm3.
 
-### `fatal error: pyconfig.h: no such file or directory`
+#### `fatal error: pyconfig.h: no such file or directory`
 python3-dev is required.
 
-### `error: command 'gcc' failed: No such file or directory
+#### `error: command 'gcc' failed: No such file or directory`
 build-essential is required.
