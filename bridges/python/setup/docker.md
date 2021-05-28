@@ -62,7 +62,7 @@ services:
     image: dock.mau.dev/tulir/mautrix-$bridge:<version>
     restart: unless-stopped
     volumes:
-    - .:/data
+    - ./mautrix-$bridge:/data
 ```
 
 Follow the rest of the Docker setup, but use compose commands instead of the
