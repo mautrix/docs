@@ -8,7 +8,7 @@
    **Do not clone the repository.** If you want to use a specific version from
    git rather than PyPI, use the development setup instructions.
 2. Set up a virtual environment.
-   1. Create with `/usr/bin/python3 -m venv .` (note the dot at the end)
+   1. Create with `virtualenv -p /usr/bin/python3 .` (note the dot at the end)
       * You should not use a subdirectory for the virtualenv in this production
         setup. The pip install step places some required files at the root of
         the environment.
@@ -36,7 +36,7 @@
 ## Development setup
 0. Clone the repository.
 1. _Optional, but strongly recommended:_ Set up a virtual environment.
-   1. Create with `/usr/bin/python3 -m venv .venv`
+   1. Create with `virtualenv -p /usr/bin/python3 .venv`
    2. Activate with `source .venv/bin/activate`
 2. Install dependencies with `pip install -r requirements.txt`
 3. `pip install --editable .` (note the dot at the end)
