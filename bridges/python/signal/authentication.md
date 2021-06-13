@@ -14,5 +14,9 @@
 3. To be able to participate in v2 groups, set a profile name with
    `set-profile-name <name>`.
 
-Sometimes Signal requires solving a CAPTCHA when registering, but this is
-currently not supported by the bridge.
+### CAPTCHA
+Refer to the [signald docs](https://signald.org/articles/captcha/) on dealing
+with captcha required errors. The bridge supports the same `--captcha`
+parameter as signaldctl, but it must be passed before the phone number instead
+of after (e.g. `!signal register --captcha 03AOLTBLR... +12024561414`). The
+`signalcaptcha://` part must *not* be included.
