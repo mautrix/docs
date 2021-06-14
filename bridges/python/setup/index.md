@@ -53,6 +53,7 @@ with this virtualenv setup.
 8. Run the bridge `python -m mautrix_$bridge`.
 
 ### Upgrading
+0. Make sure you're in the virtualenv (`source ./bin/activate`).
 1. Run the bridge install command again (install step #2).
 2. Update the database with the command in install step #7.
    <span class="bridge-filter" bridges="telegram,hangouts"/>
@@ -70,6 +71,7 @@ with this virtualenv setup.
 3. Continue from step #3 of production setup.
 
 ### Upgrading
+0. Make sure you're in the virtualenv (`source ./bin/activate`).
 1. Pull changes from Git.
 2. Update dependencies with `pip install --upgrade -r requirements.txt`.
    * If you installed optional dependencies, run the same `pip` command as when installing them, but with `--upgrade`
