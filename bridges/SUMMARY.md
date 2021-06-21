@@ -32,6 +32,7 @@
 - [mautrix-signal](./python/signal/index.md)
   - [Authentication](./python/signal/authentication.md)
   - [Bridge setup with Docker](./python/signal/setup-docker.md)
+  - [Relay mode](./python/signal/relay-mode.md)
 - [mautrix-instagram](./python/instagram/index.md)
   - [Authentication](./python/instagram/authentication.md)
 
