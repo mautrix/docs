@@ -4,7 +4,6 @@ Debugging setup issues should be done in the Matrix rooms for the bridges
 page will collect some of the most common issues.
 
 ## Why is the bridge bot not accepting invites?
-
 If the bridge starts up successfully, but inviting the bot doesn't work and the
 logs don't show any errors, it usually means the homeserver isn't sending
 events to the appservice. There are a few potential reasons this can happen:
@@ -44,3 +43,9 @@ python3-dev is required.
 
 #### `error: command 'gcc' failed: No such file or directory`
 build-essential is required.
+
+## `[CRITICAL@mau.init] Configuration error: <field> not configured`
+You didn't change the value of `<field>` in the config, but that field must be
+configured for the bridge to work (i.e. the default value will not work). Dots
+in `<field>` mean nesting, e.g. `bridge.permissions` means the `permissions`
+field inside the `bridge` object.
