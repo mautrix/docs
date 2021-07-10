@@ -50,21 +50,20 @@ arm64 images.
 2. Start the new version (setup step 7)
 
 ## Docker compose
-Create a directory as in step #0 and create `docker-compose.yml` that contains
-something like this:
+0. Create a directory for the bridge like step #0 in the Docker CLI
+   instructions above.
+1. Create `docker-compose.yml` that contains something like this:
+   ```yaml
+   version: "3.7"
 
-```yaml
-version: "3.7"
-
-services:
-  mautrix-$bridge:
-    container_name: mautrix-$bridge
-    image: dock.mau.dev/tulir/mautrix-$bridge:<version>
-    restart: unless-stopped
-    volumes:
-    - .:/data
-```
-
-Follow the rest of the Docker setup, but use compose commands instead of the
-raw `docker` commands: `docker-compose up -d` to start, `docker-compose stop`
-to stop and `docker-compose pull` to update.
+   services:
+     mautrix-$bridge:
+       container_name: mautrix-$bridge
+       image: dock.mau.dev/tulir/mautrix-$bridge:<version>
+       restart: unless-stopped
+       volumes:
+       - .:/data
+   ```
+2. Follow the rest of the Docker setup, but use compose commands instead of the
+   raw `docker` commands: `docker-compose up -d` to start, `docker-compose stop`
+   to stop and `docker-compose pull` to update.
