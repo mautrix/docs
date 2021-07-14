@@ -67,3 +67,12 @@ arm64 images.
 2. Follow the rest of the Docker setup, but use compose commands instead of the
    raw `docker` commands: `docker-compose up -d` to start, `docker-compose stop`
    to stop and `docker-compose pull` to update.
+
+If you want to set it up in an existing docker-compose file instead of a new
+dedicated one, simply adjust the `volumes` section to mount a subdirectory
+instead of the current directory as the data directory:
+
+```yaml
+volumes:
+- ./mautrix-$bridge:/data
+```
