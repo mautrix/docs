@@ -49,4 +49,4 @@
   - [Bridge setup (macOS without SIP)]()
   - [Bridge setup (iOS)](./go/imessage/ios/setup.md)
     - [SMS forwarding](./go/imessage/ios/sms-forwarding.md)
-  - [Bridge setup (Android SMS)]()
+  - [Bridge setup (Android SMS)](./go/imessage/android/setup.md)
