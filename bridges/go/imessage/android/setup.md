@@ -1,4 +1,12 @@
 # ~~iMessage~~ SMS bridge setup (Android)
+In addition to being an iMessage bridge, mautrix-imessage can run on Android to
+bridge SMS messages from your phone. The Android SMS bridge works similar to
+the [jailbroken iOS setup], but instead of Brooklyn, the wrapper app for the
+bridge is [android-sms].
+
+[jailbroken iOS setup]: ../ios/setup.md
+[android-sms]: https://gitlab.com/beeper/android-sms
+
 ## Requirements
 * An Android device with Android 5 or higher.
   * **N.B.** You must set the android-sms app as your default SMS app.
@@ -9,11 +17,6 @@
   proxy readme) is also recommended to minimize battery usage.
 
 ## Installation
-The bridge consists of two components: [android-sms] for hooking into the SMS
-APIs on Android and mautrix-imessage for connecting to Matrix. The android-sms
-app runs mautrix-imessage as a subprocess and they communicate over stdio.
-
-[android-sms]: https://gitlab.com/beeper/android-sms
 
 ### Compiling manually
 1. Install the latest Android SDK and NDK version 21.3.6528147.
