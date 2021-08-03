@@ -41,7 +41,7 @@ CI after that.
    * Change `imessage` -> `platform` to `android`.
    * Generate random tokens for the `as_token` and `hs_token` fields.
    * The database and log directory paths must be absolute paths in the
-     `/data/user/0/com.beeper.sms` directory.
+     `/data/user/0/com.beeper.sms.app` directory.
 2. Get the [example registration] and copy the relevant values from the config.
 3. Set up [mautrix-wsproxy](https://github.com/tulir/mautrix-wsproxy)
    (and the sync proxy).
