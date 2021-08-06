@@ -20,7 +20,7 @@ rooms.
 * [aria-net.org](https://aria-net.org/SitePages/Portal/Bridges.aspx)
   / [@support:aria-net.org](https://matrix.to/#/@support:aria-net.org)
 
-If you run a public instance and wish to list it here, please [make a pull request](https://github.com/tulir/mautrix-docs/blob/master/bridges/src/python/telegram/index.md).
+If you run a public instance and wish to list it here, please [make a pull request](https://github.com/mautrix/docs/blob/master/bridges/src/python/telegram/index.md).
 
 ## Discussion
 Matrix room: [#telegram:maunium.net](https://matrix.to/#/#telegram:maunium.net)

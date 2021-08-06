@@ -12,7 +12,7 @@ build-dir = "../dist/gomuks"
 [preprocessor.links]
 
 [output.html]
-git-repository-url = "https://github.com/tulir/mautrix-docs"
+git-repository-url = "https://github.com/mautrix/docs"
 git-repository-icon = "fa-github"
 additional-css = ["../bridges/additional.css"]
 theme = "../theme/gomuks"
