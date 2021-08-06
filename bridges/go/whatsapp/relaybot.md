@@ -14,10 +14,10 @@
 6. Restart the bridge and invite the bridge bot to the management room you
    created.
 
-[the relaybot config]: https://github.com/tulir/mautrix-whatsapp/blob/v0.1.4/example-config.yaml#L221-L227
-[`invites` list in the config]: https://github.com/tulir/mautrix-whatsapp/blob/v0.1.4/example-config.yaml#L228-L229
-[the permissions section]: https://github.com/tulir/mautrix-whatsapp/blob/v0.1.4/example-config.yaml#L207-L219
-[`allow_user_invite`]: https://github.com/tulir/mautrix-whatsapp/blob/v0.1.4/example-config.yaml#L175-L177
+[the relaybot config]: https://github.com/mautrix/whatsapp/blob/v0.1.4/example-config.yaml#L221-L227
+[`invites` list in the config]: https://github.com/mautrix/whatsapp/blob/v0.1.4/example-config.yaml#L228-L229
+[the permissions section]: https://github.com/mautrix/whatsapp/blob/v0.1.4/example-config.yaml#L207-L219
+[`allow_user_invite`]: https://github.com/mautrix/whatsapp/blob/v0.1.4/example-config.yaml#L175-L177
 
 ## Logging in
 Note that only one user can be logged in with one WhatsApp account at a time,
@@ -38,9 +38,9 @@ see below for instructions on bridging existing Matrix rooms.
 ## Creating a new WhatsApp group for an existing Matrix room
 There are currently a few bugs that affect this:
 * You can only invite the bridge bot to an empty room
-  ([#208](https://github.com/tulir/mautrix-whatsapp/issues/208)).
+  ([#208](https://github.com/mautrix/whatsapp/issues/208)).
 * ~~You can only create groups in encrypted rooms due to a bug in the bridge
-  ([#209](https://github.com/tulir/mautrix-whatsapp/issues/209)).~~
+  ([#209](https://github.com/mautrix/whatsapp/issues/209)).~~
 
 1. Invite the bridge bot to the Matrix room.
 2. Invite the ghosts of any WhatsApp users you want in the group right away.

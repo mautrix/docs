@@ -12,7 +12,7 @@ bridge is [android-sms].
   * **N.B.** You must set the android-sms app as your default SMS app.
 * A Matrix homeserver that supports application services
   (e.g. [Synapse](https://github.com/matrix-org/synapse)).
-* A [websocket proxy](https://github.com/tulir/mautrix-wsproxy) to receive
+* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
   appservice transactions. The sync proxy component (mentioned in the websocket
   proxy readme) is also recommended to minimize battery usage.
 
@@ -43,7 +43,7 @@ CI after that.
    * The database and log directory paths must be absolute paths in the
      `/data/user/0/com.beeper.sms.app` directory.
 2. Get the [example registration] and copy the relevant values from the config.
-3. Set up [mautrix-wsproxy](https://github.com/tulir/mautrix-wsproxy)
+3. Set up [mautrix-wsproxy](https://github.com/mautrix/wsproxy)
    (and the sync proxy).
 4. Add the path to the registration file to your Synapse `homeserver.yaml`
    under `app_service_config_files`, then restart Synapse.
@@ -63,5 +63,5 @@ CI after that.
 7. Scan the QR code with android-sms.
 -->
 
-[example config]: https://github.com/tulir/mautrix-imessage/blob/master/example-config.yaml
-[example registration]: https://github.com/tulir/mautrix-imessage/blob/master/example-registration.yaml
+[example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
+[example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml

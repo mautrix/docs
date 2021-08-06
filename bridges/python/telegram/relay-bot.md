@@ -35,7 +35,7 @@ Matrix users manually with `/invite <mxid>`.
 
 ## Message format configuration
 The format of messages and membership events that the bot sends to Telegram can
-be configured both [bridge-wide](https://github.com/tulir/mautrix-telegram/blob/v0.7.0/example-config.yaml#L221-L255)
+be configured both [bridge-wide](https://github.com/mautrix/telegram/blob/v0.7.0/example-config.yaml#L221-L255)
 and per-room. Per-room configs can be managed using the `!tg config` command.
 
 For example, to disable bridging of membership events in a room, you can run

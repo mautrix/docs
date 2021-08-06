@@ -10,7 +10,7 @@
     database.
 * A Matrix homeserver that supports application services
   (e.g. [Synapse](https://github.com/matrix-org/synapse)).
-* A [websocket proxy](https://github.com/tulir/mautrix-wsproxy) to receive
+* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
   appservice transactions.
 
 ## Installation
@@ -18,14 +18,14 @@ You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI.
 
 ### Compiling manually
-1. Clone the repo with `git clone https://github.com/tulir/mautrix-imessage.git`.
+1. Clone the repo with `git clone https://github.com/mautrix/imessage.git`.
 2. Enter the directory (`cd mautrix-imessage`).
 3. Run `./build.sh` to fetch Go dependencies and compile
-   ([`build.sh`](https://github.com/tulir/mautrix-imessage/blob/master/build.sh)
+   ([`build.sh`](https://github.com/mautrix/imessage/blob/master/build.sh)
    will simply call `go build` with some additional flags).
 
 ### Downloading a prebuilt executable
-1. Go to https://mau.dev/tulir/mautrix-imessage/pipelines?scope=branches&page=1
+1. Go to https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list.
    * There are three entries: universal, arm64 (Apple Silicon) and amd64 (Intel).
@@ -43,7 +43,7 @@ from the mau.dev CI.
    * You can use the `-c` and `-r` flags to change the location of the config
      and registration files. They default to `config.yaml` and
      `registration.yaml` respectively.
-4. Set up [mautrix-wsproxy](https://github.com/tulir/mautrix-wsproxy).
+4. Set up [mautrix-wsproxy](https://github.com/mautrix/wsproxy).
 5. Update your registration file so the `url` field points to wsproxy (e.g.
    `http://localhost:29331`), and make sure the `websocket_proxy` field in the
    bridge config also points to wsproxy (e.g. `ws://matrix.example.com:29331`).

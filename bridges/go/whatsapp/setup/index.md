@@ -24,7 +24,7 @@ You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI.
 
 ### Compiling manually
-1. Clone the repo with `git clone https://github.com/tulir/mautrix-whatsapp.git`
+1. Clone the repo with `git clone https://github.com/mautrix/whatsapp.git`
 2. Enter the directory (`cd mautrix-whatsapp`)
 3. Run `./build.sh` to fetch Go dependencies and compile
    ([`build.sh`] will simply call `go build` with some additional flags).
@@ -34,10 +34,10 @@ from the mau.dev CI.
      Debian stable.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
 
-[`build.sh`]: https://github.com/tulir/mautrix-whatsapp/blob/master/build.sh
+[`build.sh`]: https://github.com/mautrix/whatsapp/blob/master/build.sh
 
 ### Downloading a prebuilt executable
-1. Go to <https://mau.dev/tulir/mautrix-whatsapp/pipelines?scope=branches&page=1>
+1. Go to <https://mau.dev/mautrix/whatsapp/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list.
    * The builds are all static with olm included, but SQLite may not work.

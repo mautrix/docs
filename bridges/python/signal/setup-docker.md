@@ -22,7 +22,7 @@
    services:
      mautrix-signal:
        container_name: mautrix-signal
-       image: dock.mau.dev/tulir/mautrix-signal
+       image: dock.mau.dev/mautrix/signal
        restart: unless-stopped
        volumes:
        - ./bridge:/data

@@ -11,7 +11,7 @@ enabled in the config to use this method ([`appservice`->`public`]).
 After web login is enabled, send `login` with no parameters to the bridge bot,
 click the link it gives, and use the login form on the website to log in.
 
-[`appservice`->`public`]: https://github.com/tulir/mautrix-facebook/blob/9363c4541785a45e69b2f73d0bc5057ecb177619/mautrix_facebook/example-config.yaml#L36-L50
+[`appservice`->`public`]: https://github.com/mautrix/facebook/blob/v0.3.0/mautrix_facebook/example-config.yaml#L38-L52
 
 ## In-Matrix login
 1. Send `login <email>` to the bridge bot.

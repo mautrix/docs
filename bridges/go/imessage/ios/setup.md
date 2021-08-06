@@ -3,7 +3,7 @@
 * A jailbroken iOS device, minimum and recommended is iPhone 4S with iOS 8.4(.1).
 * A Matrix homeserver that supports application services
   (e.g. [Synapse](https://github.com/matrix-org/synapse)).
-* A [websocket proxy](https://github.com/tulir/mautrix-wsproxy) to receive
+* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
   appservice transactions.
 
 ## Installation
@@ -37,7 +37,7 @@ the repo.
    * Change `imessage` -> `platform` to `ios`.
    * Generate random tokens for the `as_token` and `hs_token` fields.
 2. Get the [example registration] and copy the relevant values from the config.
-3. Set up [mautrix-wsproxy](https://github.com/tulir/mautrix-wsproxy).
+3. Set up [mautrix-wsproxy](https://github.com/mautrix/wsproxy).
 4. Add the path to the registration file to your Synapse `homeserver.yaml`
    under `app_service_config_files`, then restart Synapse.
 5. Serve the config file with the webserver of your choice. It's recommended
@@ -52,6 +52,6 @@ the repo.
    (e.g. `echo -n https://user:pass@example.com/your-config.yaml | qrencode -t ansiutf8`).
 7. Scan the QR code with Brooklyn.
 
-[example config]: https://github.com/tulir/mautrix-imessage/blob/master/example-config.yaml
-[example registration]: https://github.com/tulir/mautrix-imessage/blob/master/example-registration.yaml
+[example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
+[example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml
 [a bug in Brooklyn]: https://gitlab.com/beeper/brooklyn/-/issues/7

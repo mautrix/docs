@@ -25,11 +25,11 @@ arm64 images.
    **N.B.** The docker image will `chown` its `/data` directory to UID 1337.
    The commands below mount the working directory as `/data`, so make sure you
    always run them in the correct directory.
-1. Pull the docker image with `docker pull dock.mau.dev/tulir/mautrix-$bridge:<version>`.
+1. Pull the docker image with `docker pull dock.mau.dev/mautrix/$bridge:<version>`.
    Replace `<version>` with the version you want to run (e.g. `latest` or `v0.6.0`).
 2. Run the container for the first time, so it can create a config file for you:
    ```
-   docker run --rm -v `pwd`:/data:z dock.mau.dev/tulir/mautrix-$bridge:<version>
+   docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
 3. Update the config to your liking. You'll at least need to change the
    homeserver settings, appservice address and permissions.
@@ -39,7 +39,7 @@ arm64 images.
    under `app_service_config_files`. Restart Synapse to apply changes.
 6. Run the bridge:
    ```
-   docker run --restart unless-stopped -v `pwd`:/data:z dock.mau.dev/tulir/mautrix-$bridge:<version>
+   docker run --restart unless-stopped -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
    Additionally, you should either add the bridge to the same Docker network as
    Synapse with `--network=synapsenet`, or expose the correct port with
@@ -59,7 +59,7 @@ arm64 images.
    services:
      mautrix-$bridge:
        container_name: mautrix-$bridge
-       image: dock.mau.dev/tulir/mautrix-$bridge:<version>
+       image: dock.mau.dev/mautrix/$bridge:<version>
        restart: unless-stopped
        volumes:
        - .:/data

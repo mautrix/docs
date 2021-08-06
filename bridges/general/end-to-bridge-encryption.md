@@ -18,7 +18,7 @@ Prior to mautrix-telegram v0.9.0 / mautrix-python v0.8.0, you had to configure
 [login_shared_secret]. In new versions, you only need a homeserver with
 [MSC2778] support, i.e. Synapse 1.22 or later.
 
-[login_shared_secret]: https://github.com/tulir/mautrix-telegram/blob/v0.8.0-rc2/mautrix_telegram/example-config.yaml#L162-L167
+[login_shared_secret]: https://github.com/mautrix/telegram/blob/v0.8.0-rc2/mautrix_telegram/example-config.yaml#L162-L167
 [MSC2778]: https://github.com/matrix-org/matrix-doc/pull/2778
 
 ### Registration file workaround
