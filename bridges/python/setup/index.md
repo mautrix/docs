@@ -18,7 +18,7 @@ with this virtualenv setup.
   An instance of [signald](https://gitlab.com/signald/signald).
 
 ## Production setup
-0. Create a directory for the bridge.
+0. Create a directory for the bridge. **Do not clone the repository.**
 1. Set up a virtual environment.
    1. Create with `virtualenv -p /usr/bin/python3 .` (note the dot at the end)
       * You should not use a subdirectory for the virtualenv in this production
