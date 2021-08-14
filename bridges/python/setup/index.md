@@ -68,6 +68,6 @@ with this virtualenv setup.
 ### Upgrading (development setup)
 0. Make sure you're in the virtualenv (`source .venv/bin/activate`).
 1. Pull changes from Git.
-2. Run the bridge install command again (install step #2).
+2. Run the dependency install command again (install step #2).
 3. <span class="bridge-filter" bridges="telegram,hangouts">**For mautrix-telegram and mautrix-hangouts only:**</span>
    Update the database with the command in install step #7.
