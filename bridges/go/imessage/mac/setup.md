@@ -8,8 +8,8 @@
 * A computer running a reasonably new version of macOS.
   * The bridge requires full disk access in privacy settings to read your chat
     database.
-* A Matrix homeserver that supports application services
-  (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+  You need access to register an appservice, which usually involves editing the homeserver config file.
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
   appservice transactions.
 

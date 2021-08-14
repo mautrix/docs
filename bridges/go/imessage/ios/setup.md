@@ -1,8 +1,8 @@
 # iMessage bridge setup (iOS)
 ## Requirements
 * A jailbroken iOS device, minimum and recommended is iPhone 4S with iOS 8.4(.1).
-* A Matrix homeserver that supports application services
-  (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+  You need access to register an appservice, which usually involves editing the homeserver config file.
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
   appservice transactions.
 

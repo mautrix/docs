@@ -9,7 +9,8 @@ with this virtualenv setup.
 ## Requirements
 * Python 3.7 or higher with `pip` and `virtualenv`.  
   **N.B.** Python 3.8 will be the minimum in the near future.
-* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse))
+* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+  You need access to register an appservice, which usually involves editing the homeserver config file.
 * A PostgreSQL server (which you should already have for Synapse).
 * If installing optional dependencies, see the [optional dependencies](../optional-dependencies.md) page.
 * <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>

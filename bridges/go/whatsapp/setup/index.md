@@ -13,8 +13,8 @@ the bridge:
 * Olm dev headers and a C/C++ compiler (if you want end-to-bridge encryption)
 
 ### Runtime
-* A Matrix homeserver that supports application services
-  (e.g. [Synapse](https://github.com/matrix-org/synapse))
+* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+  You need access to register an appservice, which usually involves editing the homeserver config file.
 * A WhatsApp client running on a phone or in an emulated Android VM.
 * libolm3 (if you compiled manually and want end-to-bridge encryption)
 * ffmpeg (if you want to send gifs from Matrix)
