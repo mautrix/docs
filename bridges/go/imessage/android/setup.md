@@ -9,7 +9,8 @@ bridge is [android-sms].
 
 ## Requirements
 * An Android device with Android 5 or higher.
-  * **N.B.** You must set the android-sms app as your default SMS app.
+  * ~~**N.B.** You must set the android-sms app as your default SMS app.~~
+    Being the default SMS app is no longer required.
 * A Matrix homeserver that supports application services
   (e.g. [Synapse](https://github.com/matrix-org/synapse)).
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
@@ -48,7 +49,7 @@ CI after that.
 4. Add the path to the registration file to your Synapse `homeserver.yaml`
    under `app_service_config_files`, then restart Synapse.
 5. Build and run the android-sms app with your config.
-6. Make the app your primary SMS app to start the bridge.
+6. Open the app and grant it SMS permissions to start the bridge.
 
 <!--
 5. Serve the config file with the webserver of your choice. It's recommended
