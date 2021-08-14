@@ -1,7 +1,4 @@
 # Manhole
-**This feature is currently only present in mautrix-telegram, but it's intended 
-to be extended to all other Python-based bridges eventually.**
-
 The "manhole" allows server administrators to access a Python shell on a
 running bridge. This is a very powerful mechanism for administration and
 debugging.
@@ -19,8 +16,8 @@ When the manhole is open, you can open a connection with `nc -NU
 the host and connect with the hosts netcat and rlwrap.
 
 To close the connection, use <kbd>Ctrl</kbd>+<kbd>C</kbd> or `exit()`. To close
-the manhole, use the `close-manhole` management command or use
-`bridge.manhole.close()` inside the manhole.
+the manhole, use the `close-manhole` management command or use `manhole.close()`
+inside the manhole.
 
 Inside the manhole, `bridge` refers to the main class instance. Refer to the 
 source code to see how everything works. The manhole supports top-level `await`
