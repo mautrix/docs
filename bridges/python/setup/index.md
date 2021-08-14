@@ -46,28 +46,27 @@ with this virtualenv setup.
    path, use `alembic -x config=/path/to/config.yaml upgrade head`.
 8. Run the bridge `python -m mautrix_$bridge`.
 
-### Upgrading
+### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).
 1. Run the bridge install command again (install step #2).
-2. Update the database with the command in install step #7.
-   <span class="bridge-filter" bridges="telegram,hangouts"/>
+2. <span class="bridge-filter" bridges="telegram,hangouts">**For mautrix-telegram and mautrix-hangouts only:**</span>
+   Update the database with the command in install step #7.
 
 ## Development setup
 0. Clone the repository.
 1. _Optional, but strongly recommended:_ Set up a virtual environment.
    1. Create with `virtualenv -p /usr/bin/python3 .venv`
    2. Activate with `source .venv/bin/activate`
-2. Install dependencies with `pip install -r requirements.txt`
+2. Install dependencies with `pip install --upgrade -r requirements.txt`
    * Optionally, add `-r optional-requirements.txt` to install optional
      dependencies. Some of the optional dependencies may need additional native
      packages. See the [optional dependencies page](../optional-dependencies.md)
      for more info.
 3. Continue from step #3 of production setup.
 
-### Upgrading
-0. Make sure you're in the virtualenv (`source ./bin/activate`).
+### Upgrading (development setup)
+0. Make sure you're in the virtualenv (`source .venv/bin/activate`).
 1. Pull changes from Git.
-2. Update dependencies with `pip install --upgrade -r requirements.txt`.
-   * If you installed optional dependencies, run the same `pip` command as when installing them, but with `--upgrade`
-3. Update the database with the command in install step #7.
-   <span class="bridge-filter" bridges="telegram,hangouts"/>
+2. Run the bridge install command again (install step #2).
+3. <span class="bridge-filter" bridges="telegram,hangouts">**For mautrix-telegram and mautrix-hangouts only:**</span>
+   Update the database with the command in install step #7.
