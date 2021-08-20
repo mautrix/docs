@@ -17,8 +17,6 @@ rooms.
   / [#tchncs:tchncs.de](https://matrix.to/#/#tchncs:tchncs.de)
 * [snt.utwente.nl](https://syscom.utwente.io/info/matrix/telegram/)
   / [#telegram:utwente.io](https://matrix.to/#/#telegram:utwente.io)
-* [aria-net.org](https://aria-net.org/SitePages/Portal/Bridges.aspx)
-  / [@support:aria-net.org](https://matrix.to/#/@support:aria-net.org)
 
 If you run a public instance and wish to list it here, please [make a pull request](https://github.com/mautrix/docs/blob/master/bridges/src/python/telegram/index.md).
 
