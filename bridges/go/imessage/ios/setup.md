@@ -15,10 +15,10 @@ The recommended way to install the app is getting a precompiled build from the
 Cydia repo. You can technically also compile everything yourself, but that is
 less documented.
 
-[Brooklyn]: https://gitlab.com/beeper/brooklyn
+[Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn
 
 ### Compiling manually
-There are instructions for compiling Brooklyn in the GitLab repo.
+There are instructions for compiling Brooklyn in the GitHub repo.
 
 Compiling mautrix-imessage for darwin/armv7 is more complicated and not
 currently documented. For more recent devices (i.e. armv8/arm64), it should
@@ -26,9 +26,9 @@ be as simple as compiling mautrix-imessage on a Mac with Apple Silicon.
 
 ### Precompiled builds
 You can get the Brooklyn app with a bundled mautrix-imessage from the Cydia
-repo. The repo is currently available at <http://beeper.gitlab.io/brooklyn/>.
-After adding the repo in Cydia, simply install the "Brooklyn" package from
-the repo.
+repo. The repo is currently available at <http://maunium.mau.life/brooklyn/>
+(repo URL subject to change). After adding the repo in Cydia, simply install
+the "Brooklyn" package from the repo.
 
 ## Configuring and running
 1. Get the [example config] and fill it out. You'll at least need to:
@@ -54,4 +54,4 @@ the repo.
 
 [example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
 [example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml
-[a bug in Brooklyn]: https://gitlab.com/beeper/brooklyn/-/issues/7
+[a bug in Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn/issues/5

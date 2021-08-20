@@ -18,7 +18,7 @@ different ways to connect to iMessage:
 You can find setup instructions for each of the connectors in the sidebar.
 
 [Barcelona]: https://github.com/open-imcore/barcelona
-[Brooklyn]: https://gitlab.com/beeper/brooklyn
+[Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn
 [android-sms]: https://gitlab.com/beeper/android-sms
 [IPC protocol]: https://github.com/mautrix/imessage/blob/master/imessage/ios/ipc.md
 
