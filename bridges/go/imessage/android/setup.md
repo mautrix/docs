@@ -14,8 +14,9 @@ bridge is [android-sms].
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
-  appservice transactions. The sync proxy component (mentioned in the websocket
-  proxy readme) is also recommended to minimize battery usage.
+  appservice transactions. If you want end-to-bridge encryption, the sync
+  proxy component (mentioned in the websocket proxy readme) is also recommended
+  to minimize battery usage.
 
 ## Installation
 
