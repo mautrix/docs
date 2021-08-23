@@ -19,9 +19,6 @@ the normal login, you must do this in a private chat with the bridge bot.
    ```shell
    $ curl -XPOST -d '{"type":"m.login.password","identifier":{"type": "m.id.user", "user": "example"},"password":"wordpass","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/r0/login
    ```
-   Alternatively, you can get an existing access token from your client
-   (Settings -> Help & About in Element Web/Desktop). However, this means
-   double puppeting will break if you log out of that client.
 2. Send `login-matrix <access token>` to the bridge bot. For the Telegram
    bridge, send `login-matrix` without the access token, then send the access
    token in a separate message.
