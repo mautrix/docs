@@ -12,6 +12,7 @@
   updated to match the maunium image.
 * By default, the bridge runs as root. You can run it as a different user, but
   make sure you `chown` all the files and make signald run as the same user.
+  Additionally set the log file to a path where the user is able to write (e.g. `/data/`).
 
 ## Setup
 0. Create a directory for the bridge and cd into it: `mkdir mautrix-signal && cd mautrix-signal`.
