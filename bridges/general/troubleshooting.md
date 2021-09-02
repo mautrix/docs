@@ -18,10 +18,9 @@ events to the appservice. There are a few potential reasons this can happen:
   off. The homeserver should retry after some time. If it still doesn't work
   after an hour or so (exact backoff depends on how long the bridge was down),
   check the homeserver logs.
-* Synapse messed up and silently broke the appservice. ~~This is quite rare,
-  but~~ This is becoming relatively common, you should check
-  [matrix-org/synapse#1834](https://github.com/matrix-org/synapse/issues/1834)
-  if nothing else works.
+* Synapse messed up and silently broke the appservice. ~~This is becoming
+  relatively common, you should check [matrix-org/synapse#1834](https://github.com/matrix-org/synapse/issues/1834)
+  if nothing else works.~~ This should be fixed as of Synapse v1.36.0.
 
 ## `pip` failed building wheel for python-olm
 
