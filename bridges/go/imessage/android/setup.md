@@ -14,9 +14,11 @@ bridge is [android-sms].
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
-  appservice transactions. If you want end-to-bridge encryption, the sync
-  proxy component (mentioned in the websocket proxy readme) is also recommended
+  appservice transactions. If you want end-to-bridge encryption, the [sync
+  proxy] component (mentioned in the websocket proxy readme) is also recommended
   to minimize battery usage.
+
+[sync proxy]: https://github.com/mautrix/syncproxy
 
 ## Installation
 
@@ -46,7 +48,7 @@ CI after that.
      `/data/user/0/com.beeper.sms.app` directory.
 2. Get the [example registration] and copy the relevant values from the config.
 3. Set up [mautrix-wsproxy](https://github.com/mautrix/wsproxy)
-   (and the sync proxy).
+   (and the [sync proxy](https://github.com/mautrix/syncproxy)).
 4. Add the path to the registration file to your Synapse `homeserver.yaml`
    under `app_service_config_files`, then restart Synapse.
 5. Build and run the android-sms app with your config.
