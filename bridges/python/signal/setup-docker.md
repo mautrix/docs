@@ -29,17 +29,20 @@
        - ./signald:/signald
        depends_on:
        - signald
+
        # If synapse is running outside of docker, you'll need to expose the port.
        # Note that in most cases you should either run everything inside docker
-       # or outside docker rather than mixing docker things with non-docker things.
+       # or everything outside docker, rather than mixing docker things with
+       # non-docker things.
        #ports:
        #- "29328:29328"
 
        # If synapse is in a different network, then add this container to that network.
        # Note the networks object at the bottom too.
        #networks:
-       #- default
+       #- default  # keep the container in the default network too so that the db container is reachable.
        #- synapsenet
+
      signald:
        container_name: signald
        image: docker.io/finn/signald
