@@ -36,6 +36,10 @@
        # non-docker things.
        #ports:
        #- "29328:29328"
+       # You'll also probably want this so the bridge can reach Synapse directly
+       # using something like `http://host.docker.internal:8008` as the address:
+       #extra_hosts:
+       #- "host.docker.internal:host-gateway"
 
        # If synapse is in a different network, then add this container to that network.
        # Note the networks object at the bottom too.

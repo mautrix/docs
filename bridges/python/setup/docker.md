@@ -60,6 +60,28 @@ arm64 images.
        restart: unless-stopped
        volumes:
        - .:/data
+
+       # If synapse is running outside of docker, you'll need to expose the port.
+       # Note that in most cases you should either run everything inside docker
+       # or everything outside docker, rather than mixing docker things with
+       # non-docker things.
+       #ports:
+       #- "$bridgeport:$bridgeport"
+       # You'll also probably want this so the bridge can reach Synapse directly
+       # using something like `http://host.docker.internal:8008` as the address:
+       #extra_hosts:
+       #- "host.docker.internal:host-gateway"
+
+       # If synapse is in a different network, then add this container to that network.
+       #networks:
+       #- default  # keep the container in the default network too so that the db container is reachable.
+       #- synapsenet
+   # This is also a part of the networks thing above
+   #networks:
+   #  synapsenet:
+   #    external:
+   #      name: synapsenet
+
    ```
 2. Follow the rest of the Docker setup, but use compose commands instead of the
    raw `docker` commands: `docker-compose up -d` to start, `docker-compose stop`

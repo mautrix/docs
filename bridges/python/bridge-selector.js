@@ -1,5 +1,16 @@
 const allowedBridges = ["$bridge", "telegram", "facebook", "hangouts", "twitter", "signal", "instagram"]
 
+const bridgePorts = {
+  "$bridge": "$bridgeport",
+  "telegram": "29317",
+  "facebook": "29319",
+  "hangouts": "29320",
+  "googlechat": "29320",
+  "twitter": "29327",
+  "signal": "29328",
+  "instagram": "29330",
+}
+
 const updateBridgeSelection = () => {
     const selector = document.getElementById("bridge-selector")
     if (!allowedBridges.includes(selector.value)) {
@@ -7,6 +18,9 @@ const updateBridgeSelection = () => {
         return
     }
 
+    for (const elem of document.getElementsByClassName("bridge-port")) {
+        elem.innerText = bridgePorts[selector.value]
+    }
     for (const elem of document.getElementsByClassName("bridge-type")) {
         elem.innerText = selector.value
     }
@@ -54,6 +68,9 @@ if (selector) {
     }
     selector.addEventListener("change", updateBridgeSelection)
 
+    for (const node of document.getElementsByTagName("code")) {
+        node.innerHTML = node.innerHTML.replaceAll("$bridgeport", `<span class="bridge-port">$bridgeport</span>`)
+    }
     for (const node of document.getElementsByTagName("code")) {
         node.innerHTML = node.innerHTML.replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
     }
