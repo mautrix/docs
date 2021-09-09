@@ -95,3 +95,7 @@ instead of the current directory as the data directory:
 volumes:
 - ./mautrix-$bridge:/data
 ```
+
+When you put the bridge and Synapse in the same docker-compose file, networking
+should work out of the box, which means you don't need any of the commented
+`ports` or `networks` things in the example compose file.
