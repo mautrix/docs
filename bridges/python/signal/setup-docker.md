@@ -29,6 +29,17 @@
        - ./signald:/signald
        depends_on:
        - signald
+       # If synapse is running outside of docker, you'll need to expose the port.
+       # Note that in most cases you should either run everything inside docker
+       # or outside docker rather than mixing docker things with non-docker things.
+       #ports:
+       #- "29328:29328"
+
+       # If synapse is in a different network, then add this container to that network.
+       # Note the networks object at the bottom too.
+       #networks:
+       #- default
+       #- synapsenet
      signald:
        container_name: signald
        image: docker.io/finn/signald
@@ -44,11 +55,18 @@
          POSTGRES_PASSWORD: foobar
        volumes:
        - ./db:/var/lib/postgresql/data
+
+   # When synapse is in a different network (note the networks object in the service too):
+   #networks:
+   #  synapsenet:
+   #    external:
+   #      name: synapsenet
    ```
 2. Run `docker-compose up -d signald` to start signald and make sure it doesn't
    crash.
 3. Run `docker-compose up mautrix-signal` to make the bridge generate a config
-   file for you.
+   file for you, then `docker-compose stop mautrix-signal` so it doesn't try to
+   keep restarting while you're fixing the config.
 4. Update the config to your liking.
    * As usual, you'll at least need to change the homeserver settings and add
      yourself to the permissions section.
