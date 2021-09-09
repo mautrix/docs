@@ -74,7 +74,6 @@ arm64 images.
 
        # If synapse is in a different network, then add this container to that network.
        #networks:
-       #- default  # keep the container in the default network too so that the db container is reachable.
        #- synapsenet
    # This is also a part of the networks thing above
    #networks:
