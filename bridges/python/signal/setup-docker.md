@@ -49,7 +49,7 @@
 
      signald:
        container_name: signald
-       image: docker.io/finn/signald
+       image: docker.io/signald/signald
        restart: unless-stopped
        volumes: 
        - ./signald:/signald
