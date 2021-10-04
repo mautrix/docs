@@ -49,7 +49,7 @@ you should use the x86 target. If you don't have KVM support (running in certain
 VPS systems) then you will need to use the ARM targets.
 
 ```shell
-./tools/bin/sdkmanager --install platform-tools
+./tools/bin/sdkmanager --install platform-tools emulator
 ./tools/bin/sdkmanager --install "platforms;android-24"
 ./tools/bin/sdkmanager --install "system-images;android-24;default;armeabi-v7a"
 ```
@@ -58,6 +58,10 @@ Once you have the SDK setup you can create a VM.
 
 ```shell
 ./tools/bin/avdmanager create avd -n AVD_NAME -k SDK_ID
+e.g.:
+./tools/bin/avdmanager create avd -n MyWhatsAppVM -k "system-images;android-24;default;armeabi-v7a"
+or when using KVM (includes Play Store):
+./tools/bin/avdmanager create avd -n MyWhatsAppVM -k "system-images;android-28;google_apis_playstore;x86"
 ```
 
 Run the AVD using the Android Emulator:
@@ -147,6 +151,9 @@ the [authentication Page](./authentication.md).
 NOTE: The bridge will cycle through multiple QR codes, you have to have
 everything ready to go. You won't have time to copy/paste images so you will
 need the VM and the Matrix client running on the same desktop.
+
+After installation has finished ensure you open Android settings -> "Battery" ->
+"All Apps" -> find WhatsApp and choose: "Do not optimize".
 
 ## Running Headless
 
