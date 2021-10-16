@@ -6,7 +6,12 @@ page will collect some of the most common issues.
 ## Why is the bridge bot not accepting invites?
 If the bridge starts up successfully, but inviting the bot doesn't work and the
 logs don't show any errors, it usually means the homeserver isn't sending
-events to the appservice. There are a few potential reasons this can happen:
+events to the appservice.
+
+In the case of mautrix-imessage, there's no need to invite the bot for setup,
+so this issue manifests as outgoing messages not working.
+
+There are a few potential reasons this can happen:
 
 * There was a misconfiguration in the appservice address/hostname/port config
   or the homeserver can't reach the appservice for some other reason. The
@@ -16,6 +21,7 @@ events to the appservice. There are a few potential reasons this can happen:
     working correctly. If it shows nothing at all, something is broken.
   * Also note that `transaction` is not the same as `transactions`. If you don't
     include the `s` at the end, you'll get tons of unrelated logs.
+  * For mautrix-imessage, you should also check the wsproxy logs.
 * The bridge was down for longer than a few minutes and the homeserver backed
   off. The homeserver should retry after some time. If it still doesn't work
   after an hour or so (exact backoff depends on how long the bridge was down),
