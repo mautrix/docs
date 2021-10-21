@@ -9,7 +9,7 @@ the bridge:
 
 ## Requirements
 ### Compilation (optional)
-* Go 1.13+ (download & installation instructions at <https://golang.org/dl/>)
+* Go 1.17+ (download & installation instructions at <https://golang.org/dl/>)
 * Olm dev headers and a C/C++ compiler (if you want end-to-bridge encryption)
 
 ### Runtime
