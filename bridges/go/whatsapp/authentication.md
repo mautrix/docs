@@ -13,8 +13,8 @@
 
 Please note that the bridge uses the web API, so your phone must be connected to
 the internet for the bridge to work. The WhatsApp app doesn't need to be running
-all the time, but it needs to be allowed to wake up when receiving messages. The
-web API is used instead of the main client API to avoid getting banned.
+all the time, but it needs to be allowed to wake up when receiving messages. ( OR you can use the new whatsapp beta that connects ditectly to whatsapp servers so need need for your phone to be connected)
+The web API is used instead of the main client API to avoid getting banned.
 
 ## Logging out
 Simply run the `logout` management command.
