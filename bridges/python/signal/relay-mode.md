@@ -18,3 +18,7 @@ user's Signal account.
 
 If you want to bridge existing rooms, you'll have to manually update the `mxid`
 column in the `portal` table to point to the room you want bridged.
+
+Note that reactions from relayed users will not be bridged to Signal at all,
+because the bot wouldn't be able to bridge sender info nor multiple reactions
+of the same emoji.
