@@ -1,10 +1,9 @@
-const allowedBridges = ["$bridge", "telegram", "facebook", "hangouts", "googlechat", "twitter", "signal", "instagram"]
+const allowedBridges = ["$bridge", "telegram", "facebook", "googlechat", "twitter", "signal", "instagram"]
 
 const bridgePorts = {
   "$bridge": "$bridgeport",
   "telegram": "29317",
   "facebook": "29319",
-  "hangouts": "29320",
   "googlechat": "29320",
   "twitter": "29327",
   "signal": "29328",
