@@ -6,6 +6,12 @@ with this virtualenv setup.
 
 {{ #include ../selector.html }}
 
+Please note that everything in these docs are meant for server admins who want
+to self-host the bridge. If you're just looking to use the bridges, check out
+[Beeper], which provides fully managed instances of all of these bridges.
+
+[Beeper]: https://www.beeper.com/
+
 ## Requirements
 * Python 3.7 or higher with `pip` and `virtualenv`.  
   **N.B.** Python 3.8 will be the minimum in the near future.

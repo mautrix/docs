@@ -7,6 +7,12 @@ the bridge:
 * [YunoHost](https://github.com/YunoHost-Apps/mautrix_whatsapp_ynh)
 * [systemd service](./systemd.md)
 
+Please note that everything in these docs are meant for server admins who want
+to self-host the bridge. If you're just looking to use the bridges, check out
+[Beeper], which provides fully managed instances of all of these bridges.
+
+[Beeper]: https://www.beeper.com/
+
 ## Requirements
 ### Compilation (optional)
 * Go 1.17+ (download & installation instructions at <https://golang.org/dl/>)
