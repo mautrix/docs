@@ -68,7 +68,7 @@ from the mau.dev CI.
 
 ## Updating
 If you compiled manually, pull changes with `git pull` and recompile with
-`go build`.
+`./build.sh`.
 
 If you downloaded a prebuilt executable, simply download a new one and replace
 the old one.
