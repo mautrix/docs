@@ -1,4 +1,9 @@
 # Relaybot
+These docs are outdated as of v0.2.0. The new relay system works the same way
+as in the Signal bridge. See [Signal relay mode docs](../../python/signal/relay-mode.md).
+
+# Pre-v0.2 instructions below
+
 ## Configuration
 1. Create a new room for relaybot management and get its internal ID
    (Room settings → Advanced → Internal room ID in Element Web).
