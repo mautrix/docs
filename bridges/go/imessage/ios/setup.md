@@ -61,3 +61,17 @@ the "Brooklyn" package from the repo.
 [example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
 [example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml
 [a bug in Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn/issues/5
+
+## Troubleshooting
+
+*The brooklyn app keeps showing the QR Code reader popup*
+1. Connect your iPhone to a Mac and open the Console app to see logs
+2. Filter for "Brooklyn" to see logs
+3. If you see `Brooklyn	 mautrix-imessage sent error:Failed to download config: failed to open config.yaml for writing config: open config.yaml: permission denied`, use the following to mitigate:
+    1. install OpenSSH via Cydia
+    2. ssh to the iPhone (find out IP via settings, user is root, password is alpine)
+    3. the first ssh will take minutes because SSH keys are generated
+    4. once you are ssh'ed into your phone, run chmod 777 /var/mobile/Documents/mautrix-imessage-armv7
+    5. scan QR Code again
+    6. check that the config file downloaded by running the following over SSH on your iPhone: `cat /var/mobile/Documents/mautrix-imessage-armv7/config.yaml`
+ 4. If you are seeing `[ERROR] Error in appservice websocket: failed to open websocket: dial tcp [::1]:29331: connect: connection refused` that means that your phone cannot talk to `mautrix-wsproxy`, make sure that the configured value for homeserver -> websocket_proxy can be resolved from your phone. You can check this by installing `netcat` in Cydia and then running the following over ssh: `nc -zv <hostname> 29331` to see if it connects
