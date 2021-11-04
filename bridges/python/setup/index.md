@@ -13,8 +13,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper]: https://www.beeper.com/
 
 ## Requirements
-* Python 3.7 or higher with `pip` and `virtualenv`.  
-  **N.B.** Python 3.8 will be the minimum in the near future.
+* Python 3.8 or higher with `pip` and `virtualenv`.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A PostgreSQL server (which you should already have for Synapse).
