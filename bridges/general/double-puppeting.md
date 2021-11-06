@@ -35,9 +35,9 @@ bridge can simply automatically relogin.
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
 1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
    config file under the correct server name.
-   * In Go-based bridges (WhatsApp and iMessage) and in past versions of
-     Python-based bridges, the field is called `login_shared_secret`, as double
-     puppeting was only supported for local users.
+   * In mautrix-imessage and in past versions of other bridges, the field is
+     called `login_shared_secret`, as double puppeting was only supported for
+     local users.
 2. The bridge will now automatically enable double puppeting for all local users
    when they log into the bridge.
 
