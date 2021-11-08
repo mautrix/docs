@@ -64,7 +64,7 @@ from the mau.dev CI.
      <string>-v keepsyms=1 tlbto_us=0 vti=9 amfi_get_out_of_my_way=0x1</string>
 ```
 9. Install [com.apple.security.xpc.plist](https://github.com/open-imcore/barcelona/blob/mautrix/com.apple.security.xpc.plist) to `/Library/Preferences/com.apple.security.xpc.plist`
-10. get the barcelona exec from [https://jank.crap.studio/job/barcelona/job/mautrix//](https://jank.crap.studio/job/barcelona/job/mautrix/), get `darwin-barcelona-mautrix`	and download it to your computer
+10. get the barcelona exec from [https://jank.crap.studio/job/barcelona/job/mautrix/](https://jank.crap.studio/job/barcelona/job/mautrix/), get `darwin-barcelona-mautrix`	and download it to your computer
 11. Change `imessage_rest_path` to barcelona exec path from previous step
     example `imessage_rest_path = /Users/user/Documents/Project/Imessage/darwin-barcelona-mautrix`
 12. Change `platform: mac` to `platform: mac-nosip`
