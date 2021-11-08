@@ -1,4 +1,4 @@
-# iMessage bridge setup (macOS)
+# iMessage-NoSip bridge setup (macOS-No-Sip)
 Please note that everything in these docs are meant for server admins who want
 to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper], which provides fully managed instances of all of these bridges.
