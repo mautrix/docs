@@ -23,9 +23,9 @@
    your config file up to date.
 5. Create the log directory and all directories used in `plugin_directories`
    (usually `mkdir plugins trash logs`).
-6. Start with `python3 -m maubot`.
-7. Create the database with `alembic upgrade head`. If you have a custom config
+6. Create the database with `alembic upgrade head`. If you have a custom config
    path, use `alembic -x config=/path/to/config.yaml upgrade head`.
+7. Start with `python3 -m maubot`.
 8. The management interface should now be available at
    <http://localhost:29316/_matrix/maubot> or whatever you configured.
 
