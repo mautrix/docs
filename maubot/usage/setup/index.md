@@ -14,13 +14,7 @@
         the environment.
    2. Activate with `source ./bin/activate`
 3. Install with `pip install --upgrade maubot`
-4. Copy `example-config.yaml` to `config.yaml` and update to your liking.  
-   **N.B.** If you created a virtualenv in a different directory than `.`
-   (e.g. in `.venv`), you must manually copy `example-config.yaml` from the
-   virtualenv directory to the directory you're running maubot in (or provide
-   the path to the example config when starting maubot). Maubot will not
-   function without access to the example config, as it is used for keeping
-   your config file up to date.
+4. Copy `maubot/example-config.yaml` to `config.yaml` and update to your liking.
 5. Create the log directory and all directories used in `plugin_directories`
    (usually `mkdir plugins trash logs`).
 6. Create the database with `alembic upgrade head`. If you have a custom config
