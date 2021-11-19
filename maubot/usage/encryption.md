@@ -16,6 +16,6 @@ that haven't been used in an e2ee-capable client. In other words, you can't take
 the access token from Element, you have to log in manually. The easiest way to
 do that is to use [`mbc auth`](cli/auth.md).
 
-## Updating the database
-After installing dependencies, just put the device ID in the maubot client,
-either using the UI or just use the `--update-client` flag with `mbc auth`.
+## Actually enabling encryption
+After installing dependencies, put the device ID in the maubot client, either
+using the web UI or just the `--update-client` flag with `mbc auth`.

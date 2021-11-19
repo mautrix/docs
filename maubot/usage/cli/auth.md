@@ -16,7 +16,8 @@ If the command says "Registration target server not found", it means you didn't
 add the server to `homeservers` properly or didn't enter the correct name in
 `mbc`.
 
-If you want to register the account, you must pass `--register` as a parameter.
+If you want to register an account, you must pass `--register` as a parameter.
+This also requires the `secret` to be set in the config.
 
 Additionally, there's a `--update-client` parameter that tells maubot to store
 the created access token as a client instance so you don't have to do it
