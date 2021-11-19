@@ -27,7 +27,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable
-from the mau.dev CI.
+from the mau.dev CI or [GitHub releases](https://github.com/mautrix/whatsapp/releases).
 
 ### Compiling manually
 1. Clone the repo with `git clone https://github.com/mautrix/whatsapp.git`
@@ -42,7 +42,7 @@ from the mau.dev CI.
 
 [`build.sh`]: https://github.com/mautrix/whatsapp/blob/master/build.sh
 
-### Downloading a prebuilt executable
+### Downloading a prebuilt executable from CI
 1. Go to <https://mau.dev/mautrix/whatsapp/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list.
