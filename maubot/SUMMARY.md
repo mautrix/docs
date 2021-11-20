@@ -11,6 +11,7 @@
   - [mbc auth](./usage/cli/auth.md)
   - [mbc build](./usage/cli/build.md)
 - [Management API](./management-api.md)
+- [Standalone mode](./usage/standalone.md)
 
 # Plugin development
 - [Getting started](./dev/getting-started.md)
