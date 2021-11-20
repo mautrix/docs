@@ -19,6 +19,10 @@ add the server to `homeservers` properly or didn't enter the correct name in
 If you want to register an account, you must pass `--register` as a parameter.
 This also requires the `secret` to be set in the config.
 
+Single sign-on is also supported by using the `--sso` flag. When that flag is
+passed, the command will open the login page in a browser instead of prompting
+for username and password.
+
 Additionally, there's a `--update-client` parameter that tells maubot to store
 the created access token as a client instance so you don't have to do it
 manually in the web interface.
