@@ -13,21 +13,21 @@ plugin with a predefined Matrix account.
 ## Basic usage
 
 0. Set up a virtual environment.
-  1. Create with `virtualenv -p /usr/bin/python3 .venv`
-  2. Activate with `source .venv/bin/activate`
+   1. Create with `virtualenv -p /usr/bin/python3 .venv`
+   2. Activate with `source .venv/bin/activate`
 1. Install maubot into the virtualenv with `pip install --upgrade maubot[all]`
-  * `[all]` at the end will install all optional dependencies!
-    The e2ee optional dependency requires libolm3 to be installed natively.
-  * Alternatively install the latest git version with
-    `pip install --upgrade git+https://github.com/maubot/maubot.git#egg=maubot[all]`
+   * `[all]` at the end will install all optional dependencies!
+     The e2ee optional dependency requires libolm3 to be installed natively.
+   * Alternatively install the latest git version with
+     `pip install --upgrade git+https://github.com/maubot/maubot.git#egg=maubot[all]`
 2. Extract the plugin you want to run into the directory
    (at least `maubot.yaml` and some Python modules should be there).
 3. Install any dependencies that the plugin has into the virtualenv manually
    (they should be listed in `maubot.yaml`).
 4. Copy the [standalone example config] to the same directory and fill it out.
-  * If the plugin has a config, you should copy the contents from the plugin's
-    `base-config.yaml` into the `plugin_config` object in the standalone config,
-    then fill it out as needed.
+   * If the plugin has a config, you should copy the contents from the plugin's
+     `base-config.yaml` into the `plugin_config` object in the standalone config,
+     then fill it out as needed.
 5. Run the bot with `python -m maubot.standalone`
 
 [standalone example config]: https://github.com/maubot/maubot/blob/master/maubot/standalone/example-config.yaml
