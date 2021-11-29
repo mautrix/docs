@@ -56,3 +56,21 @@ You didn't change the value of `<field>` in the config, but that field must be
 configured for the bridge to work (i.e. the default value will not work). Dots
 in `<field>` mean nesting, e.g. `bridge.permissions` means the `permissions`
 field inside the `bridge` object.
+
+## The `as_token` was not accepted
+This error means you either:
+
+* didn't add the path to the registration file to the homeserver config,
+* didn't restart the homeserver after adding the path to the config, or
+* modified the tokens somewhere and didn't copy them to the other file
+
+Make sure the tokens match everywhere, that you're looking at the right files,
+and that everything has been restarted.
+
+## The `as_token` was accepted, but the `/register` request was not
+This can happen if you misconfigure either the `homeserver` -> `domain`
+field, or change the `username_template` without regenerating the registration.
+
+Usually it's the former, so make sure that the `domain` field matches your
+homeserver's `server_name` exactly. If it doesn't, fix it, regenerate the
+registration file and restart everything.
