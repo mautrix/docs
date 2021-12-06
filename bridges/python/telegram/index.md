@@ -18,7 +18,7 @@ rooms.
 * [snt.utwente.nl](https://syscom.utwente.io/info/matrix/telegram/)
   / [#telegram:utwente.io](https://matrix.to/#/#telegram:utwente.io)
 
-If you run a public instance and wish to list it here, please [make a pull request](https://github.com/mautrix/docs/blob/master/bridges/src/python/telegram/index.md).
+If you run a public instance and wish to list it here, please [make a pull request](https://github.com/mautrix/docs/blob/master/bridges/python/telegram/index.md).
 
 ## Discussion
 Matrix room: [#telegram:maunium.net](https://matrix.to/#/#telegram:maunium.net)
