@@ -5,9 +5,10 @@ from your Matrix account instead of the default ghost user.
 
 Also, in servers that don't support [MSC2409] (i.e. Synapse before v1.22), it is
 the only way to enable bridging of ephemeral events, such as presence, typing
-notifications and read receipts. All of my Python-based bridges support MSC2409.
-However, mautrix-whatsapp does not, and therefore double puppeting is still the
-only way to enable bridging of ephemeral events.
+notifications and read receipts. If you want to use MSC2409 for ephemeral
+events, make sure `appservice` -> `ephemeral_events` is set to `true` in the
+bridge config and that the registration file has the appropriate flags too
+(you can regenerate the registration after updating the bridge config).
 
 [MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
 
