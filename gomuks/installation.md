@@ -23,8 +23,7 @@ you've made a new distro package, please add it to the list below.
   [gomuks-git](https://aur.archlinux.org/packages/gomuks-git)
 * NixOS: [gomuks](https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/instant-messengers/gomuks/default.nix)
 * OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
-* Alpine Linux (testing): [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks&branch=edge)
-* Gentoo (Overlay): [elopez-r-overlay](https://gitlab.com/libre_hackerman/elopez-r-overlay)
+* Alpine Linux: [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks)
 * macOS (Homebrew Tap): [aaronraimist/tap/gomuks](https://github.com/aaronraimist/homebrew-tap)
 
 ## Compiling from source
