@@ -32,7 +32,6 @@
 - [mautrix-signal](./python/signal/index.md)
   - [Authentication](./python/signal/authentication.md)
   - [Bridge setup with Docker](./python/signal/setup-docker.md)
-  - [Relay mode](./python/signal/relay-mode.md)
 - [mautrix-instagram](./python/instagram/index.md)
   - [Authentication](./python/instagram/authentication.md)
 
@@ -43,7 +42,6 @@
     - [with systemd](./go/whatsapp/setup/systemd.md)
   - [Android VM setup](./go/whatsapp/android-vm-setup.md)
   - [Authentication](./go/whatsapp/authentication.md)
-  - [Relaybot](./go/whatsapp/relaybot.md)
   - [DBMS migration](./go/whatsapp/database-migration.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
