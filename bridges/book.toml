@@ -20,8 +20,8 @@ theme = "../theme/bridges"
 
 [output.html.redirect]
 "/go/imessage/setup.html" = "./mac/setup.html"
-"/go/whatsapp/relaybot.html" = "./general/relay-mode.html"
-"/python/signal/relay-mode.html" = "./general/relay-mode.html"
+"/go/whatsapp/relaybot.html" = "../../general/relay-mode.html"
+"/python/signal/relay-mode.html" = "../../general/relay-mode.html"
 
 [output.linkcheck]
 optional = true
