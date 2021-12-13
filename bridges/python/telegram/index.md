@@ -10,6 +10,7 @@ themselves. If you don't want to host it yourself, you can use a public
 instance. When using public instances, refer to their instructions and support 
 rooms.
 
+* [beeper.com](https://www.beeper.com/) (paid service with lots of bridges)
 * [t2bot.io](https://t2bot.io/telegram/)
   / [#help:t2bot.io](https://matrix.to/#/#help:t2bot.io)
   (only relay bridging, puppeting is disabled)
