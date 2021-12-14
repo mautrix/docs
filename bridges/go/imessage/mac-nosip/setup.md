@@ -20,9 +20,9 @@ to self-host the bridge. If you're just looking to use the bridges, check out
   appservice transactions.
 
 ### Disabling SIP and AMFI
-Disabling SIP and AMFI *will* make your Mac less secure. It is strongly
-recommended to only use the nosip bridge if you have a Mac dedicated for
-bridging (where you don't run any untrusted software).
+**Disabling SIP and AMFI *will* make your Mac less secure.** You should only
+use this method of bridging if you have a Mac dedicated for it (where you don't
+run any untrusted software).
 
 1. Boot into recovery mode (hold Command+R while booting) and open a terminal
 2. Run `csrutil disable` to disable SIP
