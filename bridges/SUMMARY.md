@@ -46,7 +46,7 @@
   - [DBMS migration](./go/whatsapp/database-migration.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
-  - [Bridge setup (macOS without SIP)]()
+  - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)
   - [Bridge setup (iOS)](./go/imessage/ios/setup.md)
     - [SMS forwarding](./go/imessage/ios/sms-forwarding.md)
   - [Bridge setup (Android SMS)](./go/imessage/android/setup.md)
