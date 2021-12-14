@@ -53,7 +53,7 @@ from the mau.dev CI.
 [Barcelona build instructions]: https://github.com/open-imcore/barcelona/blob/mautrix/BUILDING.md
 
 ### Downloading a prebuilt executable
-1. Go to https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1
+1. Go to <https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list and choose "build universal".
 3. Extract the downloaded zip file into a new directory.
