@@ -32,6 +32,8 @@ Integrity Protection) and AMFI (Apple Mobile File Integrity) on the Mac for it
 to work. Disabling SIP will make your Mac less secure, so you should only do it
 on a Mac that you won't use for anything else.
 
+[Barcelona]: https://github.com/open-imcore/barcelona
+
 ### Compiling manually
 1. Clone the repo with `git clone https://github.com/mautrix/imessage.git`.
 2. Enter the directory (`cd mautrix-imessage`).
