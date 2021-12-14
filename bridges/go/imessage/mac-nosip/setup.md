@@ -28,15 +28,17 @@ run any untrusted software).
 2. Run `csrutil disable` to disable SIP
 3. Run `nvram boot-args="amfi_get_out_of_my_way=0x1"` to disable AMFI
 
-If you are running MacOS in a VM (e.g. through OSX-KVM https://github.com/kholia/OSX-KVM)
-you may need to disable AMFI with a boot option. Assuming you are using OSX-KVM
-and OpenCore, open the config.plist (in EFI/OC/config.plist) and change the Key
-boot-args to add  `amfi_get_out_of_my_way=0x1` example:
+If you are running macOS in a VM (e.g. through [OSX-KVM]) you may need to
+disable AMFI with a boot option. Assuming you are using OSX-KVM and OpenCore,
+open the `config.plist` (in `EFI/OC/config.plist`) and change the key
+`boot-args` to add `amfi_get_out_of_my_way=0x1` example:
 
 ```
 <key>boot-args</key>
 <string>-v keepsyms=1 tlbto_us=0 vti=9 amfi_get_out_of_my_way=0x1</string>
 ```
+
+[OSX-KVM]: https://github.com/kholia/OSX-KVM
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable
