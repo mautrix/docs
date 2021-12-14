@@ -35,7 +35,7 @@ boot-args to add  `amfi_get_out_of_my_way=0x1` example:
 
 ```
 <key>boot-args</key>
-     <string>-v keepsyms=1 tlbto_us=0 vti=9 amfi_get_out_of_my_way=0x1</string>
+<string>-v keepsyms=1 tlbto_us=0 vti=9 amfi_get_out_of_my_way=0x1</string>
 ```
 
 ## Installation
