@@ -13,6 +13,8 @@ const bridgePorts = {
 if (window.location.pathname.endsWith("docker.html")) {
     allowedBridges.push("whatsapp")
     bridgePorts["whatsapp"] = "29318"
+} else {
+    document.querySelectorAll("#bridge-selector > .docker-only").forEach(elem => elem.remove())
 }
 
 const updateBridgeSelection = () => {
