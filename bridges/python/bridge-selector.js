@@ -10,6 +10,11 @@ const bridgePorts = {
   "instagram": "29330",
 }
 
+if (window.location.pathname.endsWith("docker.html")) {
+    allowedBridges.push("whatsapp")
+    bridgePorts["whatsapp"] = "29318"
+}
+
 const updateBridgeSelection = () => {
     const selector = document.getElementById("bridge-selector")
     if (!allowedBridges.includes(selector.value)) {

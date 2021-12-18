@@ -44,7 +44,7 @@ arm64 images.
 
 ## Upgrading
 1. Pull the new version (setup step 1)
-2. Start the new version (setup step 7)
+2. Start the new version (setup step 6)
 
 ## Docker compose
 0. Create a directory for the bridge like step #0 in the Docker CLI

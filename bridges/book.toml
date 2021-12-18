@@ -22,6 +22,7 @@ theme = "../theme/bridges"
 "/go/imessage/setup.html" = "./mac/setup.html"
 "/go/whatsapp/relaybot.html" = "../../general/relay-mode.html"
 "/python/signal/relay-mode.html" = "../../general/relay-mode.html"
+"/go/whatsapp/setup/docker.html" = "../../python/setup/docker.html?bridge=whatsapp"
 
 [output.linkcheck]
 optional = true
