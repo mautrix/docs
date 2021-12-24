@@ -1,4 +1,4 @@
-# Android VM setup
+# Android VM setup (optional)
 This page documents how to setup WhatsApp in an Android Virtual Machine. It
 could be useful if you cannot or don't want to run WhatsApp on a mobile phone.
 
