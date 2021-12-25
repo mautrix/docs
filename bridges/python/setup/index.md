@@ -48,16 +48,11 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 6. Add the path to the registration file (`registration.yaml` by default) to
    your Synapse's `homeserver.yaml` under `app_service_config_files`.
    Restart Synapse to apply changes.
-7. <span class="bridge-filter" bridges="telegram">**For mautrix-telegram only:**</span>
-   Initialize the database with `alembic upgrade head`. If you have a custom config
-   path, use `alembic -x config=/path/to/config.yaml upgrade head`.
-8. Run the bridge `python -m mautrix_$bridge`.
+7. Run the bridge `python -m mautrix_$bridge`.
 
 ### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).
 1. Run the bridge install command again (install step #2).
-2. <span class="bridge-filter" bridges="telegram">**For mautrix-telegram only:**</span>
-   Update the database with the command in install step #7.
 
 ## Development setup
 0. Clone the repository.
@@ -75,5 +70,3 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 0. Make sure you're in the virtualenv (`source .venv/bin/activate`).
 1. Pull changes from Git.
 2. Run the dependency install command again (install step #2).
-3. <span class="bridge-filter" bridges="telegram">**For mautrix-telegram only:**</span>
-   Update the database with the command in install step #7.
