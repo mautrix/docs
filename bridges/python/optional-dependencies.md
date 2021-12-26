@@ -7,7 +7,7 @@ The pip install URLs in the production setup guide include `[all]` at the end
 by default, which means all optional dependencies will be installed by default.
 
 If you only want specific optional dependencies, replace the `all` with a 
-comma-separated list of the pip extra names (e.g. `postgres,speedups`).
+comma-separated list of the pip extra names (e.g. `sqlite,speedups`).
 
 If you don't want any optional dependencies, just remove the `[all]`.
 
@@ -30,7 +30,8 @@ packages in parentheses indicate a large dependency of the other packages.
 | pip extra name      | Required packages | Description                                                        |
 |---------------------|-------------------|--------------------------------------------------------------------|
 | †`metrics`          | prometheus_client | Prometheus metrics.                                                |
-| †`e2be`             | asyncpg<br>python-olm<br>pycryptodome<br>unpaddedbase64 | End-to-bridge encryption support (see native dependency below). |
+| †`e2be`             | python-olm<br>pycryptodome<br>unpaddedbase64 | End-to-bridge encryption support (see native dependency below). |
+| †`sqlite`           | aiosqlite         | Experimental SQLite support (currently in Telegram/Facebook/Signal) |
 
 **N.B.** python-olm requires libolm3 with dev headers, Python dev headers, and
 a C compiler. This means `libolm-dev`, `python3-dev` and `build-essential` on
@@ -51,12 +52,13 @@ pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projec
 | `speedups`          | cryptg<br>cchardet<br>aiodns<br>brotli | Speed up some things, e.g. by using native crypto code. |
 | `hq_thumbnails`     | moviepy (numpy)   | High quality thumbnails for Telegram->Matrix gifs and videos.  If you want to use an existing `ffmpeg` installation for `moviepy`, set the `FFMPEG_BINARY` environment variable before starting the bridge. If it's not set, a ffmpeg binary will be downloaded automatically. |
 | `qr_login`          | qrcode<br>Pillow  | Telegram login by scanning a QR code from another device.          |
-| †`postgres`         | psycopg2          | Postgres database support                                          |
+| `formattednumbers`  | phonenumbers      | Format phone numbers nicely in contact share messages              |
 
 ### mautrix-facebook
 | pip extra name      | Required packages | Description                                                        |
 |---------------------|-------------------|--------------------------------------------------------------------|
 | `animated_stickers` | Pillow            | Finds the dimensions of stickers bridged from Facebook.            |
+| †`proxy`     | pysocks<br>aiohttp-socks | Support for proxying all Facebook traffic through a SOCKS5 proxy.  |
 
 ### mautrix-instagram
 | pip extra name      | Required packages | Description                                                          |
