@@ -1,6 +1,8 @@
 # DBMS migration
 _New in version 0.3.0_
 
+***Removed in version 0.11.0*** (may come back in a future version)
+
 The bridge includes a simple script for migrating between database management
 systems. It simply reads the data from one database and inserts it into another
 database.

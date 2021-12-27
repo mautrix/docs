@@ -1,6 +1,8 @@
 # Migrating from Telematrix
 _New in version 0.3.0_
 
+***Removed in version 0.11.0***
+
 When migrating from Telematrix, you'll need to configure mautrix-telegram to use
 the same user ID format and bridge bot username. Other options, such as the AS
 token, port, etc.. don't need to be the same.
