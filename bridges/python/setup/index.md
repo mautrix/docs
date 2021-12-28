@@ -39,8 +39,9 @@ to self-host the bridge. If you're just looking to use the bridges, check out
      `pip install --upgrade git+https://github.com/mautrix/$bridge.git#egg=mautrix-$bridge[all]`.
 3. Copy `example-config.yaml` to `config.yaml`.
 4. Update the config to your liking. You'll at least need to change the
-   homeserver settings and permissions. If you miss something that's required,
-   the bridge will refuse to start and tell you what's missing.
+   homeserver settings, database address, and bridge permissions. If you miss
+   something that's required, the bridge will refuse to start and tell you
+   what's missing.
 5. Generate the appservice registration with `python -m mautrix_$bridge -g`.
    You can use the `-c` and `-r` flags to change the location of the config and
    registration files. They default to `config.yaml` and `registration.yaml`

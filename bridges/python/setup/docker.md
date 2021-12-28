@@ -29,7 +29,9 @@ arm64 images.
    docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
 3. Update the config to your liking. You'll at least need to change the
-   homeserver settings, appservice address and permissions.
+   homeserver settings, appservice address, database address and bridge
+   permissions. If you miss something that's required, the bridge will refuse
+   to start and tell you what's missing.
 4. Generate the appservice registration by running the container again, same
    command as above.
 5. Add the path to the registration file to your Synapse's `homeserver.yaml`
