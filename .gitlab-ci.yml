@@ -3,6 +3,7 @@ deploy:
   tags: [webdeploy]
   script:
   - rsync -rcthvl bookshelf/ /srv/web/docs.mau.fi/
+  - rsync -rcthvl python/ /srv/web/docs.mau.fi/python/
   - mdbook build bridges && rsync -rcthvl --delete dist/bridges/html/ /srv/web/docs.mau.fi/bridges/
   - mdbook build maubot && rsync -rcthvl --delete dist/maubot/html/ /srv/web/docs.mau.fi/maubot/
   - mdbook build gomuks && rsync -rcthvl --delete dist/gomuks/html/ /srv/web/docs.mau.fi/gomuks/
