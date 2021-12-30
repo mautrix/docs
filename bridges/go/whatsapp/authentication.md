@@ -5,7 +5,7 @@
 2. Log in by scanning the QR code. If the code expires before you scan it, the
    bridge will send an error to notify you.
    1. Open WhatsApp on your phone.
-   2. Tap Menu or Settings and select WhatsApp Web.
+   2. Tap Menu or Settings and select Linked devices.
    3. Point your phone at the image sent by the bot to capture the code.
 3. Finally, the bot should inform you of a successful login and the bridge
    should start creating portal rooms for your recent WhatsApp groups and
