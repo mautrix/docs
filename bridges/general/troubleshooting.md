@@ -3,7 +3,7 @@ Debugging setup issues should be done in the Matrix rooms for the bridges
 (linked in the READMEs), rather than in GitHub issues. Additionally, this
 page will collect some of the most common issues.
 
-## Why is the bridge bot not accepting invites?
+## Why is the bridge bot not accepting invites? (or not receiving messages from Matrix)
 If the bridge starts up successfully, but inviting the bot doesn't work and the
 logs don't show any errors, it usually means the homeserver isn't sending
 events to the appservice.
