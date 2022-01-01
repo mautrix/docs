@@ -1,10 +1,9 @@
-# Android VM setup (optional)
+# Android VM setup (not recommended)
 This page documents how to setup WhatsApp in an Android Virtual Machine. It
 could be useful if you cannot or don't want to run WhatsApp on a mobile phone.
 
-**If you're running WhatsApp already and are OK with your current setup, then
-you can ignore this page and just connect mautrix-whatsapp to your existing
-WhatsApp instance.**
+**Running in a virtual machine is more suspicious and increases the risk of
+getting banned. A physical phone is recommended.**
 
 ## Requirements
 You'll need a working Android SDK. You can use the

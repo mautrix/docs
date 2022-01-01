@@ -16,6 +16,12 @@ Please note that the bridge uses the web API. Prior to v0.2.0 and the multidevic
 update, your phone had to be connected to the internet for the bridge to work.
 After v0.2.0, it's enough if the phone is connected at least once every 2 weeks.
 
+**N.B.** WhatsApp is known to ban accounts that are too suspicious. Just using
+the bridge shouldn't cause any bans, but getting banned is more likely when
+combining the bridge with other suspicious activity (running WhatsApp in an
+Android emulator, using VoIP numbers, using a newly created account, initiating
+DMs to non-contacts, etc).
+
 ## Logging out
 Simply run the `logout` management command.
 
