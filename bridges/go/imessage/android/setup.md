@@ -9,8 +9,6 @@ bridge is [android-sms].
 
 ## Requirements
 * An Android device with Android 5 or higher.
-  * ~~**N.B.** You must set the android-sms app as your default SMS app.~~
-    Being the default SMS app is no longer required.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
@@ -35,8 +33,8 @@ bridge is [android-sms].
 ### Precompiled builds
 There are currently no precompiled versions available, as the config must be
 bundled at compile time. Support for setting up with QR code similar to the iOS
-setup will be added soon, and precompiled APKs will be available in the GitLab
-CI after that.
+setup will be added soon(™), and precompiled APKs will be available in the
+GitLab CI after that.
 
 ## Configuring and running
 1. Get the [example config] and fill it out. You'll at least need to:
