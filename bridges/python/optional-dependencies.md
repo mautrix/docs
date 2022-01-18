@@ -39,8 +39,9 @@ Debian 11+ and Ubuntu 19.10+. On  older Debian-based distros, install
 `libolm-dev` from backports.
 
 If you want to avoid the dev headers, you can install the libolm3 package
-without -dev and get a pre-compiled python-olm from gitlab.matrix.org's
-PyPI registry:
+without -dev and get a pre-compiled python-olm from gitlab.matrix.org's PyPI
+registry. However, this method has not been tested properly, so it might not
+work at all.
 
 ```shell
 pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projects/27/packages/pypi/simple
