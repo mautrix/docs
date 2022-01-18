@@ -37,6 +37,7 @@ users, and removes problems if the access token getting invalidated, as the
 bridge can simply automatically relogin.
 
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
+   * Make sure you set `m_login_password_setup_enabled` to `true` in the config.
 1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
    config file under the correct server name.
    * In mautrix-imessage and in past versions of other bridges, the field is
