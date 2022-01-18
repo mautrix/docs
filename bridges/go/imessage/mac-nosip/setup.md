@@ -74,7 +74,7 @@ You can also refer to Apple's [official documentation on disabling SIP](https://
 
 ## Configuring and running
 1. Follow steps 1-6 from the [normal macOS setup](../mac/setup.md)
-2. Install Barcelona's [com.apple.security.xpc.plist] to `/Library/Preferences/com.apple.security.xpc.plist`
+2. Copy and paste Barcelona's [com.apple.security.xpc.plist] to `/Library/Preferences/` so that `/Library/Preferences/com.apple.security.xpc.plist`
 3. In the `imessage` section of the config, change `platform` to `mac-nosip`
    and set `imessage_rest_path` to the path to the `darwin-barcelona-mautrix`
    executable you downloaded or compiled.
