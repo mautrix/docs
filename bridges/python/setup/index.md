@@ -16,7 +16,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 * Python 3.8 or higher with `pip` and `virtualenv`.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
-* A PostgreSQL server (which you should already have for Synapse).
+* A PostgreSQL server, v10 or higher (which you should already have for Synapse).
 * If installing optional dependencies, see the [optional dependencies](../optional-dependencies.md) page.
 * <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
   Telegram app ID and hash (get from [my.telegram.org](https://my.telegram.org/apps)).
