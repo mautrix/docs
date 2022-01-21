@@ -66,6 +66,10 @@ to self-host the bridge. If you're just looking to use the bridges, check out
      packages. See the [optional dependencies page](../optional-dependencies.md)
      for more info.
 3. Continue from step #3 of production setup.
+4. For linting: `pip install -r dev-requirements.txt` to install Black, isort
+   and pre-commit, then install the Git hook with `pre-commit install`. This
+   will ensure that code is properly formatted when you commit, to avoid having
+   to fix linting errors when the CI complains.
 
 ### Upgrading (development setup)
 0. Make sure you're in the virtualenv (`source .venv/bin/activate`).
