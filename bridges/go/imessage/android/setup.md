@@ -11,10 +11,10 @@ bridge is [android-sms].
 * An Android device with Android 5 or higher.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
-* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
-  appservice transactions. If you want end-to-bridge encryption, the [sync
-  proxy] component (mentioned in the websocket proxy readme) is also recommended
-  to minimize battery usage.
+* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive appservice
+  transactions. If you want end-to-bridge encryption, the [sync proxy] component
+  (mentioned in the websocket proxy readme) is also recommended to minimize
+  battery usage.
 
 [sync proxy]: https://github.com/mautrix/syncproxy
 
@@ -26,15 +26,13 @@ bridge is [android-sms].
    `git submodule init && git submodule update` after cloning to ensure that
    the mautrix-imessage submodule is present.
 3. Run `./mautrix.sh` to compile mautrix-imessage for Android.
-4. Put your `config.yaml` in `app/src/main/assets/` (create the directory
-   if it doesn't exist).
-5. Run `./gradlew installDebug` to compile the app and install it over ADB.
+4. Run `./gradlew installDebug` to compile the app and install it over ADB.
 
 ### Precompiled builds
-There are currently no precompiled versions available, as the config must be
-bundled at compile time. Support for setting up with QR code similar to the iOS
-setup will be added soon(™), and precompiled APKs will be available in the
-GitLab CI after that.
+Pre-compiled APKs are available in [GitLab CI]. In the future, they'll
+hopefully also be available from F-Droid.
+
+[GitLab CI]: https://gitlab.com/beeper/android-sms/-/pipelines
 
 ## Configuring and running
 1. Get the [example config] and fill it out. You'll at least need to:
@@ -49,10 +47,6 @@ GitLab CI after that.
    (and the [sync proxy](https://github.com/mautrix/syncproxy)).
 4. Add the path to the registration file to your Synapse `homeserver.yaml`
    under `app_service_config_files`, then restart Synapse.
-5. Build and run the android-sms app with your config.
-6. Open the app and grant it SMS permissions to start the bridge.
-
-<!--
 5. Serve the config file with the webserver of your choice. It's recommended
    to use a random file name or add HTTP basic auth to prevent other people
    from reading your config.
@@ -62,8 +56,9 @@ GitLab CI after that.
      [Apache](https://httpd.apache.org/docs/2.4/howto/auth.html)
 6. Generate a QR code with the URL to your config
    (e.g. `echo -n https://user:pass@example.com/your-config.yaml | qrencode -t ansiutf8`).
-7. Scan the QR code with android-sms.
--->
+7. Scan the QR code with the android-sms app (install the app now if you didn't already).
+8. Grant at least the SMS permission when prompted. Contact list access is also
+   necessary if you want proper displaynames for ghost users on Matrix.
 
 [example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
 [example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml
