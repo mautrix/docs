@@ -1,7 +1,7 @@
 # Bridge setup
 
 These instructions are for a simple virtualenv-based setup. You can also set up
-[with Docker](./docker.md), or [set up systemd](./systemd.md) to run the bridge
+[with Docker](./docker.md), or [with YunoHost](./yunohost.md) or [set up systemd](./systemd.md) to run the bridge
 with this virtualenv setup.
 
 {{ #include ../selector.html }}
