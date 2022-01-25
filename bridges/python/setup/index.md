@@ -1,8 +1,14 @@
 # Bridge setup
 
-These instructions are for a simple virtualenv-based setup. You can also set up
-[with Docker](./docker.md), or [set up systemd](./systemd.md) to run the bridge
-with this virtualenv setup.
+This page contains instructions for setting up the bridge in a virtualenv.
+You may also want to look at other ways to run the bridge:
+
+* [Docker](./docker.md)
+* <span class="bridge-filter" bridges="telegram,signal,facebook"></span> YunoHost:
+  <a href="https://github.com/YunoHost-Apps/mautrix_telegram_ynh">mautrix_telegram_ynh<span class="bridge-filter" bridges="telegram">,</span></a>
+  <a href="https://github.com/YunoHost-Apps/mautrix_signal_ynh">mautrix_signal_ynh<span class="bridge-filter" bridges="signal">,</span></a>
+  <a href="https://github.com/YunoHost-Apps/mautrix_facebook_ynh">mautrix_facebook_ynh<span class="bridge-filter" bridges="facebook"></span></a>
+* [systemd service](./systemd.md)
 
 {{ #include ../selector.html }}
 
