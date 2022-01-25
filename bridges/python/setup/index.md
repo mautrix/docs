@@ -1,5 +1,7 @@
 # Bridge setup
 
+{{ #include ../selector.html }}
+
 This page contains instructions for setting up the bridge in a virtualenv.
 You may also want to look at other ways to run the bridge:
 
@@ -9,8 +11,6 @@ You may also want to look at other ways to run the bridge:
   <a href="https://github.com/YunoHost-Apps/mautrix_signal_ynh">mautrix_signal_ynh<span class="bridge-filter" bridges="signal">,</span></a>
   <a href="https://github.com/YunoHost-Apps/mautrix_facebook_ynh">mautrix_facebook_ynh<span class="bridge-filter" bridges="facebook"></span></a>
 * [systemd service](./systemd.md)
-
-{{ #include ../selector.html }}
 
 Please note that everything in these docs are meant for server admins who want
 to self-host the bridge. If you're just looking to use the bridges, check out
