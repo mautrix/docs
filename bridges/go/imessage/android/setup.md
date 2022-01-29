@@ -8,6 +8,11 @@ bridge is [android-sms].
 [android-sms]: https://gitlab.com/beeper/android-sms
 
 ## Requirements
+### Compilation (optional)
+* Go 1.14+ (download & installation instructions at <https://golang.org/dl/>).
+* Latest Android SDK and NDK version 21.3.6528147.
+
+### Runtime
 * An Android device with Android 5 or higher.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
@@ -21,12 +26,11 @@ bridge is [android-sms].
 ## Installation
 
 ### Compiling manually
-1. Install the latest Android SDK and NDK version 21.3.6528147.
-2. Clone the android-sms repo. Use `--recursive` when cloning or
+1. Clone the android-sms repo. Use `--recursive` when cloning or
    `git submodule init && git submodule update` after cloning to ensure that
    the mautrix-imessage submodule is present.
-3. Run `./mautrix.sh` to compile mautrix-imessage for Android.
-4. Run `./gradlew installDebug` to compile the app and install it over ADB.
+2. Run `./mautrix.sh` to compile mautrix-imessage for Android.
+3. Run `./gradlew installDebug` to compile the app and install it over ADB.
 
 ### Precompiled builds
 Pre-compiled APKs are available in [GitLab CI]. In the future, they'll
