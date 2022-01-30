@@ -41,7 +41,8 @@ Synapse logs to find out what went wrong exactly.
 
 ## Dendrite
 Dendrite works the same way as Synapse, except the relevant config field is
-[`config_files` under `app_service_api`](https://github.com/matrix-org/dendrite/blob/v0.6.0/dendrite-config.yaml#L130-L131):
+[`config_files` under `app_service_api`](https://github.com/matrix-org/dendrite/blob/v0.6.0/dendrite-config.yaml#L130-L131)
+(and the config file is usually called `dendrite.yaml` rather than `homeserver.yaml`):
 
 ```yaml
 app_service_api:
