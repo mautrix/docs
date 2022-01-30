@@ -4,6 +4,7 @@
 
 # Bridges in general
 - [Troubleshooting & FAQ](./general/troubleshooting.md)
+- [Registering appservices](./general/registering-appservices.md)
 - [End-to-bridge encryption](./general/end-to-bridge-encryption.md)
 - [Double puppeting](./general/double-puppeting.md)
 - [Relay mode](./general/relay-mode.md)

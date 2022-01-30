@@ -55,10 +55,10 @@ to self-host the bridge. If you're just looking to use the bridges, check out
    You can use the `-c` and `-r` flags to change the location of the config and
    registration files. They default to `config.yaml` and `registration.yaml`
    respectively.
-6. Add the path to the registration file (`registration.yaml` by default) to
-   your Synapse's `homeserver.yaml` under `app_service_config_files`.
-   Restart Synapse to apply changes.
+6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge `python -m mautrix_$bridge`.
+
+[Registering appservices]: ../../../general/registering-appservices.md
 
 ### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).

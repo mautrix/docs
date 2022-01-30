@@ -60,11 +60,10 @@ from the mau.dev CI or [GitHub releases](https://github.com/mautrix/whatsapp/rel
    * You can use the `-c` and `-r` flags to change the location of the config
      and registration files. They default to `config.yaml` and
      `registration.yaml` respectively.
-4. Add the path to the registration file (`registration.yaml` by default) to
-   your synapse `homeserver.yaml` under `app_service_config_files`. You will
-   then need to restart the synapse server. Remember to restart it every time
-   the registration file is regenerated.
+4. Register the bridge on your homeserver (see [Registering appservices]).
 5. Run the bridge with `./mautrix-whatsapp`.
+
+[Registering appservices]: ../../../general/registering-appservices.md
 
 ## Updating
 If you compiled manually, pull changes with `git pull` and recompile with
