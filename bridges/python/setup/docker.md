@@ -34,8 +34,7 @@ arm64 images.
    to start and tell you what's missing.
 4. Generate the appservice registration by running the container again, same
    command as above.
-5. Add the path to the registration file to your Synapse's `homeserver.yaml`
-   under `app_service_config_files`. Restart Synapse to apply changes.
+5. Register the bridge on your homeserver (see [Registering appservices]).
 6. Run the bridge:
    ```
    docker run --restart unless-stopped -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
@@ -43,6 +42,8 @@ arm64 images.
    Additionally, you should either add the bridge to the same Docker network as
    Synapse with `--network=synapsenet`, or expose the correct port with
    `-p <port>:<port>`.
+
+[Registering appservices]: ../../../general/registering-appservices.md
 
 ## Upgrading
 1. Pull the new version (setup step 1)

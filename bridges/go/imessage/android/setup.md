@@ -49,8 +49,7 @@ hopefully also be available from F-Droid.
 2. Get the [example registration] and copy the relevant values from the config.
 3. Set up [mautrix-wsproxy](https://github.com/mautrix/wsproxy)
    (and the [sync proxy](https://github.com/mautrix/syncproxy)).
-4. Add the path to the registration file to your Synapse `homeserver.yaml`
-   under `app_service_config_files`, then restart Synapse.
+4. Register the bridge on your homeserver (see [Registering appservices]).
 5. Serve the config file with the webserver of your choice. It's recommended
    to use a random file name or add HTTP basic auth to prevent other people
    from reading your config.
@@ -66,3 +65,4 @@ hopefully also be available from F-Droid.
 
 [example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
 [example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml
+[Registering appservices]: ../../../general/registering-appservices.md

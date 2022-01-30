@@ -35,7 +35,7 @@ Minimum bridge versions that support the relay system documented above.
 | WhatsApp    | 0.2.0              |
 | Signal      | 0.2.0              |
 | Instagram   | 0.1.2              |
-| Facebook    | 0.3.3 (unreleased) |
+| Facebook    | 0.3.3              |
 | Google Chat | not yet supported  |
 | Twitter     | not yet supported  |
 | iMessage    | not supported      |

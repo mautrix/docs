@@ -7,3 +7,5 @@ deploy:
   - mdbook build bridges && rsync -rcthvl --delete dist/bridges/html/ /srv/web/docs.mau.fi/bridges/
   - mdbook build maubot && rsync -rcthvl --delete dist/maubot/html/ /srv/web/docs.mau.fi/maubot/
   - mdbook build gomuks && rsync -rcthvl --delete dist/gomuks/html/ /srv/web/docs.mau.fi/gomuks/
+  only:
+  - master

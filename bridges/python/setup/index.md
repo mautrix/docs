@@ -1,10 +1,16 @@
 # Bridge setup
 
-These instructions are for a simple virtualenv-based setup. You can also set up
-[with Docker](./docker.md), or [set up systemd](./systemd.md) to run the bridge
-with this virtualenv setup.
-
 {{ #include ../selector.html }}
+
+This page contains instructions for setting up the bridge in a virtualenv.
+You may also want to look at other ways to run the bridge:
+
+* [Docker](./docker.md)
+* <span class="bridge-filter" bridges="telegram,signal,facebook"></span> YunoHost:
+  <a href="https://github.com/YunoHost-Apps/mautrix_telegram_ynh">mautrix_telegram_ynh<span class="bridge-filter" bridges="telegram">,</span></a>
+  <a href="https://github.com/YunoHost-Apps/mautrix_signal_ynh">mautrix_signal_ynh<span class="bridge-filter" bridges="signal">,</span></a>
+  <a href="https://github.com/YunoHost-Apps/mautrix_facebook_ynh">mautrix_facebook_ynh<span class="bridge-filter" bridges="facebook"></span></a>
+* [systemd service](./systemd.md)
 
 Please note that everything in these docs are meant for server admins who want
 to self-host the bridge. If you're just looking to use the bridges, check out
@@ -49,10 +55,10 @@ to self-host the bridge. If you're just looking to use the bridges, check out
    You can use the `-c` and `-r` flags to change the location of the config and
    registration files. They default to `config.yaml` and `registration.yaml`
    respectively.
-6. Add the path to the registration file (`registration.yaml` by default) to
-   your Synapse's `homeserver.yaml` under `app_service_config_files`.
-   Restart Synapse to apply changes.
+6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge `python -m mautrix_$bridge`.
+
+[Registering appservices]: ../../../general/registering-appservices.md
 
 ### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).
