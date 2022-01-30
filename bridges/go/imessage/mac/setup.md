@@ -53,10 +53,9 @@ from the mau.dev CI.
 5. Update your registration file so the `url` field points to wsproxy (e.g.
    `http://localhost:29331`), and make sure the `websocket_proxy` field in the
    bridge config also points to wsproxy (e.g. `ws://matrix.example.com:29331`).
-6. Add the path to the registration file (`registration.yaml` by default) to
-   your synapse `homeserver.yaml` under `app_service_config_files`. You will
-   then need to restart the synapse server. Remember to restart it every time
-   the registration file is regenerated.
+6. Copy the registration file to the server and add the path to the file to
+   your synapse `homeserver.yaml` under `app_service_config_files`. Restart
+   Synapse to apply changes.
 7. Run the bridge with `./mautrix-imessage`.
 8. If/when the bridge fails to initialize the iMessage connector with the
    `operation not permitted` error, go to System Preferences -> Security &
