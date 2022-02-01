@@ -12,6 +12,8 @@ useful for plugins.
 * `id` - The ID of the plugin instance.
 * `log` - A logger for the plugin instance.
 * `loop` - The asyncio event loop.
+* `loader` - The class used to load the plugin files. Can be used to read
+  arbitrary files from the plugin's .mbp archive.
 * `config` - If the config is enabled, the data from the config (see
   the [Configuration] page).
 * `database` - If the database is enabled, the SQLAlchemy database engine (see
