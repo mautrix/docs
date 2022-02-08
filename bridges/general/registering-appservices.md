@@ -37,6 +37,12 @@ If Synapse fails to start after editing the config, it means you either made a
 YAML syntax error, or the file path is incorrect or not readable. See the
 Synapse logs to find out what went wrong exactly.
 
+Some things to keep in mind:
+
+* When using Docker, the file needs to be mounted inside the container
+* If Synapse is running through systemd, the service file might have security
+  hardening features that block access to certain paths.
+
 [`app_service_config_files`]: https://github.com/matrix-org/synapse/blob/v1.51.0/docs/sample_config.yaml#L1514-L1518
 
 ## Dendrite
