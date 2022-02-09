@@ -1,7 +1,8 @@
 # Double puppeting
 You can replace the Matrix ghost of your remote account with your Matrix
 account. When you do so, messages that you send from other clients will be sent
-from your Matrix account instead of the default ghost user.
+from your Matrix account instead of the default ghost user. In most of the
+bridges, this is necessary to bridge DMs you send from other clients to Matrix.
 
 Also, in servers that don't support [MSC2409] (i.e. Synapse before v1.22), it is
 the only way to enable bridging of ephemeral events, such as presence, typing
