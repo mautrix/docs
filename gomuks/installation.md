@@ -25,6 +25,7 @@ you've made a new distro package, please add it to the list below.
 * OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
 * Alpine Linux: [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks)
 * macOS (Homebrew Tap): [aaronraimist/tap/gomuks](https://github.com/aaronraimist/homebrew-tap)
+* Windows (scoop): [gomuks] (https://github.com/TheLastZombie/scoop-bucket/blob/master/bucket/gomuks.json)
 
 ## Compiling from source
 
