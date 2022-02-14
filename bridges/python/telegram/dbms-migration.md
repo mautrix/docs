@@ -7,7 +7,7 @@ The bridge includes a simple script for migrating between database management
 systems. It simply reads the data from one database and inserts it into another
 database.
 
-The  script is located in [mautrix_telegram/scripts/dbms_migrate](https://github.com/mautrix/telegram/tree/master/mautrix_telegram/scripts/dbms_migrate).
+The script is located in [mautrix_telegram/scripts/dbms_migrate](https://github.com/mautrix/telegram/tree/v0.10.2/mautrix_telegram/scripts/dbms_migrate).
 It can be ran using
 ```bash
 $ python3 -m mautrix_telegram.scripts.dbms_migrate -f <source db> -t <target db>
