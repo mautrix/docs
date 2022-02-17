@@ -43,7 +43,7 @@ arm64 images.
    Synapse with `--network=synapsenet`, or expose the correct port with
    `-p <port>:<port>`.
 
-[Registering appservices]: ../../../general/registering-appservices.md
+[Registering appservices]: ../../general/registering-appservices.md
 
 ## Upgrading
 1. Pull the new version (setup step 1)

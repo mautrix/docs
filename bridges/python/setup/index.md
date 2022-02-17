@@ -58,7 +58,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge `python -m mautrix_$bridge`.
 
-[Registering appservices]: ../../../general/registering-appservices.md
+[Registering appservices]: ../../general/registering-appservices.md
 
 ### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).
