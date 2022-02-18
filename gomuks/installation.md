@@ -13,7 +13,8 @@ windows/amd64).
 The release and CI binaries for Linux and Windows are statically built and have
 no dependencies at all. The binaries for macOS require installing libolm, either
 with `brew install libolm` or by placing `libolm.3.dylib` from the CI in the
-same directory as the `gomuks` binary.
+same directory as the `gomuks` binary. MacPorts for macOS takes care of any 
+dependencies.
 
 There are also community maintained packages for several distributions. If
 you've made a new distro package, please add it to the list below.
@@ -25,6 +26,7 @@ you've made a new distro package, please add it to the list below.
 * OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
 * Alpine Linux: [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks)
 * macOS (Homebrew Tap): [aaronraimist/tap/gomuks](https://github.com/aaronraimist/homebrew-tap)
+* macOS (MacPorts): [gomuks](https://ports.macports.org/port/gomuks/)
 * Windows (scoop): [gomuks](https://github.com/TheLastZombie/scoop-bucket/blob/master/bucket/gomuks.json)
 
 ## Compiling from source
