@@ -51,8 +51,10 @@ from the mau.dev CI.
      `registration.yaml` respectively.
 4. Set up [mautrix-wsproxy](https://github.com/mautrix/wsproxy).
 5. Update your registration file so the `url` field points to wsproxy (e.g.
-   `http://localhost:29331`), and make sure the `websocket_proxy` field in the
-   bridge config also points to wsproxy (e.g. `ws://matrix.example.com:29331`).
+   `http://localhost:29331`, this is where your homeserver reaches wsproxy),
+   and make sure the `websocket_proxy` field in the bridge config also points
+   to wsproxy (e.g. `ws://matrix.example.com:29331`, where the bridge reaches
+   wsproxy).
 6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge with `./mautrix-imessage`.
 8. If/when the bridge fails to initialize the iMessage connector with the

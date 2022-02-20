@@ -18,7 +18,11 @@ All of the instructions below require you to have the `registration.yaml` file
 ready, so make sure you've reached the point in the bridge setup instructions
 where it tells you to register the bridge on your homeserver.
 
-[Application Service API]: https://spec.matrix.org/v1.1/application-service-api/
+The registration file is only necessary for the homeserver. None of the mautrix
+bridges will try to read it at runtime, as all the relevant information is also
+in the bridge-specific config file.
+
+[Application Service API]: https://spec.matrix.org/v1.2/application-service-api/
 
 ## Synapse
 If necessary, copy the registration file somewhere where Synapse can read it.
