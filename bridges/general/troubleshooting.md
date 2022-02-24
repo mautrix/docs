@@ -30,6 +30,25 @@ There are a few potential reasons this can happen:
   relatively common, you should check [matrix-org/synapse#1834](https://github.com/matrix-org/synapse/issues/1834)
   if nothing else works.~~ This should be fixed as of Synapse v1.36.0.
 
+## Why are direct messages showing up under "Rooms" instead of "People"?
+All chats in Matrix are actually rooms, and there's no good way for bridges to
+declare that a room is a DM. Specifically, the DM status is stored in the
+user's account data in the `m.direct` event, rather than in the room itself.
+Since the flag isn't stored in the room, there's no way for the room creator
+to force it the room to be a DM.
+
+The bridges include a hacky workaround, which uses [double puppeting] to update
+the `m.direct` account data event directly. It can be turned on with the
+`sync_direct_chat_list` config option. Alternatively, you can manually add
+individual rooms using the `/converttodm` command in Element Web/Desktop.
+
+Canonical DMs ([MSC2199]) should fix the issue permanently by actually storing
+the DM status in the room itself, but so far it has not been implemented in any
+clients or servers.
+
+[double puppeting]: ./double-puppeting.md
+[MSC2199]: https://github.com/matrix-org/matrix-doc/pull/2199
+
 ## `pip` failed building wheel for python-olm
 
 #### `fatal error: olm/olm.h: no such file or directory`
