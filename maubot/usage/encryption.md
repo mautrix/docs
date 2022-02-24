@@ -1,6 +1,4 @@
 # Encryption
-Maubot has basic support for end-to-end encryption~~, but it is not yet exposed
-in the web management UI~~. It is now exposed in the web management UI too.
 
 ## Dependencies
 To enable encryption, you must first have maubot installed with the `e2be`

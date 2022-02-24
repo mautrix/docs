@@ -40,7 +40,7 @@ currently support any commands.
 
 1. Log in on the homeserver to get an access token, for example with the command
    ```shell
-   $ curl -XPOST -d '{"type":"m.login.password","identifier":{"type": "m.id.user", "user": "example"},"password":"wordpass","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/r0/login
+   $ curl -XPOST -d '{"type":"m.login.password","identifier":{"type": "m.id.user", "user": "example"},"password":"wordpass","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
    ```
 2. Send `login-matrix <access token>` to the bridge bot. For the Telegram
    bridge, send `login-matrix` without the access token, then send the access

@@ -26,9 +26,6 @@ There are a few potential reasons this can happen:
   off. The homeserver should retry after some time. If it still doesn't work
   after an hour or so (exact backoff depends on how long the bridge was down),
   check the homeserver logs.
-* Synapse messed up and silently broke the appservice. ~~This is becoming
-  relatively common, you should check [matrix-org/synapse#1834](https://github.com/matrix-org/synapse/issues/1834)
-  if nothing else works.~~ This should be fixed as of Synapse v1.36.0.
 
 ## Why are direct messages showing up under "Rooms" instead of "People"?
 All chats in Matrix are actually rooms, and there's no good way for bridges to
