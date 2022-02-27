@@ -46,6 +46,27 @@ clients or servers.
 [double puppeting]: ./double-puppeting.md
 [MSC2199]: https://github.com/matrix-org/matrix-doc/pull/2199
 
+## How do I bridge typing notifications and read receipts?
+Bridging ephemeral events (EDUs) is enabled by default in the bridges, but
+currently those events aren't sent to appservices by default. There are two
+config options to enable the bridges to receive EDUs:
+
+1. `bridge` -> `sync_with_custom_puppets` - calls `/sync` with your Matrix
+   account to receive EDUs. See the [double puppeting] docs for how to enable
+   double puppeting in general.
+2. `appservice` -> `ephemeral_events` - enables [MSC2409] support to have the
+   homeserver push EDUs directly to the bridge (the same way it pushes normal
+   messages).
+   * This is currently only implemented in Synapse.
+   * This also requires the `de.sorunome.msc2409.push_ephemeral` field in the
+     registration file to be set to `true`. If you regenerate the registration
+     after enabling the config option, the relevant fields will be added
+     automatically. Remember to restart Synapse after updating the registration.
+
+You should only have one of the two enabled at any time.
+
+[MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
+
 ## `pip` failed building wheel for python-olm
 
 #### `fatal error: olm/olm.h: no such file or directory`
