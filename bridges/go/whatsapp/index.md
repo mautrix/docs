@@ -1,12 +1,6 @@
 # mautrix-whatsapp
 Welcome to the mautrix-whatsapp docs!
 
-## How The Components Fit Together
-![Diagram of components: matrix, bridge, whatsapp, clients](./mautrix-whatsapp.png)
-(Image by [Азат](http://matrix.to/#/@azata:gazizova.net))
-
-This bridge is the component labeled "mautrix-whatsapp bot".
-
 ## Discussion
 Matrix room: [#whatsapp:maunium.net](https://matrix.to/#/#whatsapp:maunium.net)
 
