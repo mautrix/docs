@@ -3,8 +3,8 @@
 # DEPRECATED
 mautrix-imessage has dropped support for 32-bit iOS devices, so this
 Brooklyn-based bridge setup is now deprecated. Newer iOS-based devices can use
-Barcelona (which is meant for macOS, but works on iOS). However, instructions
-for Barcelona on iOS are not yet available here.
+Barcelona (which is meant for macOS without SIP, but works on jailbroken iOS).
+However, instructions for Barcelona on iOS are not yet available here.
 
 If you still want to use Brooklyn with an old iOS device, the last commit that
 supports Go 1.14 and 32-bit iOS is [31bc6e28](https://github.com/mautrix/imessage/tree/31bc6e281841c85de15fb551ee90b77265e0c1fd)
