@@ -4,9 +4,9 @@
 To enable encryption, you must first have maubot installed with the `e2be`
 optional dependency. To do this, you can either add `[e2be]` at the end of the
 package in the `pip install` command, e.g. `pip install --upgrade maubot[e2be]`.
-Your system will need to have `libolm` installed for this to work.
-Alternatively, you can install the dependencies manually (`asyncpg`,
-`python-olm`, `pycryptodome` and `unpaddedbase64`). The Docker image has all
+Your system will need to have `libolm` installed for this to work. Alternatively,
+you can install the dependencies manually (`asyncpg`, `python-olm`,
+`pycryptodome`, `unpaddedbase64` and `wheel`). The Docker image has all
 optional dependencies installed by default.
 
 ## Getting a fresh device ID
