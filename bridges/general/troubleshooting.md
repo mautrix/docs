@@ -32,7 +32,7 @@ All chats in Matrix are actually rooms, and there's no good way for bridges to
 declare that a room is a DM. Specifically, the DM status is stored in the
 user's account data in the `m.direct` event, rather than in the room itself.
 Since the flag isn't stored in the room, there's no way for the room creator
-to force it the room to be a DM.
+to force the room to be a DM.
 
 The bridges include a hacky workaround, which uses [double puppeting] to update
 the `m.direct` account data event directly. It can be turned on with the
