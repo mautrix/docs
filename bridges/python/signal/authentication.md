@@ -18,5 +18,5 @@
 Refer to the [signald docs](https://signald.org/articles/captcha/) on dealing
 with captcha required errors. The bridge supports the same `--captcha`
 parameter as signaldctl, but it must be passed before the phone number instead
-of after (e.g. `!signal register --captcha 03AOLTBLR... +12024561414`). The
-`signalcaptcha://` part must *not* be included.
+of after (e.g. `!signal register --captcha signal-recaptcha-v2.03AOLTBLR... +12024561414`).
+The `signalcaptcha://` prefix must *not* be included, but everything after it must be.
