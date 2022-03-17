@@ -30,7 +30,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
   [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
   animated stickers to be converted to something viewable on Matrix.
 * <span class="bridge-filter" bridges="telegram,signal,facebook,instagram">**Bridges with voice messages**: </span>
-  `ffmpeg` in `$PATH` to transcode audio files (just install it with your system package manager).
+  [ffmpeg](https://ffmpeg.org/) to transcode audio files (just install it with your system package manager).
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   An instance of [signald](https://gitlab.com/signald/signald).
 
