@@ -15,6 +15,10 @@
 Please note that the bridge uses the web API. Prior to v0.2.0 and the multidevice
 update, your phone had to be connected to the internet for the bridge to work.
 After v0.2.0, it's enough if the phone is connected at least once every 2 weeks.
+If the phone is offline for >2 weeks, linked devices will become disconnected:
+<https://faq.whatsapp.com/general/download-and-installation/about-linked-devices>.
+The bridge will warn you if it doesn't receive any data from the phone in over
+12 days.
 
 **N.B.** WhatsApp is known to ban accounts that are too suspicious. Just using
 the bridge shouldn't cause any bans, but getting banned is more likely when
