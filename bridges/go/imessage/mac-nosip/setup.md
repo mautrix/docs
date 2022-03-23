@@ -7,8 +7,9 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 
 ## Requirements
 ### Compilation (optional)
-* Go 1.16+ (download & installation instructions at <https://golang.org/dl/>)
+* Go 1.17+ (download & installation instructions at <https://golang.org/dl/>)
 * libolm3 with dev headers (`brew install libolm`)
+* Optionally libheif with dev headers for heif -> jpeg conversion (`brew install libheif`)
 * Xcode 12.4+ if you want to build Barcelona yourself
 
 ### Runtime
