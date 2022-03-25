@@ -7,7 +7,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 
 ## Requirements
 ### Compilation (optional)
-* Go 1.17+ (download & installation instructions at <https://go.dev/dl/>)
+* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>)
 * libolm3 with dev headers (`brew install libolm`)
 * Optionally libheif with dev headers for heif -> jpeg conversion (`brew install libheif`)
 
