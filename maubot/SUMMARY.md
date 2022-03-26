@@ -28,4 +28,5 @@
   - [Events](./dev/handlers/events.md)
   - [Web](./dev/handlers/web.md)
 - [Configuration](./dev/configuration.md)
-- [Database]()
+- [Database](./dev/database/index.md)
+  - [API reference](./dev/database/api-reference.md)

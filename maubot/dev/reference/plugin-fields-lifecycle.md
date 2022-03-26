@@ -14,10 +14,10 @@ useful for plugins.
 * `loop` - The asyncio event loop.
 * `loader` - The class used to load the plugin files. Can be used to read
   arbitrary files from the plugin's .mbp archive.
-* `config` - If the config is enabled, the data from the config (see
-  the [Configuration] page).
-* `database` - If the database is enabled, the SQLAlchemy database engine (see
-  the [Database] page).
+* `config` - If the config is enabled, the data from the config
+  (see the [Configuration] page).
+* `database` - If the database is enabled, the database engine
+  (see the [Database] page).
 * `webapp` - If the HTTP handlers are enabled, the aiohttp `UrlDispatcher` for
   the plugin (see the [HTTP handlers]) page.
 * `webapp_url` - If the HTTP handlers are enabled, the public base URL where the
@@ -25,7 +25,7 @@ useful for plugins.
 
 [aiohttp client]: https://docs.aiohttp.org/en/stable/client.html
 [Configuration]: ../configuration.md
-[Database]: <> (../database.md)
+[Database]: ../database/index.md
 [HTTP handlers]: ../handlers/web.md
 
 ## Methods
