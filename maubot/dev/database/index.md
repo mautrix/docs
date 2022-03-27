@@ -22,6 +22,9 @@ For legacy plugins (with `database_mode` unset or set to `sqlalchemy`), the
 For details on the methods available in the `Database` class,
 see [Database API reference](./api-reference.md).
 
+You can also find an example plugin in the maubot repo:
+[examples/database/](https://github.com/maubot/maubot/tree/master/examples/database)
+
 ## Schema upgrades
 mautrix-python includes a simple framework for versioning the schema.
 The migrations are simply Python functions which are registered in an
