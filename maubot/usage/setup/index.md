@@ -17,10 +17,8 @@
 4. Copy `maubot/example-config.yaml` to `config.yaml` and update to your liking.
 5. Create the log directory and all directories used in `plugin_directories`
    (usually `mkdir plugins trash logs`).
-6. Create the database with `alembic upgrade head`. If you have a custom config
-   path, use `alembic -x config=/path/to/config.yaml upgrade head`.
-7. Start with `python3 -m maubot`.
-8. The management interface should now be available at
+6. Start with `python3 -m maubot`.
+7. The management interface should now be available at
    <http://localhost:29316/_matrix/maubot> or whatever you configured.
 
 ### Upgrading
@@ -32,15 +30,14 @@
 1. _Optional, but strongly recommended:_ Set up a virtual environment.
    1. Create with `virtualenv -p /usr/bin/python3 .venv`
    2. Activate with `source .venv/bin/activate`
-2. Install dependencies with `pip install -r requirements.txt`
-3. `pip install --editable .` (note the dot at the end)
-4. Build the frontend:
+2. Install with `pip install --editable .` (note the dot at the end)
+3. Build the frontend:
    1. `cd maubot/management/frontend`
    2. Install dependencies with `yarn`
-   4. Build with `yarn build`
-5. _Optional:_ Configure [debug file open] so that you can open files in your
+   3. Build with `yarn build`
+4. _Optional:_ Configure [debug file open] so that you can open files in your
    IDE by clicking on stack trace lines in the frontend log viewer.
-6. Continue from step 4 of the production setup.
+5. Continue from step 4 of the production setup.
 
 [debug file open]: ../../management-api.md#debug-file-open
 
