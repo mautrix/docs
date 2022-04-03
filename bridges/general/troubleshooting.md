@@ -105,8 +105,8 @@ Make sure the tokens match everywhere, that you're looking at the right files,
 and that everything has been restarted.
 
 ## The `as_token` was accepted, but the `/register` request was not
-This can happen if you misconfigure either the `homeserver` -> `domain`
-field, or change the `username_template` without regenerating the registration.
+This can happen if you either misconfigure the `homeserver` -> `domain` field,
+or change the `username_template` without regenerating the registration.
 
 Usually it's the former, so make sure that the `domain` field matches your
 homeserver's `server_name` exactly. If it doesn't, fix it, regenerate the
