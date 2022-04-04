@@ -32,6 +32,10 @@ arm64 images.
    homeserver settings, appservice address, database address and bridge
    permissions. If you miss something that's required, the bridge will refuse
    to start and tell you what's missing.
+   * Keep in mind that `localhost` is not the correct address inside Docker
+     (unless using `network=host` mode). Usually you should have the bridge and
+     homeserver in the same Docker network, and use the container names as
+     addresses (e.g. `http://mautrix-whatsapp:29326` and `http://synapse:8008`).
 4. Generate the appservice registration by running the container again, same
    command as above.
 5. Register the bridge on your homeserver (see [Registering appservices]).
@@ -40,8 +44,9 @@ arm64 images.
    docker run --restart unless-stopped -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
    Additionally, you should either add the bridge to the same Docker network as
-   Synapse with `--network=synapsenet`, or expose the correct port with
-   `-p <port>:<port>`.
+   Synapse with `--network=synapsenet` (when both are running in Docker), or
+   expose the correct port with `-p <port>:<port>` (when the homeserver is
+   outside Docker).
 
 [Registering appservices]: ../../general/registering-appservices.md
 
