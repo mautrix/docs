@@ -69,6 +69,9 @@ arm64 images.
        volumes:
        - .:/data
 
+       # If you put the service above in the same docker-compose as the homeserver,
+       # ignore the parts below. Otherwise, see below for configuring networking.
+
        # If synapse is running outside of docker, you'll need to expose the port.
        # Note that in most cases you should either run everything inside docker
        # or everything outside docker, rather than mixing docker things with
