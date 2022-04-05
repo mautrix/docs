@@ -67,6 +67,8 @@ outgoing requests via `/verify` work.
 * `/export-room <path>` - Export message decryption keys for the current room
   to the given path.
 * `/import <path>` - Import message decryption keys from the given path.
+* `/cs fetch` - Unlock cross signing keys
+* `/cs self-sign` - Cross-sign the device and trust it
 
 ### Rooms
 #### Creating
