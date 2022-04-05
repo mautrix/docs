@@ -4,8 +4,13 @@ bridge SMS messages from your phone. The Android SMS bridge works similar to
 the [jailbroken iOS setup], but instead of Brooklyn, the wrapper app for the
 bridge is [android-sms].
 
+Please note that everything in these docs are meant for server admins who want
+to self-host the bridge. If you're just looking to use the bridges, check out
+[Beeper], which provides fully managed instances of all of these bridges.
+
 [jailbroken iOS setup]: ../ios/setup.md
 [android-sms]: https://gitlab.com/beeper/android-sms
+[Beeper]: https://www.beeper.com/
 
 ## Requirements
 * An Android device with Android 5 or higher.
