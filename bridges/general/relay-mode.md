@@ -38,6 +38,11 @@ Minimum bridge versions that support the relay system documented above.
 | Facebook    | 0.3.3              |
 | Google Chat | not yet supported  |
 | Twitter     | not yet supported  |
-| iMessage    | not supported      |
+| iMessage    | †0.1.0/[3df789e2]  |
+
+† iMessage doesn't require `set-relay`, relay mode is enabled in all chats
+  automatically if enabled in the config. The `permissions` section is replaced
+  with `relay` -> `whitelist`.
 
 [Different system]: ../python/telegram/relay-bot.html
+[3df789e2]: https://github.com/mautrix/imessage/commit/3df789e24b8500d95a53d5417aca6e59bedf7efd
