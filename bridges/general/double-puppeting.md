@@ -42,6 +42,8 @@ currently support any commands.
    ```shell
    $ curl -XPOST -d '{"type":"m.login.password","identifier":{"type": "m.id.user", "user": "example"},"password":"wordpass","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
    ```
+   You may want to change the `initial_device_display_name` field to something
+   more descriptive, or rename it from another client after logging in.
 2. Send `login-matrix <access token>` to the bridge bot. For the Telegram
    bridge, send `login-matrix` without the access token, then send the access
    token in a separate message.
