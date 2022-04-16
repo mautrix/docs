@@ -21,7 +21,9 @@
     working).
   * `notifications` - Desktop notifications.
   * `unverified` - Sending (e2ee keys for) messages to unverified devices.
-    You need restart gomuks for this setting to take effect.
+    You need to restart gomuks for this setting to take effect.
+  * `inlineurls` - Inline URLs in text. May not be supported in all terminals.
+    You need to restart gomuks for this setting to take effect.
 
 ### Media
 Tab-completing file paths is supported in all these commands.
@@ -39,8 +41,9 @@ Tab-completing file paths is supported in all these commands.
 ### Sending special messages
 * `/me <text>` - Send an emote.
 * `/notice <text>` - Send a notice (generally used for bot messages).
-* `/rainbow <text>` - Send rainbow text ~~(markdown not supported)~~.
+* `/rainbow <text>` - Send rainbow text.
 * `/rainbowme <text>` - Send rainbow text in an emote.
+* `/rainbownotice <text>` - Send rainbow text in a `m.notice` message.
 * `/reply [text]` - Reply to the selected message. If text is not specified,
   the next message will be used.
 * `/react <reaction>` - React to the selected message.
@@ -67,6 +70,20 @@ outgoing requests via `/verify` work.
 * `/export-room <path>` - Export message decryption keys for the current room
   to the given path.
 * `/import <path>` - Import message decryption keys from the given path.
+* `/cross-signing <subcommand> [...]` - Cross-signing commands. Somewhat experimental. (alias: `/cs`).
+  * `status` - Check the status of your own cross-signing keys.
+  * `generate [--force]` - Generate and upload new cross-signing keys.
+     This will prompt you to enter your account password.
+     If you already have existing keys, `--force` is required.
+  * `self-sign` - Sign the current device with cached cross-signing keys.
+    (or in other words, verify the current device).
+  * `fetch [--save-to-disk]` - Fetch your cross-signing keys from SSSS and
+    decrypt them. If `--save-to-disk` is specified, the keys are saved to disk.
+  * `upload` - Upload your cross-signing keys to SSSS.
+* `/ssss <subcommand> [...]` - Secure Secret Storage (and Sharing) commands. Very experimental.
+  * `status [key ID]` - Check the status of your SSSS.
+  * `generate [--set-default]` - Generate a SSSS key and optionally set it as the default.
+  * `set-default <key ID>` - Set a SSSS key as the default.
 
 ### Rooms
 #### Creating
