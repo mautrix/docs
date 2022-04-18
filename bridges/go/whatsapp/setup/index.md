@@ -14,16 +14,15 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper]: https://www.beeper.com/
 
 ## Requirements
-### Compilation (optional)
-* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>)
-* Olm dev headers and a C/C++ compiler (if you want end-to-bridge encryption)
-
-### Runtime
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A WhatsApp client running on a phone or in an emulated Android VM.
-* libolm3 (if you compiled manually and want end-to-bridge encryption)
-* ffmpeg (if you want to send gifs from Matrix)
+* ffmpeg (if you want to send gifs from Matrix).
+
+If you want to compile the bridge manually (which is not required), you'll also need:
+
+* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>).
+* libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable

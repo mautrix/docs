@@ -6,19 +6,18 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper]: https://www.beeper.com/
 
 ## Requirements
-### Compilation (optional)
-* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>)
-* libolm3 with dev headers (`brew install libolm`)
-* Optionally libheif with dev headers for heif -> jpeg conversion (`brew install libheif`)
-* Xcode 12.4+ if you want to build Barcelona yourself
-
-### Runtime
 * A computer running a reasonably new version of macOS, with SIP and AMFI
   disabled (see instructions below).
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
-* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
-  appservice transactions.
+* A [websocket proxy](https://github.com/mautrix/wsproxy) to receive appservice transactions.
+
+If you want to compile the bridge manually (which is not required), you'll also need:
+
+* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>).
+* libolm3 with dev headers (`brew install libolm`).
+* Optionally libheif with dev headers for heif -> jpeg conversion (`brew install libheif`).
+* Xcode 12.4+ if you want to build Barcelona yourself.
 
 ## Installation
 This form of the bridge consists of two components: [Barcelona] for connecting

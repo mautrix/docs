@@ -6,12 +6,6 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper]: https://www.beeper.com/
 
 ## Requirements
-### Compilation (optional)
-* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>)
-* libolm3 with dev headers (`brew install libolm`)
-* Optionally libheif with dev headers for heif -> jpeg conversion (`brew install libheif`)
-
-### Runtime
 * A computer running a reasonably new version of macOS.
   * The bridge requires full disk access in privacy settings to read your chat
     database.
@@ -19,6 +13,12 @@ to self-host the bridge. If you're just looking to use the bridges, check out
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A [websocket proxy](https://github.com/mautrix/wsproxy) to receive
   appservice transactions.
+
+If you want to compile the bridge manually (which is not required), you'll also need:
+
+* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>).
+* libolm3 with dev headers (`brew install libolm`).
+* Optionally libheif with dev headers for heif -> jpeg conversion (`brew install libheif`).
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable
