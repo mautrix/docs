@@ -72,3 +72,12 @@ GitLab CI after that.
 
 [example config]: https://github.com/mautrix/imessage/blob/master/example-config.yaml
 [example registration]: https://github.com/mautrix/imessage/blob/master/example-registration.yaml
+
+If something is wrong and you need to view the bridge logs, use logcat:
+
+```
+adb logcat --pid=$(adb shell ps | grep com.beeper.sms.app | awk '{ print $2 }')
+```
+
+(note that the pid will change if the app is restarted, so you'll have to
+re-run the command after restarts)
