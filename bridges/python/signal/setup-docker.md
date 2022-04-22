@@ -5,15 +5,6 @@
   to read a docker-compose file and run the docker containers yourself.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse))
 
-## Notes
-* ~~These instructions use the `dock.mau.dev/maunium/signald` image instead of
-  `docker.io/finn/signald` for signald, as the former has a more recent version
-  of Java and a sane default data directory.~~ The upstream image has been
-  updated to match the maunium image.
-* By default, the bridge runs as root. You can run it as a different user, but
-  make sure you `chown` all the files and make signald run as the same user.
-  Additionally set the log file to a path where the user is able to write (e.g. `/data/`).
-
 ## Setup
 0. Create a directory for the bridge and cd into it: `mkdir mautrix-signal && cd mautrix-signal`.
 1. Create `docker-compose.yml` that contains something like this:
