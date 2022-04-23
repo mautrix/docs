@@ -67,6 +67,19 @@ You should only have one of the two enabled at any time.
 
 [MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
 
+## Why are contact list names disabled by default?
+Some bridges like WhatsApp and Signal have access to the contact list you've
+uploaded to their servers. However, the bridges will not use those names by
+default. The reason is that they cause problems if your bridge has multiple
+Matrix users with the same people in their contact lists.
+
+* Contact list names might be leaked to other Matrix users using the same bridge.
+  * Per-room displaynames could somewhat mitigate this, but even that wouldn't
+    work if you're in some bridged groups with the other Matrix users.
+* Bridge ghosts might flip between names from different Matrix users' contact lists.
+
+If the bridge only has one user, then contact list names should be safe to enable.
+
 ## `pip` failed building wheel for python-olm
 
 #### `fatal error: olm/olm.h: no such file or directory`
