@@ -30,6 +30,9 @@ const updateBridgeSelection = () => {
     for (const elem of document.getElementsByClassName("bridge-type")) {
         elem.innerText = selector.value
     }
+    for (const elem of document.getElementsByClassName("bridge-link")) {
+        elem.href = elem.getAttribute("data-href-template").replace("$bridge", selector.value)
+    }
 
     const url = new URL(window.location)
     if (selector.value === "$bridge") {
@@ -41,7 +44,8 @@ const updateBridgeSelection = () => {
 
     for (const elem of document.getElementsByClassName("bridge-filter")) {
         const showItem = (selector.value === "$bridge" && !elem.hasAttribute("bridge-no-generic")) ||
-            elem.getAttribute("bridges").split(",").includes(selector.value)
+            (selector.value !== "$bridge" && elem.getAttribute("bridges") === "all") ||
+            elem.getAttribute("bridges")?.split(",").includes(selector.value)
         if (elem.tagName === "SPAN") {
             if (showItem) {
                 elem.parentElement.style.removeProperty("display")
@@ -79,6 +83,12 @@ if (selector) {
     }
     for (const node of document.getElementsByTagName("code")) {
         node.innerHTML = node.innerHTML.replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
+    }
+    for (const node of document.getElementsByTagName("a")) {
+        if (node.href.includes("$bridge")) {
+            node.setAttribute("data-href-template", node.href)
+            node.classList.add("bridge-link")
+        }
     }
     // TODO replace $bridge in non-code elements somehow
 

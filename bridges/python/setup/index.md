@@ -61,6 +61,10 @@ to self-host the bridge. If you're just looking to use the bridges, check out
    respectively.
 6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge `python -m mautrix_$bridge`.
+8. The bridge is ready to use. See the bridge-specific authentication pages for login instructions.
+   <span class="bridge-filter"></span>
+8. The bridge is ready to use. See the [Authentication](../$bridge/authentication.html) page for login instructions.
+   <span class="bridge-filter" bridges="all" bridge-no-generic></span>
 
 [Registering appservices]: ../../general/registering-appservices.md
 
