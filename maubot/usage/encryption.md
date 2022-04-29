@@ -24,7 +24,7 @@ pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projec
 To install python-olm on macOS, you can use libolm from homebrew like this:
 ```
 brew install libolm
-pip3 install python-olm --global-option="build_ext" --global-option="--include-dirs=/opt/homebrew/opt/libolm/include" --global-option="--library-dirs=/opt/homebrew/opt/libolm/lib"git st
+pip3 install python-olm --global-option="build_ext" --global-option="--include-dirs="`brew --prefix libolm`"/include" --global-option="--library-dirs="`brew --prefix libolm`"/lib"
 ```
 
 ## Getting a fresh device ID
