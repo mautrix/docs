@@ -80,6 +80,17 @@ Matrix users with the same people in their contact lists.
 
 If the bridge only has one user, then contact list names should be safe to enable.
 
+## Signal: Identity failure occurred while sending message to +phone
+This error happens if the remote user's encryption identity changed (e.g. if
+they reinstalled Signal). In groups, it usually means one or more of the
+participants changed devices, but the message was still sent to everyone else.
+
+To solve it, you can either use `!signal safety-number +phone` and then copy
+the safety number to the `mark-trusted` command, or you can run signald with
+the `--trust-new-keys` and `--trust-all-keys-on-start` CLI options to have it
+automatically trust new key. See <https://signald.org/articles/config/> for
+more info on those options.
+
 ## `pip` failed building wheel for python-olm
 
 #### `fatal error: olm/olm.h: no such file or directory`
