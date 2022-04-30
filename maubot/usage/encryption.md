@@ -21,6 +21,12 @@ work at all.
 pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projects/27/packages/pypi/simple
 ```
 
+To install python-olm on macOS, you can use libolm from homebrew like this:
+```
+brew install libolm
+pip3 install python-olm --global-option="build_ext" --global-option="--include-dirs="`brew --prefix libolm`"/include" --global-option="--library-dirs="`brew --prefix libolm`"/lib"
+```
+
 ## Getting a fresh device ID
 When using maubot with encryption, you must have an access token and a device ID
 that haven't been used in an e2ee-capable client. In other words, you can't take
