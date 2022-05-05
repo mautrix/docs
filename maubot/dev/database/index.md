@@ -11,12 +11,12 @@ Update `maubot.yaml` to tell the server that your plugin wants a database:
 
 ```yaml
 database: true
-database_mode: asyncpg
+database_type: asyncpg
 ```
 
 The database connector will be provided in the `database` property. The type is
 `mautrix.util.async_db.Database`, which emulates asyncpg's pool interface.
-For legacy plugins (with `database_mode` unset or set to `sqlalchemy`), the
+For legacy plugins (with `database_type` unset or set to `sqlalchemy`), the
 `database` property contains an SQLAlchemy engine.
 
 For details on the methods available in the `Database` class,
