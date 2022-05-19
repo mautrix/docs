@@ -5,12 +5,21 @@
 <p class="bridge-filter" bridges="signal" bridge-no-generic>
   <strong>The Signal bridge requires a second docker container for signald.
   Instructions for setting up everything can be found on the
-  <a href="../signal/setup-docker.md">Signal-specific Bridge setup with Docker page</a></strong>
+  <a href="../python/signal/docker-setup.md">Signal-specific Bridge setup with Docker page</a></strong>
 </p>
+
+This page contains instructions for setting up the bridge in Docker. To set up
+the bridge outside of Docker, see the language-specific instructions:
+[Python](../python/setup.md), [Go](../go/setup.md)
+(to find out which bridge language the bridge you want is written in, check
+the sidebar to see which section it's under).
 
 ## Requirements
 * Docker
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse))
+  You need access to register an appservice, which usually involves editing the homeserver config file.
+* <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
+  A WhatsApp client running on a phone or in an emulated Android VM.
 
 ## Setup
 Docker images are hosted on dock.mau.dev. Available docker tags are generally
@@ -48,7 +57,7 @@ arm64 images.
    expose the correct port with `-p $bridgeport:$bridgeport` (when the
    homeserver is outside Docker).
 
-[Registering appservices]: ../../general/registering-appservices.md
+[Registering appservices]: ./registering-appservices.md
 
 ## Upgrading
 1. Pull the new version (setup step 1)

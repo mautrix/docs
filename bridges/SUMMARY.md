@@ -8,11 +8,10 @@
 - [End-to-bridge encryption](./general/end-to-bridge-encryption.md)
 - [Double puppeting](./general/double-puppeting.md)
 - [Relay mode](./general/relay-mode.md)
+- [Bridge setup with Docker](./general/docker-setup.md)
 
 # Python-based bridges
-- [Bridge setup](./python/setup/index.md)
-  - [with Docker](./python/setup/docker.md)
-  - [with systemd](./python/setup/systemd.md)
+- [Bridge setup](./python/setup.md)
 - [Optional dependencies](./python/optional-dependencies.md)
 - [Manhole](./python/manhole.md)
 ---
@@ -33,15 +32,14 @@
   - [Authentication](./python/twitter/authentication.md)
 - [mautrix-signal](./python/signal/index.md)
   - [Authentication](./python/signal/authentication.md)
-  - [Bridge setup with Docker](./python/signal/setup-docker.md)
+  - [Bridge setup with Docker](./python/signal/docker-setup.md)
 - [mautrix-instagram](./python/instagram/index.md)
   - [Authentication](./python/instagram/authentication.md)
 
 # Go-based bridges
+- [Bridge setup](./go/setup.md)
+---
 - [mautrix-whatsapp](./go/whatsapp/index.md)
-  - [Bridge setup](./go/whatsapp/setup/index.md)
-    - [with Docker](./go/whatsapp/setup/docker.md)
-    - [with systemd](./go/whatsapp/setup/systemd.md)
   - [Android VM setup](./go/whatsapp/android-vm-setup.md)
   - [Authentication](./go/whatsapp/authentication.md)
   - [DBMS migration](./go/whatsapp/database-migration.md)

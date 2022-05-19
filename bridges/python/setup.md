@@ -1,16 +1,16 @@
-# Bridge setup
+# Python bridge setup
 
 {{ #include ../selector.html }}
 
 This page contains instructions for setting up the bridge in a virtualenv.
 You may also want to look at other ways to run the bridge:
 
-* [Docker](./docker.md)
+* [Docker](../general/docker-setup.md)
 * <span class="bridge-filter" bridges="telegram,signal,facebook"></span> YunoHost:
   <a href="https://github.com/YunoHost-Apps/mautrix_telegram_ynh">mautrix_telegram_ynh<span class="bridge-filter" bridges="telegram">,</span></a>
   <a href="https://github.com/YunoHost-Apps/mautrix_signal_ynh">mautrix_signal_ynh<span class="bridge-filter" bridges="signal">,</span></a>
   <a href="https://github.com/YunoHost-Apps/mautrix_facebook_ynh">mautrix_facebook_ynh<span class="bridge-filter" bridges="facebook"></span></a>
-* [systemd service](./systemd.md)
+* [systemd service](#systemd-service) (at the bottom of this page)
 
 Please note that everything in these docs are meant for server admins who want
 to self-host the bridge. If you're just looking to use the bridges, check out
@@ -25,7 +25,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 * A PostgreSQL server, v10 or higher (which you should already have for Synapse).
   * Make sure you don't share databases between unrelated programs.
     Shared postgres instance is fine, but shared database is not.
-* If installing optional dependencies, see the [optional dependencies](../optional-dependencies.md) page.
+* If installing optional dependencies, see the [optional dependencies](./optional-dependencies.md) page.
 * <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
   Telegram app ID and hash (get from [my.telegram.org](https://my.telegram.org/apps)).
 * <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
@@ -47,7 +47,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 2. Install the bridge with `pip install --upgrade mautrix-$bridge[all]`
    * `[all]` at the end will install all optional dependencies. **This includes
      end-to-bridge encryption, which requires libolm3.** See the
-     [optional dependencies page](../optional-dependencies.md) for more info.
+     [optional dependencies page](./optional-dependencies.md) for more info.
    * If you want the master branch instead of a release, use
      `pip install --upgrade git+https://github.com/mautrix/$bridge.git#egg=mautrix-$bridge[all]`.
 3. Copy `example-config.yaml` to `config.yaml`.
@@ -62,7 +62,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge `python -m mautrix_$bridge`.
 
-[Registering appservices]: ../../general/registering-appservices.md
+[Registering appservices]: ../general/registering-appservices.md
 
 ### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).
@@ -76,7 +76,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 2. Install dependencies with `pip install --upgrade -r requirements.txt`
    * Optionally, add `-r optional-requirements.txt` to install optional
      dependencies. Some of the optional dependencies may need additional native
-     packages. See the [optional dependencies page](../optional-dependencies.md)
+     packages. See the [optional dependencies page](./optional-dependencies.md)
      for more info.
 3. Continue from step #3 of production setup.
 4. For linting: `pip install -r dev-requirements.txt` to install Black, isort
@@ -88,3 +88,26 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 0. Make sure you're in the virtualenv (`source .venv/bin/activate`).
 1. Pull changes from Git.
 2. Run the dependency install command again (install step #2).
+
+## systemd service
+1. Create a user for the bridge:
+   ```shell
+   $ sudo adduser --system mautrix-$bridge --home /opt/mautrix-$bridge
+   ```
+2. Follow the [production setup instructions](#production-setup) above.
+   Make sure you use that user and home directory for the bridge.
+4. Create a systemd service file at `/etc/systemd/system/mautrix-$bridge.service`:
+   ```ini
+   [Unit]
+   Description=mautrix-$bridge bridge
+
+   [Service]
+   # N.B. If you didn't create a user with the correct home directory, set this
+   #      to the directory where config.yaml is (e.g. /opt/mautrix-$bridge).
+   WorkingDirectory=~
+   ExecStart=/opt/mautrix-$bridge/bin/python -m mautrix_$bridge
+   User=mautrix-$bridge
+
+   [Install]
+   WantedBy=multi-user.target
+   ```

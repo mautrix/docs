@@ -14,7 +14,7 @@ build-dir = "../dist/bridges"
 [output.html]
 git-repository-url = "https://github.com/mautrix/docs"
 git-repository-icon = "fa-github"
-additional-js = ["./python/bridge-selector.js"]
+additional-js = ["./bridge-selector.js"]
 additional-css = ["additional.css"]
 theme = "../theme/bridges"
 
@@ -22,6 +22,12 @@ theme = "../theme/bridges"
 "/go/imessage/setup.html" = "./mac/setup.html"
 "/go/whatsapp/relaybot.html" = "../../general/relay-mode.html"
 "/python/signal/relay-mode.html" = "../../general/relay-mode.html"
+"/go/whatsapp/setup/index.html" = "../../setup.html?bridge=whatsapp"
+"/go/whatsapp/setup/systemd.html" = "../../setup.html?bridge=whatsapp#systemd-service"
+"/go/whatsapp/setup/docker.html" = "../../../general/docker-setup.html?bridge=whatsapp"
+"/python/setup/docker.html" = "../../general/docker-setup.html"
+"/python/setup/systemd.html" = "../setup.html#systemd-service"
+"/python/setup/index.html" = "../setup.html"
 
 [output.linkcheck]
 optional = true
