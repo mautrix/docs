@@ -18,7 +18,7 @@ master:
 staging:
   <<: *deploy
   variables:
-    TARGET: /srv/web/docs.mau.fi/staging/$CI_BRANCH_NAME
+    TARGET: /srv/web/docs.mau.fi/staging/$CI_COMMIT_REF_NAME
   before_script:
   - mkdir -p $TARGET
   except:
