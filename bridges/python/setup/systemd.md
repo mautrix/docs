@@ -20,6 +20,25 @@
    ExecStart=/opt/mautrix-$bridge/bin/python -m mautrix_$bridge
    User=mautrix-$bridge
 
+   # Hardening
+   CapabilityBoundingSet = [ "" ];
+   LockPersonality = true;
+   PrivateTmp = true;
+   ProcSubset = "pid";
+   ProtectClock = true;
+   ProtectControlGroups = true;
+   ProtectHome = true;
+   ProtectHostname = true;
+   ProtectKernelLogs = true;
+   ProtectKernelModules = true;
+   ProtectKernelTunables = true;
+   ProtectProc = "invisible";
+   ProtectSystem = "strict";
+   RestrictNamespaces = true;
+   RestrictRealtime = true;
+   RestrictSUIDSGID = true;
+   SystemCallArchitectures = "native";
+
    [Install]
    WantedBy=multi-user.target
    ```
