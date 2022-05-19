@@ -1,11 +1,25 @@
-deploy:
+.deploy: &deploy
   image: dock.mau.dev/tulir/docker-mdbook
   tags: [webdeploy]
   script:
-  - rsync -rcthvl bookshelf/ /srv/web/docs.mau.fi/
-  - rsync -rcthvl python/ /srv/web/docs.mau.fi/python/
-  - mdbook build bridges && rsync -rcthvl --delete dist/bridges/html/ /srv/web/docs.mau.fi/bridges/
-  - mdbook build maubot && rsync -rcthvl --delete dist/maubot/html/ /srv/web/docs.mau.fi/maubot/
-  - mdbook build gomuks && rsync -rcthvl --delete dist/gomuks/html/ /srv/web/docs.mau.fi/gomuks/
+  - rsync -rcthvl bookshelf/ $TARGET/
+  - rsync -rcthvl python/ $TARGET/python/
+  - mdbook build bridges && rsync -rcthvl --delete dist/bridges/html/ $TARGET/bridges/
+  - mdbook build maubot && rsync -rcthvl --delete dist/maubot/html/ $TARGET/maubot/
+  - mdbook build gomuks && rsync -rcthvl --delete dist/gomuks/html/ $TARGET/gomuks/
+
+master:
+  <<: *deploy
+  variables:
+    TARGET: /srv/web/docs.mau.fi
   only:
+  - master
+
+staging:
+  <<: *deploy
+  variables:
+    TARGET: /srv/web/docs.mau.fi/staging/$CI_COMMIT_REF_NAME
+  before_script:
+  - mkdir -p $TARGET
+  except:
   - master
