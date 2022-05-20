@@ -34,7 +34,7 @@ You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI or [GitHub releases](https://github.com/mautrix/whatsapp/releases).
 
 ### Compiling manually
-1. Clone the repo with `git clone https://github.com/mautrix/$bridge.git`
+1. Clone the repo with `git clone https://github.com/mautrix/$bridge.git mautrix-$bridge`
 2. Enter the directory (`cd mautrix-$bridge`)
 3. Run `./build.sh` to fetch Go dependencies and compile
    ([`build.sh`] will simply call `go build` with some additional flags).
