@@ -43,6 +43,8 @@
   - [Android VM setup](./go/whatsapp/android-vm-setup.md)
   - [Authentication](./go/whatsapp/authentication.md)
   - [DBMS migration](./go/whatsapp/database-migration.md)
+- [mautrix-discord](./go/discord/index.md)
+  - [Authentication](./go/discord/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
   - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)
