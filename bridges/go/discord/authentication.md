@@ -6,7 +6,10 @@
    * After scanning the code, you'll need to approve the login on the mobile app.
      See the [official docs] for more info.
    * The app can be uninstalled afterwards.
-3. Finally, the bot should inform you of a successful login and the bridge
-   should start creating portal rooms.
+3. Finally, the bot should inform you of a successful login.
+
+Portal rooms are currently not created immediately. DM portals should be
+created when you receive messages, and guild portals can be created using
+`!discord guilds` commands.
 
 [official docs]: https://support.discord.com/hc/en-us/articles/360039213771-QR-Code-Login-FAQ
