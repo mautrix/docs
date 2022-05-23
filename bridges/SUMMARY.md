@@ -45,6 +45,7 @@
   - [DBMS migration](./go/whatsapp/database-migration.md)
 - [mautrix-discord](./go/discord/index.md)
   - [Authentication](./go/discord/authentication.md)
+- [mautrix-slack](./go/slack/index.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
   - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)
