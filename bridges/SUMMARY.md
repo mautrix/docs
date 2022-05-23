@@ -42,7 +42,6 @@
 - [mautrix-whatsapp](./go/whatsapp/index.md)
   - [Android VM setup](./go/whatsapp/android-vm-setup.md)
   - [Authentication](./go/whatsapp/authentication.md)
-  - [DBMS migration](./go/whatsapp/database-migration.md)
 - [mautrix-discord](./go/discord/index.md)
   - [Authentication](./go/discord/authentication.md)
 - [mautrix-slack](./go/slack/index.md)
