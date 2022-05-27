@@ -25,7 +25,7 @@ header and drop your `.mbp` file in the upload box.
 To create a client, click the `+` button next to the "Clients" header and fill
 in the form.
 
-* The homeserver dropdown gets values from the `registration_secrets` section,
+* The homeserver dropdown gets values from the config's `homeservers` section,
   but you can also type a full URL in that box.
 * The avatar URL can be left empty, you can upload an image after creating the
   client.
