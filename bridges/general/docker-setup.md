@@ -2,10 +2,19 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="signal" bridge-no-generic>
+<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
   <strong>The Signal bridge requires a second docker container for signald.
   Instructions for setting up everything can be found on the
   <a href="../python/signal/docker-setup.md">Signal-specific Bridge setup with Docker page</a></strong>
+</p>
+<p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
+  <strong>The Slack bridge is not yet ready for general use. Please check back later.</strong>
+</p>
+<p class="bridge-filter" bridges="discord" bridge-no-generic style="display: none">
+  <strong>
+    The Discord bridge should be mostly functional, but it is still in
+    early development and therefore will have bugs and may get breaking changes.
+  </strong>
 </p>
 
 This page contains instructions for setting up the bridge in Docker. To set up

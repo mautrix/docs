@@ -2,6 +2,16 @@
 
 {{ #include ../selector.html }}
 
+<p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
+  <strong>The Slack bridge is not yet ready for general use. Please check back later.</strong>
+</p>
+<p class="bridge-filter" bridges="discord" bridge-no-generic style="display: none">
+  <strong>
+    The Discord bridge should be mostly functional, but it is still in
+    early development and therefore will have bugs and may get breaking changes.
+  </strong>
+</p>
+
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
 the bridge:
