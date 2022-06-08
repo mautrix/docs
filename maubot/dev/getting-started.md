@@ -56,7 +56,7 @@ With the maubot.yaml meta file above and this Python file saved as
 plugins, you can either use `mbc build` or just zip it yourself
 (`zip -9r plugin.mbp *` in the directory with `maubot.yaml`). After you have
 the `.mbp` file, upload it to your maubot instance (see [Basic usage]), then try
-to use the `!hello_world` command.
+to use the `!hello-world` command.
 
 If you make any changes, you can use [`mbc build --upload`] to build and upload
 the plugin directly to the server. Any plugin instances will be reloaded
