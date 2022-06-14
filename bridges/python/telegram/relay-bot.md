@@ -19,7 +19,7 @@ chat with Telegram users.
 
 If the room was created by the bridge and you don't have invite permissions,
 you can either use `!tg set-pl` to give yourself permissions, or
-`!invite <mxid>` to invite users through the bridge bot.
+`/invite <mxid>` (on Telegram) to invite users through the bridge bot.
 
 [create a new bot on Telegram]: https://core.telegram.org/bots
 [@BotFather]: https://t.me/BotFather
