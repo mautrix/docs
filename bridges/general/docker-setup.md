@@ -54,6 +54,8 @@ arm64 images.
      (unless using `network=host` mode). Usually you should have the bridge and
      homeserver in the same Docker network, and use the container names as
      addresses (e.g. `http://mautrix-$bridge:$bridgeport` and `http://synapse:8008`).
+    * Make sure you don't share databases between unrelated programs.
+      Shared postgres instance is fine, but shared database is not.
 4. Generate the appservice registration by running the container again, same
    command as above.
 5. Register the bridge on your homeserver (see [Registering appservices]).
