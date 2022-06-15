@@ -112,11 +112,24 @@ python3-dev is required.
 #### `error: command 'gcc' failed: No such file or directory`
 build-essential is required.
 
-## `[CRITICAL@mau.init] Configuration error: <field> not configured`
+## Configuration error: `<field>` not configured
 You didn't change the value of `<field>` in the config, but that field must be
 configured for the bridge to work (i.e. the default value will not work). Dots
 in `<field>` mean nesting, e.g. `bridge.permissions` means the `permissions`
 field inside the `bridge` object.
+
+## ForeignTablesFound: The database contains foreign tables
+As mentioned in the setup page, you should not share a single Postgres database
+between unrelated programs.
+
+You can create a separate database either using the `createdb` shell command
+that is usually included with Postgres, or the `CREATE DATABASE` SQL statement.
+
+For existing installations, you can use the flag suggested in the error message
+and hope that there are no table name conflicts in the future. To use the flag
+in Docker, you'll have to override the startup command, either with a copy of
+the `docker-run.sh` script (which can be found in the bridge repo), or just
+the startup command (`python3 -m mautrix_$bridge -c /data/config.yaml --flags`).
 
 ## The `as_token` was not accepted
 This error means you either:
