@@ -32,7 +32,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   A WhatsApp client running on a phone or in an emulated Android VM.
-* Recommended: A PostgreSQL server, v10 or higher (which you should already have for Synapse).
+* A PostgreSQL server, v10 or higher (which you should already have for Synapse).
   * Make sure you don't share databases between unrelated programs.
     Shared postgres instance is fine, but shared database is not.
 * ffmpeg (if you want to send gifs from Matrix).
