@@ -71,9 +71,8 @@ from the mau.dev CI or [GitHub releases](https://github.com/mautrix/whatsapp/rel
 ## Configuring and running
 1. Copy `example-config.yaml` to `config.yaml`
 2. Update the config to your liking.
-   * You need to make sure that the `address` and `domain` field point to your
-     homeserver.
-   * You will also need to add your user under the `permissions` section.
+   * You'll at least need to update the `address` and `domain` in the homeserver
+     section, the database address, and the `permissions` section.
 3. Generate the appservice registration file by running `./mautrix-$bridge -g`.
    * You can use the `-c` and `-r` flags to change the location of the config
      and registration files. They default to `config.yaml` and
