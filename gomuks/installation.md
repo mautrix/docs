@@ -39,3 +39,11 @@ you've made a new distro package, please add it to the list below.
    instead of the current directory)
 
 Simply pull changes (`git pull`) and run `go build` again to update.
+
+### Common compilation issues
+* `fatal error: olm/olm.h: No such file or directory` means you forgot to install libolm-dev.
+* `fatal error: olm/pk.h: No such file or directory` means you installed libolm2 instead of libolm3.
+* `cgo: C compiler "gcc" not found: exec: "gcc": executable file not found in $PATH` means you forgot to install C/C++ compilers.
+* `//go:build comment without // +build comment` means your Go version is slightly outdated.
+* `cannot load embed: malformed module path "embed"` or `package embed is not in GOROOT` means your Go version is very outdated.
+* `cannot find package "maunium.net/go/gomuks/..." in any of:` usually means your Go version is extremely outdated.
