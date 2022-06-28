@@ -35,13 +35,17 @@ you've made a new distro package, please add it to the list below.
      (3.x required, 2.x won't work) and C/C++ compilers.
    * If you don't want encryption, disable CGO with `export CGO_ENABLED=0`.
 1. Clone the repo: `git clone https://github.com/tulir/gomuks.git && cd gomuks`
-2. Build: `go build` (alternatively, use `go install` to build to `$GOPATH/bin`
-   instead of the current directory)
+2. Build: `./build.sh`
+   ([build.sh] will simply call go build with some additional flags).
 
+[build.sh]: https://github.com/tulir/gomuks/blob/master/build.sh
 Simply pull changes (`git pull`) and run `go build` again to update.
 
 ### Common compilation issues
-* `fatal error: olm/olm.h: No such file or directory` means you forgot to install libolm-dev.
+* `fatal error: olm/olm.h: No such file or directory` means you forgot to install libolm-dev,
+  or that you installed it in a weird place which isn't in your default library lookup path.
+  * In the latter case, set the `LIBRARY_PATH` and `CPATH` environment variables,
+    e.g. `export LIBRARY_PATH=/usr/local/lib CPATH=/usr/local/include`.
 * `fatal error: olm/pk.h: No such file or directory` means you installed libolm2 instead of libolm3.
 * `cgo: C compiler "gcc" not found: exec: "gcc": executable file not found in $PATH` means you forgot to install C/C++ compilers.
 * `//go:build comment without // +build comment` means your Go version is slightly outdated.
