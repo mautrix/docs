@@ -10,8 +10,9 @@ different ways to connect to iMessage:
 * Mac with SIP disabled. Uses [Barcelona] to hook into Apple's private iMessage
   frameworks on a Mac. Requires disabling SIP and AMFI to be able to hook into
   private frameworks.
-* Jailbroken iOS. Uses [Brooklyn] to hook into Apple's private iMessage
-  frameworks on a jailbroken iOS device.
+* ~~Jailbroken iOS. Uses [Brooklyn] to hook into Apple's private iMessage
+  frameworks on a jailbroken iOS device.~~ 32-bit support has been deprecated,
+  Barcelona can be used on newer iOS devices.
 * Additionally, there's [android-sms], an Android app that implements the same
   [IPC protocol] as Brooklyn and Barcelona to bridge SMS from an Android phone.
 
