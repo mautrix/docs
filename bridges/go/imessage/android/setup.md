@@ -27,9 +27,11 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 
 ### Compiling manually
 1. Install the latest Android SDK and NDK version 21.3.6528147.
-2. Clone the android-sms repo. Use `--recursive` when cloning or
-   `git submodule init && git submodule update` after cloning to ensure that
-   the mautrix-imessage submodule is present.
+2. Clone the android-sms repo
+   * The main branch doesn't currently work as a standalone app, so use the
+     `0.1.89` tag.
+   * Use `--recursive` when cloning or `git submodule init && git submodule update`
+     after cloning to ensure that the mautrix-imessage submodule is present.
 3. Run `./mautrix.sh` to compile mautrix-imessage for Android.
 4. Put your `config.yaml` in `app/src/main/assets/` (create the directory
    if it doesn't exist).
