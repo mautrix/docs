@@ -44,7 +44,7 @@ arm64 images.
    Replace `<version>` with the version you want to run (e.g. `latest` or `v0.6.0`).
 2. Run the container for the first time, so it can create a config file for you:
    ```
-   docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
+   docker run --rm --env UID=$(id -u) --env GID=$(id -g) -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
 3. Update the config to your liking. You'll at least need to change the
    homeserver settings, appservice address, database address and bridge
