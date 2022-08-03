@@ -13,7 +13,7 @@ You'll need a working Android SDK. You can use the
 Currently the Android SDK appears to only work with OpenJDK8 (not 11), which
 will need to be installed.
 
-WhatsApp in the in the Android VM will need to scan a QR-code via webcam. We can
+WhatsApp in the Android VM will need to scan a QR-code via webcam. We can
 do this by passing the emulator a real webcam (which needs to be able to see the
 emulator screen) or a virtual one (e.g. [v4l2loopback](https://github.com/umlaeute/v4l2loopback)).
 
