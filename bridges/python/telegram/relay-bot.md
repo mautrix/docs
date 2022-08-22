@@ -7,8 +7,11 @@ chat with Telegram users.
 
 ## Setup
 0. If you haven't yet, [create a new bot on Telegram] by chatting with
-   [@BotFather]. Make sure you disable [privacy mode] using BotFather's
-   `/setprivacy` command in order to allow the bot to read messages in groups.
+   [@BotFather].
+   * Make sure you disable [privacy mode] using BotFather's `/setprivacy`
+     command in order to allow the bot to read messages in groups.
+   * If you added the bot to a group before disabling privacy mode, you'll have
+     to remove the bot and re-add it to apply the change.
 1. Configure the bridge to use the bot you created by setting the token you got
    from BotFather in the `telegram` → `bot_token` field in the bridge's config.
 2. Restart the bridge and check status with the `!tg ping-bot` command on Matrix.
