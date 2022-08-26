@@ -59,7 +59,7 @@ empty strings `join`, `leave` and `name_change`.
 | **/invite** \[_mxid_] | Invite a Matrix user to the portal room.                      |
 | **/portal**           | Create the portal if it does not exist and get the join info. |
 | **/id**               | Get the prefixed ID of the chat that can be used with `!tg bridge` and `!tg filter` in Matrix |
-| **/mxban**            | Ban a Matrix relaybot user. Must reply to a relaybot message. |
+| **/mxban**            | Ban a relayed Matrix user. Must reply to a relaybot message.  |
 | **/mxkick**           | Same as mxban, but for kicking                                |
 
 If you have your own Telegram bot for the bridge, you can copy this to the
@@ -69,6 +69,6 @@ If you have your own Telegram bot for the bridge, you can copy this to the
 invite - Invite a Matrix user to the portal room.
 portal - Create the portal if it does not exist and get the join info.
 id - Get the prefixed ID of the chat that can be used with `!tg bridge` and `!tg filter` in Matrix
-mxban - Ban a Matrix relaybot user. Must reply to a relaybot message.
-mxkick - Kick a Matrix relaybot user. Must reply to a relaybot message.
+mxban - Ban a relayed Matrix user. Must reply to a relaybot message.
+mxkick - Kick a relayed Matrix user. Must reply to a relaybot message.
 ```
