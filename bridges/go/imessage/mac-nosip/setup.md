@@ -49,7 +49,7 @@ on a Mac that you won't use for anything else.
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list and choose "build universal".
 3. Extract the downloaded zip file into a new directory.
-4. Download `darwin-barcelona-mautrix` from <https://jank.crap.studio/job/barcelona/job/mautrix/>.
+4. Download `darwin-barcelona-mautrix` from <https://jank.crap.studio/job/barcelona/job/main/>.
 
 ### Disabling SIP and AMFI
 **Disabling SIP and AMFI will make your Mac significantly less secure.**
