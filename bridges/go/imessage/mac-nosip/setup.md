@@ -78,6 +78,9 @@ You can also refer to Apple's [official documentation on disabling SIP](https://
 3. In the `imessage` section of the config, change `platform` to `mac-nosip`
    and set `imessage_rest_path` to the path to the `darwin-barcelona-mautrix`
    executable you downloaded or compiled.
-4. Run the bridge with `./mautrix-imessage`.
+4. If you want messages sent directly from iMessage to be replicated on Matrix (have the puppet work), you'll need to set up the [shared secret] plugin for Synapse (there may exist other ways to do this using `login-matrix` but the iMessage bridge doesn't seem to support this at the moment). Once you generate a shared secret, use the same secret in the `login_shared_secret` section in the `bridge` section of `config.yaml`. It's worth noting the `m_login_password_setup_enabled` should be `true` when setting up the shared secret plugin.
+5. If you'd like to enable read receipts to be sent from Matrix to iMessage after you've set up the puppet, set the `delivery_receipts` in the `bridge` section to `true`. If you'd like to enable typing indicators from Matrix to iMessaage, you should set `sync_with_custom_puppets` to `true` in the `bridge` section.
+6. Run the bridge with `./mautrix-imessage`.
 
 [com.apple.security.xpc.plist]: https://github.com/open-imcore/barcelona/blob/mautrix/com.apple.security.xpc.plist
+[shared secret]: https://github.com/devture/matrix-synapse-shared-secret-auth
