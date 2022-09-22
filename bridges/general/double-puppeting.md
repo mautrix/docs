@@ -44,6 +44,9 @@ currently support any commands.
    ```
    You may want to change the `initial_device_display_name` field to something
    more descriptive, or rename it from another client after logging in.
+   * In the past, getting a token from an existing client like Element was the
+     recommended easy way. However, multiple clients using the same token can
+     cause issues with encryption, so doing that is no longer allowed.
 2. Send `login-matrix <access token>` to the bridge bot. For the Telegram
    bridge, send `login-matrix` without the access token, then send the access
    token in a separate message.
