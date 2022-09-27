@@ -39,6 +39,8 @@ Minimum bridge versions that support the relay system documented above.
 | Google Chat | not yet supported  |
 | Twitter     | not yet supported  |
 | iMessage    | †0.1.0/[3df789e2]  |
+| Discord     | not yet supported (will likely use different system) |
+| Slack       | not yet supported (will likely use different system) |
 
 † iMessage doesn't require `set-relay`, relay mode is enabled in all chats
   automatically if enabled in the config. The `permissions` section is replaced
