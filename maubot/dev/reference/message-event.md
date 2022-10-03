@@ -4,7 +4,6 @@ These methods are available in maubot's `MessageEvent` class.
 
 * `relates_to` - A property containing the event's `m.relates_to` data wrapped
   in a `RelatesTo` object.
-* `get_reply_to() -> EventID` - Get the event ID the command is replying to.
 * `get_edit() -> EventID` - Get the event ID the command is editing.
 * `async react(key: str) -> EventID` - React to the command with the given key.
   The key can be arbitrary unicode text, but usually reactions are emojis.
@@ -53,6 +52,7 @@ they're a part of the Matrix spec.
 
 * `body` - The plaintext body.
 * `msgtype` - The message type as a `MessageType` enum instance.
+* `get_reply_to() -> EventID` - Get the event ID the command is replying to.
 
 For `m.text`, `m.notice` and `m.emote` (`TextMessageEventContent`):
 
