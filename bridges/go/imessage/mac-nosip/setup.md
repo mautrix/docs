@@ -25,14 +25,14 @@ to iMessage and mautrix-imessage for connecting to Matrix. mautrix-imessage
 will run Barcelona as a subprocess and they communicate over stdio.
 
 You may either compile the bridge and Barcelona manually, or download prebuilt
-executables from the mau.dev and jank.crap.studio CIs.
+executables from the mau.dev CI and GitHub actions respectively.
 
 Because Barcelona hooks into Apple's private APIs, you must disable SIP (System
 Integrity Protection) and AMFI (Apple Mobile File Integrity) on the Mac for it
 to work. Disabling SIP will make your Mac less secure, so you should only do it
 on a Mac that you won't use for anything else.
 
-[Barcelona]: https://github.com/open-imcore/barcelona
+[Barcelona]: https://github.com/beeper/barcelona
 
 ### Compiling manually
 1. Clone the repo with `git clone https://github.com/mautrix/imessage.git`.
@@ -42,14 +42,15 @@ on a Mac that you won't use for anything else.
    will simply call `go build` with some additional flags).
 4. Refer to the [Barcelona build instructions] for building Barcelona.
 
-[Barcelona build instructions]: https://github.com/open-imcore/barcelona/blob/mautrix/BUILDING.md
+[Barcelona build instructions]: https://github.com/beeper/barcelona/blob/mautrix/BUILDING.md
 
 ### Downloading prebuilt executables
 1. Go to <https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list and choose "build universal".
 3. Extract the downloaded zip file into a new directory.
-4. Download `darwin-barcelona-mautrix` from <https://jank.crap.studio/job/barcelona/job/mautrix/>.
+4. Download `darwin-barcelona-mautrix` from <https://github.com/beeper/barcelona/actions>
+   ([latest direct download](https://nightly.link/beeper/barcelona/workflows/build/main/darwin-barcelona-mautrix.zip)).
 
 ### Disabling SIP and AMFI
 **Disabling SIP and AMFI will make your Mac significantly less secure.**
@@ -80,4 +81,4 @@ You can also refer to Apple's [official documentation on disabling SIP](https://
    executable you downloaded or compiled.
 4. Run the bridge with `./mautrix-imessage`.
 
-[com.apple.security.xpc.plist]: https://github.com/open-imcore/barcelona/blob/mautrix/com.apple.security.xpc.plist
+[com.apple.security.xpc.plist]: https://github.com/beeper/barcelona/blob/mautrix/com.apple.security.xpc.plist
