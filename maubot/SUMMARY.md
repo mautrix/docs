@@ -8,6 +8,7 @@
 - [Basic usage](./usage/basic.md)
 - [Encryption](./usage/encryption.md)
 - [maubot cli](./usage/cli/index.md)
+  - [mbc login](./usage/cli/login.md)
   - [mbc auth](./usage/cli/auth.md)
   - [mbc build](./usage/cli/build.md)
 - [Management API](./management-api.md)
