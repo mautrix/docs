@@ -27,6 +27,8 @@ in the form.
 
 * The homeserver dropdown gets values from the config's `homeservers` section,
   but you can also type a full URL in that box.
+* The access token and device ID can be generated using the `mbc auth` command
+  as [documented here](https://docs.mau.fi/maubot/usage/cli/auth.html).
 * The avatar URL can be left empty, you can upload an image after creating the
   client.
 * Both the display name and avatar URL can be set to `disable` if you don't want
