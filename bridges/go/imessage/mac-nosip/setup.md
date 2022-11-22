@@ -57,16 +57,16 @@ on a Mac that you won't use for anything else.
 
 1. Boot into recovery mode (hold Command+R while booting) and open a terminal
 2. Run `csrutil disable` to disable SIP
-3. Run `nvram boot-args="amfi_get_out_of_my_way=0x1"` to disable AMFI
+3. Run `nvram boot-args="amfi_get_out_of_my_way=0x1 ipc_control_port_options=0"` to disable AMFI while ensuring that the rest of your system continues to work correctly
 
 If you are running macOS in a VM (e.g. through [OSX-KVM]) you may need to
 disable AMFI with a boot option. Assuming you are using OSX-KVM and OpenCore,
 open the `config.plist` (in `EFI/OC/config.plist`) and change the key
-`boot-args` to add `amfi_get_out_of_my_way=0x1` example:
+`boot-args` to add `amfi_get_out_of_my_way=0x1` and `ipc_control_port_options=0` example:
 
 ```
 <key>boot-args</key>
-<string>-v keepsyms=1 tlbto_us=0 vti=9 amfi_get_out_of_my_way=0x1</string>
+<string>-v keepsyms=1 tlbto_us=0 vti=9 amfi_get_out_of_my_way=0x1 ipc_control_port_options=0</string>
 ```
 
 You can also refer to Apple's [official documentation on disabling SIP](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection).
