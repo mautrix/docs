@@ -58,11 +58,14 @@ on a Mac that you won't use for anything else.
 1. Boot into recovery mode (hold Command+R while booting) and open a terminal
 2. Run `csrutil disable` to disable SIP
 3. Run `nvram boot-args="amfi_get_out_of_my_way=0x1"` to disable AMFI
+   * If you run other things like Electron apps on the Mac (which you definitely
+     should not), you may want to add `ipc_control_port_options=0` to prevent
+     those from breaking.
 
 If you are running macOS in a VM (e.g. through [OSX-KVM]) you may need to
 disable AMFI with a boot option. Assuming you are using OSX-KVM and OpenCore,
 open the `config.plist` (in `EFI/OC/config.plist`) and change the key
-`boot-args` to add `amfi_get_out_of_my_way=0x1` example:
+`boot-args` to add `amfi_get_out_of_my_way=0x1`:
 
 ```
 <key>boot-args</key>
