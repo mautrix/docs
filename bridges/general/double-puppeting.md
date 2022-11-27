@@ -19,6 +19,10 @@ the bridge access to log in on its own. This makes the process much smoother for
 users, and removes problems if the access token getting invalidated, as the
 bridge can simply automatically relogin.
 
+This method requires administrator access to the homeserver, so it can't be used
+if your account is on someone elses server (e.g. using self-hosted bridges from
+matrix.org). In such cases, manual login is the only option.
+
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
    * Make sure you set `m_login_password_support_enabled` to `true` in the config.
 1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
