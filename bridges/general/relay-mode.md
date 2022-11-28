@@ -2,9 +2,9 @@
 Some of the bridges here support relaying messages for unauthenticated users
 through the account that another Matrix user is logged in as.
 
-0. Enable relay mode by setting `bridge` → `relay` → `enabled` to `true`.
-   Also make sure that the users you want to invite have at least the `relay`
-   level in the `permissions` section.
+0. Enable relay mode by setting `bridge` → `relay` → `enabled` to `true` in the
+   bridge config. Also make sure that the users you want to invite have at
+   least the `relay` level in the `permissions` section.
 1. Log into the bridge normally using the relaybot account.
    * If you want a separate remote account for the relaybot while using your
      own account for your own Matrix user, you should make a dedicated Matrix
