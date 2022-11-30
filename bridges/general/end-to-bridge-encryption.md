@@ -12,6 +12,13 @@ If you only set `allow: true`, the bridge won't enable encryption on its own,
 but will work in encrypted rooms. If you set `default: true`, the bridge will
 automatically enable encryption in new portals.
 
+Note that end-to-bridge encryption does not currently work on Dendrite nor
+Conduit as they don't implement the necessary parts of the spec. The critical
+missing piece is tracked in [matrix-org/dendrite#2723] and [famedly/conduit#321].
+
+[matrix-org/dendrite#2723]: https://github.com/matrix-org/dendrite/issues/2723
+[famedly/conduit#321]: https://gitlab.com/famedly/conduit/-/issues/321
+
 ## Legacy instructions
 ### Shared secret login
 Prior to mautrix-telegram v0.9.0 / mautrix-python v0.8.0, you had to configure

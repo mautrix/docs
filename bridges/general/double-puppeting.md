@@ -66,8 +66,12 @@ works for users who are on the same homeserver as the bridge, it can't be used
 with other homeservers at all (even with admin access).
 
 The benefit of this method is that [appservice login] is in the spec, so it can
-work on all homeserver implementations (caveat: as of writing, Dendrite and
-Conduit do not implement the spec).
+work on all homeserver implementations (caveat: as of writing, [Dendrite] and
+[Conduit] do not implement the spec).
+
+[appservice login]: https://spec.matrix.org/v1.5/client-server-api/#appservice-login
+[Dendrite]: https://github.com/matrix-org/dendrite/issues/2723
+[Conduit]: https://gitlab.com/famedly/conduit/-/issues/321
 
 1. Modify the registration file to add a user namespace covering all users
    in addition to the `bridge_.+` and `bridgebot` regexes. Make sure you set
@@ -93,5 +97,3 @@ Conduit do not implement the spec).
    ```
 3. The bridge will now use appservice login enable double puppeting for all
    local users when they log into the bridge.
-
-[appservice login]: https://spec.matrix.org/v1.5/client-server-api/#appservice-login
