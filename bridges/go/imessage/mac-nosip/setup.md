@@ -42,7 +42,7 @@ on a Mac that you won't use for anything else.
    will simply call `go build` with some additional flags).
 4. Refer to the [Barcelona build instructions] for building Barcelona.
 
-[Barcelona build instructions]: https://github.com/beeper/barcelona/blob/mautrix/BUILDING.md
+[Barcelona build instructions]: https://github.com/beeper/barcelona/blob/main/BUILDING.md
 
 ### Downloading prebuilt executables
 1. Go to <https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1>
