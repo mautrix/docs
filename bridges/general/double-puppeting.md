@@ -13,28 +13,6 @@ bridge config and that the registration file has the appropriate flags too
 
 [MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
 
-## Automatically
-Instead of requiring everyone to manually enable double puppeting, you can give
-the bridge access to log in on its own. This makes the process much smoother for
-users, and removes problems if the access token getting invalidated, as the
-bridge can simply automatically relogin.
-
-This method requires administrator access to the homeserver, so it can't be used
-if your account is on someone elses server (e.g. using self-hosted bridges from
-matrix.org). In such cases, manual login is the only option.
-
-0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
-   * Make sure you set `m_login_password_support_enabled` to `true` in the config.
-1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
-   config file under the correct server name.
-   * In mautrix-imessage and in past versions of other bridges, the field is
-     called `login_shared_secret`, as double puppeting was only supported for
-     local users.
-2. The bridge will now automatically enable double puppeting for all local users
-   when they log into the bridge.
-
-[matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
-
 ## Manually
 Double puppeting can only be enabled after logging into the bridge. As with
 the normal login, you must do this in a private chat with the bridge bot.
@@ -57,3 +35,63 @@ currently support any commands.
 3. After logging in, the default Matrix ghost of your remote account should
    leave rooms and your account should join all rooms the ghost was in
    automatically.
+
+## Automatically
+Instead of requiring everyone to manually enable double puppeting, you can give
+the bridge access to log in on its own. This makes the process much smoother for
+users, and removes problems if the access token getting invalidated, as the
+bridge can simply automatically relogin.
+
+This method requires administrator access to the homeserver, so it can't be used
+if your account is on someone elses server (e.g. using self-hosted bridges from
+matrix.org). In such cases, manual login is the only option.
+
+### Shared secret method
+
+0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
+   * Make sure you set `m_login_password_support_enabled` to `true` in the config.
+1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
+   config file under the correct server name.
+   * In mautrix-imessage and in past versions of other bridges, the field is
+     called `login_shared_secret`, as double puppeting was only supported for
+     local users.
+2. The bridge will now automatically enable double puppeting for all users on
+   servers with a shared secret set when they log into the bridge.
+
+[matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
+
+### Appservice method
+This is more experimental and can have other side-effects. Additionally, it only
+works for users who are on the same homeserver as the bridge, it can't be used
+with other homeservers at all (even with admin access).
+
+The benefit of this method is that [appservice login] is in the spec, so it can
+work on all homeserver implementations (caveat: as of writing, Dendrite and
+Conduit do not implement the spec).
+
+1. Modify the registration file to add a user namespace covering all users
+   in addition to the `bridge_.+` and `bridgebot` regexes. Make sure you set
+   `exclusive: false` for the new regex.
+
+   ```yaml
+   namespaces:
+     users:
+     - ...existing regexes...
+     - regex: '@.*:your\.domain'
+       exclusive: false
+   ```
+
+   Restart the homeserver after modifying the registration.
+
+2. Set the shared secret in the bridge config to `appservice`:
+   ```yaml
+   bridge:
+     ...
+     login_shared_secret_map:
+       your.domain: appservice
+     ...
+   ```
+3. The bridge will now use appservice login enable double puppeting for all
+   local users when they log into the bridge.
+
+[appservice login]: https://spec.matrix.org/v1.5/client-server-api/#appservice-login
