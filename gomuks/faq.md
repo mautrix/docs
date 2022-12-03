@@ -50,6 +50,8 @@ and will be read from there. To move existing gomuks data to a different path,
 you must change the paths in the config file.
 
 ### System-specific defaults
+These are the base directories for each OS, data will be stored in the `gomuks`
+directory inside each base directory.
 
 #### *nix
 * Config: `$XDG_CONFIG_HOME` or `$HOME/.config`
@@ -61,5 +63,5 @@ you must change the paths in the config file.
 * Cache: `$HOME/Library/Caches`
 
 #### Windows
-* Config & Data: `%AppData%/gomuks`
-* Cache: `%LocalAppData%/gomuks`
+* Config & Data: `%AppData%`
+* Cache: `%LocalAppData%`
