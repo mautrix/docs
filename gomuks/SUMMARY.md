@@ -8,6 +8,7 @@
 
 # Usage
 
+- [FAQ](./faq.md)
 - [Commands](./commands.md)
 - [Shortcuts](./shortcuts.md)
 - [Debugging](./debugging.md)
