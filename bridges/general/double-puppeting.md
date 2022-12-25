@@ -17,8 +17,7 @@ bridge config and that the registration file has the appropriate flags too
 Double puppeting can only be enabled after logging into the bridge. As with
 the normal login, you must do this in a private chat with the bridge bot.
 
-**N.B.** This method is not supported in mautrix-imessage, as it does not
-currently support any commands.
+**N.B.** This method is not currently supported in mautrix-imessage and mautrix-slack.
 
 1. Log in on the homeserver to get an access token, for example with the command
    ```shell
