@@ -22,11 +22,11 @@ The registration file is only necessary for the homeserver. None of the mautrix
 bridges will try to read it at runtime, as all the relevant information is also
 in the bridge-specific config file.
 
-The fields that are used to generate the registration file are:
+The bridge config fields that are used to generate the registration file are:
 
 * `homeserver` -> `domain`
 * `appservice` -> `address`
-* `appservice` -> `bot_username` (or `bot` -> `username` on Go bridges)
+* `appservice` -> `bot_username` (or `bot` -> `username` in Go bridges)
 * `appservice` -> `ephemeral_events`
 * `appservice` -> `id`
 * `appservice` -> `as_token`
