@@ -20,9 +20,9 @@ where it tells you to register the bridge on your homeserver.
 
 The registration file is only necessary for the homeserver. None of the mautrix
 bridges will try to read it at runtime, as all the relevant information is also
-in the bridge-specific config file.
-
-The bridge config fields that are used to generate the registration file are:
+in the bridge-specific config file. However, this also means that if you change
+certain config fields, you must regenerate the registration file (or manually
+apply the relevant changes). The config fields that affect the registration are:
 
 * `homeserver` -> `domain`
 * `appservice` -> `address`
@@ -33,9 +33,6 @@ The bridge config fields that are used to generate the registration file are:
 * `appservice` -> `hs_token`
 * `bridge` -> `username_template`
 * `bridge` -> `alias_template` (Telegram only)
-
-If you change any of the above fields in the config, you must regenerate the
-registration file or apply the equivalent changes manually.
 
 [Application Service API]: https://spec.matrix.org/v1.2/application-service-api/
 
