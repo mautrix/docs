@@ -22,6 +22,21 @@ The registration file is only necessary for the homeserver. None of the mautrix
 bridges will try to read it at runtime, as all the relevant information is also
 in the bridge-specific config file.
 
+The fields that are used to generate the registration file are:
+
+* `homeserver` -> `domain`
+* `appservice` -> `address`
+* `appservice` -> `bot_username` (or `bot` -> `username` on Go bridges)
+* `appservice` -> `ephemeral_events`
+* `appservice` -> `id`
+* `appservice` -> `as_token`
+* `appservice` -> `hs_token`
+* `bridge` -> `username_template`
+* `bridge` -> `alias_template` (Telegram only)
+
+If you change any of the above fields in the config, you must regenerate the
+registration file or apply the equivalent changes manually.
+
 [Application Service API]: https://spec.matrix.org/v1.2/application-service-api/
 
 ## Synapse
