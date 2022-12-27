@@ -19,16 +19,7 @@ missing piece is tracked in [matrix-org/dendrite#2723] and [famedly/conduit#321]
 [matrix-org/dendrite#2723]: https://github.com/matrix-org/dendrite/issues/2723
 [famedly/conduit#321]: https://gitlab.com/famedly/conduit/-/issues/321
 
-## Legacy instructions
-### Shared secret login
-Prior to mautrix-telegram v0.9.0 / mautrix-python v0.8.0, you had to configure
-[login_shared_secret]. In new versions, you only need a homeserver with
-[MSC2778] support, i.e. Synapse 1.22 or later.
-
-[login_shared_secret]: https://github.com/mautrix/telegram/blob/v0.8.0-rc2/mautrix_telegram/example-config.yaml#L162-L167
-[MSC2778]: https://github.com/matrix-org/matrix-doc/pull/2778
-
-### Registration file workaround
+## Legacy registration file workaround
 In mautrix-telegram v0.8.0 release candidates, you had to manually apply a
 workaround for [MSC2190](https://github.com/matrix-org/matrix-doc/pull/2190).
 In newer versions (mautrix-telegram v0.8.0+, mautrix-python v0.5.0-rc3+) the
