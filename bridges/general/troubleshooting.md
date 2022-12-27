@@ -44,7 +44,7 @@ the DM status in the room itself, but so far it has not been implemented in any
 clients or servers.
 
 [double puppeting]: ./double-puppeting.md
-[MSC2199]: https://github.com/matrix-org/matrix-doc/pull/2199
+[MSC2199]: https://github.com/matrix-org/matrix-spec-proposals/pull/2199
 
 ## How do I bridge typing notifications and read receipts?
 Bridging ephemeral events (EDUs) is enabled by default in the bridges, but
@@ -65,7 +65,7 @@ config options to enable the bridges to receive EDUs:
 
 You should only have one of the two enabled at any time.
 
-[MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
+[MSC2409]: https://github.com/matrix-org/matrix-spec-proposals/pull/2409
 
 ## Why are contact list names disabled by default?
 Some bridges like WhatsApp and Signal have access to the contact list you've

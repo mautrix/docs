@@ -21,7 +21,7 @@ missing piece is tracked in [matrix-org/dendrite#2723] and [famedly/conduit#321]
 
 ## Legacy registration file workaround
 In mautrix-telegram v0.8.0 release candidates, you had to manually apply a
-workaround for [MSC2190](https://github.com/matrix-org/matrix-doc/pull/2190).
+workaround for [MSC2190](https://github.com/matrix-org/matrix-spec-proposals/pull/2190).
 In newer versions (mautrix-telegram v0.8.0+, mautrix-python v0.5.0-rc3+) the
 workaround is applied automatically to all newly generated registration files.
 For old registration files, you can either regenerate the file or apply the

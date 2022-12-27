@@ -11,7 +11,7 @@ events, make sure `appservice` -> `ephemeral_events` is set to `true` in the
 bridge config and that the registration file has the appropriate flags too
 (you can regenerate the registration after updating the bridge config).
 
-[MSC2409]: https://github.com/matrix-org/matrix-doc/pull/2409
+[MSC2409]: https://github.com/matrix-org/matrix-spec-proposals/pull/2409
 
 ## Manually
 Double puppeting can only be enabled after logging into the bridge. As with
