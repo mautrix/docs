@@ -60,9 +60,17 @@ matrix.org). In such cases, manual login is the only option.
 [matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
 
 ### Appservice method
-This is more experimental and can have other side-effects. Additionally, it only
-works for users who are on the same homeserver as the bridge, it can't be used
-with other homeservers at all (even with admin access).
+**This method is experimental and may have unexpected side-effects.**
+
+Potential side-effects include:
+
+* Push notifications not working due to bugs in Synapse
+  ([#2211](https://github.com/matrix-org/synapse/issues/2211))
+* The bridge bot joining rooms unexpectedly when events are pushed to it
+* Other unknown effects
+
+Additionally, it only works for users who are on the same homeserver as the
+bridge, it can't be used with other homeservers at all (even with admin access).
 
 The benefit of this method is that [appservice login] is in the spec, so it can
 work on all homeserver implementations (caveat: as of writing, [Dendrite] and
