@@ -1,0 +1,92 @@
+{
+  "$id": "https://docs.mau.fi/mauspec/schema/mss.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "A Matrix message event that reports the bridging status of another event (like a normal message, reaction or redaction). Originally based on [MSC2162](https://github.com/matrix-org/matrix-spec-proposals/pull/2162).",
+  "additionalProperties": true,
+  "required": [
+    "type",
+    "content"
+  ],
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The event type, which is always `com.beeper.message_send_status`.",
+      "const": "com.beeper.message_send_status"
+    },
+    "content": {
+      "type": "object",
+      "description": "The content of the event.",
+      "additionalProperties": true,
+      "required": ["m.relates_to", "network", "status"],
+      "properties": {
+        "m.relates_to": {
+          "type": "object",
+          "description": "A standard relation pointing at the message that the status is referencing.",
+          "properties": {
+            "rel_type": {
+              "type": "string",
+              "description": "The relation type, which is always `m.reference`",
+              "const": "m.reference"
+            },
+            "event_id": {
+              "type": "string",
+              "format": "matrix-event-id",
+              "pattern": "\\$.+",
+              "description": "The event ID that this status is referencing. For retries, this is always the original event, and the retry event ID is included in the `last_retry` field.",
+              "examples": ["$27GZgeavYRg7qRahUKrtQvCvG05qTzZzLG09e1T73dc"]
+            }
+          }
+        },
+        "network": {
+          "type": "string",
+          "description": "The state key of the `m.bridge` event describing the bridge that reported this message status. See [MSC2346](https://github.com/matrix-org/matrix-spec-proposals/pull/2346) for more details on `m.bridge` events.",
+          "examples": ["net.maunium.telegram://telegram/1234567890"]
+        },
+        "status": {
+          "type": "string",
+          "description": "The bridging status of the target event.",
+          "enum": ["SUCCESS", "PENDING", "FAIL_RETRIABLE", "FAIL_PERMANENT"],
+          "enumDescription": {
+            "SUCCESS": "The event was successfully sent to the remote network",
+            "PENDING": "Handling the event is taking longer than usual and the bridge would like to confirm that it's still trying",
+            "FAIL_RETRIABLE": "Handling the event failed, but the bridge thinks the error may be resolved by trying again",
+            "FAIL_PERMANENT": "Handling the event failed and the bridge doesn't think trying again would help"
+          }
+        },
+        "reason": {
+          "type": "string",
+          "description": "A general error code",
+          "enum": ["m.event_not_handled", "m.event_too_old", "m.foreign_network_error", "m.no_permission", "m.bridge_unavailable", "com.beeper.unsupported_event", "com.beeper.undecryptable_event"],
+          "enumDescription": {
+            "m.event_not_handled": "Generic error",
+            "m.event_too_old": "Event was dropped because it was too old or took too long to handle",
+            "m.foreign_network_error": "The remote network rejected the event",
+            "m.no_permission": "The remote network rejected the event due to a lack of permissions",
+            "m.bridge_unavailable": "The homeserver couldn't reach the bridge",
+            "com.beeper.unsupported_event": "The event contains something which the bridge can't convert to the remote network format",
+            "com.beeper.undecryptable_event": "The bridge was unable to decrypt the event"
+          }
+        },
+        "error": {
+          "type": "string",
+          "description": "An internal error code or message. Not intended to be displayed to users, but should be included in debug views. May be used as a bridge-specific machine-readable error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "A human-readable error message that should be directly shown to the user."
+        },
+        "last_retry": {
+          "type": "string",
+          "format": "matrix-event-id",
+          "pattern": "\\$.+",
+          "description": "The event ID pointing at the most recent retry event."
+        },
+        "mutate_event_key": {
+          "type": "string",
+          "description": "A string containing a JSON field name, which hungryserv will copy from this event into the event that this event is pointing at. Used by the iMessage bridge to add handle metadata to user-sent events."
+        }
+      }
+    }
+  }
+}
