@@ -38,9 +38,9 @@ Commands to make connections to Telegram chats.
 
 | Command                | Usage |
 |------------------------|-------|
-| **bridge** \[_id_]      | Bridge the current Matrix room to the Telegram chat with the given ID. The ID must be the prefixed version that you get with the `/id` command of the Telegram-side bot. |
+| **bridge** \[_id_]     | Bridge the current Matrix room to the Telegram chat with the given ID. The ID must be the prefixed version that you get with the `/id` command of the Telegram-side bot. |
 | **create** \[_type_]   | Create a Telegram chat of the given type for the current Matrix. _type_ is either `group`, `supergroup` or `channel`. Defaults to `group` |
-| **pm** <_identifier_>  | Open a private chat with the given Telegram user. _identifier_ is either the internal ID, the username or the phone number of the Telegram user. **N.B.** The phone numbers you start chats with must already be in your contacts. |
+| **pm** <_username_>    | Open a private chat with the given Telegram user. You can also use a phone number instead of username, but you must have the number in your Telegram contacts for that to work. |
 | **join** <_link_>      | Join a chat with an invite link. _link_ is a complete t.me invite link, e.g. https://t.me/telegram |
 
 ## Portal management
