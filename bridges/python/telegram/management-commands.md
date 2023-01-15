@@ -26,7 +26,7 @@ Commands to authenticate with Telegram.
 | **login** \[_mxid_]                  | Get instructions on how to log in. Admins can use the _mxid_ parameter to log in as another user. |
 | **register** <_phone_> <_full name_> | Register to Telegram.                                                       |
 | **logout**                           | Log out from Telegram.                                                      |
-| **login-matrix**                     | Replace your Telegram account's Matrix puppet with your own Matrix account. |
+| **login-matrix**                     | Replace your Telegram account's Matrix ghost with your own Matrix account. |
 | **ping-matrix**                      | Pings the server with the stored matrix authentication.                     |
 | **ping**                             | Check if you're logged into Telegram.                                       |
 | **ping-bot**                         | Get info of the message relay Telegram bot.                                 |
@@ -54,7 +54,7 @@ Most of these commands require some admin privileges in the Telegram chat: The b
 | **upgrade**                    | Upgrade a normal Telegram group to a supergroup. |
 | **group-name** <_name_\|`-`>   | Change the username of a supergroup/channel. To disable, use a dash (`-`) as the name. |
 | **delete-portal**              | Remove all users from the current portal room and forget the portal. Only works for group chats; to delete a private chat portal, simply leave the room. |
-| **unbridge**                   | Remove puppets from the current portal room and forget the portal. |
+| **unbridge**                   | Remove ghosts from the current portal room and forget the portal. |
 
 ### Portal configuration
 Some bridge settings can be set on a per-portal basis. The `!tg config` command is used for that.

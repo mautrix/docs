@@ -51,8 +51,10 @@ power level requirements are currently hardcoded as follows:
 ## Private messages
 ### Creating portals
 There are three ways to create private chat portals:
-1. Create a room and invite the Matrix puppet of the Telegram user. The puppet
-   should join and send confirmation of the portal creation.
+1. Start a normal Matrix DM (create a room and invite the Matrix ghost of the
+   Telegram user), e.g. by finding a user in the user list of an already
+   bridged group chat. The ghost should join and send confirmation of the
+   portal creation.
 2. Use the `pm` command.
 3. Send or receive a message on another Telegram client.
 
