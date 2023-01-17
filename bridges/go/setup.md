@@ -48,7 +48,7 @@ If you want to compile the bridge manually (which is not required), you'll also 
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable
-from the mau.dev CI or [GitHub releases](https://github.com/mautrix/whatsapp/releases).
+from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/releases).
 
 ### Compiling manually
 1. Clone the repo with `git clone https://github.com/mautrix/$bridge.git mautrix-$bridge`
