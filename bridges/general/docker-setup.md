@@ -23,6 +23,11 @@ the bridge outside of Docker, see the language-specific instructions:
 (to find out which bridge language the bridge you want is written in, check
 the sidebar to see which section it's under).
 
+If you need help with setting up the bridge, you can ask in the Matrix room:
+[#$bridge:maunium.net](https://matrix.to/#/#$bridge:maunium.net). For help with
+setting up other parts like the homeserver that aren't the bridge, refer to
+their documentation to find support rooms.
+
 ## Requirements
 * Docker
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse))

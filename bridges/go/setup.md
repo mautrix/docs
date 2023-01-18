@@ -30,6 +30,11 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 
 [Beeper]: https://www.beeper.com/
 
+If you need help with setting up the bridge, you can ask in the Matrix room:
+[#$bridge:maunium.net](https://matrix.to/#/#$bridge:maunium.net). For help with
+setting up other parts like the homeserver that aren't the bridge, refer to
+their documentation to find support rooms.
+
 ## Requirements
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
