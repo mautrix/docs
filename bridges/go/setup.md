@@ -42,18 +42,31 @@ their documentation to find support rooms.
   * Make sure you don't share databases between unrelated programs.
     Shared postgres instance is fine, but shared database is not.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
-  A WhatsApp client running on a phone or in an emulated Android VM.
+  A WhatsApp client running on a phone (both physical and virtual phones work).
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   ffmpeg (if you want to send gifs from Matrix).
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 
-* Go 1.17+ (download & installation instructions at <https://go.dev/doc/install>).
+* Go 1.18+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/releases).
+Prebuilt executables are the simplest option, as they don't require having Go
+nor libolm installed.
+
+### Downloading a prebuilt executable from CI
+1. Go to <https://mau.dev/mautrix/$bridge/pipelines?scope=branches&page=1>
+2. Find the entry for the `master` branch, click the download button on the
+   right-hand side in the list and choose the architecture you want.
+3. Extract the downloaded zip file into a new directory.
+
+### Downloading a release
+1. Go to <https://github.com/mautrix/$bridge/releases>
+2. Download the binary for the architecture you want and save it in a new
+   directory.
 
 ### Compiling manually
 1. Clone the repo with `git clone https://github.com/mautrix/$bridge.git mautrix-$bridge`
@@ -67,14 +80,6 @@ from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/rele
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
 
 [`build.sh`]: https://github.com/mautrix/$bridge/blob/master/build.sh
-
-### Downloading a prebuilt executable from CI
-1. Go to <https://mau.dev/mautrix/$bridge/pipelines?scope=branches&page=1>
-2. Find the entry for the `master` branch and click the download button on the
-   right-hand side in the list.
-   * The builds are all static with olm included, but SQLite may not work.
-     Postgres is recommended anyway.
-3. Extract the downloaded zip file into a new directory.
 
 ## Configuring and running
 1. Copy `example-config.yaml` to `config.yaml`
