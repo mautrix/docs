@@ -25,9 +25,13 @@ The `maubot.yaml` file can contain the following fields:
 * `dependencies` - A list of Python modules and their version ranges that the
   plugin requires. This is currently not used, but in the future maubot will
   offer to automatically install dependencies when uploading a plugin.
-  * This should not include any standard packages that maubot requires, only
-    custom requirements should be listed. It's also recommended to specify
-    version ranges (e.g. based on semver), not exact versions.
+  * This should only include top-level dependencies of the plugin, i.e. things
+    that you explicitly `import`. Don't specify transitive dependencies.
+  * Core maubot dependencies should also not be specified. Specifically, don't
+    include `mautrix`, `aiohttp`, `yarl`, `asyncpg`, `aiosqlite`, `ruamel.yaml`
+    or `attrs`. Also obviously don't include maubot itself.
+  * It's recommended to specify version ranges (e.g. based on semver), not
+    exact versions.
 * `soft_dependencies` - Same as `dependencies`, but not required for the plugin
   to function.
 * `config` - Whether the plugin has a [configuration]
