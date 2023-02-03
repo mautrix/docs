@@ -14,7 +14,7 @@ The `maubot.yaml` file can contain the following fields:
   * Submodules that are imported by modules listed here don't need to be listed
     separately. However, top-level modules must always be listed even if they're
     imported by other modules.
-  * Currently module names must be globally unique.
+  * **Currently module names must be globally unique.**
 * `main_class` - The main class of the plugin as `module/ClassName`.
   * If `module/` is omitted, maubot will look for the class in the *last* module
     specified in the `modules` list.
@@ -25,6 +25,9 @@ The `maubot.yaml` file can contain the following fields:
 * `dependencies` - A list of Python modules and their version ranges that the
   plugin requires. This is currently not used, but in the future maubot will
   offer to automatically install dependencies when uploading a plugin.
+  * This should not include any standard packages that maubot requires, only
+    custom requirements should be listed. It's also recommended to specify
+    version ranges (e.g. based on semver), not exact versions.
 * `soft_dependencies` - Same as `dependencies`, but not required for the plugin
   to function.
 * `config` - Whether the plugin has a [configuration]
