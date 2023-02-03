@@ -20,8 +20,10 @@ main_class: ExampleBot
 ```
 
 The file above will tell maubot to load the `examplebot` Python module and find
-the `ExampleBot` class inside it. The class must inherit the `Plugin` class from
-maubot. A simple bot that does nothing would therefore look like this:
+the `ExampleBot` class inside it. Note that Python modules are currently loaded
+into the global context, so they must be unique. The class must inherit the
+`Plugin` class from maubot. A simple bot that does nothing would therefore look
+like this:
 
 ```python
 from maubot import Plugin
