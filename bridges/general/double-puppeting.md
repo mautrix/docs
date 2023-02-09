@@ -49,6 +49,9 @@ matrix.org). In such cases, manual login is the only option.
 
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
    * Make sure you set `m_login_password_support_enabled` to `true` in the config.
+   * You should also set `com_devture_shared_secret_auth_support_enabled` to
+     `false` as having that option enabled breaks user-interactive auth in some
+     clients (e.g. you won't be able to reset cross-signing in Element).
 1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
    config file under the correct server name.
    * In mautrix-imessage and in past versions of other bridges, the field is
