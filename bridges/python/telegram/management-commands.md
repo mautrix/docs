@@ -21,16 +21,15 @@ is always allowed even if it's not required.
 ## Authentication
 Commands to authenticate with Telegram.
 
-| Command                              | Usage                                                                       |
-|--------------------------------------|-----------------------------------------------------------------------------|
-| **login** \[_mxid_]                  | Get instructions on how to log in. Admins can use the _mxid_ parameter to log in as another user. |
-| **register** <_phone_> <_full name_> | Register to Telegram.                                                       |
-| **logout**                           | Log out from Telegram.                                                      |
-| **login-matrix**                     | Replace your Telegram account's Matrix ghost with your own Matrix account. |
-| **ping-matrix**                      | Pings the server with the stored matrix authentication.                     |
-| **ping**                             | Check if you're logged into Telegram.                                       |
-| **ping-bot**                         | Get info of the message relay Telegram bot.                                 |
-| **username** <_new username_>        | Change your Telegram username.                                              |
+| Command                       | Usage                                                                       |
+|-------------------------------|-----------------------------------------------------------------------------|
+| **login** \[_mxid_]           | Get instructions on how to log in. Admins can use the _mxid_ parameter to log in as another user. |
+| **logout**                    | Log out from Telegram.                                                      |
+| **login-matrix**              | Replace your Telegram account's Matrix ghost with your own Matrix account. |
+| **ping-matrix**               | Pings the server with the stored matrix authentication.                     |
+| **ping**                      | Check if you're logged into Telegram.                                       |
+| **ping-bot**                  | Get info of the message relay Telegram bot.                                 |
+| **username** <_new username_> | Change your Telegram username.                                              |
 | **session** <`list`\|`terminate`> \[_hash_] | View or delete other Telegram sessions.                               |
 
 ## Creating portals

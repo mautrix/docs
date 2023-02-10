@@ -55,22 +55,13 @@ and invite you to them. The bridge won't automatically create rooms for private
 chats: see "Private messages" at the bottom of [Creating and managing chats](./creating-and-managing-chats.md#private-messages)
 
 ## Registering
-_New in version 0.2.0_
+Telegram officially discontinued registration from 3rd party clients as of
+2023-02-18, so support for it was removed in v0.13.0 of the bridge. You should
+sign up using a mobile client and then log into the bridge.
 
-As with login, you shouldn't register in a room with other users. Registering
-via the web UI is not currently possible.
-
-Please note that Telegram might not like users who register using 3rd party
-clients. To avoid getting banned, it is recommended to register with a real
-phone number (i.e. not an online SMS service) using an official client
-(web/desktop/android/ios).
-
-**Registration has not been tested, but it should work like this:**
-
-1. Request a Telegram auth code with `register <phone number> <full name for Telegram>`
-2. The bot should prompt you to send your auth code to the room: send it once it does.
-3. The bot should inform you of a successful registration, after which you can
-   join groups with your own name or start private chats.
+You can safely uninstall the mobile client after the bridge is logged in.
+Telegram is not encrypted, so they don't have a concept of a primary device
+like WhatsApp and Signal do.
 
 ## Logging out
 Simply run the `logout` management command.
