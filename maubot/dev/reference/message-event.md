@@ -19,6 +19,11 @@ These methods are available in maubot's `MessageEvent` class.
     tags. Only applies if the content parameter is a string.
   * `edits` (optional, event ID or `MessageEvent`, defaults to `None`) - The
     event that the response event should edit.
+  * `in_thread` (optional) - Whether the response should be in a thread with
+    the command. By default (`None`), the response is in a thread if the
+    command is in a thread. If `False`, the response will never be in a thread.
+    If `True`, the response will always be in a thread (creating a thread with
+    the command as the root if necessary).
 * `async reply(content) -> EventID` - Reply to a message. Same parameters as
   `respond()`, except no `edits` option.
 * `async edit(content) -> EventID` - Edit the event. Same parameters
