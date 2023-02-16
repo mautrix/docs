@@ -97,3 +97,42 @@ show the `id` field of the just registered appservice):
 ```
 
 See also: <https://gitlab.com/famedly/conduit/-/blob/next/APPSERVICES.md>
+
+## Construct
+
+1. Review the following to tweak your registration.yaml:
+
+    - Add the prefix "bridge_" to the `as_token`. Example: `as_token: bridge_1m9jt3xt6qdb4...`
+
+    - The bridge `id` and the `sender_localpart` have to match. Choose a simple name such as the service being bridged.
+
+    > A bridge user and room will be created automatically based on the `id` (e.g. `!id:localhost`). It is also okay if these already exist.
+
+
+2. Convert the `registration.yaml` to `registration.json` using a yaml2json converter such as `reserialize` or a website.
+
+    ```
+    apt-get -y install reserialize
+    reserialize yaml2json registration.yaml > registration.json
+    ```
+
+3. Use the [console](https://github.com/matrix-construct/construct/wiki/Useful-console-command-examples) to enter the command:
+
+    ```
+    bridge set /path/to/registration.json
+    ```
+
+    > If the bridge has already been registered before then the prior configuration will be overwritten.
+
+ 	> The registration will take effect immediately without restarting the server or reloading the bridge module.
+
+    > The console command `bridge` will list all bridges by ID. `bridge <id>` will confirm the configuration for the bridge.
+
+	The following are all functionally equivalent:
+	- With terminal access strike `ctrl-c` and enter `bridge set /path/to/registration.json` at the prompt.
+	- Operator sends message `bridge set /path/to/registration.json` to the `!control` room.
+	- Operator sends server-side private-command prefix `\\control bridge set /path/to/registration.json` (any client, any room).
+	- Non-interactive registration add the argument `-execute "bridge set /path/to/registration.json"` when running the server.
+	- Non-interactive registration for multiple bridges: use multiple `-execute` arguments: `-execute "bridge set registration1.json" -execute "bridge set registration2.json"`
+
+See also: <https://github.com/matrix-construct/construct/wiki/Bridges>
