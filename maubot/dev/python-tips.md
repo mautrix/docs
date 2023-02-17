@@ -26,6 +26,13 @@ can run the synchronous methods in a separate thread using asyncio's built-in
 [aiohttp]: https://github.com/aio-libs/aiohttp
 [`run_in_executor`]: https://docs.python.org/3/library/asyncio-eventloop.html#executing-code-in-thread-or-process-pools
 
+If you haven't used asyncio before, you may want to read a guide on the topic
+before developing maubot plugins. Some potentially good ones are:
+
+* <https://lonami.dev/blog/asyncio/> (short)
+* <https://realpython.com/async-io-python/> (a bit longer)
+* <https://superfastpython.com/python-asyncio/> (very long)
+
 ## Type hints
 
 Most of the methods in maubot and mautrix-python have proper type hints. Even
