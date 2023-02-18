@@ -11,6 +11,7 @@ instance. When using public instances, refer to their instructions and support
 rooms.
 
 * [beeper.com](https://www.beeper.com/) (paid service with lots of bridges)
+* @instagrambot:chagai.website
 
 If you run a public instance and wish to list it here, please [make a pull request](https://github.com/mautrix/docs/blob/master/bridges/python/instagram/index.md).
 
