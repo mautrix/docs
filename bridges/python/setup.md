@@ -55,6 +55,7 @@ their documentation to find support rooms.
      [optional dependencies page](./optional-dependencies.md) for more info.
    * If you want the master branch instead of a release, use
      `pip install --upgrade git+https://github.com/mautrix/$bridge.git#egg=mautrix-$bridge[all]`.
+   * Make sure that you **don't** run pip with sudo.
 3. Copy `example-config.yaml` to `config.yaml`.
 4. Update the config to your liking. You'll at least need to change the
    homeserver settings, database address, and bridge permissions. If you miss
