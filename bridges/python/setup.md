@@ -42,6 +42,8 @@ their documentation to find support rooms.
   An instance of [signald](https://gitlab.com/signald/signald).
 
 ## Production setup
+Don't use `sudo` for any of these steps (and preferably don't use the root user either).
+
 0. Create a directory for the bridge. **Do not clone the repository.**
 1. Set up a virtual environment.
    1. Create with `virtualenv -p /usr/bin/python3 .` (note the dot at the end)
@@ -55,7 +57,6 @@ their documentation to find support rooms.
      [optional dependencies page](./optional-dependencies.md) for more info.
    * If you want the master branch instead of a release, use
      `pip install --upgrade git+https://github.com/mautrix/$bridge.git#egg=mautrix-$bridge[all]`.
-   * Make sure that you **don't** run pip with sudo.
 3. Copy `example-config.yaml` to `config.yaml`.
 4. Update the config to your liking. You'll at least need to change the
    homeserver settings, database address, and bridge permissions. If you miss
