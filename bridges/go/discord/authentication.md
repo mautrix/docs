@@ -31,9 +31,25 @@ the bridge.
 5. Pick any successful request (e.g. the `library` request). Scroll down to
    "Request Headers" and find the `Authorization` header. Right-click the entry
    and choose copy value.
-7. Send `login-token <token>` to the bot
+7. Send `login-token user <token>` to the bot
    (replacing `<token>` with the copied value).
 8. (Close the private window)
+
+## Bot token login
+If you don't want to use a real account, you can also log in as a bot.
+
+1. Create an application on <https://discord.com/developers/applications>.
+2. In the "Bot" section, add a bot and copy the token.
+3. Enable "server members intent" and "message content intent" under the
+   "Privileged Gateway Intents" section.
+4. Send `login-token bot <token>`
+5. To add your bot to a guild, go to OAuth2 -> URL Generator, select "bot"
+   under scopes and select the permissions to grant. The generated URL can then
+   be used to add the bot to a guild.
+   * At least "Send Messages", "Create Public Threads", "Send Messages in
+     Threads", "Read Message History" and "Add Reactions" are recommended.
+   * If you're the guild admin, you can just choose "Administrator" for the
+     bot and not worry about exact permissions.
 
 ---
 
