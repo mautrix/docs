@@ -1,7 +1,7 @@
 # Authentication
 0. Open a private chat with the bridge bot. Usually `@discordbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
-1. Follow one of the two instructions below.
+1. Follow one of the three instructions below.
 
 ## QR login
 QR login is more convenient, but requires having the Discord mobile app
