@@ -44,6 +44,7 @@
   - [Authentication](./go/whatsapp/authentication.md)
 - [mautrix-discord](./go/discord/index.md)
   - [Authentication](./go/discord/authentication.md)
+  - [Relaying with webhooks](./go/discord/relay.md)
 - [mautrix-slack](./go/slack/index.md)
   - [Authentication](./go/slack/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)

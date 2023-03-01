@@ -29,22 +29,21 @@ emoji.
 ## Support table
 Minimum bridge versions that support the relay system documented above.
 
-| Bridge      | Version            |
-|-------------|--------------------|
-| Telegram    | [Different system] |
-| WhatsApp    | 0.2.0              |
-| Signal      | 0.2.0              |
-| Instagram   | 0.1.2              |
-| Facebook    | 0.3.3              |
-| Google Chat | not yet supported  |
-| Twitter     | not yet supported  |
-| iMessage    | †0.1.0/[3df789e2]  |
-| Discord     | not yet supported (will likely use different system) |
-| Slack       | not yet supported (will likely use different system) |
+| Bridge      | Version                                               |
+|-------------|-------------------------------------------------------|
+| Telegram    | [Different system](../python/telegram/relay-bot.html) |
+| WhatsApp    | 0.2.0                                                 |
+| Signal      | 0.2.0                                                 |
+| Instagram   | 0.1.2                                                 |
+| Facebook    | 0.3.3                                                 |
+| Google Chat | not yet supported                                     |
+| Twitter     | not yet supported                                     |
+| iMessage    | †0.1.0/[3df789e2]                                     |
+| Discord     | [Different system](../go/discord/relay.md)            |
+| Slack       | not yet supported (will likely use different system)  |
 
 † iMessage doesn't require `set-relay`, relay mode is enabled in all chats
   automatically if enabled in the config. The `permissions` section is replaced
   with `relay` -> `whitelist`.
 
-[Different system]: ../python/telegram/relay-bot.html
 [3df789e2]: https://github.com/mautrix/imessage/commit/3df789e24b8500d95a53d5417aca6e59bedf7efd
