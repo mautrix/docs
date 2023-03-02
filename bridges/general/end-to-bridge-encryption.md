@@ -12,6 +12,9 @@ If you only set `allow: true`, the bridge won't enable encryption on its own,
 but will work in encrypted rooms. If you set `default: true`, the bridge will
 automatically enable encryption in new portals.
 
+You should **not** set `appservice: true` at the moment, as the Synapse
+implementation is still incomplete and has not been tested with the bridges.
+
 Note that end-to-bridge encryption does not currently work on Dendrite nor
 Conduit as they don't implement the necessary parts of the spec. The critical
 missing piece is tracked in [matrix-org/dendrite#2723] and [famedly/conduit#321].
