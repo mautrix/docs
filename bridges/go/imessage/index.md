@@ -23,7 +23,7 @@ instances on normal Matrix servers, but [Beeper](https://www.beeper.com) does
 offer hosted iMessage bridges (using the Barcelona connector) and the Beeper
 Android app has the android-sms bridge built in.
 
-[Barcelona]: https://github.com/open-imcore/barcelona
+[Barcelona]: https://github.com/beeper/barcelona
 [Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn
 [android-sms]: https://gitlab.com/beeper/android-sms
 [IPC protocol]: https://github.com/mautrix/imessage/blob/master/imessage/ios/ipc.md
