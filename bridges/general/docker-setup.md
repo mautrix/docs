@@ -13,12 +13,6 @@
     early development and therefore will have bugs and may get breaking changes.
   </strong>
 </p>
-<p class="bridge-filter" bridges="discord" bridge-no-generic style="display: none">
-  <strong>
-    The Discord bridge should be mostly functional, but it is still in
-    early development and therefore will have bugs and may get breaking changes.
-  </strong>
-</p>
 
 This page contains instructions for setting up the bridge in Docker. To set up
 the bridge outside of Docker, see the language-specific instructions:
