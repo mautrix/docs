@@ -6,7 +6,7 @@ to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper]: https://www.beeper.com/
 
 ## Requirements
-* A computer running macOS 13 or higher, with SIP and AMFI disabled
+* A computer running macOS 11 or higher, with SIP and AMFI disabled
   (see instructions below).
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
