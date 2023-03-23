@@ -61,6 +61,9 @@ Some things to keep in mind:
 
 [`app_service_config_files`]: https://github.com/matrix-org/synapse/blob/v1.51.0/docs/sample_config.yaml#L1514-L1518
 
+## Beeper
+Follow the instructions at [github.com/beeper/bridge-manager](https://github.com/beeper/bridge-manager).
+
 ## Dendrite
 Dendrite works the same way as Synapse, except the relevant config field is
 [`config_files` under `app_service_api`](https://github.com/matrix-org/dendrite/blob/v0.6.0/dendrite-config.yaml#L130-L131)
