@@ -102,6 +102,7 @@ outgoing requests via `/verify` work.
   ascending priority order.
 * `/untag <tag>` - Remove the room from `<tag>`.
 * `/tags` - List the tags the room is in.
+* `/powerlevel [thing] [level]` - View or change power levels in rooms.
 #### Leaving
 * `/leave` - Leave the current room.
 * `/kick <user id> [reason]` - Kick a user.
