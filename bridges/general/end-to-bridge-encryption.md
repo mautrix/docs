@@ -9,8 +9,8 @@ To enable it, you must install the bridge with dependencies:
 
 After that, simply enable the option in the config (`bridge` → `encryption`).
 If you only set `allow: true`, the bridge won't enable encryption on its own,
-but will work in encrypted rooms. If you set `default: true`, the bridge will
-automatically enable encryption in new portals.
+but will work in encrypted rooms. If you also set `default: true`, the bridge
+will automatically enable encryption in new portals.
 
 You should **not** set `appservice: true` at the moment, as the Synapse
 implementation is still incomplete and has not been tested with the bridges.
