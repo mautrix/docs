@@ -22,10 +22,21 @@ There are a few potential reasons this can happen:
   * Also note that `transaction` is not the same as `transactions`. If you don't
     include the `s` at the end, you'll get tons of unrelated logs.
   * For mautrix-imessage, you should also check the wsproxy logs.
+  * In recent Synapse versions, you can enable [MSC2659] support to allow the
+    bridge to detect issues automatically. This way the bridge logs will also
+    include errors if it's set up incorrectly.
+
+    In the Synapse config:
+    ```yaml
+    experimental_features:
+      msc2659_enabled: true
+    ```
 * The bridge was down for longer than a few minutes and the homeserver backed
   off. The homeserver should retry after some time. If it still doesn't work
   after an hour or so (exact backoff depends on how long the bridge was down),
   check the homeserver logs.
+
+[MSC2659]: https://github.com/matrix-org/matrix-spec-proposals/pull/2659
 
 ## Why are direct messages showing up under "Rooms" instead of "People"?
 All chats in Matrix are actually rooms, and there's no good way for bridges to
