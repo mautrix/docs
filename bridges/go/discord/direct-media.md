@@ -44,6 +44,8 @@ federated rooms.
 ```Caddyfile
 matrix.example.com {
 	handle /_matrix/media/*/download/discord-media.mau.dev/* {
+		# The redirect must have CORS headers to let web clients follow it.
+		header Access-Control-Allow-Origin *
 		# Need to use a route directive to make the uri mutations apply before redir
 		route {
 			# Remove path prefix
@@ -57,6 +59,7 @@ matrix.example.com {
 	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
 	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
 	handle /_matrix/media/*/thumbnail/discord-media.mau.dev/* {
+		header Access-Control-Allow-Origin *
 		route {
 			uri path_regexp ^/_matrix/media/.+/download/discord-media\.mau\.dev/ /
 			uri replace "%7C" /
