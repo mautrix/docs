@@ -61,6 +61,7 @@ matrix.example.com {
 	handle /_matrix/* {
 		reverse_proxy http://localhost:8008
 	}
+}
 ```
 
 </details>
@@ -103,6 +104,7 @@ matrix.example.com {
 	handle /_matrix/* {
 		reverse_proxy http://localhost:8008
 	}
+}
 ```
 
 </details>
