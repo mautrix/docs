@@ -42,19 +42,22 @@ want to use your bridge in federated rooms.
 
 ```Caddyfile
 matrix.example.com {
-	# Matcher to catch /download and /thumbnail on /v3 and /r0
-	@discordmaudev {
-		path /_matrix/media/v3/download/discord-media.mau.dev/* /_matrix/media/v3/thumbnail/discord-media.mau.dev/* /_matrix/media/r0/download/discord-media.mau.dev/* /_matrix/media/r0/thumbnail/discord-media.mau.dev/*
-	}
-	handle @discordmaudev {
-		# Need to use a route directive to make the uri mutations apply before redir
+	# Use handle_path to strip the prefix automatically
+	handle_path /_matrix/media/*/download/discord-media.mau.dev/* {
+		# Need to use a route directive to make the uri mutation apply before redir
 		route {
-			# Remove the prefix in the URL
-			uri path_regexp /_matrix/media/(?:r0|v3)/(?:download|thumbnail)/discord-media.mau.dev/ /
-			# The mxc patterns use | instead of /, so replace it first turning it into attachments/1234
+			# The mxc patterns use | instead of /, so replace it first turning the path into attachments/1234/5678/filename.png
 			uri replace "%7C" /
-			# Then redirect to cdn.discordapp.com/attachments/1234 with HTTP 307
+			# Then redirect to cdn.discordapp.com/attachments/1234/5678/filename.png with HTTP 307
 			redir https://cdn.discordapp.com{uri} 307
+		}
+	}
+	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
+	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
+	handle_path /_matrix/media/*/thumbnail/discord-media.mau.dev/* {
+		route {
+			uri replace "%7C" /
+			redir https://media.discordapp.net{uri} 307
 		}
 	}
 	# The usual proxying to your homeserver
@@ -83,15 +86,10 @@ abuse vectors for spamming the Discord CDN through your server.
 
 ```Caddyfile
 matrix.example.com {
-	# Matcher to catch /download and /thumbnail on /v3 and /r0
-	@discordmedia {
-		path /_matrix/media/v3/download/example.com/discord_* /_matrix/media/v3/thumbnail/example.com/discord_* /_matrix/media/r0/download/example.com/discord_* /_matrix/media/r0/thumbnail/example.com/discord_*
-	}
-	# Use handle_path to remove the matched prefix
-	handle @discordmedia {
-		# Remove the prefix in the URL
-		uri path_regexp /_matrix/media/(?:r0|v3)/(?:download|thumbnail)/example.com/discord_ /
-		# The mxc patterns use | instead of /, so replace it first turning it into attachments/1234
+	handle /_matrix/media/*/download/example.com/discord_* {
+		# handle_path doesn't work when the last part isn't /*, so use handle and path_regexp to remove the prefix
+		uri path_regexp ^/_matrix/media/.+/download/example\.com/discord_ /
+		# The mxc patterns use | instead of /, so replace it first turning it into attachments/1234/5678/filename.png
 		uri replace "%7C" /
 		reverse_proxy {
 			# reverse_proxy automatically includes the uri, so no {uri} at the end
@@ -99,6 +97,16 @@ matrix.example.com {
 			# Caddy doesn't set the Host header automatically when reverse proxying
 			# (because usually reverse proxies are local and don't care about Host headers)
 			header_up Host cdn.discordapp.com
+		}
+	}
+	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
+	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
+	handle_path /_matrix/media/*/thumbnail/example.com/discord_* {
+		uri path_regexp ^/_matrix/media/.+/thumbnail/example\.com/discord_ /
+		uri replace "%7C" /
+		reverse_proxy {
+			to https://media.discordapp.net
+			header_up Host media.discordapp.net
 		}
 	}
 	handle /_matrix/* {
