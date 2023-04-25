@@ -42,10 +42,11 @@ want to use your bridge in federated rooms.
 
 ```Caddyfile
 matrix.example.com {
-	# Use handle_path to strip the prefix automatically
-	handle_path /_matrix/media/*/download/discord-media.mau.dev/* {
-		# Need to use a route directive to make the uri mutation apply before redir
+	handle /_matrix/media/*/download/discord-media.mau.dev/* {
+		# Need to use a route directive to make the uri mutations apply before redir
 		route {
+			# Remove path prefix
+			uri path_regexp ^/_matrix/media/.+/download/discord-media\.mau\.dev/ /
 			# The mxc patterns use | instead of /, so replace it first turning the path into attachments/1234/5678/filename.png
 			uri replace "%7C" /
 			# Then redirect to cdn.discordapp.com/attachments/1234/5678/filename.png with HTTP 307
@@ -54,8 +55,9 @@ matrix.example.com {
 	}
 	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
 	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
-	handle_path /_matrix/media/*/thumbnail/discord-media.mau.dev/* {
+	handle /_matrix/media/*/thumbnail/discord-media.mau.dev/* {
 		route {
+			uri path_regexp ^/_matrix/media/.+/download/discord-media\.mau\.dev/ /
 			uri replace "%7C" /
 			redir https://media.discordapp.net{uri} 307
 		}
@@ -87,7 +89,7 @@ abuse vectors for spamming the Discord CDN through your server.
 ```Caddyfile
 matrix.example.com {
 	handle /_matrix/media/*/download/example.com/discord_* {
-		# handle_path doesn't work when the last part isn't /*, so use handle and path_regexp to remove the prefix
+		# Remove path prefix
 		uri path_regexp ^/_matrix/media/.+/download/example\.com/discord_ /
 		# The mxc patterns use | instead of /, so replace it first turning it into attachments/1234/5678/filename.png
 		uri replace "%7C" /
@@ -101,7 +103,7 @@ matrix.example.com {
 	}
 	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
 	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
-	handle_path /_matrix/media/*/thumbnail/example.com/discord_* {
+	handle /_matrix/media/*/thumbnail/example.com/discord_* {
 		uri path_regexp ^/_matrix/media/.+/thumbnail/example\.com/discord_ /
 		uri replace "%7C" /
 		reverse_proxy {
