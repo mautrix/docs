@@ -31,11 +31,12 @@ example config below, plus a static .well-known file to redirect federation to
 [MSC3860]: https://github.com/matrix-org/matrix-spec-proposals/pull/3860
 
 ### Redirect in reverse proxy
-You can also configure your reverse proxy to redirect mxc://discord-media.mau.dev
+You can also configure your reverse proxy to redirect `mxc://discord-media.mau.dev/*`
 downloads directly to cdn.discordapp.com. This method doesn't involve your
 media repo at all, so it already works with most clients. However, it won't
-work with servers that don't support MSC3860, which may be a problem if you
-want to use your bridge in federated rooms.
+work with servers that don't support MSC3860, as they'd still try to connect to
+discord-media.mau.dev, which may be a problem if you want to use your bridge in
+federated rooms.
 
 <details>
 <summary>Caddy config example</summary>
@@ -82,6 +83,11 @@ actually proxy the downloads instead of just redirecting to cdn.discordapp.com.
 That way it'll work with all existing servers and clients. The downside of this
 method is the higher bandwidth use compared to redirecting, and theoretical
 abuse vectors for spamming the Discord CDN through your server.
+
+When using this example, change `discord-media.mau.dev/` in the patterns to
+`example.com/discord_` (replacing `example.com` with your own domain). The
+`discord_` prefix is there so that other media on your domain will still work
+normally.
 
 <details>
 <summary>Caddy config example</summary>
