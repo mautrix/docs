@@ -45,6 +45,7 @@
 - [mautrix-discord](./go/discord/index.md)
   - [Authentication](./go/discord/authentication.md)
   - [Relaying with webhooks](./go/discord/relay.md)
+  - [Direct media access](./go/discord/direct-media.md)
 - [mautrix-slack](./go/slack/index.md)
   - [Authentication](./go/slack/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)
