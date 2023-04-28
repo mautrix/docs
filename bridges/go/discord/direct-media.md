@@ -56,6 +56,15 @@ matrix.example.com {
 			redir https://cdn.discordapp.com{uri} 307
 		}
 	}
+	# Special-case stickers because they don't have CORS headers on cdn.discordapp.com for some reason
+	handle /_matrix/media/*/download/discord-media.mau.dev/stickers|* {
+		header Access-Control-Allow-Origin *
+		route {
+			uri path_regexp ^/_matrix/media/.+/download/discord-media\.mau\.dev/ /
+			uri replace "%7C" /
+			redir https://cdn.discordapp.com{uri} 307
+		}
+	}
 	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
 	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
 	handle /_matrix/media/*/thumbnail/discord-media.mau.dev/* {
