@@ -98,6 +98,7 @@ normally.
 ```Caddyfile
 matrix.example.com {
 	handle /_matrix/media/*/download/example.com/discord_* {
+		header Access-Control-Allow-Origin *
 		# Remove path prefix
 		uri path_regexp ^/_matrix/media/.+/download/example\.com/discord_ /
 		# The mxc patterns use | instead of /, so replace it first turning it into attachments/1234/5678/filename.png
@@ -113,6 +114,7 @@ matrix.example.com {
 	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
 	# Alternatively, you can point this at cdn.discordapp.com too. Clients shouldn't mind even if they get a bigger image than they asked for.
 	handle /_matrix/media/*/thumbnail/example.com/discord_* {
+		header Access-Control-Allow-Origin *
 		uri path_regexp ^/_matrix/media/.+/thumbnail/example\.com/discord_ /
 		uri replace "%7C" /
 		reverse_proxy {
