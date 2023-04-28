@@ -38,6 +38,11 @@ There are a few potential reasons this can happen:
 
 [MSC2659]: https://github.com/matrix-org/matrix-spec-proposals/pull/2659
 
+## I don't see any responses from the bridge bot in Matrix, but the responses are visible in the bridge logs
+Make sure you didn't ignore the bot.
+
+Settings -> Security & Privacy -> Advanced -> Ignored users on Element.
+
 ## Why are direct messages showing up under "Rooms" instead of "People"?
 All chats in Matrix are actually rooms, and there's no good way for bridges to
 declare that a room is a DM. Specifically, the DM status is stored in the
