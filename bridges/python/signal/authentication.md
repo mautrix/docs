@@ -8,6 +8,10 @@
 3. Scan the QR code the bridge sends you.
 
 ## Registering as the primary device
+Note that this method isn't recommended, as it's harder to recover if something
+goes wrong. When the bridge is linked as a secondary device, it can always be
+unlinked and relinked if something breaks.
+
 1. Send `register <phone>` to the bridge bot. The phone should be in the
    international format with no spaces.
 2. Once you get the SMS verification code, send it to the bridge.
