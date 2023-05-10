@@ -21,10 +21,14 @@ plugin with a predefined Matrix account.
    * Alternatively install the latest git version with
      `pip install --upgrade git+https://github.com/maubot/maubot.git#egg=maubot[all]`
 2. Extract the plugin you want to run into the directory
-   (at least `maubot.yaml` and some Python modules should be there).
+   * `.mbp` files can be extracted with `unzip`.
+   * You can also just clone the plugin repository and use it directly.
+   * After extracting, you should have `maubot.yaml` and some Python modules in
+     the directory.
 3. Install any dependencies that the plugin has into the virtualenv manually
    (they should be listed in `maubot.yaml`).
-4. Copy the [standalone example config] to the same directory and fill it out.
+4. Copy the [standalone example config] to the same directory as `config.yaml`
+   and fill it out.
    * If the plugin has a config, you should copy the contents from the plugin's
      `base-config.yaml` into the `plugin_config` object in the standalone config,
      then fill it out as needed.
