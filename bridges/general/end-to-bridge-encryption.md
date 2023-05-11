@@ -6,6 +6,7 @@ when using end-to-bridge encryption.
 To enable it, you must install the bridge with dependencies:
 * For Python-based bridges, install the `e2be` [optional dependency](../python/optional-dependencies.md).
 * For Go-based bridges, make sure the bridge is built with libolm.
+  * CI binaries are always built with libolm.
 
 After that, simply enable the option in the config (`bridge` → `encryption`).
 If you only set `allow: true`, the bridge won't enable encryption on its own,
@@ -22,7 +23,9 @@ missing piece is tracked in [matrix-org/dendrite#2723] and [famedly/conduit#321]
 [matrix-org/dendrite#2723]: https://github.com/matrix-org/dendrite/issues/2723
 [famedly/conduit#321]: https://gitlab.com/famedly/conduit/-/issues/321
 
-## Legacy registration file workaround
+<details>
+<summary>Legacy registration file workaround</summary>
+
 In mautrix-telegram v0.8.0 release candidates, you had to manually apply a
 workaround for [MSC2190](https://github.com/matrix-org/matrix-spec-proposals/pull/2190).
 In newer versions (mautrix-telegram v0.8.0+, mautrix-python v0.5.0-rc3+) the
@@ -49,3 +52,5 @@ workaround manually:
    ```shell
    $ curl -H "Authorization: Bearer <as_token>" -d '{"username": "telegrambot"}' -X POST https://your.homeserver/_matrix/client/r0/register?kind=user
    ```
+
+</details>
