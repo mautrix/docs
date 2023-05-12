@@ -84,4 +84,4 @@ You can also refer to Apple's [official documentation on disabling SIP](https://
    executable you downloaded or compiled.
 4. Run the bridge with `./mautrix-imessage`.
 
-[com.apple.security.xpc.plist]: https://github.com/beeper/barcelona/blob/mautrix/com.apple.security.xpc.plist
+[com.apple.security.xpc.plist]: https://github.com/beeper/barcelona/blob/main/com.apple.security.xpc.plist
