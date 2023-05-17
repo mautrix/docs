@@ -49,6 +49,7 @@ Tab-completing file paths is supported in all these commands.
 * `/react <reaction>` - React to the selected message.
 * `/redact [reason]` - Redact the selected message.
 * `/edit` - Edit the selected message.
+* `/delete` - Delete the selected message.
 
 ### Encryption
 These commands support tab-completing file paths and user/device IDs using the
