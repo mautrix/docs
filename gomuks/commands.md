@@ -47,7 +47,7 @@ Tab-completing file paths is supported in all these commands.
 * `/reply [text]` - Reply to the selected message. If text is not specified,
   the next message will be used.
 * `/react <reaction>` - React to the selected message.
-* `/redact [reason]` - Redact the selected message.
+* `/redact [reason]` - Redact (delete) the selected message.
 * `/edit` - Edit the selected message.
 
 ### Encryption
