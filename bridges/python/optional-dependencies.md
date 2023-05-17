@@ -51,7 +51,6 @@ pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projec
 | pip extra name      | Required packages | Description                                                        |
 |---------------------|-------------------|--------------------------------------------------------------------|
 | `speedups`          | cryptg<br>cchardet<br>aiodns<br>brotli | Speed up some things, e.g. by using native crypto code. |
-| `hq_thumbnails`     | moviepy (numpy)   | High quality thumbnails for Telegram->Matrix gifs and videos.  If you want to use an existing `ffmpeg` installation for `moviepy`, set the `FFMPEG_BINARY` environment variable before starting the bridge. If it's not set, a ffmpeg binary will be downloaded automatically. |
 | `qr_login`          | qrcode<br>Pillow  | Telegram login by scanning a QR code from another device.          |
 | `formattednumbers`  | phonenumbers      | Format phone numbers nicely in contact share messages              |
 
