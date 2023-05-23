@@ -70,7 +70,7 @@ matrix.example.com {
 	handle /_matrix/media/*/thumbnail/discord-media.mau.dev/* {
 		header Access-Control-Allow-Origin *
 		route {
-			uri path_regexp ^/_matrix/media/.+/download/discord-media\.mau\.dev/ /
+			uri path_regexp ^/_matrix/media/.+/thumbnail/discord-media\.mau\.dev/ /
 			uri replace "%7C" /
 			redir https://media.discordapp.net{uri} 307
 		}
