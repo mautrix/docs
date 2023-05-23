@@ -6,7 +6,7 @@ when using end-to-bridge encryption.
 To enable it, you must install the bridge with dependencies:
 * For Python-based bridges, install the `e2be` [optional dependency](../python/optional-dependencies.md).
 * For Go-based bridges, make sure the bridge is built with libolm.
-  * CI binaries are always built with libolm.
+  * CI binaries from mau.dev and release binaries on GitHub are always built with libolm.
 
 After that, simply enable the option in the config (`bridge` → `encryption`).
 If you only set `allow: true`, the bridge won't enable encryption on its own,
