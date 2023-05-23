@@ -62,7 +62,7 @@ matrix.example.com {
 		route {
 			uri path_regexp ^/_matrix/media/.+/download/discord-media\.mau\.dev/ /
 			uri replace "%7C" /
-			redir https://cdn.discordapp.com{uri} 307
+			redir https://media.discordapp.net{uri} 307
 		}
 	}
 	# Do the same for thumbnails, but redirect to media.discordapp.net (which is Discord's thumbnailing server, and happens to use similar width/height params as Matrix)
