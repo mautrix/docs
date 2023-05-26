@@ -16,12 +16,12 @@ will automatically enable encryption in new portals.
 You should **not** set `appservice: true` at the moment, as the Synapse
 implementation is still incomplete and has not been tested with the bridges.
 
-Note that end-to-bridge encryption does not currently work on Dendrite nor
-Conduit as they don't implement the necessary parts of the spec. The critical
-missing piece is tracked in [matrix-org/dendrite#2723] and [famedly/conduit#321].
+Note that end-to-bridge encryption does not currently work on Dendrite as it
+doesn't implement the necessary parts of the spec. The critical missing piece
+is tracked in [matrix-org/dendrite#2723]. Additionally, Conduit only supports
+it starting from v0.6.0.
 
 [matrix-org/dendrite#2723]: https://github.com/matrix-org/dendrite/issues/2723
-[famedly/conduit#321]: https://gitlab.com/famedly/conduit/-/issues/321
 
 <details>
 <summary>Legacy registration file workaround</summary>
