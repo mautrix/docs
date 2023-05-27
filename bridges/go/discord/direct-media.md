@@ -36,7 +36,9 @@ downloads directly to cdn.discordapp.com. This method doesn't involve your
 media repo at all, so it already works with most clients. However, it won't
 work with servers that don't support MSC3860, as they'd still try to connect to
 discord-media.mau.dev, which may be a problem if you want to use your bridge in
-federated rooms.
+federated rooms. Additionally, you may encounter some CORS issues with this
+method as cdn.discordapp.com doesn't provide CORS headers for all files (like
+webp images and non-inline documents)
 
 <details>
 <summary>Caddy config example</summary>
