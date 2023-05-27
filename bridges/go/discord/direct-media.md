@@ -187,5 +187,60 @@ matrix.example.com {
 </details>
 
 <details>
-<summary>TODO: Nginx config example</summary>
+<summary>Nginx config example</summary>
+
+```nginx
+server {
+	listen 443;
+	server_name matrix.example.com;
+	# ... usual /_matrix location block and other stuff ...
+
+	# You may need to configure a resolver for nginx to be able to resolve cdn.discordapp.com
+	#resolver 8.8.8.8;
+
+	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://cdn.discordapp.com/attachments/$1/$2/$3;
+	}
+	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/emojis\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://cdn.discordapp.com/emojis/$1;
+	}
+	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/stickers\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://cdn.discordapp.com/stickers/$1;
+	}
+	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/avatars\|([0-9]+)\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://cdn.discordapp.com/avatars/$1/$2;
+	}
+
+	# Thumbnails (optional-ish)
+	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://media.discordapp.net/attachments/$1/$2/$3?$args;
+	}
+	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/emojis\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://media.discordapp.net/emojis/$1?$args;
+	}
+	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/stickers\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://media.discordapp.net/stickers/$1?$args;
+	}
+	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/avatars\|([0-9]+)\|(.+)$ {
+		add_header Access-Control-Allow-Origin *;
+		proxy_set_header Host cdn.discordapp.com;
+		proxy_pass https://media.discordapp.net/avatars/$1/$2?$args;
+	}
+}
+```
+
 </details>
