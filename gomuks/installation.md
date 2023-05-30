@@ -6,7 +6,7 @@ The releases on GitHub contain binaries and debian
 packages: <https://github.com/tulir/gomuks/releases>
 
 GitLab CI builds binaries for each
-commit: <https://mau.dev/tulir/gomuks/pipelines> (currently available for
+commit: <https://mau.dev/tulir/gomuks/-/pipelines> (currently available for
 linux/amd64, linux/arm, linux/arm64, darwin/amd64, darwin/arm64 and
 windows/amd64).
 

@@ -32,7 +32,7 @@ from the mau.dev CI.
    will simply call `go build` with some additional flags).
 
 ### Downloading a prebuilt executable
-1. Go to <https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1>
+1. Go to <https://mau.dev/mautrix/imessage/-/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list.
    * There are three entries: universal, arm64 (Apple Silicon) and amd64 (Intel).

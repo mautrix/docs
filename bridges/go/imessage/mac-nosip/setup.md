@@ -45,7 +45,7 @@ on a Mac that you won't use for anything else.
 [Barcelona build instructions]: https://github.com/beeper/barcelona/blob/main/BUILDING.md
 
 ### Downloading prebuilt executables
-1. Go to <https://mau.dev/mautrix/imessage/pipelines?scope=branches&page=1>
+1. Go to <https://mau.dev/mautrix/imessage/-/pipelines?scope=branches&page=1>
 2. Find the entry for the `master` branch and click the download button on the
    right-hand side in the list and choose "build universal".
 3. Extract the downloaded zip file into a new directory.
