@@ -2,10 +2,6 @@
 
 These methods are available in maubot's `MessageEvent` class.
 
-* `relates_to` - A property containing the event's `m.relates_to` data wrapped
-  in a `RelatesTo` object.
-* `get_reply_to() -> EventID` - Get the event ID the command is replying to.
-* `get_edit() -> EventID` - Get the event ID the command is editing.
 * `async react(key: str) -> EventID` - React to the command with the given key.
   The key can be arbitrary unicode text, but usually reactions are emojis.
 * `async mark_read()` - Send a read receipt for the command event.
@@ -29,6 +25,11 @@ These methods are available in maubot's `MessageEvent` class.
 * `async edit(content) -> EventID` - Edit the event. Same parameters
   as `reply()`. Note that while this won't throw an error for editing non-own
   messages, most clients won't render such edits.
+* `content` - Some useful methods are also inside the content property:
+  * `relates_to` - A property containing the event's `m.relates_to` data wrapped
+    in a `RelatesTo` object.
+  * `get_reply_to() -> EventID` - Get the event ID the command is replying to.
+  * `get_edit() -> EventID` - Get the event ID the command is editing.
 
 ## Event fields
 
