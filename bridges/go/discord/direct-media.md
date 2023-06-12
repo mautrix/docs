@@ -94,6 +94,7 @@ server {
 	listen 443;
 	server_name matrix.example.com;
 	# ... usual /_matrix location block and other stuff ...
+	# N.B. If you use a regex pattern for the /_matrix block, it must be below these locations
 
 	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
 		add_header Access-Control-Allow-Origin *;
@@ -194,6 +195,7 @@ server {
 	listen 443;
 	server_name matrix.example.com;
 	# ... usual /_matrix location block and other stuff ...
+	# N.B. If you use a regex pattern for the /_matrix block, it must be below these locations
 
 	# You may need to configure a resolver for nginx to be able to resolve cdn.discordapp.com
 	#resolver 8.8.8.8;
