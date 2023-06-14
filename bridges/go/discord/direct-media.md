@@ -224,22 +224,22 @@ server {
 	# Thumbnails (optional-ish)
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
 		add_header Access-Control-Allow-Origin *;
-		proxy_set_header Host cdn.discordapp.com;
+		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/attachments/$1/$2/$3?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_emojis\|(.+)$ {
 		add_header Access-Control-Allow-Origin *;
-		proxy_set_header Host cdn.discordapp.com;
+		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/emojis/$1?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_stickers\|(.+)$ {
 		add_header Access-Control-Allow-Origin *;
-		proxy_set_header Host cdn.discordapp.com;
+		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/stickers/$1?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_avatars\|([0-9]+)\|(.+)$ {
 		add_header Access-Control-Allow-Origin *;
-		proxy_set_header Host cdn.discordapp.com;
+		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/avatars/$1/$2?$args;
 	}
 }
