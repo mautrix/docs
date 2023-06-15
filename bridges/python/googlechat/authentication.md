@@ -14,7 +14,7 @@
       like this (field names are case-insensitive):
       ```json
       {
-        "compass": "dynamite-ui=..."
+        "compass": "dynamite-ui=...",
         "ssid": "...",
         "sid": "...",
         "osid": "...",
