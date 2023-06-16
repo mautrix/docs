@@ -10,7 +10,7 @@
       and select Linked devices.
    3. Point your phone at the image sent by the bot to capture the code.
 3. Finally, the bot should inform you of a successful login. If you enabled
-   backfill before logging in, andthe bridge should start creating portal rooms
+   backfill before logging in, the bridge should start creating portal rooms
    for all your WhatsApp groups and private chats. If not, rooms will be
    created when you receive a message.
 
