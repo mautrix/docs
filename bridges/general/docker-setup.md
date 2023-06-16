@@ -131,3 +131,20 @@ volumes:
 When you put the bridge and Synapse in the same docker-compose file, networking
 should work out of the box, which means you don't need any of the commented
 `ports` or `networks` things in the example compose file.
+
+## Kubernetes
+Kubernetes setups aren't officially supported. However, there are some things
+you should note if you want to run the bridges in k8s or similar systems:
+
+* You can bypass the startup script and just run the main bridge command
+  directly to avoid permission mangling, automatic registration generation,
+  and other such things. The bridge also doesn't need the registration file at
+  all when doing this, only the config file is needed.
+* A `StatefulSet` is likely the best way to run the bridge, because only one
+  container can be running at a time. Multiple containers even briefly are
+  extremely unsupported and may cause your server to explode.
+* You should set `publishNotReadyAddresses: true`. The bridges will check
+  homeserver -> bridge connectivity on startup, which may fail or be delayed if
+  k8s delays publishing the bridge address. There is also no reason to not
+  publish addresses ASAP, because you can only have one instance of the bridge
+  running at a time.
