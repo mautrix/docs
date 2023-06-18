@@ -8,6 +8,11 @@ Webhook relays can be used regardless of how you logged into Discord, a bot is
 not required. However, in the future the bridge may include additional relay
 integration using a bot.
 
+If you want to use the bridge for relaying only, it is recommended to have a
+dedicated Matrix account to log in as the bot user. If you log in on your main
+Matrix account, your messages will be sent through the bot rather than through
+the webhook with custom profiles.
+
 ## Setup
 To enable relaying in a room, use `!discord set-relay`. The command requires a
 parameter, which can either be `--create [name]` or `--url <url>`.
