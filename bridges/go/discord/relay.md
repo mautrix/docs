@@ -17,6 +17,10 @@ the webhook with custom profiles.
 To enable relaying in a room, use `!discord set-relay`. The command requires a
 parameter, which can either be `--create [name]` or `--url <url>`.
 
+The room must be bridged before running `set-relay`. You can either have the
+bridge create rooms by bridging the entire guild with the `guilds` command, or
+you can bridge individual channels using the `bridge` command.
+
 * `!discord set-relay --create` will create a new webhook. You must be logged
   into the bridge as a user or bot that has privileges to create webhooks in
   on the Discord side.
