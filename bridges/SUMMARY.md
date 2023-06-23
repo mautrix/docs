@@ -44,6 +44,7 @@
   - [Authentication](./go/whatsapp/authentication.md)
 - [mautrix-discord](./go/discord/index.md)
   - [Authentication](./go/discord/authentication.md)
+  - [Bridging rooms](./go/discord/bridging-rooms.md)
   - [Relaying with webhooks](./go/discord/relay.md)
   - [Direct media access](./go/discord/direct-media.md)
 - [mautrix-slack](./go/slack/index.md)

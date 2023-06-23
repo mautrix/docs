@@ -19,7 +19,8 @@ parameter, which can either be `--create [name]` or `--url <url>`.
 
 The room must be bridged before running `set-relay`. You can either have the
 bridge create rooms by bridging the entire guild with the `guilds` command, or
-you can bridge individual channels using the `bridge` command.
+you can bridge individual channels using the `bridge` command. See the [bridging
+rooms](./bridging-rooms.md) page for more info.
 
 * `!discord set-relay --create` will create a new webhook. You must be logged
   into the bridge as a user or bot that has privileges to create webhooks in
