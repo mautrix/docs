@@ -74,6 +74,8 @@ Don't use `sudo` for any of these steps (and preferably don't use the root user 
 
 ### Upgrading (production setup)
 0. Make sure you're in the virtualenv (`source ./bin/activate`).
+   * Note: if you updated Python, you'll have to recreate the virtualenv
+     to apply the update.
 1. Run the bridge install command again (install step #2).
 
 ## Development setup
@@ -94,6 +96,8 @@ Don't use `sudo` for any of these steps (and preferably don't use the root user 
 
 ### Upgrading (development setup)
 0. Make sure you're in the virtualenv (`source .venv/bin/activate`).
+   * Note: if you updated Python, you'll have to recreate the virtualenv
+     to apply the update.
 1. Pull changes from Git.
 2. Run the dependency install command again (install step #2).
 
