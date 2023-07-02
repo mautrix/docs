@@ -55,3 +55,5 @@
   - [Bridge setup (iOS)](./go/imessage/ios/setup.md)
     - [SMS forwarding](./go/imessage/ios/sms-forwarding.md)
   - [Bridge setup (Android SMS)](./go/imessage/android/setup.md)
+- [mautrix-gmessages](./go/gmessages/index.md)
+  - [Authentication](./go/gmessages/authentication.md)
