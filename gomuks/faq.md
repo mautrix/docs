@@ -49,6 +49,11 @@ After first startup, everything except the config path is saved to the config
 and will be read from there. To move existing gomuks data to a different path,
 you must change the paths in the config file.
 
+Additionally, gomuks stores debug logs in `/tmp/gomuks-$USER` by default.
+Prior to v0.4.0, the default path was `/tmp/gomuks` without the username.
+The path can be changed using the `DEBUG_DIR` environment variable, or debug
+logs can be disabled entirely by setting `DEBUG=false`
+
 ### System-specific defaults
 These are the base directories for each OS, data will be stored in the `gomuks`
 directory inside each base directory.
