@@ -21,6 +21,7 @@ Simply run the `logout` management command.
 
 <style>
 img.gm-icon {
+  height: 24px;
   vertical-align: middle;
 }
 </style>
