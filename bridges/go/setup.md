@@ -2,6 +2,12 @@
 
 {{ #include ../selector.html }}
 
+<p class="bridge-filter" bridges="gmessages" bridge-no-generic style="display: none">
+  <strong>
+    The Google Messages bridge is in very early development and is only suitable
+    for developers. Please check back later for a more production-ready bridge.
+  </strong>
+</p>
 <p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
   <strong>
     The Slack bridge should be mostly functional, but it is still in
