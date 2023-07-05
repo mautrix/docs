@@ -3,7 +3,7 @@ Welcome to the mautrix-gmessages docs!
 
 Use the sidebar to find the relevant pages. Things that are the same for all
 bridges, like setting up the bridge, are right below the "Go-based bridges"
-header. Things specific to mautrix-whatsapp are under this page.
+header. Things specific to mautrix-gmessages are under this page.
 
 These docs are mostly targeted towards people who are hosting the bridge
 themselves. If you don't want to host it yourself, you can use a public
