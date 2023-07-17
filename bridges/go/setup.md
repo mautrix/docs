@@ -4,8 +4,8 @@
 
 <p class="bridge-filter" bridges="gmessages" bridge-no-generic style="display: none">
   <strong>
-    The Google Messages bridge is in very early development and is only suitable
-    for developers. Please check back later for a more production-ready bridge.
+    The Google Messages bridge should be mostly functional, but it is still in
+    early development and therefore will have bugs and may get breaking changes.
   </strong>
 </p>
 <p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
