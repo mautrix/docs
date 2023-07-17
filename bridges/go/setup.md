@@ -8,12 +8,6 @@
     early development and therefore will have bugs and may get breaking changes.
   </strong>
 </p>
-<p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
-  <strong>
-    The Slack bridge should be mostly functional, but it is still in
-    early development and therefore will have bugs and may get breaking changes.
-  </strong>
-</p>
 
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
