@@ -15,6 +15,8 @@ different ways to connect to iMessage:
   Barcelona can be used on newer iOS devices.
 * Additionally, there's [android-sms], an Android app that implements the same
   [IPC protocol] as Brooklyn and Barcelona to bridge SMS from an Android phone.
+  * Note that the [Google Messages bridge](../gmessages/) is now recommended
+    over android-sms.
 
 You can find setup instructions for each of the connectors in the sidebar.
 
