@@ -54,6 +54,30 @@ clients or servers.
 [double puppeting]: ./double-puppeting.md
 [MSC2199]: https://github.com/matrix-org/matrix-spec-proposals/pull/2199
 
+## Why do I see the bridge as an unverified session in my device list?
+When using double puppeting, the bridge will have an access token for your
+account, and therefore show up as a session. However, double puppeting sessions
+never have encryption keys, which means they can't be verified. Some buggy
+clients (such as Element) will display non-e2ee-capable devices as "unverified",
+even though in reality there's nothing to verify.
+
+## Why are messages showing up as "Encrypted by a deleted session"
+All messages sent by the bridge are encrypted using the bridge bot's session
+even though they're sent with different accounts, which may confuse some clients.
+The warnings are harmless, so you should just ignore them.
+
+The bridge could technically create a separate e2ee session for each ghost user
+to avoid the warning, but that would be ridiculously inefficient, so it won't
+happen. In the future, there may be a proper way to define that the ghost users
+are delegating e2ee handling to the bridge bot.
+
+## Can I verify the bridge e2ee session?
+Bridges don't currently support interactive verification nor cross-signing, so
+you can't verify the bot user using the usual user verification flow. You can
+use the "Manually verify by text" option to verify the bridge bot's device, but
+it won't make any of the warnings mentioned above go away, so there isn't
+really any reason to do it.
+
 ## How do I bridge typing notifications and read receipts?
 Bridging ephemeral events (EDUs) is enabled by default in the bridges, but
 currently those events aren't sent to appservices by default. There are two
