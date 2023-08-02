@@ -3,6 +3,9 @@
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Follow one of the three instructions below.
 
+**N.B.** Discord may ban users who are too suspicious. The bridge shouldn't be
+too suspicious by default, but if you want to avoid any risk, use a bot account.
+
 ## QR login
 QR login is more convenient, but requires having the Discord mobile app
 installed, and may encounter CAPTCHAs which are currently not supported by the

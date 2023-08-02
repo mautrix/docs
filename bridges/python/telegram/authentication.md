@@ -17,6 +17,12 @@ contain your password/token in plaintext form.
 3. Choose the login method you want and follow the instructions under that
    heading, then go to the "Finally" section.
 
+**N.B.** While the bridge uses the official client API, Telegram is known to
+ban suspicious users, and a brand new account using a 3rd party client is
+considered suspicious. Using a well-established account is perfectly safe.
+If you do get banned, Telegram usually reverts incorrect bans fairly quickly
+after emailing recover@telegram.org.
+
 ### In-Matrix login
 4. Send your phone number to the room.
 5. The bot should prompt you to send your auth code to the room: send it once it
