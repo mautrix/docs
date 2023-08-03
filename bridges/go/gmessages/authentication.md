@@ -16,6 +16,10 @@
 As all messages are proxied through the app, your phone must be connected to
 the internet for the bridge to work.
 
+If you use Google Fi, note that the bridge does not support logging in with a
+Google account, so you must choose to use the normal QR login mode (option 1 in
+<https://support.google.com/fi/answer/6188337>).
+
 ## Logging out
 Simply run the `logout` management command.
 
