@@ -150,3 +150,6 @@ you should note if you want to run the bridges in k8s or similar systems:
   k8s delays publishing the bridge address. There is also no reason to not
   publish addresses ASAP, because you can only have one instance of the bridge
   running at a time.
+* Liveness and readiness endpoints are available at `/_matrix/mau/live` and
+  `/_matrix/mau/ready` respectively, but they aren't particularly useful due to
+  the points mentioned above.
