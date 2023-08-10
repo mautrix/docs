@@ -42,7 +42,7 @@ their documentation to find support rooms.
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 
-* Go 1.19.1+ (download & installation instructions at <https://go.dev/doc/install>).
+* Go 1.20+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
 
 ## Installation
