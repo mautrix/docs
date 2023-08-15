@@ -11,7 +11,9 @@
 This method is strongly discouraged, as it's harder to recover if something
 goes wrong, and you won't be able to migrate the registration when the bridge
 is rewritten in Go. If you don't want to use the official signal apps, you
-could use signal-cli to register and link the bridge to it.
+could use [signal-cli] to register and link the bridge to it.
+
+[signal-cli]: https://github.com/AsamK/signal-cli
 
 <details>
 <summary>Registration instructions</summary>
