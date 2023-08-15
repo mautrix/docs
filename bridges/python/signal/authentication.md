@@ -8,9 +8,13 @@
 3. Scan the QR code the bridge sends you.
 
 ## Registering as the primary device
-Note that this method isn't recommended, as it's harder to recover if something
-goes wrong. When the bridge is linked as a secondary device, it can always be
-unlinked and relinked if something breaks.
+This method is strongly discouraged, as it's harder to recover if something
+goes wrong, and you won't be able to migrate the registration when the bridge
+is rewritten in Go. If you don't want to use the official signal apps, you
+could use signal-cli to register and link the bridge to it.
+
+<details>
+<summary>Registration instructions</summary>
 
 1. Send `register <phone>` to the bridge bot. The phone should be in the
    international format with no spaces.
@@ -24,3 +28,5 @@ with captcha required errors. The bridge supports the same `--captcha`
 parameter as signaldctl, but it must be passed before the phone number instead
 of after (e.g. `!signal register --captcha signal-recaptcha-v2.03AOLTBLR... +12024561414`).
 The `signalcaptcha://` prefix must *not* be included, but everything after it must be.
+
+</details>
