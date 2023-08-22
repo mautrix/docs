@@ -63,15 +63,51 @@ matrix.org). In such cases, manual login is the only option.
 
 [matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
 
-### Appservice method
-**This method is experimental and may have unexpected side-effects.**
+### Appservice method (new)
+**This method is currently only supported on unreleased versions of mautrix-go bridges.**
 
-Potential side-effects include:
+This method doesn't log in at all, instead it uses an `as_token` directly with
+the `user_id` query parameter. It should work on all homeserver implementations
+that support appservices, including old Conduits and Dendrites.
 
-* Push notifications not working due to bugs in Synapse
-  ([#2211](https://github.com/matrix-org/synapse/issues/2211))
-* The bridge bot joining rooms unexpectedly when events are pushed to it
-* Other unknown effects
+First create a new appservice registration file:
+
+```yaml
+id: doublepuppet
+url:
+as_token: random string
+hs_token: random string
+sender_localpart: random string
+rate_limited: false
+namespaces:
+  users:
+  - regex: '@.*:your\.server'
+    exclusive: false
+```
+
+Generate random strings for each `random string` in the example. Also replace
+`your\.server` with your server name (it's regex, so escape dots like in the
+example). Note that the `url` field is intentionally blank: the homeserver
+should not push events anywhere for this extra appservice. The `hs_token` is
+therefore also not used.
+
+Install the registration file the same way as the main bridge registration
+(see [Registering appservices]).
+
+Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map` (e.g.
+if you have `as_token: meow` in the registration, set `as_token:meow` in the
+bridge config).
+
+This method works for other homeservers too, you just have to create a new
+registration file for each server (which obviously means you have to be the
+server admin), and set the server address in `double_puppet_server_map`.
+
+[Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
+
+### Appservice method (legacy)
+**This method is not recommended.** Doing this causes all events from rooms
+your user is in to be pushed to the bridge, which then makes the bridge bot
+join the rooms (as the bridge assumes it only receives events meant for it).
 
 Additionally, it only works for users who are on the same homeserver as the
 bridge, it can't be used with other homeservers at all (even with admin access).
