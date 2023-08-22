@@ -70,33 +70,31 @@ This method doesn't log in at all, instead it uses an `as_token` directly with
 the `user_id` query parameter. It should work on all homeserver implementations
 that support appservices, including old Conduits and Dendrites.
 
-First create a new appservice registration file:
+1. First create a new appservice registration file:
 
-```yaml
-id: doublepuppet
-url:
-as_token: random string
-hs_token: random string
-sender_localpart: random string
-rate_limited: false
-namespaces:
-  users:
-  - regex: '@.*:your\.server'
-    exclusive: false
-```
+   ```yaml
+   id: doublepuppet
+   url:
+   as_token: random string
+   hs_token: random string
+   sender_localpart: random string
+   rate_limited: false
+   namespaces:
+     users:
+     - regex: '@.*:your\.server'
+       exclusive: false
+   ```
 
-Generate random strings for each `random string` in the example. Also replace
-`your\.server` with your server name (it's regex, so escape dots like in the
-example). Note that the `url` field is intentionally blank: the homeserver
-should not push events anywhere for this extra appservice. The `hs_token` is
-therefore also not used.
-
-Install the registration file the same way as the main bridge registration
-(see [Registering appservices]).
-
-Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map` (e.g.
-if you have `as_token: meow` in the registration, set `as_token:meow` in the
-bridge config).
+   Generate random strings for each `random string` in the example. Also replace
+   `your\.server` with your server name (it's regex, so escape dots like in the
+   example). Note that the `url` field is intentionally blank: the homeserver
+   should not push events anywhere for this extra appservice. The `hs_token` is
+   therefore also not used.
+2. Install the registration file the same way as the main bridge registration
+   (see [Registering appservices]).
+3. Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map`
+   (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
+   in the bridge config).
 
 This method works for other homeservers too, you just have to create a new
 registration file for each server (which obviously means you have to be the
