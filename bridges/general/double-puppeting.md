@@ -104,8 +104,10 @@ that support appservices, including old Conduits and Dendrites.
    ```
 
 This method works for other homeservers too, you just have to create a new
-registration file for each server (which obviously means you have to be the
-server admin), and set the server address in `double_puppet_server_map`.
+registration file for each server, add the token to `login_shared_secret_map`,
+and also add the server address to `double_puppet_server_map` (for the bridge
+server, adding to the server map is not necessary as it defaults to using the
+one configured in `homeserver` -> `address`).
 
 [Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
 
