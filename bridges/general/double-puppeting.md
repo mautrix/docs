@@ -81,12 +81,12 @@ that support appservices, including old Conduits and Dendrites.
    rate_limited: false
    namespaces:
      users:
-     - regex: '@.*:your\.server'
+     - regex: '@.*:your\.domain'
        exclusive: false
    ```
 
    Generate random strings for each `random string` in the example. Also replace
-   `your\.server` with your server name (it's regex, so escape dots like in the
+   `your\.domain` with your server name (it's regex, so escape dots like in the
    example). Note that the `url` field is intentionally blank: the homeserver
    should not push events anywhere for this extra appservice. The `hs_token` is
    therefore also not used.
@@ -95,6 +95,13 @@ that support appservices, including old Conduits and Dendrites.
 3. Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map`
    (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
    in the bridge config).
+   ```yaml
+   bridge:
+     ...
+     login_shared_secret_map:
+       your.domain: "as_token:meow"
+     ...
+   ```
 
 This method works for other homeservers too, you just have to create a new
 registration file for each server (which obviously means you have to be the
