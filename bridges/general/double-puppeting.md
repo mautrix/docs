@@ -106,6 +106,9 @@ confusing sessions to the session list visible to the user.
      ...
    ```
 
+If you set up double puppeting for multiple bridges, you can safely reuse the
+same registration by just setting the same token in the config of each bridge.
+
 This method works for other homeservers too, you just have to create a new
 registration file for each server, add the token to `login_shared_secret_map`,
 and also add the server address to `double_puppet_server_map` (for the bridge
