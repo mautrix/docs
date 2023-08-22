@@ -68,7 +68,9 @@ matrix.org). In such cases, manual login is the only option.
 
 This method doesn't log in at all, instead it uses an `as_token` directly with
 the `user_id` query parameter. It should work on all homeserver implementations
-that support appservices, including old Conduits and Dendrites.
+that support appservices, including old Conduits and Dendrites. This method
+also makes timestamp massaging work correctly and disables ratelimiting for
+double puppeted messages.
 
 Since there's no login step, this method also has the benefit of not adding
 confusing sessions to the session list visible to the user.
@@ -76,28 +78,32 @@ confusing sessions to the session list visible to the user.
 1. First create a new appservice registration file:
 
    ```yaml
+   # The ID doesn't really matter, put whatever you want.
    id: doublepuppet
+   # The URL is intentionally left empty, as the homeserver shouldn't push
+   # events anywhere for this extra appservice
    url:
+   # Generate random strings for these three fields.
+   # (only the as_token really matters)
    as_token: random string
    hs_token: random string
    sender_localpart: random string
+   # Bridges don't like ratelimiting. This should only apply when using the
+   # as_token, normal user tokens will still be ratelimited.
    rate_limited: false
    namespaces:
      users:
+     # Replace your\.domain with your server name (escape dots for regex)
      - regex: '@.*:your\.domain'
+       # This must be false so the appservice doesn't take over all users completely.
        exclusive: false
    ```
-
-   Generate random strings for each `random string` in the example. Also replace
-   `your\.domain` with your server name (it's regex, so escape dots like in the
-   example). Note that the `url` field is intentionally blank: the homeserver
-   should not push events anywhere for this extra appservice. The `hs_token` is
-   therefore also not used.
 2. Install the registration file the same way as the main bridge registration
    (see [Registering appservices]).
 3. Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map`
    (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
-   in the bridge config).
+   in the bridge config). Remember to quote the value since `:` is a special
+   character in YAML.
    ```yaml
    bridge:
      ...
