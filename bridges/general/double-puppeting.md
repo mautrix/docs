@@ -70,6 +70,9 @@ This method doesn't log in at all, instead it uses an `as_token` directly with
 the `user_id` query parameter. It should work on all homeserver implementations
 that support appservices, including old Conduits and Dendrites.
 
+Since there's no login step, this method also has the benefit of not adding
+confusing sessions to the session list visible to the user.
+
 1. First create a new appservice registration file:
 
    ```yaml
