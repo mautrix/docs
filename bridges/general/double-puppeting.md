@@ -64,7 +64,8 @@ matrix.org). In such cases, manual login is the only option.
 [matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
 
 ### Appservice method (new)
-**This method is currently only supported on unreleased versions of mautrix-go bridges.**
+**This method is currently only supported on unreleased versions of Go bridges,
+and in Python bridges using mautrix-python 0.20.1 or higher.**
 
 This method doesn't log in at all, instead it uses an `as_token` directly with
 the `user_id` query parameter. It should work on all homeserver implementations
