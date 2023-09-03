@@ -69,9 +69,9 @@ and in Python bridges using mautrix-python 0.20.1 or higher.**
 
 This method doesn't log in at all, instead it uses an `as_token` directly with
 the `user_id` query parameter. It should work on all homeserver implementations
-that support appservices, including old Conduits and Dendrites. This method
-also makes timestamp massaging work correctly and disables ratelimiting for
-double puppeted messages.
+that support appservices. However, some servers don't follow the spec, and may
+not work with a null `url` field. This method also makes timestamp massaging
+work correctly and disables ratelimiting for double puppeted messages.
 
 Since there's no login step, this method also has the benefit of not adding
 confusing sessions to the session list visible to the user.
@@ -81,8 +81,9 @@ confusing sessions to the session list visible to the user.
    ```yaml
    # The ID doesn't really matter, put whatever you want.
    id: doublepuppet
-   # The URL is intentionally left empty, as the homeserver shouldn't push
-   # events anywhere for this extra appservice
+   # The URL is intentionally left empty (null), as the homeserver shouldn't
+   # push events anywhere for this extra appservice. If you use a
+   # non-spec-compliant server, you may need to put some fake URL here.
    url:
    # Generate random strings for these three fields.
    # (only the as_token really matters)
