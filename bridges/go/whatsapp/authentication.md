@@ -2,7 +2,7 @@
 0. Open a private chat with the bridge bot. Usually `@whatsappbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Send `login` to start the login.
-   * _New in version 0.10.0:_ To log in by entering a 8-letter code on your
+   * _New in version 0.10.1:_ To log in by entering a 8-letter code on your
      phone instead of scanning the QR code, pass your phone number after the
      command, e.g. `login +123456789`.
 2. Log in by scanning the QR code or entering the pairing code. If the code
