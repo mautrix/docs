@@ -4,15 +4,6 @@ account. When you do so, messages that you send from other clients will be sent
 from your Matrix account instead of the default ghost user. In most of the
 bridges, this is necessary to bridge DMs you send from other clients to Matrix.
 
-Also, in servers that don't support [MSC2409] (i.e. Synapse before v1.22), it is
-the only way to enable bridging of ephemeral events, such as presence, typing
-notifications and read receipts. If you want to use MSC2409 for ephemeral
-events, make sure `appservice` -> `ephemeral_events` is set to `true` in the
-bridge config and that the registration file has the appropriate flags too
-(you can regenerate the registration after updating the bridge config).
-
-[MSC2409]: https://github.com/matrix-org/matrix-spec-proposals/pull/2409
-
 ## Manually
 Double puppeting can only be enabled after logging into the bridge. As with
 the normal login, you must do this in a private chat with the bridge bot.
