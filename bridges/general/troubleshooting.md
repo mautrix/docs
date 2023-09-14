@@ -34,6 +34,9 @@ There are a few potential reasons this can happen:
 Check the bridge logs to see if the bridge is receiving the messages and
 whether it's responding to them or just not handling them at all.
 
+If there's nothing in the logs, then the homeserver may have backed off on
+sending transactions as per the above entry.
+
 ## I don't see any responses from the bridge bot in Matrix, but the responses are visible in the bridge logs
 Make sure you didn't ignore the bot.
 
