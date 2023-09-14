@@ -30,6 +30,10 @@ There are a few potential reasons this can happen:
   after an hour or so (exact backoff depends on how long the bridge was down),
   check the homeserver logs.
 
+## The bot accepted the invite, but I don't see any responses from the bridge bot in Matrix
+Check the bridge logs to see if the bridge is receiving the messages and
+whether it's responding to them or just not handling them at all.
+
 ## I don't see any responses from the bridge bot in Matrix, but the responses are visible in the bridge logs
 Make sure you didn't ignore the bot.
 
