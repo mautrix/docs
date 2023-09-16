@@ -44,16 +44,19 @@ This method is supported as of:
 | Bridge          | Version |
 |-----------------|---------|
 | Telegram        | 0.14.2† |
-| WhatsApp        | 0.10.1† |
-| Discord         | 0.6.2†  |
-| Google Messages | 0.2.0†  |
+| WhatsApp        | 0.10.1  |
+| Discord         | 0.6.2   |
+| Google Messages | 0.2.0   |
 | Signal          | 0.5.0‡  |
 | Google Chat     | 0.5.1†  |
 | Facebook        | 0.5.1†  |
 | Instagram       | 0.3.1†  |
 | Twitter         | 0.1.7†  |
+| Slack           | \*      |
+| iMessage        | \*      |
 
 <small>† Not yet released</small>
+<small>\* Slack and iMessage don't have the feature yet</small>
 <small>‡ 0.5.0 is the Go rewrite of Signal</small>
 </details>
 
