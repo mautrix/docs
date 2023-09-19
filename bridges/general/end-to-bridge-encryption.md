@@ -1,12 +1,27 @@
 # End-to-bridge encryption
 The bridge can optionally encrypt messages between Matrix users and the bridge
-to hide messages from the homeserver. Using Postgres is strongly recommended
-when using end-to-bridge encryption.
+to hide messages from the homeserver. The use cases for this are:
+
+* Storing messages encrypted on disk rather than in plaintext.
+  * In unencrypted rooms, events are stored in plaintext in the homeserver database.
+  * E2BE can be configured to delete keys immediately after encrypting/decrypting,
+    which means the server being compromised in the future won't compromise old
+    bridged messages.
+* Preventing the server from seeing messages at all when bridges are hosted locally:
+  * When using Beeper, you can self-host bridges locally and connect them to
+    the Beeper servers. End-to-bridge encryption means the Beeper servers never
+    see messages.
+  * If you have your own homeserver on a cloud VPS, you can host bridges on
+    a local raspberry pi or similar to ensure your cloud provider can't see
+    messages.
+
+## Basic usage
 
 To enable it, you must install the bridge with dependencies:
 * For Python-based bridges, install the `e2be` [optional dependency](../python/optional-dependencies.md).
 * For Go-based bridges, make sure the bridge is built with libolm.
   * CI binaries from mau.dev and release binaries on GitHub are always built with libolm.
+* Docker images for all bridges always support encryption and don't need any special build flags.
 
 After that, simply enable the option in the config (`bridge` → `encryption`).
 If you only set `allow: true`, the bridge won't enable encryption on its own,
@@ -27,6 +42,20 @@ is tracked in [matrix-org/dendrite#2723]. Additionally, Conduit only supports
 it starting from v0.6.0.
 
 [matrix-org/dendrite#2723]: https://github.com/matrix-org/dendrite/issues/2723
+
+## Additional security
+
+The bridges contain various additional options to configure how keys are handled.
+For maximum security, you should set:
+
+* `default: true` and `require: true` to reject any unencrypted messages.
+* All fields **except** `delete_outbound_on_ack` under `delete_keys` to `true`
+  to ratchet/delete keys immediately when they're no longer needed. This
+  prevents the bridge (and bridge admin) from reading old messages.
+* All fields under `verification_levels` to `cross-signed-tofu`. This means
+  only devices with valid cross-signing verification can use the bridge.
+
+## Legacy instructions
 
 <details>
 <summary>Legacy registration file workaround</summary>
