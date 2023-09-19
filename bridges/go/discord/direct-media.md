@@ -97,37 +97,45 @@ server {
 	# N.B. If you use a regex pattern for the /_matrix block, it must be below these locations
 
 	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://cdn.discordapp.com/attachments/$1/$2/$3;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/emojis\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://cdn.discordapp.com/emojis/$1;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/stickers\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		# Stickers don't have CORS headers on cdn.discordapp.com for some reason, so always use media.
 		return 307 https://media.discordapp.net/stickers/$1;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/download/discord-media.mau.dev/avatars\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://cdn.discordapp.com/avatars/$1/$2;
 	}
 
 	# Thumbnails (optional-ish)
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://media.discordapp.net/attachments/$1/$2/$3?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/emojis\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://media.discordapp.net/emojis/$1?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/stickers\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://media.discordapp.net/stickers/$1?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/discord-media.mau.dev/avatars\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		return 307 https://media.discordapp.net/avatars/$1/$2?$args;
 	}
@@ -201,21 +209,25 @@ server {
 	#resolver 8.8.8.8;
 
 	location ~ ^/_matrix/media/(?:v3|r0)/download/example.com/discord_attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host cdn.discordapp.com;
 		proxy_pass https://cdn.discordapp.com/attachments/$1/$2/$3;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/download/example.com/discord_emojis\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host cdn.discordapp.com;
 		proxy_pass https://cdn.discordapp.com/emojis/$1;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/download/example.com/discord_stickers\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host cdn.discordapp.com;
 		proxy_pass https://cdn.discordapp.com/stickers/$1;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/download/example.com/discord_avatars\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host cdn.discordapp.com;
 		proxy_pass https://cdn.discordapp.com/avatars/$1/$2;
@@ -223,21 +235,25 @@ server {
 
 	# Thumbnails (optional-ish)
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_attachments\|([0-9]+)\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/attachments/$1/$2/$3?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_emojis\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/emojis/$1?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_stickers\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/stickers/$1?$args;
 	}
 	location ~ ^/_matrix/media/(?:v3|r0)/thumbnail/example.com/discord_avatars\|([0-9]+)\|(.+)$ {
+		proxy_hide_header Access-Control-Allow-Origin;
 		add_header Access-Control-Allow-Origin *;
 		proxy_set_header Host media.discordapp.net;
 		proxy_pass https://media.discordapp.net/avatars/$1/$2?$args;
