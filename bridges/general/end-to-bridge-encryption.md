@@ -13,6 +13,11 @@ If you only set `allow: true`, the bridge won't enable encryption on its own,
 but will work in encrypted rooms. If you also set `default: true`, the bridge
 will automatically enable encryption in new portals.
 
+If your homeserver is configured to forcibly enable encryption in rooms, you
+must also set `default: true` in the bridge config. Force-enabling encryption
+on the server side will not notify the bridge, so unless the bridge enables
+encryption by default, the bridge will not find out that encryption was enabled.
+
 You should **not** set `appservice: true` at the moment, as the Synapse
 implementation is still incomplete and has not been tested with the bridges.
 
