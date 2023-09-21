@@ -35,8 +35,7 @@ packages in parentheses indicate a large dependency of the other packages.
 
 **N.B.** python-olm requires libolm3 with dev headers, Python dev headers, and
 a C compiler. This means `libolm-dev`, `python3-dev` and `build-essential` on
-Debian 11+ and Ubuntu 19.10+. On  older Debian-based distros, install
-`libolm-dev` from backports.
+Debian-based distros.
 
 If you want to avoid the dev headers, you can install the libolm3 package
 without -dev and get a pre-compiled python-olm from gitlab.matrix.org's PyPI
