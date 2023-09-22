@@ -39,6 +39,10 @@ their documentation to find support rooms.
   A WhatsApp client running on a phone (both physical and virtual phones work).
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   ffmpeg (if you want to send gifs from Matrix).
+* <span class="bridge-filter" bridges="discord">**mautrix-discord**: </span>
+  [LottieConverter](https://github.com/sot-tech/LottieConverter) (If not installed and someone sending a gif it will crash)
+* <span class="bridge-filter" bridges="discord">**mautrix-discord**: </span>
+  ffmpeg (If not installed and someone sending a gif it will crash)
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 
