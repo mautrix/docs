@@ -10,6 +10,10 @@ but it's not optimal for larger production deployments.
 The solution is standalone mode: a separate entrypoint that runs a single maubot
 plugin with a predefined Matrix account.
 
+Additionally, standalone mode supports using appservice transactions to receive
+events instead of /sync, which is often useful for huge production instances
+with lots of traffic.
+
 ## Basic usage
 
 0. Set up a virtual environment.
