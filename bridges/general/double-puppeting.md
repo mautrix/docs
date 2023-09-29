@@ -51,7 +51,7 @@ This method is supported as of:
 | Google Chat     | 0.5.1†  |
 | Facebook        | 0.5.1   |
 | Instagram       | 0.3.1   |
-| Twitter         | 0.1.7†  |
+| Twitter         | 0.1.7   |
 | Slack           | \*      |
 | iMessage        | \*      |
 
