@@ -43,6 +43,8 @@ If you want to compile the bridge manually (which is not required), you'll also 
 
 * Go 1.20+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
+* <span class="bridge-filter" bridges="signalgo">**mautrix-signal**: </span>
+  Rust and Cargo (if you want to compile libsignal yourself).
 
 ## Installation
 You may either compile the bridge manually or download a prebuilt executable
@@ -86,6 +88,17 @@ nor libolm installed.
      Note that libolm3 is required, which means you have to use backports on
      Debian stable.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
+
+<div class="bridge-filter" bridges="signalgo">
+
+  For mautrix-signal, if you don't want to compile libsignal yourself, you can
+  download a precompiled `libsignal_ffi.a` from the mau.dev CI and place it in
+  `/usr/local/lib` (or some other directory set in `LIBRARY_PATH`). Download links:
+  [GNU/Linux amd64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20linux%20amd64),
+  [GNU/Linux arm64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20linux%20arm64),
+  [macOS arm64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20macos%20arm64)
+
+</div>
 
 [`build.sh`]: https://github.com/mautrix/$bridge/blob/master/build.sh
 
