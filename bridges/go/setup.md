@@ -57,8 +57,8 @@ nor libolm installed.
 
 ### Downloading a prebuilt executable from CI
 1. Go to <https://mau.dev/mautrix/$bridge/-/pipelines?scope=branches&page=1>
-2. Find the entry for the `master` branch, click the download button on the
-   right-hand side in the list and choose the architecture you want.
+2. Find the entry for the `main` or `master` branch, click the download button
+   on the right-hand side in the list and choose the architecture you want.
 3. Extract the downloaded zip file into a new directory.
 
 ### Downloading a release
