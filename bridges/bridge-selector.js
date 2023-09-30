@@ -17,6 +17,21 @@ const bridgePorts = {
     "gmessages": "29336",
 }
 
+const mainBranch = {
+    "$bridge": "$main_branch",
+    "telegram": "master",
+    "whatsapp": "master",
+    "facebook": "master",
+    "instagram": "master",
+    "googlechat": "master",
+    "twitter": "master",
+    "signal": "master",
+    "signalgo": "main",
+    "discord": "main",
+    "slack": "main",
+    "gmessages": "main",
+}
+
 if (window.location.pathname.endsWith("docker-setup.html")) {
     allowedBridges = allowedBridges.concat(pythonBridges, goBridges)
 } else if (window.location.pathname.includes("/python/")) {
@@ -40,8 +55,13 @@ const updateBridgeSelection = () => {
     for (const elem of document.getElementsByClassName("bridge-type")) {
         elem.innerText = selector.value
     }
+    for (const elem of document.getElementsByClassName("bridge-main-branch")) {
+        elem.innerText = mainBranch[selector.value]
+    }
     for (const elem of document.getElementsByClassName("bridge-link")) {
-        elem.href = elem.getAttribute("data-href-template").replace("$bridge", selector.value)
+        elem.href = elem.getAttribute("data-href-template").
+            replace("$bridge", selector.value).
+            replace("$main_branch", mainBranch[selector.value])
     }
 
     const url = new URL(window.location)
@@ -89,16 +109,18 @@ if (selector) {
     selector.addEventListener("change", updateBridgeSelection)
 
     for (const node of document.getElementsByTagName("code")) {
-        node.innerHTML = node.innerHTML.replaceAll("$bridgeport", `<span class="bridge-port">$bridgeport</span>`)
-    }
-    for (const node of document.getElementsByTagName("code")) {
-        node.innerHTML = node.innerHTML.replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
+        node.innerHTML = node.innerHTML
+            .replaceAll("$bridgeport", `<span class="bridge-port">$bridgeport</span>`)
+            .replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
+            .replaceAll("$main_branch", `<span class="bridge-main-branch">$main_branch</span>`)
     }
     for (const node of document.getElementsByTagName("a")) {
         if (node.href.includes("$bridge")) {
             node.setAttribute("data-href-template", node.href)
             node.classList.add("bridge-link")
-            node.innerHTML = node.innerHTML.replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
+            node.innerHTML = node.innerHTML
+                .replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
+                .replaceAll("$main_branch", `<span class="bridge-main-branch">$main_branch</span>`)
         }
     }
     // TODO replace $bridge in non-code elements somehow
