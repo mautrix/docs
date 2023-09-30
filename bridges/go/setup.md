@@ -2,6 +2,10 @@
 
 {{ #include ../selector.html }}
 
+<p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
+  <strong>The new Signal bridge is still experimental and will have bugs.</strong>
+</p>
+
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
 the bridge:
