@@ -36,8 +36,14 @@ their documentation to find support rooms.
     Shared postgres instance is fine, but shared database is not.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   A WhatsApp client running on a phone (both physical and virtual phones work).
-* <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
+* <span class="bridge-filter" bridges="signalgo">**mautrix-signal**: </span>
+  A Signal client that can add linked devices (both official mobile apps and
+  some unofficial clients like signal-cli work).
+* <span class="bridge-filter" bridges="whatsapp,">**mautrix-whatsapp**: </span>
   ffmpeg (if you want to send gifs from Matrix).
+* <span class="bridge-filter" bridges="discord">**mautrix-discord**: </span>
+  [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
+  to receive animated stickers.
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 

@@ -31,6 +31,9 @@ their documentation to find support rooms.
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   A WhatsApp client running on a phone or in an emulated Android VM.
+* <span class="bridge-filter" bridges="signalgo">**mautrix-signal (new)**: </span>
+  A Signal client that can add linked devices (both official mobile apps and
+  some unofficial clients like signal-cli work).
 
 ## Setup
 Docker images are hosted on dock.mau.dev. Available docker tags are generally
