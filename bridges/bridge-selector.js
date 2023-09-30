@@ -75,7 +75,7 @@ const updateBridgeSelection = () => {
     for (const elem of document.getElementsByClassName("bridge-filter")) {
         const filterBridgeList = elem.getAttribute("bridges")?.split(",") ?? []
         const showItem = ((selector.value === "$bridge" && !elem.hasAttribute("bridge-no-generic")) ||
-            (selector.value !== "$bridge" && elem.getAttribute("bridges") === "all") ||
+            (selector.value !== "$bridge" && filterBridgeList.includes("all")) ||
             filterBridgeList.includes(selector.value)) && !filterBridgeList.includes(`!${selector.value}`)
         if (elem.tagName === "SPAN") {
             if (showItem) {
