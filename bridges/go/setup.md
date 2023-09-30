@@ -49,10 +49,8 @@ Prebuilt executables are the simplest option, as they don't require having Go
 nor libolm installed.
 
 <p class="bridge-filter" bridges="signalgo">
-
 **N.B.** The binaries for mautrix-signal are not static like other bridges,
 which means they only work on glibc-based distros (i.e. not Alpine).
-
 </p>
 
 ### Downloading a prebuilt executable from CI
