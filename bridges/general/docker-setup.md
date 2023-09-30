@@ -9,7 +9,9 @@
   The new Signal bridge written in Go doesn't need anything special and uses the standard Docker setup below.
 </p>
 <p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
-  <strong>The new Signal bridge is still experimental and will have bugs.</strong>
+  <strong>The new Signal bridge is still experimental and will have bugs.
+  Also, the bridge is currently in the signalgo repository, but it will move to
+  the main signal repo once it's ready.</strong>
 </p>
 
 This page contains instructions for setting up the bridge in Docker. To set up
