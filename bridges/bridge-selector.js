@@ -73,9 +73,10 @@ const updateBridgeSelection = () => {
     history.pushState({}, "", url)
 
     for (const elem of document.getElementsByClassName("bridge-filter")) {
-        const showItem = (selector.value === "$bridge" && !elem.hasAttribute("bridge-no-generic")) ||
+        const filterBridgeList = elem.getAttribute("bridges")?.split(",") ?? []
+        const showItem = ((selector.value === "$bridge" && !elem.hasAttribute("bridge-no-generic")) ||
             (selector.value !== "$bridge" && elem.getAttribute("bridges") === "all") ||
-            elem.getAttribute("bridges")?.split(",").includes(selector.value)
+            filterBridgeList.includes(selector.value)) && !filterBridgeList.includes(`!${selector.value}`)
         if (elem.tagName === "SPAN") {
             if (showItem) {
                 elem.parentElement.style.removeProperty("display")
