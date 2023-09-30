@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="{{ language }}" class="sidebar-visible no-js {{ default_theme }}">
+<html lang="{{ language }}" class="{{ default_theme }}" dir="{{ text_direction }}">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>{{ title }}</title>
         {{#if is_print }}
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
         {{/if}}
         {{#if base_url}}
         <base href="{{ base_url }}">
@@ -15,10 +15,9 @@
         <!-- Custom HTML head -->
         {{> head}}
 
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="{{ description }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         {{#if favicon_svg}}
         <link rel="icon" href="{{ path_to_root }}favicon.svg">
@@ -54,7 +53,8 @@
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         {{/if}}
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "{{ path_to_root }}";
@@ -83,22 +83,29 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('{{ default_theme }}')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -113,25 +120,47 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                 {{> header}}
                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">{{ theme_option "Light" }}</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">{{ theme_option "Rust" }}</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">{{ theme_option "Coal" }}</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">{{ theme_option "Navy" }}</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">{{ theme_option "Ayu" }}</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
                         {{#if search_enabled}}
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
@@ -153,6 +182,12 @@
                             <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
                         </a>
                         {{/if}}
+                        {{#if git_repository_edit_url}}
+                        <a href="{{git_repository_edit_url}}" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        {{/if}}
+
                     </div>
                 </div>
 
@@ -192,7 +227,7 @@
                         {{/previous}}
 
                         {{#next}}
-                            <a rel="next" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         {{/next}}
@@ -210,7 +245,7 @@
                 {{/previous}}
 
                 {{#next}}
-                    <a rel="next" href="{{ path_to_root }}{{link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 {{/next}}
@@ -269,22 +304,22 @@
         {{/if}}
 
         {{#if playground_js}}
-        <script src="{{ path_to_root }}ace.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}editor.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}mode-rust.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}theme-dawn.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}theme-tomorrow_night.js" charset="utf-8"></script>
+        <script src="{{ path_to_root }}ace.js"></script>
+        <script src="{{ path_to_root }}editor.js"></script>
+        <script src="{{ path_to_root }}mode-rust.js"></script>
+        <script src="{{ path_to_root }}theme-dawn.js"></script>
+        <script src="{{ path_to_root }}theme-tomorrow_night.js"></script>
         {{/if}}
 
         {{#if search_js}}
-        <script src="{{ path_to_root }}elasticlunr.min.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}mark.min.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}searcher.js" charset="utf-8"></script>
+        <script src="{{ path_to_root }}elasticlunr.min.js"></script>
+        <script src="{{ path_to_root }}mark.min.js"></script>
+        <script src="{{ path_to_root }}searcher.js"></script>
         {{/if}}
 
-        <script src="{{ path_to_root }}clipboard.min.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}highlight.js" charset="utf-8"></script>
-        <script src="{{ path_to_root }}book.js" charset="utf-8"></script>
+        <script src="{{ path_to_root }}clipboard.min.js"></script>
+        <script src="{{ path_to_root }}highlight.js"></script>
+        <script src="{{ path_to_root }}book.js"></script>
 
         <!-- Custom JS scripts -->
         {{#each additional_js}}
@@ -309,5 +344,6 @@
         {{/if}}
         {{/if}}
 
+    </div>
     </body>
 </html>
