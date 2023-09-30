@@ -2,13 +2,6 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="gmessages" bridge-no-generic style="display: none">
-  <strong>
-    The Google Messages bridge should be mostly functional, but it is still in
-    early development and therefore will have bugs and may get breaking changes.
-  </strong>
-</p>
-
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
 the bridge:
@@ -50,6 +43,13 @@ You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/releases).
 Prebuilt executables are the simplest option, as they don't require having Go
 nor libolm installed.
+
+<span class="bridge-filter" bridges="signal">
+
+**N.B.** The binaries for mautrix-signal are not static like other bridges,
+which means they only work on glibc-based distros (i.e. not Alpine).
+
+</span>
 
 ### Downloading a prebuilt executable from CI
 1. Go to <https://mau.dev/mautrix/$bridge/-/pipelines?scope=branches&page=1>

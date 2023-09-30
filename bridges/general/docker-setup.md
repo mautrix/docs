@@ -2,18 +2,6 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
-  <strong>The Signal bridge requires a second docker container for signald.
-  Instructions for setting up everything can be found on the
-  <a href="../python/signal/docker-setup.md">Signal-specific Bridge setup with Docker page</a></strong>
-</p>
-<p class="bridge-filter" bridges="gmessages" bridge-no-generic style="display: none">
-  <strong>
-    The Google Messages bridge should be mostly functional, but it is still in
-    early development and therefore will have bugs and may get breaking changes.
-  </strong>
-</p>
-
 This page contains instructions for setting up the bridge in Docker. To set up
 the bridge outside of Docker, see the language-specific instructions:
 [Python](../python/setup.md), [Go](../go/setup.md)
