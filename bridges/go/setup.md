@@ -63,10 +63,10 @@ nor libolm installed.
 2. Extract the downloaded zip file into a new directory.
 
 ### Downloading a release
-<p class="bridge-filter" bridges="slack">
+<p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
   <strong>The Slack bridge doesn't have releases yet</strong>
 </p>
-<p class="bridge-filter" bridges="signalgo">
+<p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
   <strong>The new Signal bridge doesn't have releases yet</strong>
 </p>
 
