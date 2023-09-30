@@ -63,6 +63,13 @@ nor libolm installed.
 2. Extract the downloaded zip file into a new directory.
 
 ### Downloading a release
+<p class="bridge-filter" bridges="slack">
+  <strong>The Slack bridge doesn't have releases yet</strong>
+</p>
+<p class="bridge-filter" bridges="signalgo">
+  <strong>The new Signal bridge doesn't have releases yet</strong>
+</p>
+
 1. Go to <https://github.com/mautrix/$bridge/releases>
 2. Download the binary for the architecture you want and save it in a new
    directory.
