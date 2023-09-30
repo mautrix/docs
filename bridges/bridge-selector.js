@@ -1,5 +1,5 @@
 const pythonBridges = ["telegram", "facebook", "googlechat", "twitter", "signal", "instagram"]
-const goBridges = ["whatsapp", "discord", "slack", "gmessages"]
+const goBridges = ["whatsapp", "discord", "slack", "gmessages", "signalgo"]
 let allowedBridges = ["$bridge"]
 
 const bridgePorts = {
@@ -10,6 +10,7 @@ const bridgePorts = {
     "googlechat": "29320",
     "twitter": "29327",
     "signal": "29328",
+    "signalgo": "29328",
     "instagram": "29330",
     "discord": "29334",
     "slack": "29335",

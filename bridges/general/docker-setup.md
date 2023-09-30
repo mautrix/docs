@@ -2,6 +2,16 @@
 
 {{ #include ../selector.html }}
 
+<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
+  <strong>The old Signal bridge requires a second docker container for signald.
+  Instructions for setting up everything can be found on the
+  <a href="../python/signal/docker-setup.md">Signal-specific Bridge setup with Docker page</a></strong>.
+  The new Signal bridge written in Go doesn't need anything special and uses the standard Docker setup below.
+</p>
+<p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
+  <strong>The new Signal bridge is still experimental and will have bugs.</strong>
+</p>
+
 This page contains instructions for setting up the bridge in Docker. To set up
 the bridge outside of Docker, see the language-specific instructions:
 [Python](../python/setup.md), [Go](../go/setup.md)

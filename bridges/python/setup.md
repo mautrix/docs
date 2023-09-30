@@ -39,7 +39,7 @@ their documentation to find support rooms.
   animated stickers to be converted to something viewable on Matrix.
 * <span class="bridge-filter" bridges="telegram,signal,facebook,instagram">**Bridges with voice messages**: </span>
   [ffmpeg](https://ffmpeg.org/) to transcode audio files (just install it with your system package manager).
-* <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
+* <span class="bridge-filter" bridges="signal">**mautrix-signal (legacy)**: </span>
   An instance of [signald](https://gitlab.com/signald/signald).
 
 ## Production setup
