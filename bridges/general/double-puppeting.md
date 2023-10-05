@@ -68,7 +68,9 @@ work correctly and disables ratelimiting for double puppeted messages.
 Since there's no login step, this method also has the benefit of not adding
 confusing sessions to the session list visible to the user.
 
-1. First create a new appservice registration file:
+1. First create a new appservice registration file. Don't touch the bridge's
+   main registration file, and make sure the ID and as/hs tokens are different
+   (having multiple appservices with the same ID or as_token isn't allowed).
 
    ```yaml
    # The ID doesn't really matter, put whatever you want.
@@ -77,8 +79,9 @@ confusing sessions to the session list visible to the user.
    # push events anywhere for this extra appservice. If you use a
    # non-spec-compliant server, you may need to put some fake URL here.
    url:
-   # Generate random strings for these three fields.
-   # (only the as_token really matters)
+   # Generate random strings for these three fields. Only the as_token really
+   # matters, hs_token is never used because there's no url, and the default
+   # user (sender_localpart) is never used either.
    as_token: random string
    hs_token: random string
    sender_localpart: random string
@@ -92,7 +95,7 @@ confusing sessions to the session list visible to the user.
        # This must be false so the appservice doesn't take over all users completely.
        exclusive: false
    ```
-2. Install the registration file the same way as the main bridge registration
+2. Install the new registration file the usual way
    (see [Registering appservices]).
 3. Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map`
    (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
@@ -107,7 +110,8 @@ confusing sessions to the session list visible to the user.
    ```
 
 If you set up double puppeting for multiple bridges, you can safely reuse the
-same registration by just setting the same token in the config of each bridge.
+same registration by just setting the same token in the config of each bridge
+(i.e. no need to create a new double puppeting registration for each bridge).
 
 This method works for other homeservers too, you just have to create a new
 registration file for each server, add the token to `login_shared_secret_map`,
@@ -117,7 +121,7 @@ one configured in `homeserver` -> `address`).
 
 [Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
 
-### Shared secret method
+### Shared secret method (legacy, synapse-only)
 
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
    * Make sure you set `m_login_password_support_enabled` to `true` in the config.
@@ -135,7 +139,7 @@ one configured in `homeserver` -> `address`).
 
 [matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
 
-### Appservice method (legacy)
+### Appservice method (legacy, deprecated)
 **This method is not recommended.** Doing this causes all events from rooms
 your user is in to be pushed to the bridge, which then makes the bridge bot
 join the rooms (as the bridge assumes it only receives events meant for it).
