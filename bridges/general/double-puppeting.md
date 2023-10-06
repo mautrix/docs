@@ -26,6 +26,24 @@ the normal login, you must do this in a private chat with the bridge bot.
    leave rooms and your account should join all rooms the ghost was in
    automatically.
 
+### Manually with SSO
+
+If you only have SSO login on your homeserver, the above example with password
+login won't work. However, doing SSO login manually is still possible, just a
+bit more work.
+
+1. Open `https://example.com/_matrix/client/v3/login/sso/redirect/?redirectUrl=http://localhost:12345`
+   in a browser. The redirect URL at the end doesn't have to be a real server,
+   since you can just copy the relevant value in the browser URL bar after the
+   redirect.
+2. Go through the SSO process, then once it redirects to localhost:12345, copy
+   the value of the `loginToken` query parameter.
+3. Log into the homeserver with the login token:
+   ```shell
+   $ curl -XPOST -d '{"type":"m.login.token","token":"THE TOKEN","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
+   ```
+4. Follow steps 2 and 3 of the normal password login instructions.
+
 ## Automatically
 Instead of requiring everyone to manually enable double puppeting, you can give
 the bridge access to log in on its own. This makes the process much smoother for
