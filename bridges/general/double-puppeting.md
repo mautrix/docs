@@ -117,8 +117,7 @@ confusing sessions to the session list visible to the user.
    (see [Registering appservices]).
 3. Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map`
    (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
-   in the bridge config). Remember to quote the value since `:` is a special
-   character in YAML.
+   in the bridge config).
    ```yaml
    bridge:
      ...
