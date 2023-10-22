@@ -1,6 +1,6 @@
 # Setup
 ## Requirements
-* Python 3.8 or higher with `pip` and `virtualenv`
+* Python 3.10 or higher with `pip` and `virtualenv`
 * (For dev setup) [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/en/docs/install)
 
 ## Production setup

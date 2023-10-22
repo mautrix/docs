@@ -25,7 +25,7 @@ their documentation to find support rooms.
 
 ## Requirements
 * Python 3.9 or higher with `pip` and `virtualenv`.
-  * 3.10 or higher is recommended, 3.9 support will be dropped some time after Debian 12 is released.
+  * 3.10 or higher is recommended, 3.9 support will be dropped in the near future.
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A PostgreSQL server, v10 or higher (which you should already have for Synapse).
