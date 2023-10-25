@@ -57,7 +57,7 @@ Don't use `sudo` for any of these steps (and preferably don't use the root user 
      end-to-bridge encryption, which requires libolm3.** See the
      [optional dependencies page](./optional-dependencies.md) for more info.
    * If you want the master branch instead of a release, use
-     `pip install --upgrade git+https://github.com/mautrix/$bridge.git#egg=mautrix-$bridge[all]`.
+     `pip install --upgrade mautrix-$bridge[all]@git+https://github.com/mautrix/$bridge.git`.
 3. Copy `example-config.yaml` to `config.yaml`.
 4. Update the config to your liking. You'll at least need to change the
    homeserver settings, database address, and bridge permissions. If you miss

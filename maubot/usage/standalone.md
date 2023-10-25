@@ -23,7 +23,7 @@ with lots of traffic.
    * `[all]` at the end will install all optional dependencies!
      The e2ee optional dependency requires libolm3 to be installed natively.
    * Alternatively install the latest git version with
-     `pip install --upgrade git+https://github.com/maubot/maubot.git#egg=maubot[all]`
+     `pip install --upgrade maubot[all]@git+https://github.com/maubot/maubot.git`
 2. Extract the plugin you want to run into the directory
    * `.mbp` files can be extracted with `unzip`.
    * You can also just clone the plugin repository and use it directly.
