@@ -21,6 +21,9 @@
         "hsid": "..."
       }
       ```
+    6. Close the browser window to prevent the cookies being invalidated
+       (Google uses refresh tokens, so you need to close the window within
+       a few minutes).
 2. Send `login-cookie {the json object}` to the bot.
 3. Recent chats should now get portals automatically. Other chats will get
    portals as you receive messages.
