@@ -62,11 +62,14 @@ clients or servers.
 [MSC2199]: https://github.com/matrix-org/matrix-spec-proposals/pull/2199
 
 ## Why do I see the bridge as an unverified session in my device list?
-When using double puppeting, the bridge will have an access token for your
-account, and therefore show up as a session. However, double puppeting sessions
-never have encryption keys, which means they can't be verified. Some buggy
-clients (such as Element) will display non-e2ee-capable devices as "unverified",
-even though in reality there's nothing to verify.
+When using old methods for double puppeting, the bridge will have an access
+token for your account, and therefore show up as a session. However, double
+puppeting sessions never have encryption keys, which means they can't be
+verified. Some buggy clients (such as Element) will display non-e2ee-capable
+devices as "unverified", even though in reality there's nothing to verify.
+
+The new appservice method for double puppeting does not create devices, and
+will therefore not cause false positives even in buggy clients.
 
 ## Why are messages showing up as "Encrypted by a deleted session"
 All messages sent by the bridge are encrypted using the bridge bot's session
