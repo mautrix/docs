@@ -7,6 +7,7 @@
 - [Registering appservices](./general/registering-appservices.md)
 - [End-to-bridge encryption](./general/end-to-bridge-encryption.md)
 - [Double puppeting](./general/double-puppeting.md)
+- [Backfilling messages](./general/backfill.md)
 - [Relay mode](./general/relay-mode.md)
 - [Bridge setup with Docker](./general/docker-setup.md)
 
