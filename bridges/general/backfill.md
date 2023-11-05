@@ -40,7 +40,9 @@ WhatsApp primarily uses "history sync" blobs, which the phone automatically
 sends to linked devices soon after successfully linking. If backfill is
 enabled, the bridge will temporarily save those messages to the database, and
 delete them once it has either backfilled the chat or found that the room
-already has messages and backfill isn't possible anymore.
+already has messages and backfill isn't possible anymore. There's no way to
+re-request the initial history sync blobs, so if backfill is disabled or
+something goes wrong, the only way to retry is to log out and back in.
 
 If `max_initial_conversations` is set to zero or higher, messages in chats
 without portal rooms will be stored in the bridge database until the room is
@@ -59,8 +61,9 @@ messages, you must also change the `message_count` option.
 More recently, WhatsApp has also added on-demand history syncs, but those are
 not yet implemented in the bridge. On-demand history sync wouldn't be
 particularly useful in most cases, as messages can't be inserted into the
-history anyway. It would primarily be useful when receiving a message in a very
-old chat that wasn't included in the initial history sync blob.
+history anyway. It would primarily be useful if something goes wrong in the
+initial backfill, or when receiving a message in a very old chat that wasn't
+included in the initial history sync blob.
 
 ### Signal
 Native Signal clients don't support any sort of history transfer (yes, the UX
