@@ -14,7 +14,7 @@ build-dir = "../dist/bridges"
 [output.html]
 git-repository-url = "https://github.com/mautrix/docs"
 git-repository-icon = "fa-github"
-additional-js = ["./bridge-selector.js"]
+additional-js = ["./bridge-selector.js", "./additional.js"]
 additional-css = ["additional.css"]
 theme = "../theme/bridges"
 
