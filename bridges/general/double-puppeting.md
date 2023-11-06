@@ -4,46 +4,6 @@ account. When you do so, messages that you send from other clients will be sent
 from your Matrix account instead of the default ghost user. In most of the
 bridges, this is necessary to bridge DMs you send from other clients to Matrix.
 
-## Manually
-Double puppeting can only be enabled after logging into the bridge. As with
-the normal login, you must do this in a private chat with the bridge bot.
-
-**N.B.** This method is not currently supported in mautrix-imessage and mautrix-slack.
-
-1. Log in on the homeserver to get an access token, for example with the command
-   ```shell
-   $ curl -XPOST -d '{"type":"m.login.password","identifier":{"type": "m.id.user", "user": "example"},"password":"wordpass","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
-   ```
-   You may want to change the `initial_device_display_name` field to something
-   more descriptive, or rename it from another client after logging in.
-   * In the past, getting a token from an existing client like Element was the
-     recommended easy way. However, multiple clients using the same token can
-     cause issues with encryption, so doing that is no longer allowed.
-2. Send `login-matrix <access token>` to the bridge bot. For the Telegram
-   bridge, send `login-matrix` without the access token, then send the access
-   token in a separate message.
-3. After logging in, the default Matrix ghost of your remote account should
-   leave rooms and your account should join all rooms the ghost was in
-   automatically.
-
-### Manually with SSO
-
-If you only have SSO login on your homeserver, the above example with password
-login won't work. However, doing SSO login manually is still possible, just a
-bit more work.
-
-1. Open `https://example.com/_matrix/client/v3/login/sso/redirect/?redirectUrl=http://localhost:12345`
-   in a browser. The redirect URL at the end doesn't have to be a real server,
-   since you can just copy the relevant value in the browser URL bar after the
-   redirect.
-2. Go through the SSO process, then once it redirects to localhost:12345, copy
-   the value of the `loginToken` query parameter.
-3. Log into the homeserver with the login token:
-   ```shell
-   $ curl -XPOST -d '{"type":"m.login.token","token":"THE TOKEN","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
-   ```
-4. Follow steps 2 and 3 of the normal password login instructions.
-
 ## Automatically
 Instead of requiring everyone to manually enable double puppeting, you can give
 the bridge access to log in on its own. This makes the process much smoother for
@@ -138,7 +98,8 @@ one configured in `homeserver` -> `address`).
 
 [Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
 
-### Shared secret method (legacy, synapse-only)
+<details>
+<summary><h3>Shared secret method (legacy, synapse-only)</h3></summary>
 
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
    * Make sure you set `m_login_password_support_enabled` to `true` in the config.
@@ -156,7 +117,10 @@ one configured in `homeserver` -> `address`).
 
 [matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
 
-### Appservice method (legacy, deprecated)
+</details>
+<details>
+<summary><h3>Appservice method (legacy, deprecated)</h3></summary>
+
 **This method is not recommended.** Doing this causes all events from rooms
 your user is in to be pushed to the bridge, which then makes the bridge bot
 join the rooms (as the bridge assumes it only receives events meant for it).
@@ -196,3 +160,45 @@ work on all homeserver implementations (caveat: as of writing, [Dendrite] and
    ```
 3. The bridge will now use appservice login enable double puppeting for all
    local users when they log into the bridge.
+
+</details>
+
+## Manually
+Double puppeting can only be enabled after logging into the bridge. As with
+the normal login, you must do this in a private chat with the bridge bot.
+
+**N.B.** This method is not currently supported in mautrix-imessage and mautrix-slack.
+
+1. Log in on the homeserver to get an access token, for example with the command
+   ```shell
+   $ curl -XPOST -d '{"type":"m.login.password","identifier":{"type": "m.id.user", "user": "example"},"password":"wordpass","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
+   ```
+   You may want to change the `initial_device_display_name` field to something
+   more descriptive, or rename it from another client after logging in.
+   * In the past, getting a token from an existing client like Element was the
+     recommended easy way. However, multiple clients using the same token can
+     cause issues with encryption, so doing that is no longer allowed.
+2. Send `login-matrix <access token>` to the bridge bot. For the Telegram
+   bridge, send `login-matrix` without the access token, then send the access
+   token in a separate message.
+3. After logging in, the default Matrix ghost of your remote account should
+   leave rooms and your account should join all rooms the ghost was in
+   automatically.
+
+### Manually with SSO
+
+If you only have SSO login on your homeserver, the above example with password
+login won't work. However, doing SSO login manually is still possible, just a
+bit more work.
+
+1. Open `https://example.com/_matrix/client/v3/login/sso/redirect/?redirectUrl=http://localhost:12345`
+   in a browser. The redirect URL at the end doesn't have to be a real server,
+   since you can just copy the relevant value in the browser URL bar after the
+   redirect.
+2. Go through the SSO process, then once it redirects to localhost:12345, copy
+   the value of the `loginToken` query parameter.
+3. Log into the homeserver with the login token:
+   ```shell
+   $ curl -XPOST -d '{"type":"m.login.token","token":"THE TOKEN","initial_device_display_name":"a fancy bridge"}' https://example.com/_matrix/client/v3/login
+   ```
+4. Follow steps 2 and 3 of the normal password login instructions.
