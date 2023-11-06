@@ -1,4 +1,7 @@
 # ~~iMessage~~ SMS bridge setup (Android)
+**This bridge is deprecated, the Google Messages bridge is recommended instead.**
+However, it should still work to some extent if you follow the instructions carefully.
+
 In addition to being an iMessage bridge, mautrix-imessage can run on Android to
 bridge SMS messages from your phone. The Android SMS bridge works similar to
 the [jailbroken iOS setup], but instead of Brooklyn, the wrapper app for the
