@@ -65,9 +65,8 @@ Some things to keep in mind:
 Follow the instructions at [github.com/beeper/bridge-manager](https://github.com/beeper/bridge-manager).
 
 ## Dendrite
-**N.B.** Dendrite v0.12.0 had severe bugs where room state randomly disappears.
-The bugs may be fixed in v0.13.1, but Synapse and Conduit are still recommended
-over Dendrite.
+**N.B.** Dendrite is not a supported environment, as it often has serious bugs.
+It is strongly recommended to use Synapse or Conduit instead.
 
 Dendrite works the same way as Synapse, except the relevant config field is
 [`config_files` under `app_service_api`](https://github.com/matrix-org/dendrite/blob/v0.6.0/dendrite-config.yaml#L130-L131)
