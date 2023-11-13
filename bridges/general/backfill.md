@@ -3,6 +3,11 @@ Most bridges here support fetching old messages and backfilling them into the
 Matrix room. However, the level of support and config options vary a lot
 between bridges.
 
+In general, backfill happens automatically, and the recommended way to do
+backfilling is to configure the bridge the way you want before starting to use
+it. Some bridges also have a `backfill` command, but automatic backfill is
+better due to the Matrix limitations mentioned in the section below.
+
 ## How backfilling works
 Bridges can set the timestamp of each message they send, which is the basic
 principle behind backfilling. This mechanism is called [timestamp massaging].
