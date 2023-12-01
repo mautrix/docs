@@ -7,6 +7,8 @@
 * `/logout` - Log out, clear caches and go back to the login view.
 * `/fingerprint` - Shows the Device ID and fingerprint, allowing verification of
   the session.
+* `/copy [register]` - Copy the selected message to the specified clipboard
+  register (defaults to `clipboard`).
 * `/toggle <thing>` - Toggle user preferences.
   * `rooms` - Room list sidebar.
   * `users` - User list sidebar.

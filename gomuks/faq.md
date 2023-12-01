@@ -21,6 +21,13 @@ retry decrypting old messages.
 Go's HTTP library reads the `https_proxy` environment variable by default
 (see <https://pkg.go.dev/net/http#ProxyFromEnvironment> for more info).
 
+## How do I copy text from gomuks?
+Most terminals allow selecting text even when mouse mode is enabled by using
+shift+drag. However, that way doesn't work for copying multiline text, so you
+may prefer the `/copy` command for copying a single message, or
+<kbd>Ctrl</kbd>+<kbd>L</kbd> to enter plaintext mode where you can copy
+whatever you want.
+
 ## Can I use gomuks with multiple accounts?
 gomuks currently only supports one account at a time, but you can run multiple
 instances of gomuks with different data directories. See the entry below for
