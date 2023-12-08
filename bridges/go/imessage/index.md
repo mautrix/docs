@@ -1,6 +1,8 @@
 # mautrix-imessage
 Welcome to the mautrix-imessage docs!
 
+**Note: This bridge is no longer actively maintained.**
+
 mautrix-imessage is a Matrix-iMessage puppeting bridge. The bridge has three
 different ways to connect to iMessage:
 

@@ -1,4 +1,6 @@
 # iMessage bridge setup (macOS without SIP)
+**Note: Barcelona is no longer maintained and may not work on recent macOS versions.**
+
 Please note that everything in these docs are meant for server admins who want
 to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper], which provides fully managed instances of all of these bridges.
