@@ -4,6 +4,15 @@ account. When you do so, messages that you send from other clients will be sent
 from your Matrix account instead of the default ghost user. In most of the
 bridges, this is necessary to bridge DMs you send from other clients to Matrix.
 
+Benefits of double puppeting:
+
+* Automatically accept invites to new chats.
+* Bridge messages you send from the native app in direct chats.
+* Bridge messages you send from the native app as your Matrix real user instead
+  of the bridge's ghost user.
+* Optionally sync some details like low priority, favorites, mute status
+  and [direct chat status](https://docs.mau.fi/bridges/general/troubleshooting.html#why-are-direct-messages-showing-up-under-rooms-instead-of-people).
+
 ## Automatically
 Instead of requiring everyone to manually enable double puppeting, you can give
 the bridge access to log in on its own. This makes the process much smoother for
