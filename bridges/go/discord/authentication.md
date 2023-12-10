@@ -58,4 +58,5 @@ If you don't want to use a real account, you can also log in as a bot.
 
 After a successful login, the bridge will create portals for some recent DMs
 (some is defined by `startup_private_channel_create_limit` in the bridge config).
+Messages can also be backfilled, but that is disabled by default (the limit is 0).
 To bridge guilds, use the `guilds` command.

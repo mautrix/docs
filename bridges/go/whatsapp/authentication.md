@@ -14,8 +14,10 @@
    3. Point your phone at the image sent by the bot to capture the code.
       * If logging in with pairing code, tap "Link with a phone number instead".
 3. Finally, the bot should inform you of a successful login.
-   * If backfilling  was enabled before logging in, portal rooms should start
-     being created approximately a minute after login.
+   * The bridge will start creating portal rooms approximately a minute after
+     login. The amount of backfill can be configured before login, the default
+     is to create portals for all chats from WhatsApp and backfill 50 messages
+     in recent chats.
 
 Please note that the bridge uses the web API. Prior to v0.2.0 and the multidevice
 update, your phone had to be connected to the internet for the bridge to work.

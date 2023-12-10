@@ -10,8 +10,9 @@
       from your conversation list and select **Device pairing**.
    3. Tap **QR code scanner** and point your phone at the image sent by the bot.
 3. Finally, the bot should inform you of a successful login.
-   * If backfilling  was enabled before logging in, portal rooms should start
-     being created approximately a minute after login.
+   * The bridge will create portal rooms for recent chats. The number is
+     configurable and defaults to 25 chats with 50 messages backfilled in each
+     chat.
 
 As all messages are proxied through the app, your phone must be connected to
 the internet for the bridge to work.
