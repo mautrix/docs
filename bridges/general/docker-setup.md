@@ -51,10 +51,8 @@ arm64 images.
    ```
    docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
-3. Update the config to your liking. You'll at least need to change the
-   homeserver settings, appservice address, database address and bridge
-   permissions. If you miss something that's required, the bridge will refuse
-   to start and tell you what's missing.
+3. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
+   page for recommendations.
    * Keep in mind that `localhost` is not the correct address inside Docker
      (unless using `network=host` mode). Usually you should have the bridge and
      homeserver in the same Docker network, and use the container names as

@@ -110,10 +110,8 @@ nor libolm installed.
 
 ## Configuring and running
 1. Copy `example-config.yaml` to `config.yaml`
-2. Update the config to your liking. You'll at least need to change the
-   homeserver settings, database address, and bridge permissions. If you miss
-   something that's required, the bridge will refuse to start and tell you
-   what's missing.
+2. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
+   page for recommendations.
 3. Generate the appservice registration file by running `./mautrix-$bridge -g`.
    * You can use the `-c` and `-r` flags to change the location of the config
      and registration files. They default to `config.yaml` and

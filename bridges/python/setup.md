@@ -59,10 +59,8 @@ Don't use `sudo` for any of these steps (and preferably don't use the root user 
    * If you want the master branch instead of a release, use
      `pip install --upgrade mautrix-$bridge[all]@git+https://github.com/mautrix/$bridge.git`.
 3. Copy `example-config.yaml` to `config.yaml`.
-4. Update the config to your liking. You'll at least need to change the
-   homeserver settings, database address, and bridge permissions. If you miss
-   something that's required, the bridge will refuse to start and tell you
-   what's missing.
+4. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
+   page for recommendations.
 5. Generate the appservice registration with `python -m mautrix_$bridge -g`.
    You can use the `-c` and `-r` flags to change the location of the config and
    registration files. They default to `config.yaml` and `registration.yaml`
