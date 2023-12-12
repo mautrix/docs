@@ -119,14 +119,6 @@ join the rooms (as the bridge assumes it only receives events meant for it).
 Additionally, it only works for users who are on the same homeserver as the
 bridge, it can't be used with other homeservers at all (even with admin access).
 
-The benefit of this method is that [appservice login] is in the spec, so it can
-work on all homeserver implementations (caveat: as of writing, [Dendrite] and
-[Conduit] do not implement the spec).
-
-[appservice login]: https://spec.matrix.org/v1.5/client-server-api/#appservice-login
-[Dendrite]: https://github.com/matrix-org/dendrite/issues/2723
-[Conduit]: https://gitlab.com/famedly/conduit/-/issues/321
-
 1. Modify the registration file to add a user namespace covering all users
    in addition to the `bridge_.+` and `bridgebot` regexes. Make sure you set
    `exclusive: false` for the new regex.

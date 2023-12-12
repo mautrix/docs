@@ -36,13 +36,6 @@ encryption by default, the bridge will not find out that encryption was enabled.
 You should **not** set `appservice: true` at the moment, as the Synapse
 implementation is still incomplete and has not been tested with the bridges.
 
-Note that end-to-bridge encryption does not currently work on Dendrite as it
-doesn't implement the necessary parts of the spec. The critical missing piece
-is tracked in [matrix-org/dendrite#2723]. Additionally, Conduit only supports
-it starting from v0.6.0.
-
-[matrix-org/dendrite#2723]: https://github.com/matrix-org/dendrite/issues/2723
-
 ## Additional security
 
 The bridges contain various additional options to configure how keys are handled.
