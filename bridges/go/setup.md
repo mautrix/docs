@@ -58,11 +58,6 @@ from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/rele
 Prebuilt executables are the simplest option, as they don't require having Go
 nor libolm installed.
 
-<p class="bridge-filter" bridges="signalgo">
-  <strong>N.B.</strong> The binaries for mautrix-signal are not static like other bridges,
-  which means they only work on glibc-based distros (i.e. not Alpine).
-</p>
-
 ### Downloading a prebuilt executable from CI
 1. Download the relevant artifacts:
    * linux/amd64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20amd64>
