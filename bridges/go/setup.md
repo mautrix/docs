@@ -95,8 +95,8 @@ nor libolm installed.
   For mautrix-signal, if you don't want to compile libsignal yourself, you can
   download a precompiled `libsignal_ffi.a` from the mau.dev CI and place it in
   `/usr/local/lib` (or some other directory set in `LIBRARY_PATH`). Download links:
-  [GNU/Linux amd64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20linux%20amd64),
-  [GNU/Linux arm64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20linux%20arm64),
+  [Linux amd64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20linux%20amd64),
+  [Linux arm64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20linux%20arm64),
   [macOS arm64](https://mau.dev/tulir/gomuks-build-docker/-/jobs/artifacts/master/raw/libsignal_ffi.a?job=libsignal%20macos%20arm64)
 
 </div>
