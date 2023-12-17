@@ -3,10 +3,6 @@
 {{ #include ../selector.html }}
 
 <p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
-  <strong>The legacy Signal bridge can no longer sign into Signal, as there
-  have been breaking API changes.</strong>
-</p>
-<p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
   <strong>The new Signal bridge is still experimental and may have bugs.
   However, the old bridge is too old and can't sign into Signal anymore,
   so the new bridge is the only option for new instances.</strong>
@@ -29,7 +25,7 @@ their documentation to find support rooms.
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   A WhatsApp client running on a phone or in an emulated Android VM.
-* <span class="bridge-filter" bridges="signalgo">**mautrix-signal (new)**: </span>
+* <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   A Signal client that can add linked devices (both official mobile apps and
   some unofficial clients like signal-cli work).
 

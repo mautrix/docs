@@ -2,11 +2,6 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
-  <strong>The legacy Signal bridge can no longer sign into Signal, as there
-  have been breaking API changes.</strong>
-</p>
-
 This page contains instructions for setting up the bridge in a virtualenv.
 You may also want to look at other ways to run the bridge:
 

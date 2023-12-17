@@ -2,12 +2,6 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
-  <strong>The new Signal bridge is still experimental and may have bugs.
-  However, the old bridge is too old and can't sign into Signal anymore,
-  so the new bridge is the only option for new instances.</strong>
-</p>
-
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
 the bridge:
@@ -36,7 +30,7 @@ their documentation to find support rooms.
     Shared postgres instance is fine, but shared database is not.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   A WhatsApp client running on a phone (both physical and virtual phones work).
-* <span class="bridge-filter" bridges="signalgo">**mautrix-signal**: </span>
+* <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   A Signal client that can add linked devices (both official mobile apps and
   some unofficial clients like signal-cli work).
 * <span class="bridge-filter" bridges="whatsapp,">**mautrix-whatsapp**: </span>
@@ -49,7 +43,7 @@ If you want to compile the bridge manually (which is not required), you'll also 
 
 * Go 1.20+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
-* <span class="bridge-filter" bridges="signalgo">**mautrix-signal**: </span>
+* <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   Rust and Cargo (if you want to compile libsignal yourself).
 
 ## Installation
@@ -63,7 +57,7 @@ nor libolm installed.
    * linux/amd64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20amd64>
    * linux/arm64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm64>
    * linux/arm: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm>
-     <span class="bridge-filter" bridges="all,!signalgo"></span>
+     <span class="bridge-filter" bridges="all,!signal"></span>
    * or find it yourself on <https://mau.dev/mautrix/$bridge/-/pipelines>
 2. Extract the downloaded zip file into a new directory.
 
@@ -71,7 +65,7 @@ nor libolm installed.
 <p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
   <strong>The Slack bridge doesn't have releases yet</strong>
 </p>
-<p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
+<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
   <strong>The new Signal bridge doesn't have releases yet</strong>
 </p>
 
@@ -90,7 +84,7 @@ nor libolm installed.
      Debian stable.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
 
-<div class="bridge-filter" bridges="signalgo">
+<div class="bridge-filter" bridges="signal">
 
   For mautrix-signal, if you don't want to compile libsignal yourself, you can
   download a precompiled `libsignal_ffi.a` from the mau.dev CI and place it in
