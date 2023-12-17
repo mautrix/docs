@@ -3,15 +3,13 @@
 {{ #include ../selector.html }}
 
 <p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
-  <strong>The old Signal bridge requires a second docker container for signald.
-  Instructions for setting up everything can be found on the
-  <a href="../python/signal/docker-setup.md">Signal-specific Bridge setup with Docker page</a></strong>.
-  The new Signal bridge written in Go doesn't need anything special and uses the standard Docker setup below.
+  <strong>The legacy Signal bridge can no longer sign into Signal, as there
+  have been breaking API changes.</strong>
 </p>
 <p class="bridge-filter" bridges="signalgo" bridge-no-generic style="display: none">
-  <strong>The new Signal bridge is still experimental and will have bugs.
-  Also, the bridge is currently in the signalgo repository, but it will move to
-  the main signal repo once it's ready.</strong>
+  <strong>The new Signal bridge is still experimental and may have bugs.
+  However, the old bridge is too old and can't sign into Signal anymore,
+  so the new bridge is the only option for new instances.</strong>
 </p>
 
 This page contains instructions for setting up the bridge in Docker. To set up
