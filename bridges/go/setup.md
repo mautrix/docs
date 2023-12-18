@@ -2,6 +2,12 @@
 
 {{ #include ../selector.html }}
 
+<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
+  <strong>The new Signal bridge is still experimental and may have bugs.
+  However, the old bridge is too old and can't sign into Signal anymore,
+  so the new bridge is the only option for new instances.</strong>
+</p>
+
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
 the bridge:
