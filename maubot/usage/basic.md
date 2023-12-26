@@ -39,7 +39,7 @@ in the form.
   maubot to change them. If left empty, maubot will *remove* the displayname and
   avatar on Matrix.
 
-[`mbc auth`]: (https://docs.mau.fi/maubot/usage/cli/auth.html).
+[`mbc auth`]: cli/auth.md
 
 ## Creating instances
 Instances are how plugins are linked to clients. After you have uploaded a
