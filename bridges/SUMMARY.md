@@ -32,9 +32,6 @@
   - [Authentication](./python/googlechat/authentication.md)
 - [mautrix-twitter](./python/twitter/index.md)
   - [Authentication](./python/twitter/authentication.md)
-- [mautrix-signal (legacy)](./python/signal/index.md)
-  - [Authentication](./python/signal/authentication.md)
-  - [Bridge setup with Docker](./python/signal/docker-setup.md)
 - [mautrix-instagram](./python/instagram/index.md)
   - [Authentication](./python/instagram/authentication.md)
 
@@ -53,7 +50,7 @@
   - [Authentication](./go/slack/authentication.md)
 - [mautrix-gmessages](./go/gmessages/index.md)
   - [Authentication](./go/gmessages/authentication.md)
-- [mautrix-signal (new)](./go/signal/index.md)
+- [mautrix-signal](./go/signal/index.md)
   - [Authentication](./go/signal/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
