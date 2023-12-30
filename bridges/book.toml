@@ -28,9 +28,9 @@ theme = "../theme/bridges"
 "/python/setup/docker.html" = "../../general/docker-setup.html"
 "/python/setup/systemd.html" = "../setup.html#systemd-service"
 "/python/setup/index.html" = "../setup.html"
-"/python/signal/index.md" = "../../go/signal/index.md"
-"/python/signal/authentication.md" = "../../go/signal/authentication.md"
-"/python/signal/docker-setup.md" = "../../general/docker-setup.html?bridge=signal"
+"/python/signal/index.html" = "../../go/signal/index.html"
+"/python/signal/authentication.html" = "../../go/signal/authentication.html"
+"/python/signal/docker-setup.html" = "../../general/docker-setup.html?bridge=signal"
 
 [output.linkcheck]
 optional = true
