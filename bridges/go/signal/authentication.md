@@ -13,8 +13,21 @@
      so the bridge won't backfill any messages.
 
 ## Registering as the primary device
-Registering as the primary device is no longer supported. If you don't want to
-use the official signal apps, you could use [signal-cli] to register and link
-the bridge to it.
+Registering as the primary device is no longer supported directly in the bridge.
+If you don't want to use the official signal apps, [signal-cli] is recommended
+instead.
+
+1. Download the latest release of signal-cli.
+2. Run `signal-cli -u +123456789 register`
+3. Generate a captcha as specified in
+   <https://github.com/AsamK/signal-cli/wiki/Registration-with-captcha>.
+4. Run `signal-cli -u +123456789 register --captcha signalcaptcha://signal-hcaptcha...`
+   with the generated captcha code.
+5. Send `login` to the bridge bot.
+6. Run `signal-cli -u +123456789 addDevice --uri 'sgnl://...` with the URI
+   returned by the bridge bot.
+7. The bot should inform you of a successful login.
+8. Run `signal-cli -u +123456789 receive` occasionally to make sure the
+   registration remains active.
 
 [signal-cli]: https://github.com/AsamK/signal-cli
