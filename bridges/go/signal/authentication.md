@@ -21,10 +21,10 @@ instead.
 2. Run `signal-cli -u +123456789 register`
 3. Generate a captcha as specified in
    <https://github.com/AsamK/signal-cli/wiki/Registration-with-captcha>.
-4. Run `signal-cli -u +123456789 register --captcha signalcaptcha://signal-hcaptcha...`
+4. Run `signal-cli -u +123456789 register --captcha 'signalcaptcha://signal-hcaptcha...'`
    with the generated captcha code.
 5. Send `login` to the bridge bot.
-6. Run `signal-cli -u +123456789 addDevice --uri 'sgnl://...` with the URI
+6. Run `signal-cli -u +123456789 addDevice --uri 'sgnl://...'` with the URI
    returned by the bridge bot.
 7. The bot should inform you of a successful login.
 8. Run `signal-cli -u +123456789 receive` occasionally to make sure the
