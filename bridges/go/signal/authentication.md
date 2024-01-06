@@ -24,8 +24,13 @@ those, [signal-cli] works quite well too.
 
 1. Download the latest release of signal-cli.
 2. Run `signal-cli -u +123456789 register`
-3. Generate a captcha as specified in
-   <https://github.com/AsamK/signal-cli/wiki/Registration-with-captcha>.
+3. Go to <https://signalcaptchas.org/registration/generate.html> to generate a
+   captcha code.
+   * The page will redirect you to a `signalcaptcha://` URI after solving the
+     captcha. At least on Firefox, you need to have the devtools console open
+     to be able to see and copy the URI.
+   * Alternatively, you can wait for a few seconds for the "Open Signal" button
+     to appear, then right click on it and copy the link.
 4. Run `signal-cli -u +123456789 register --captcha 'signalcaptcha://signal-hcaptcha...'`
    with the generated captcha code.
 5. Run `signal-cli -u +123456789 verify 123456`
