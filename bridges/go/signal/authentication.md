@@ -14,8 +14,8 @@
 
 ## Registering as the primary device
 Registering as the primary device is no longer supported directly in the bridge.
-If you don't want to use the official signal apps, [signal-cli] is recommended
-instead.
+Using an official mobile app is recommended. However, if you don't want to use
+those, [signal-cli] works quite well too:
 
 1. Download the latest release of signal-cli.
 2. Run `signal-cli -u +123456789 register`
