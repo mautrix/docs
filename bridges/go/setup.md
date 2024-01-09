@@ -89,6 +89,9 @@ nor libolm installed.
      Note that libolm3 is required, which means you have to use backports on
      Debian stable.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
+   * As an experimental feature, you can also use `-tags goolm` to use a pure
+     Go reimplementation of libolm. Encryption can be supported without a C
+     compiler or Olm dev headers with this method.
 
 <div class="bridge-filter" bridges="signal">
 
