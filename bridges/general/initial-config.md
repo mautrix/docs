@@ -36,6 +36,12 @@ errors in logs.
 * Way below in `bridge` -> `permissions`, you'll have to change the examples
   to match your server.
 
+### Bridge-specific mandatory fields
+The Telegram bridge requires that you create an "app" at <https://my.telegram.org/apps>
+and provide the `api_id` and `api_hash` in the config. API keys don't grant
+access to any Telegram account, they're just required to connect to the API
+in the first place. Login happens afterwards using bridge commands.
+
 ## Other useful things
 
 * Setting up [double puppeting] is strongly recommended. The relevant config
