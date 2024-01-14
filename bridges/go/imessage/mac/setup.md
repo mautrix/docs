@@ -1,8 +1,4 @@
 # iMessage bridge setup (macOS)
-**Note: This bridge is no longer actively maintained, but should work as long
-as Apple supports the AppleScript interface and doesn't change the chat.db
-schema too much.**
-
 Please note that everything in these docs are meant for server admins who want
 to self-host the bridge. If you're just looking to use the bridges, check out
 [Beeper], which provides fully managed instances of all of these bridges.
