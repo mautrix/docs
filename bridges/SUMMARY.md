@@ -52,6 +52,8 @@
   - [Authentication](./go/gmessages/authentication.md)
 - [mautrix-signal](./go/signal/index.md)
   - [Authentication](./go/signal/authentication.md)
+- [mautrix-meta](./go/meta/index.md)
+  - [Authentication](./go/meta/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
   - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)

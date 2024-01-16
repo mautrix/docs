@@ -1,5 +1,5 @@
 const pythonBridges = ["telegram", "facebook", "googlechat", "twitter", "instagram"]
-const goBridges = ["whatsapp", "discord", "slack", "gmessages", "signal"]
+const goBridges = ["whatsapp", "discord", "slack", "gmessages", "signal", "meta"]
 let allowedBridges = ["$bridge"]
 
 const bridgePorts = {
@@ -7,6 +7,7 @@ const bridgePorts = {
     "telegram": "29317",
     "whatsapp": "29318",
     "facebook": "29319",
+    "meta": "29319",
     "googlechat": "29320",
     "twitter": "29327",
     "signal": "29328",
@@ -28,6 +29,7 @@ const mainBranch = {
     "discord": "main",
     "slack": "main",
     "gmessages": "main",
+    "meta": "main",
 }
 
 if (window.location.pathname.endsWith("docker-setup.html")) {
