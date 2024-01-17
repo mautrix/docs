@@ -21,9 +21,7 @@ different ways to connect to iMessage:
 You can find setup instructions for each of the connectors in the sidebar.
 
 This bridge essentially has to be self-hosted, so you likely won't find public
-instances on normal Matrix servers, but [Beeper](https://www.beeper.com) does
-offer hosted iMessage bridges (using the Barcelona connector) and the Beeper
-Android app has the android-sms bridge built in.
+instances on normal Matrix servers.
 
 [Barcelona]: https://github.com/beeper/barcelona
 [Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn
