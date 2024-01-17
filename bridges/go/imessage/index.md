@@ -21,12 +21,14 @@ different ways to connect to iMessage:
 You can find setup instructions for each of the connectors in the sidebar.
 
 This bridge essentially has to be self-hosted, so you likely won't find public
-instances on normal Matrix servers.
+instances on normal Matrix servers. However, if you have a Beeper account, you
+can self-host the bridge using [bbctl] without self-hosting a Matrix server.
 
 [Barcelona]: https://github.com/beeper/barcelona
 [Brooklyn]: https://github.com/EthanRDoesMC/Brooklyn
 [android-sms]: https://gitlab.com/beeper/android-sms
 [IPC protocol]: https://github.com/mautrix/imessage/blob/master/imessage/ios/ipc.md
+[bbctl]: https://github.com/beeper/bridge-manager
 
 ## Discussion
 Matrix room: [#imessage:maunium.net](https://matrix.to/#/#imessage:maunium.net)
