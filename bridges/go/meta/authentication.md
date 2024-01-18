@@ -17,3 +17,7 @@
      * Facebook: `datr`, `c_user`, `sb`, `xs`
 6. Paste the copied data to the bridge bot.
 7. The bot should inform you of a successful login and sync recent chats.
+
+Example of devtools on Firefox filtered for websockets:
+
+![Firefox devtools example](./instagram-devtools.png)
