@@ -20,8 +20,7 @@ media repo will ask discord-media.mau.dev, which redirects to cdn.discordapp.com
 Your media repo then downloads the media and caches it as remote media (like it
 does for all federated media).
 
-As of writing, normal Matrix servers don't support MSC3860 yet, but they likely
-will in the future once the MSC passes.
+Synapse supports MSC3860 as of v1.98.0.
 
 The software on discord-media.mau.dev is just a Caddy instance with the first
 example config below, plus a static .well-known file to redirect federation to
