@@ -20,7 +20,9 @@ media repo will ask discord-media.mau.dev, which redirects to cdn.discordapp.com
 Your media repo then downloads the media and caches it as remote media (like it
 does for all federated media).
 
-Synapse supports MSC3860 as of v1.98.0.
+MSC3860 is supported as of Synapse v1.98.0 and matrix-media-repo v1.4.0.
+Additionally, while Conduit doesn't opt into redirects, it does follow them,
+so it should work with the default config.
 
 The software on discord-media.mau.dev is just a Caddy instance with the first
 example config below, plus a static .well-known file to redirect federation to
