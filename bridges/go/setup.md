@@ -2,14 +2,9 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="signal" bridge-no-generic style="display: none">
-  <strong>The new Signal bridge is still experimental and may have bugs.
-  However, the old bridge is too old and can't sign into Signal anymore,
-  so the new bridge is the only option for new instances.</strong>
-</p>
 <p class="bridge-filter" bridges="meta" bridge-no-generic style="display: none">
-  <strong>The new Meta bridge for Facebook and Instagram is highly experimental
-  and will have bugs. Facebook support has not been tested at all.</strong>
+  <strong>The new Meta bridge for Facebook and Instagram is still experimental.
+  Most bridging features should already work, but there will also be bugs.</strong>
 </p>
 
 This page contains instructions for setting up the bridge by running the
