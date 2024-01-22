@@ -37,10 +37,42 @@ errors in logs.
   to match your server.
 
 ### Bridge-specific mandatory fields
+#### mautrix-telegram
 The Telegram bridge requires that you create an "app" at <https://my.telegram.org/apps>
 and provide the `api_id` and `api_hash` in the config. API keys don't grant
 access to any Telegram account, they're just required to connect to the API
 in the first place. Login happens afterwards using bridge commands.
+
+#### mautrix-meta
+The Meta bridge is effectively two bridges in one codebase: Facebook Messenger
+and Instagram DMs. However, it can't handle both types of accounts with one
+instance. Instead it has a config option (`meta` -> `mode`) to choose which
+service to connect to.
+
+When changing the service, you'll also need to change a bunch of other fields,
+or otherwise it'll look like an Instagram bot connecting to Messenger. The
+fields to change listed below. For most fields, you can just replace
+"instagram" with "facebook".
+
+<details>
+<summary>List of fields</summary>
+
+* `meta` -> `mode` (duh)
+* `appservice` -> `id`
+* `appservice` -> `bot` -> `username`
+* `appservice` -> `bot` -> `displayname`
+* `appservice` -> `bot` -> `avatar`
+  * Instagram: `mxc://maunium.net/JxjlbZUlCPULEeHZSwleUXQv`
+  * Messenger: `mxc://maunium.net/ygtkteZsXnGJLJHRchUwYWak`
+* `bridge` -> `username_template`
+* `bridge` -> `management_room_text` -> `welcome`
+
+If you're duplicating an already-working bridge config, also remember to change
+the appservice port and database URI (you can't share one database for two
+bridges). The `as_token` and `hs_token` will be regenerated when you generate
+a new registration.
+
+</details>
 
 ## Other useful things
 
