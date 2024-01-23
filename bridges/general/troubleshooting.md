@@ -88,6 +88,23 @@ use the "Manually verify by text" option to verify the bridge bot's device, but
 it won't make any of the warnings mentioned above go away, so there isn't
 really any reason to do it.
 
+## The bridge can't decrypt my messages!
+It's unfortunately quite easy to misconfigure things in a way that prevents
+the bridge from decrypting messages. Places to start troubleshooting:
+
+* Make sure `appservice` is set to `false` in the encryption config
+  (unless you're connecting to Beeper servers).
+* Check the logs to ensure the bridge bot syncs are successful. It should log
+  a sync request every 30 seconds on the debug level even if there's no
+  activity, and the status code should always be `200`.
+* Make sure you haven't enabled "Never send encrypted messages to unverified
+  sessions" or similar options in your client. The options usually exist both
+  in global settings and in room settings.
+* Try `/discardsession` (available on Element Web at least) and see if there
+  are any new kinds of errors in the bridge logs when you next send a message
+  (the client will share a new megolm session, which should show up in the
+  logs).
+
 ## How do I bridge typing notifications and read receipts?
 Bridging ephemeral events (EDUs) is enabled by default in the bridges, but
 currently those events aren't sent to appservices by default. There are two
