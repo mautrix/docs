@@ -11,6 +11,8 @@
    "Copy" (Chrome) or "Copy Value" (Firefox), then "Copy as cURL".
    * Any request with the correct cookies should work, but websocket
      requests are the easiest to filter for.
+   * Note for windows users: Make sure to select "Copy as cURL (POSIX)",
+     not "(Windows)", if given both options.
    * You can also find the cookies manually and send them to the bot as a JSON object.
      The relevant cookies are:
      * Instagram: `sessionid`, `csrftoken`, `mid`, `ig_did`, `rur` `ds_user_id`, `shbid`, `shbts`
