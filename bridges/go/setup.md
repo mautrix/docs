@@ -87,8 +87,6 @@ nor libolm installed.
    ([`build.sh`] will simply call `go build` with some additional flags).
    * If you want end-to-bridge encryption, make sure you have a C/C++ compiler
      and the Olm dev headers (`libolm-dev` on debian-based distros) installed.
-     Note that libolm3 is required, which means you have to use backports on
-     Debian stable.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
    * As an experimental feature, you can also use `-tags goolm` to use a pure
      Go reimplementation of libolm. Encryption can be supported without a C
