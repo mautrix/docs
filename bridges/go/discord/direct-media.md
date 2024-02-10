@@ -1,6 +1,11 @@
 # Direct media access
 _New in version 0.4.0_
 
+**N.B. Discord now requires signed expiring download links, which means this
+solution no longer works.** In the future, a more dynamic solution may be
+implemented where requests go to the bridge and the bridge and the bridge
+refetches the message if necessary.
+
 To avoid spamming your homeserver's media repository with all files from
 Discord, the bridge has an option to generate fake `mxc://` URIs that contain
 the Discord media ID. The media repo or your reverse proxy can then handle
