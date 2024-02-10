@@ -88,6 +88,8 @@ nor libolm installed.
    * If you want end-to-bridge encryption, make sure you have a C/C++ compiler
      and the Olm dev headers (`libolm-dev` on debian-based distros) installed.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
+     * Note: signal's build.sh script doesn't support extra arguments yet,
+       so you have to use build-go.sh manually after building libsignal-ffi.a.
    * As an experimental feature, you can also use `-tags goolm` to use a pure
      Go reimplementation of libolm. Encryption can be supported without a C
      compiler or Olm dev headers with this method.
