@@ -174,7 +174,7 @@ If you only have SSO login on your homeserver, the above example with password
 login won't work. However, doing SSO login manually is still possible, just a
 bit more work.
 
-1. Open `https://example.com/_matrix/client/v3/login/sso/redirect/?redirectUrl=http://localhost:12345`
+1. Open `https://example.com/_matrix/client/v3/login/sso/redirect?redirectUrl=http://localhost:12345`
    in a browser. The redirect URL at the end doesn't have to be a real server,
    since you can just copy the relevant value in the browser URL bar after the
    redirect.
