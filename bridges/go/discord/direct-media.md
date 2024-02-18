@@ -39,6 +39,7 @@ method no longer works since Discord started requiring signed URLs that expire.
 
 <details>
 <summary>Old docs</summary>
+
 _New in version 0.4.0_
 
 To avoid spamming your homeserver's media repository with all files from
