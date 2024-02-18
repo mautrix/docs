@@ -1,10 +1,45 @@
-# Direct media access
-_New in version 0.4.0_
+# Direct media access (v2)
+_New in version 0.7.0_
 
-**N.B. Discord now requires signed expiring download links, which means this
-solution no longer works.** In the future, a more dynamic solution may be
-implemented where requests go to the bridge and the bridge and the bridge
-refetches the message if necessary.
+To avoid spamming your homeserver's media repository with all files from
+Discord, the bridge has an option to generate fake `mxc://` URIs that contain
+the Discord message ID and some other info. To make the URIs work, the bridge
+effectively turns into a media-only homeserver.
+
+For example, if your main Matrix server is `example.com`, you could set up
+`discord-media.example.com` as the bridge's server name. The way to do that
+is to either proxy the subdomain to the bridge entirely, or create a
+`.well-known/matrix/server` file (just like normal homeserver setups) pointing
+somewhere else where the bridge is listening.
+
+When proxying the subdomain entirely, port 443 is enough, the bridge will
+automatically serve a .well-known to redirect from port 8448 to 443.
+
+Endpoints that the bridge can handle with direct media access:
+
+* `/_matrix/media/*`
+* `/_matrix/key/*`
+* `/_matrix/federation/v1/version`
+* `/.well-known/matrix/server`
+
+To enable direct media access:
+
+* Set `bridge` -> `direct_media` -> `enabled` to `true`.
+* Change the `server_name` field to a (sub)domain where the aforementioned
+  endpoints are proxied to the bridge.
+* Ensure `server_key` is set.
+  * The bridge generates one automatically on startup and writes it back to the
+    config. If you prevented the bridge from writing the config, you'll have to
+    set it yourself so it wouldn't generate a new one on every restart.
+
+## Legacy direct media access
+In the past, the bridge supported specifying templates that a simple reverse
+proxy could parse to redirect the request to Discord's CDN. However, that
+method no longer works since Discord started requiring signed URLs that expire.
+
+<details>
+<summary>Old docs</summary>
+_New in version 0.4.0_
 
 To avoid spamming your homeserver's media repository with all files from
 Discord, the bridge has an option to generate fake `mxc://` URIs that contain
@@ -251,4 +286,5 @@ server {
 }
 ```
 
+</details>
 </details>
