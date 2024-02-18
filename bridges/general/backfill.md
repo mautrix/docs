@@ -49,6 +49,11 @@ already has messages and backfill isn't possible anymore. There's no way to
 re-request the initial history sync blobs, so if backfill is disabled or
 something goes wrong, the only way to retry is to log out and back in.
 
+Additionally, the WhatsApp bridge currently only supports backfilling in newly
+created rooms. If you log out and log back in, it does not backfill missed
+messages in existing portals even if it's technically possible (i.e. when there
+haven't been any new messages).
+
 If `max_initial_conversations` is set to zero or higher, messages in chats
 without portal rooms will be stored in the bridge database until the room is
 created for some other reason (like a new incoming message), at which point
