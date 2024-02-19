@@ -14,9 +14,35 @@ Password login isn't guaranteed to always be fully supported, but you can switch
 
 Token login works for any Slack account and fully supports all Slack features.
 
-1. Login to the Slack web app in a browser, and acquire the authentication token and `d` cookie from inside the app.
-   * The token starts with `xoxc-` and can be found using the browser devtools, in the app's local storage inside the `localConfig_v2` object, as `teams['your team ID'].token`.
-   * The cookie is named `d`, it starts with `xoxd-` and can be found in the cookies section in the devtools.
-2. Send the command `login-token <token> <cookie>`, for example `login-token xoxc-tokengoeshere xoxd-cookiegoeshere`
+1. Start the Browser and open the Slack Web-App
 
-After login using a token, all your joined channels will automatically be bridged into Matrix, but DMs will only appear once you receive messages in them.
+	* Log into your slack-domain
+	 (eg: https://<your_slackdomain>.slack.com/sign_in_with_password
+
+	* Start the browser devtools
+		- Firefox: `ctrl`-`shift`-`i` or `F12`
+		- Chrome: `ctrl`-`shift`-`d` or `F12`
+
+		* Extract the authentication token
+		* Goto `app->local-storage` tab
+		* Select the key called `localConfig_v2`
+		* Inside the `teams` object, you get a list with all slack-domains you are authenticated to
+		* extract the <token> element (it starts with `xoxc-`)
+
+* Goto `app->cookies` tab
+	* Select the element `https://app.slack.com`
+		* extract the <cookie>, which is stored inside the key named `d`
+		(it starts with `xoxd-`)
+
+2. Swith into your Matrix Slack-Bot room
+		* Issue the comman `login-token`
+
+		```\n
+		login-token <token> <cookie>
+		e.g:
+		login-token xoxc-tokengoeshere xoxd-cookiegoeshere
+		```
+
+After login using a token/cokie pair, all your joined channels will automatically
+be bridged into Matrix. Your Direct Messages (DMs) will only appear once you receive
+messages in them.
