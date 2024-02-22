@@ -1,7 +1,13 @@
 # Authentication
 0. Open a private chat with the bridge bot. Usually `@gmessagesbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
-1. Send `login` to start the login.
+
+## QR login
+This is the recommended method, as it's much easier to set up. If you switched
+to Google account pairing, you can switch back by unpairing all devices and
+then clicking the switch to QR pairing button that appears.
+
+1. Send `login-qr` to start the login.
 2. Log in by scanning the QR code. If the code expires before you scan it, the
    bridge will send an error to notify you.
    1. On your phone, open <img src="./messages.svg" class="gm-icon" alt="" />
@@ -17,9 +23,25 @@
 As all messages are proxied through the app, your phone must be connected to
 the internet for the bridge to work.
 
-If you use Google Fi, note that the bridge does not support logging in with a
-Google account, so you must choose to use the normal QR login mode (option 1 in
-<https://support.google.com/fi/answer/6188337>).
+## Google account login
+_New in version 0.3.0_
+
+This method is available as a fallback, it's not recommended since it's more
+difficult. This method still proxies everything through your phone, it just
+pairs in a different way.
+
+Note that Google Fi's "sync to your Google Account" option is not supported by
+the bridge even with Google account login. You must choose the normal mode
+where RCS chats are available (option 1 in <https://support.google.com/fi/answer/6188337>).
+
+1. Send `login-google` to start the login.
+2. Log into <https://messages.google.com/web> with your Google account.
+   Ignore or cancel the pairing prompt it gives after logging in.
+3. Make a key-value JSON object containing at least the `SID`, `HSID`, `SSID`,
+   `OSID`, `APISID`, `SAPISID` and `__Secure-PSIDTS` cookies.
+4. Send the JSON object to the bot.
+5. Open Google Messages on your phone and tap on the emoji the bridge bot sent.
+6. Finally, the bot should inform you of a successful login.
 
 ## Logging out
 Simply run the `logout` management command.
