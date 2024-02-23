@@ -36,8 +36,12 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
 
 1. Send `login-google` to start the login.
 2. Log into <https://accounts.google.com/AccountChooser?continue=https://messages.google.com/web/config>
-   with your Google account. The `continue` URL in the link is chosen so that
-   it would only log into your Google account and not try to pair the browser.
+   with your Google account.
+   * Using a private window is recommended to ensure the cookies don't get
+     rotated by the bridge, and because the bridge doesn't support cookies
+     linked to multiple accounts.
+   * The `continue` URL in the link is chosen so that it would only log into
+     your Google account and not try to pair the browser.
 3. Make a key-value JSON object containing at least the `SID`, `HSID`, `SSID`,
    `OSID`, `APISID` and `SAPISID` cookies.
 4. Send the JSON object to the bot.
