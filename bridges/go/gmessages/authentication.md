@@ -35,10 +35,11 @@ the bridge even with Google account login. You must choose the normal mode
 where RCS chats are available (option 1 in <https://support.google.com/fi/answer/6188337>).
 
 1. Send `login-google` to start the login.
-2. Log into <https://messages.google.com/web> with your Google account.
-   Ignore or cancel the pairing prompt it gives after logging in.
+2. Log into <https://accounts.google.com/AccountChooser?continue=https://messages.google.com/web/config>
+   with your Google account. The `continue` URL in the link is chosen so that
+   it would only log into your Google account and not try to pair the browser.
 3. Make a key-value JSON object containing at least the `SID`, `HSID`, `SSID`,
-   `OSID`, `APISID`, `SAPISID` and `__Secure-PSIDTS` cookies.
+   `OSID`, `APISID` and `SAPISID` cookies.
 4. Send the JSON object to the bot.
 5. Open Google Messages on your phone and tap on the emoji the bridge bot sent.
 6. Finally, the bot should inform you of a successful login.
