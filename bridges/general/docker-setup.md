@@ -6,6 +6,9 @@
   <strong>The new Meta bridge for Facebook and Instagram is still experimental.
   Most bridging features should already work, but there will also be bugs.</strong>
 </p>
+<p class="bridge-filter" bridges="facebook,instagram" bridge-no-generic style="display: none">
+  <strong>The old Facebook and Instagram bridges are deprecated. The Meta bridge is recommended instead.</strong>
+</p>
 
 This page contains instructions for setting up the bridge in Docker. To set up
 the bridge outside of Docker, see the language-specific instructions:

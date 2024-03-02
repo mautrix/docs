@@ -1,4 +1,6 @@
 # mautrix-facebook
+**This bridge has been replaced by mautrix-meta**
+
 Welcome to the mautrix-facebook docs!
 
 Use the sidebar to find the relevant pages. Things that are the same for all
