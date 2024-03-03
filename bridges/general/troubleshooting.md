@@ -205,8 +205,8 @@ rather than silently broken by not receiving messages. The mechanism is called
 "appservice ping".
 
 The error message associated with this log is the error that the homeserver
-(e.g. Synapse) encountered while connecting to the bridge. It is **not** an
-error from the bridge itself.
+(e.g. Synapse) encountered while connecting to the bridge. **It is not an
+error from the bridge itself.**
 
 To fix the error, ensure that your homeserver can reach the bridge at the
 configured address. The address is configured in the `appservice` -> `address`
