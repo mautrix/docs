@@ -196,3 +196,22 @@ or change the `username_template` without regenerating the registration.
 Usually it's the former, so make sure that the `domain` field matches your
 homeserver's `server_name` exactly. If it doesn't, fix it, regenerate the
 registration file and restart everything.
+
+## Homeserver -> bridge connection is not working
+At startup, the bridge will ask the homeserver to check that it can reach the
+bridge. If the homeserver reports an error, the bridge will log the error and
+exit. This ensures that if the bridge runs successfully, it's actually working,
+rather than silently broken by not receiving messages. The mechanism is called
+"appservice ping".
+
+The error message associated with this log is the error that the homeserver
+(e.g. Synapse) encountered while connecting to the bridge. It is **not** an
+error from the bridge itself.
+
+To fix the error, ensure that your homeserver can reach the bridge at the
+configured address. The address is configured in the `appservice` -> `address`
+field in the bridge config, although in reality the homeserver reads it from
+the `url` field in the registration file that you gave to the homeserver. The
+bridge config field is just copied to the registration when the registration
+is generated. If you change the value, you can either manually update the
+registration, or regenerate it completely.
