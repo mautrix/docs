@@ -200,9 +200,9 @@ registration file and restart everything.
 ## Homeserver -> bridge connection is not working
 At startup, the bridge will ask the homeserver to check that it can reach the
 bridge. If the homeserver reports an error, the bridge will log the error and
-exit. This ensures that if the bridge runs successfully, it's actually working,
-rather than silently broken by not receiving messages. The mechanism is called
-"appservice ping".
+exit. This ensures that it's actually working if the bridge runs successfully,
+rather than being silently broken by not receiving messages. This mechanism is
+called "appservice ping".
 
 The error message associated with this log is the error that the homeserver
 (e.g. Synapse) encountered while connecting to the bridge. **It is not an
