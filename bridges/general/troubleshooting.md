@@ -190,12 +190,17 @@ Make sure the tokens match everywhere, that you're looking at the right files,
 and that everything has been restarted.
 
 ## The `as_token` was accepted, but the `/register` request was not
-This can happen if you either misconfigure the `homeserver` -> `domain` field,
-or change the `username_template` without regenerating the registration.
+This error can happen through a few different misconfigurations.
+Unfortunately the homeserver doesn't tell more specifically.
+The possible misconfigurations are:
 
-Usually it's the former, so make sure that the `domain` field matches your
-homeserver's `server_name` exactly. If it doesn't, fix it, regenerate the
-registration file and restart everything.
+* having the incorrect value in `homeserver` -> `domain`
+  * This is the most common issue. The domain must match the `server_name`
+    in your homeserver's config. If it doesn't, fix it, regenerate the
+    registration file and restart everything.
+* changing the bot username without regenerating the registration
+* having another appservice registration exclusively claiming the same
+  namespace.
 
 ## Homeserver -> bridge connection is not working
 At startup, the bridge will ask the homeserver to check that it can reach the
