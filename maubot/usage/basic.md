@@ -7,8 +7,9 @@ Logging into the interface happens with the credentials configured in the
 so you must use a different username for logging in.
 
 ## Uploading plugins
-The first step is to upload a plugin. There's currently no central location to
-download plugins, but there's a list of plugins at [plugins.mau.bot](https://plugins.mau.bot/).
+Plugins contain the actual code for a bot, so the first step is to upload a
+plugin. There's currently no central location to download plugins, but there's
+a list of plugins at [plugins.mau.bot](https://plugins.mau.bot/).
 
 Common places to get plugins:
 * GitHub releases (assets section), e.g. <https://github.com/maubot/echo/releases>
@@ -21,8 +22,10 @@ After you have the `.mbp` file, click the `+` button next to the "Plugins"
 header and drop your `.mbp` file in the upload box.
 
 ## Creating clients
-To create a client, click the `+` button next to the "Clients" header and fill
-in the form.
+Each Matrix account you want to use as a bot needs to be added as a client. You
+could have one bot account that does everything, or many bot accounts with
+different purposes. To create a client, click the `+` button next to the
+"Clients" header and fill in the form.
 
 * The homeserver dropdown gets values from the config's `homeservers` section,
   but you can also type a full URL in that box.
