@@ -8,8 +8,7 @@ so you must use a different username for logging in.
 
 ## Uploading plugins
 The first step is to upload a plugin. There's currently no central location to
-download plugins, but the [maubot README](https://github.com/maubot/maubot) has
-a list of plugins.
+download plugins, but there's a list of plugins at [plugins.mau.bot](https://plugins.mau.bot/).
 
 Common places to get plugins:
 * GitHub releases (assets section), e.g. <https://github.com/maubot/echo/releases>
