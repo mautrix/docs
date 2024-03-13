@@ -106,23 +106,23 @@ the bridge from decrypting messages. Places to start troubleshooting:
   logs).
 
 ## How do I bridge typing notifications and read receipts?
-Bridging ephemeral events (EDUs) is enabled by default in the bridges, but
-currently those events aren't sent to appservices by default. There are two
-config options to enable the bridges to receive EDUs:
+The bridges use [MSC2409] to receive ephemeral events (EDUs) from the Matrix
+homeserver and bridge them to the remote network. It is enabled by default in
+new bridge instances, but old ones may need to update the bridge config and/or
+registration file manually. Additionally, MSC2409 is currently only supported
+in Synapse.
 
-1. `bridge` -> `sync_with_custom_puppets` - calls `/sync` with your Matrix
-   account to receive EDUs. See the [double puppeting] docs for how to enable
-   double puppeting in general.
-2. `appservice` -> `ephemeral_events` - enables [MSC2409] support to have the
-   homeserver push EDUs directly to the bridge (the same way it pushes normal
-   messages).
-   * This is currently only implemented in Synapse.
-   * This also requires the `de.sorunome.msc2409.push_ephemeral` field in the
-     registration file to be set to `true`. If you regenerate the registration
-     after enabling the config option, the relevant fields will be added
-     automatically. Remember to restart Synapse after updating the registration.
+On the bridge side, the config field is `appservice` -> `ephemeral_events`.
+The registration file given to the homeserver must also have the
+`de.sorunome.msc2409.push_ephemeral` field set to true. After MSC2409 is
+approved, the registration file field will be called `push_ephemeral` with no
+prefix. If it's not set, you can either set it manually, or regenerate the
+registration after setting `ephemeral_events` to true in the bridge config.
+Remember to restart the homeserver after modifying the registration file.
 
-You should only have one of the two enabled at any time.
+Previously there was an option to use `/sync` with [double puppeting] to receive
+ephemeral events without MSC2409 support. However, that option is being phased
+out, so MSC2409 is the only option now.
 
 [MSC2409]: https://github.com/matrix-org/matrix-spec-proposals/pull/2409
 
