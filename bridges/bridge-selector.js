@@ -20,7 +20,7 @@ const bridgePorts = {
 const mainBranch = {
     "$bridge": "$main_branch",
     "telegram": "master",
-    "whatsapp": "master",
+    "whatsapp": "main",
     "facebook": "master",
     "instagram": "master",
     "googlechat": "master",

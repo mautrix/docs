@@ -102,7 +102,7 @@ nor libolm installed.
 
 </div>
 
-[`build.sh`]: https://github.com/mautrix/$bridge/blob/master/build.sh
+[`build.sh`]: https://github.com/mautrix/$bridge/blob/main/build.sh
 
 ## Configuring and running
 1. Copy `example-config.yaml` to `config.yaml`
