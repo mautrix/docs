@@ -220,3 +220,16 @@ the `url` field in the registration file that you gave to the homeserver. The
 bridge config field is just copied to the registration when the registration
 is generated. If you change the value, you can either manually update the
 registration, or regenerate it completely.
+
+## Why is the latest release old?
+When bridges are being actively developed, releases are effectively always
+outdated. The main branch is generally stable and safe to use in production,
+although automatic unattended upgrades are not recommended. Bugs should only be
+reported on the main branch.
+
+New releases for Go bridges happen on the 16th of each month. Sometimes
+releases may be skipped if there's something blocking the release or if nothing
+relevant has changed since the last one. Releases outside of the standard cycle
+only happen if there are severe security issues that must be fixed immediately.
+
+Python bridges do not have a release cycle, releases will happen randomly.
