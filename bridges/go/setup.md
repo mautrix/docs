@@ -27,7 +27,7 @@ If you need help with setting up the bridge, you can ask in the Matrix room:
 setting up other parts like the homeserver that aren't the bridge, refer to
 their documentation to find support rooms.
 
-## Requirements
+## Step 0: Requirements
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A PostgreSQL server, v10 or higher (which you should already have for Synapse).
@@ -53,13 +53,13 @@ If you want to compile the bridge manually (which is not required), you'll also 
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   Rust, Cargo, libclang-dev and protoc (if you want to compile libsignal yourself).
 
-## Installation
+## Step 1: Installation
 You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/releases).
 Prebuilt executables are the simplest option, as they don't require having Go
 nor libolm installed.
 
-### Downloading a prebuilt executable from CI
+### Option 1: Downloading a prebuilt executable from CI
 1. Download the relevant artifacts:
    * linux/amd64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20amd64>
    * linux/arm64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm64>
@@ -68,7 +68,7 @@ nor libolm installed.
    * or find it yourself on <https://mau.dev/mautrix/$bridge/-/pipelines>
 2. Extract the downloaded zip file into a new directory.
 
-### Downloading a release
+### Option 2: Downloading a release
 <p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
   <strong>The Slack bridge doesn't have releases yet</strong>
 </p>
@@ -77,7 +77,7 @@ nor libolm installed.
 2. Download the binary for the architecture you want and save it in a new
    directory.
 
-### Compiling manually
+### Option 3: Compiling manually
 1. Clone the repo with `git clone https://github.com/mautrix/$bridge.git mautrix-$bridge`
 2. Enter the directory (`cd mautrix-$bridge`)
 3. Run `./build.sh` to fetch Go dependencies and compile
@@ -104,7 +104,7 @@ nor libolm installed.
 
 [`build.sh`]: https://github.com/mautrix/$bridge/blob/main/build.sh
 
-## Configuring and running
+## Step 2: Configuring and running
 1. Copy `example-config.yaml` to `config.yaml`
 2. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
    page for recommendations.
