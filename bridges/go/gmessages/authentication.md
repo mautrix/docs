@@ -43,7 +43,8 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
    * The `continue` URL in the link is chosen so that it would only log into
      your Google account and not try to pair the browser.
 3. Make a key-value JSON object containing at least the `SID`, `HSID`, `SSID`,
-   `OSID`, `APISID` and `SAPISID` cookies.
+   `OSID`, `APISID` and `SAPISID` cookies. Sometimes Google also requires
+   `__Secure-1PSIDTS` to be included.
 4. Send the JSON object to the bot.
 5. Open Google Messages on your phone and tap on the emoji the bridge bot sent.
 6. Finally, the bot should inform you of a successful login.
