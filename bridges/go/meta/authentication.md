@@ -21,5 +21,10 @@
 6. Paste the copied data to the bridge bot.
 7. The bot should inform you of a successful login and sync recent chats.
 
+**N.B.** In some cases, Meta may decide your account has suspicious activity
+and block you until you do some tasks like completing a captcha, adding a phone
+number or resetting your password. It is recommended to have two-factor
+authentication enabled to reduce the risk of such blocks.
+
 ![Firefox devtools example](./firefox-instagram-devtools.png)
 ![Chrome devtools example](./chrome-instagram-devtools.png)
