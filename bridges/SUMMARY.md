@@ -54,6 +54,7 @@
   - [Authentication](./go/signal/authentication.md)
 - [mautrix-meta](./go/meta/index.md)
   - [Authentication](./go/meta/authentication.md)
+  - [Migrating from mautrix-facebook](./go/meta/facebook-migration.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
   - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)
