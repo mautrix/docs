@@ -2,11 +2,6 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="meta" bridge-no-generic style="display: none">
-  <strong>The new Meta bridge for Facebook and Instagram is still experimental.
-  Most bridging features should already work, but there will also be bugs.</strong>
-</p>
-
 This page contains instructions for setting up the bridge by running the
 executable yourself. You may also want to look at the other ways to run
 the bridge:
