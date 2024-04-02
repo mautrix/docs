@@ -4,6 +4,8 @@
 1. Configure mautrix-meta normally. You must use the same bot username and
    username template to migrate old chats. You can also just reuse the same
    registration file, as long as you keep the same hostname/port and as/hs_token.
+   * You can't use the same config file as mautrix-facebook, make a new one
+     and copy the relevant values.
    * Don't start the bridge yet.
 2. Run `./mautrix-meta --db-migrate-from postgres://user:pass@host/olddb`
    (or `--db-migrate-from /path/to/old.db` for SQLite).
