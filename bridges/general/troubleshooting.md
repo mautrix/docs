@@ -233,3 +233,9 @@ relevant has changed since the last one. Releases outside of the standard cycle
 only happen if there are severe security issues that must be fixed immediately.
 
 Python bridges do not have a release cycle, releases will happen randomly.
+
+## Discord: `Your message was not bridged: 50035: Invalid Form Body` with relay mode
+When using relay mode, the bridge will link directly to your homeserver's media
+repo for avatars, so it needs to know a public address that Discord's CDN can
+reach. If you use a local address for the normal `homeserver` -> `address`
+field, you must configure a public address in the `public_address` field.
