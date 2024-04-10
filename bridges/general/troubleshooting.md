@@ -97,6 +97,11 @@ the bridge from decrypting messages. Places to start troubleshooting:
 * Check the logs to ensure the bridge bot syncs are successful. It should log
   a sync request every 30 seconds on the debug level even if there's no
   activity, and the status code should always be `200`.
+  * Synapse has some bugs where `/sync` starts throwing internal server errors
+    after previously working fine. If that happens, the easiest workaround is
+    to get the latest `since`/`next_batch` token (e.g. from your own client,
+    they're global) and insert it into the `crypto_account` table in the bridge
+    database.
 * Make sure you haven't enabled "Never send encrypted messages to unverified
   sessions" or similar options in your client. The options usually exist both
   in global settings and in room settings.
