@@ -11,6 +11,7 @@
 - [Initial bridge config](./general/initial-config.md)
 - [Relay mode](./general/relay-mode.md)
 - [Bridge setup with Docker](./general/docker-setup.md)
+- [Contributing guidelines](./general/contributing.md)
 
 # Python-based bridges
 - [Bridge setup](./python/setup.md)
