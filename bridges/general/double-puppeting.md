@@ -1,8 +1,9 @@
 # Double puppeting
-You can replace the Matrix ghost of your remote account with your Matrix
-account. When you do so, messages that you send from other clients will be sent
-from your Matrix account instead of the default ghost user. In most of the
-bridges, this is necessary to bridge DMs you send from other clients to Matrix.
+By giving the bridge access to your Matrix account, you can replace the Matrix
+ghost of your remote account. When you do so, messages that you send from other
+clients will be sent from your real Matrix account instead of the default ghost
+user. In most of the bridges, this is necessary to bridge DMs you send from
+other clients to Matrix.
 
 Benefits of double puppeting:
 
