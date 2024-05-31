@@ -17,7 +17,9 @@ automatically serve a .well-known to redirect from port 8448 to 443.
 
 Endpoints that the bridge can handle with direct media access:
 
-* `/_matrix/media/*`
+* `/_matrix/federation/v1/media/download/*`
+* `/_matrix/client/v1/media/*`
+* `/_matrix/media/*` (legacy, pre-MSC3916)
 * `/_matrix/key/*`
 * `/_matrix/federation/v1/version`
 * `/.well-known/matrix/server`
