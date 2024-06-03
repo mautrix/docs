@@ -237,6 +237,9 @@ releases may be skipped if there's something blocking the release or if nothing
 relevant has changed since the last one. Releases outside of the standard cycle
 only happen if there are severe security issues that must be fixed immediately.
 
+Anything older than the latest release is completely supported and there won't
+be any patches even for security issues.
+
 Python bridges do not have a release cycle, releases will happen randomly.
 
 ## Discord: `Your message was not bridged: 50035: Invalid Form Body` with relay mode
