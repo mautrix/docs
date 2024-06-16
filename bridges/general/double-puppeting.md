@@ -91,7 +91,7 @@ one configured in `homeserver` -> `address`).
 [Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
 
 <details>
-<summary><h3>Shared secret method (legacy, synapse-only)</h3></summary>
+<summary><h3>Shared secret method (deprecated, synapse-only)</h3></summary>
 
 0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
    * Make sure you set `m_login_password_support_enabled` to `true` in the config.
@@ -111,7 +111,7 @@ one configured in `homeserver` -> `address`).
 
 </details>
 <details>
-<summary><h3>Appservice method (legacy, deprecated)</h3></summary>
+<summary><h3>Appservice method (deprecated)</h3></summary>
 
 **This method is not recommended.** Doing this causes all events from rooms
 your user is in to be pushed to the bridge, which then makes the bridge bot
