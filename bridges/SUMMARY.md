@@ -3,6 +3,7 @@
 - [Introduction](./index.md)
 
 # Bridges in general
+- [Using bridges](./general/using-bridges.md)
 - [Troubleshooting & FAQ](./general/troubleshooting.md)
 - [Registering appservices](./general/registering-appservices.md)
 - [End-to-bridge encryption](./general/end-to-bridge-encryption.md)
