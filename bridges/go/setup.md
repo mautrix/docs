@@ -101,6 +101,8 @@ nor libolm installed.
 
 ## Step 2: Configuring and running
 1. Copy `example-config.yaml` to `config.yaml`
+   For v2 bridges using the megabridge architecture, use `./mautrix-$bridge -e`
+   to generate the example config and save it to `config.yaml`.
 2. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
    page for recommendations.
 3. Generate the appservice registration file by running `./mautrix-$bridge -g`.
