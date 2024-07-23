@@ -261,3 +261,6 @@ endpoints being unrecognized and therefore media bridging failing.
 2. If using a Synapse media worker (as opposed to matrix-media-repo), make sure
    the `listeners` section in the worker config has the `client` and
    `federation` resources.
+3. If using matrix-media-repo, make sure the media repo is up to date, as it's
+   the main homeserver that advertises versions used to detect support
+   (v1.3.5 or higher is required).
