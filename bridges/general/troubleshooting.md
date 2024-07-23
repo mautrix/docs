@@ -247,3 +247,17 @@ When using relay mode, the bridge will link directly to your homeserver's media
 repo for avatars, so it needs to know a public address that Discord's CDN can
 reach. If you use a local address for the normal `homeserver` -> `address`
 field, you must configure a public address in the `public_address` field.
+
+## Media bridging: `GET /_matrix/client/v1/media/download/...: M_UNRECOGNIZED`
+The July 2024 releases of all mautrix bridges added support for authenticated
+media. It is automatically enabled based on the server advertising support,
+which means Synapse v1.111 or higher. However, servers with workers may have
+the media repo worker incorrectly configured, which wil lead to the new
+endpoints being unrecognized and therefore media bridging failing.
+
+1. Make sure your reverse proxy routes `/_matrix/client/v1/media/*` and
+   `/_matrix/federation/v1/media/*` to the appropriate worker (same one as
+   `/_matrix/media/v3/*` in the past).
+2. If using a Synapse media worker (as opposed to matrix-media-repo), make sure
+   the `listeners` section in the worker config has the `client` and
+   `federation` resources.
