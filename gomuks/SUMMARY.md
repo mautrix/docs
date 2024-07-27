@@ -11,4 +11,5 @@
 - [FAQ](./faq.md)
 - [Commands](./commands.md)
 - [Shortcuts](./shortcuts.md)
+- [Keybindings](./keybindings.md)
 - [Debugging](./debugging.md)
