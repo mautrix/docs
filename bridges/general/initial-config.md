@@ -64,6 +64,7 @@ fields to change listed below. For most fields, you can just replace
 * `appservice` -> `bot` -> `avatar`
   * Instagram: `mxc://maunium.net/JxjlbZUlCPULEeHZSwleUXQv`
   * Messenger: `mxc://maunium.net/ygtkteZsXnGJLJHRchUwYWak`
+  * Facebook: `mxc://maunium.net/uvPDxOQGCvGbPsYDiuHlNiiE`
 * `bridge` -> `username_template`
 * `bridge` -> `management_room_text` -> `welcome`
 
