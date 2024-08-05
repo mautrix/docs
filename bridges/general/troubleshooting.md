@@ -252,7 +252,7 @@ field, you must configure a public address in the `public_address` field.
 The July 2024 releases of all mautrix bridges added support for authenticated
 media. It is automatically enabled based on the server advertising support,
 which means Synapse v1.111 or higher. However, servers with workers may have
-the media repo worker incorrectly configured, which wil lead to the new
+the media repo worker incorrectly configured, which will lead to the new
 endpoints being unrecognized and therefore media bridging failing.
 
 1. Make sure your reverse proxy routes `/_matrix/client/v1/media/*` and
