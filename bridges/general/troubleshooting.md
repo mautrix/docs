@@ -178,11 +178,11 @@ between unrelated programs.
 You can create a separate database either using the `createdb` shell command
 that is usually included with Postgres, or the `CREATE DATABASE` SQL statement.
 
-For existing installations, you can use the flag suggested in the error message
-and hope that there are no table name conflicts in the future. To use the flag
-in Docker, you'll have to override the startup command, either with a copy of
-the `docker-run.sh` script (which can be found in the bridge repo), or just
-the startup command (`python3 -m mautrix_$bridge -c /data/config.yaml --flags`).
+For existing installations, you can use the CLI flag to ignore the error (see
+`--help`) and hope that there are no table name conflicts in the future. To use
+the flag in Docker, you'll have to override the startup command, either with a
+copy of the `docker-run.sh` script (which can be found in the bridge repo), or
+just the startup command (`python3 -m mautrix_$bridge -c /data/config.yaml --flags`).
 
 ## The `as_token` was not accepted
 This error means you either:
