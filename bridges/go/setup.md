@@ -43,7 +43,7 @@ their documentation to find support rooms.
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 
-* Go 1.21+ (download & installation instructions at <https://go.dev/doc/install>).
+* Go 1.22+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   Rust, Cargo, libclang-dev and protoc (if you want to compile libsignal yourself).
@@ -64,10 +64,6 @@ nor libolm installed.
 2. Extract the downloaded zip file into a new directory.
 
 ### Option 2: Downloading a release
-<p class="bridge-filter" bridges="slack" bridge-no-generic style="display: none">
-  <strong>The Slack bridge doesn't have releases yet</strong>
-</p>
-
 1. Go to <https://github.com/mautrix/$bridge/releases>
 2. Download the binary for the architecture you want and save it in a new
    directory.
@@ -100,7 +96,7 @@ nor libolm installed.
 [`build.sh`]: https://github.com/mautrix/$bridge/blob/main/build.sh
 
 ## Step 2: Configuring and running
-1. Copy `example-config.yaml` to `config.yaml`
+1. Copy `example-config.yaml` to `config.yaml`.
    For v2 bridges using the megabridge architecture, use `./mautrix-$bridge -e`
    to generate the example config and save it to `config.yaml`.
 2. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)

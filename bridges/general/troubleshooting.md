@@ -177,6 +177,7 @@ between unrelated programs.
 
 You can create a separate database either using the `createdb` shell command
 that is usually included with Postgres, or the `CREATE DATABASE` SQL statement.
+After creating a separate database, adjust the database URI in the bridge config.
 
 For existing installations, you can use the CLI flag to ignore the error (see
 `--help`) and hope that there are no table name conflicts in the future. To use

@@ -1,4 +1,6 @@
 # Relay mode
+**N.B.** This page has not been updated for Megabridges yet.
+
 Some of the bridges here support relaying messages for unauthenticated users
 through the account that another Matrix user is logged in as.
 

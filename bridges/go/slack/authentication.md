@@ -1,22 +1,39 @@
 # Authentication
+You may want to use [mautrix-manager](https://github.com/mautrix/manager)
+instead of bot commands if you want to do token login. It will automate
+extracting cookies so you don't need to mess with browser devtools.
+
 0. Open a private chat with the bridge bot. Usually `@slackbot:your.server`.
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 
-## Password login
-
-Password login supports all Slack features, except portals for Slack conversations will not be created immediately after login. If your Slack account does not have a password you need to use [token login](#token-login) or add a password to your account.
-
-1. Send the command `login-password <email address> <slack team domain> <password>`, for example `login-password me@email.com workplacechat.slack.com hunter2`.
-
-Password login isn't guaranteed to always be fully supported, but you can switch to token-based login at any time afterwards by following the instructions in the [Token login](#token-login) section without signing out.
-
 ## Token login
+1. Login to the Slack web app in a browser, and acquire the authentication
+   token and `d` cookie from inside the app.
+   * The token starts with `xoxc-` and can be found using the browser devtools,
+     in localStorage inside the `localConfig_v2` object:
+     ```javascript
+     JSON.parse(localStorage.localConfig_v2).teams.YOUR_TEAM_ID_HERE.token
+     ```
+   * The cookie is named `d` and starts with `xoxd-`.
+2. Send `login token <token> <cookie>` to the bot.
 
-Token login works for any Slack account and fully supports all Slack features.
+After login, the bridge will bridge recent chats automatically
+(depending on the `conversation_count` setting).
 
-1. Login to the Slack web app in a browser, and acquire the authentication token and `d` cookie from inside the app.
-   * The token starts with `xoxc-` and can be found using the browser devtools, in the app's local storage inside the `localConfig_v2` object, as `teams['your team ID'].token`.
-   * The cookie is named `d`, it starts with `xoxd-` and can be found in the cookies section in the devtools.
-2. Send the command `login-token <token> <cookie>`, for example `login-token xoxc-tokengoeshere xoxd-cookiegoeshere`
+## App login
+If using app login for relay mode, it is recommended to create a new Matrix
+account. If you do this with your primary account, your messages will be bridged
+with the app's profile rather than a custom profile.
 
-After login using a token, all your joined channels will automatically be bridged into Matrix, but DMs will only appear once you receive messages in them.
+1. Create a new Slack app using the [app manifest](https://github.com/mautrix/slack/blob/main/app-manifest.yaml)
+   in the bridge repo.
+2. Create an app-level token for the app to get a `xapp-` token.
+3. Install the app in your workspace to get a `xoxb-` token.
+4. Send `login app` to the bot.
+5. Send the bot token and app-level token when requested.
+
+After login, the bridge will bridge the chats the bot is in automatically.
+If using `set-relay`, any unauthenticated users will be bridged through the app
+with a custom name & avatar. Note that the user who did `login app` will **not**
+get a custom name and avatar (hence the recommendation for a dedicated Matrix
+account at the start).
