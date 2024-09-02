@@ -38,7 +38,8 @@ work correctly and disables ratelimiting for double puppeted messages.
 Since there's no login step, this method also has the benefit of not adding
 confusing sessions to the session list visible to the user.
 
-1. First create a new appservice registration file. Don't touch the bridge's
+1. First create a new appservice registration file. The name doesn't really
+   matter, but `doublepuppet.yaml` is a good choice. Don't touch the bridge's
    main registration file, and make sure the ID and as/hs tokens are different
    (having multiple appservices with the same ID or as_token isn't allowed).
 
