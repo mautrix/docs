@@ -21,18 +21,20 @@ process much smoother for users, and removes problems like access tokens
 getting invalidated.
 
 Previously there were multiple different automatic double puppeting methods,
-but the older methods have been deprecated in the megabridge rewrites. Only the
-new appservice method is now supported.
+but the older methods are deprecated and were completely removed in the
+megabridge rewrites. Only the new appservice method is now supported.
 
 Automatic double puppeting should work on all homeserver implementations that
 support appservices. However, some servers don't follow the spec, and may not
-work with a null `url` field. This method also makes timestamp massaging work
-correctly and disables ratelimiting for double puppeted messages.
+work with a null `url` field.
 
 Using appservices means it requires administrator access to the homeserver, so
 it can't be used if your account is on someone elses server (e.g. using
 self-hosted bridges from matrix.org). In such cases, manual login is the only
 option.
+
+This method also makes timestamp massaging work correctly and disables
+ratelimiting for double puppeted messages.
 
 1. First create a new appservice registration file. The name doesn't really
    matter, but `doublepuppet.yaml` is a good choice. Don't touch the bridge's
