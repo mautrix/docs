@@ -1,4 +1,6 @@
 # Initial bridge config
+**N.B.** This page has not been updated for Megabridges yet.
+
 These bridges contain quite a lot of configuration options. This page is meant
 to help with finding the important ones that must be changed when setting up
 a bridge, as well as highlight some options that are usually useful.

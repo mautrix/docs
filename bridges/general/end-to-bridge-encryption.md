@@ -23,10 +23,11 @@ To enable it, you must install the bridge with dependencies:
   * CI binaries from mau.dev and release binaries on GitHub are always built with libolm.
 * Docker images for all bridges always support encryption and don't need any special build flags.
 
-After that, simply enable the option in the config (`bridge` → `encryption`).
-If you only set `allow: true`, the bridge won't enable encryption on its own,
-but will work in encrypted rooms. If you also set `default: true`, the bridge
-will automatically enable encryption in new portals.
+After that, simply enable the option in the config (top-level `encryption` in
+new bridges, `bridge` → `encryption` in old ones). If you only set `allow: true`,
+the bridge won't enable encryption on its own, but will work in encrypted rooms.
+If you also set `default: true`, the bridge will automatically enable encryption
+in new portals.
 
 If your homeserver is configured to forcibly enable encryption in rooms, you
 must also set `default: true` in the bridge config. Force-enabling encryption

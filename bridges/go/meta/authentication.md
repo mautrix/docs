@@ -1,4 +1,8 @@
 # Authentication
+You may want to use [mautrix-manager](https://github.com/mautrix/manager)
+instead of bot commands. It will automate extracting cookies so you don't need
+to mess with browser devtools.
+
 0. Open a private chat with the bridge bot. Usually `@instagrambot:your.server` or `@facebookbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Send `login` to the bridge bot. The bot should ask you to paste cookies,

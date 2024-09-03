@@ -53,6 +53,7 @@
 - [mautrix-gmessages](./go/gmessages/index.md)
   - [Authentication](./go/gmessages/authentication.md)
 - [mautrix-gvoice](./go/gvoice/index.md)
+  - [Authentication](./go/gvoice/authentication.md)
 - [mautrix-signal](./go/signal/index.md)
   - [Authentication](./go/signal/authentication.md)
 - [mautrix-meta](./go/meta/index.md)

@@ -16,27 +16,23 @@ Benefits of double puppeting:
 
 ## Automatically
 Instead of requiring everyone to manually enable double puppeting, you can give
-the bridge access to log in on its own. This makes the process much smoother for
-users, and removes problems if the access token getting invalidated, as the
-bridge can simply automatically relogin.
+the bridge access to enable double puppeting automatically. This makes the
+process much smoother for users, and removes problems like access tokens
+getting invalidated.
 
-This method requires administrator access to the homeserver, so it can't be used
-if your account is on someone elses server (e.g. using self-hosted bridges from
-matrix.org). In such cases, manual login is the only option.
+Previously there were multiple different automatic double puppeting methods,
+but the older methods have been deprecated in the megabridge rewrites. Only the
+new appservice method is now supported.
 
-### Appservice method (new)
-**N.B.** This method is not supported in the legacy (Python) Signal bridge nor
-the current iMessage and Slack bridges. You can use the alternative methods like
-shared secret login documented below for those.
+Automatic double puppeting should work on all homeserver implementations that
+support appservices. However, some servers don't follow the spec, and may not
+work with a null `url` field. This method also makes timestamp massaging work
+correctly and disables ratelimiting for double puppeted messages.
 
-This method doesn't log in at all, instead it uses an `as_token` directly with
-the `user_id` query parameter. It should work on all homeserver implementations
-that support appservices. However, some servers don't follow the spec, and may
-not work with a null `url` field. This method also makes timestamp massaging
-work correctly and disables ratelimiting for double puppeted messages.
-
-Since there's no login step, this method also has the benefit of not adding
-confusing sessions to the session list visible to the user.
+Using appservices means it requires administrator access to the homeserver, so
+it can't be used if your account is on someone elses server (e.g. using
+self-hosted bridges from matrix.org). In such cases, manual login is the only
+option.
 
 1. First create a new appservice registration file. The name doesn't really
    matter, but `doublepuppet.yaml` is a good choice. Don't touch the bridge's
@@ -68,85 +64,29 @@ confusing sessions to the session list visible to the user.
    ```
 2. Install the new registration file the usual way
    (see [Registering appservices]).
-3. Finally set `as_token:$TOKEN` as the secret in `login_shared_secret_map`
+3. Finally set `as_token:$TOKEN` as the secret in `double_puppet` -> `secrets`
    (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
    in the bridge config).
    ```yaml
-   bridge:
+   double_puppet:
      ...
-     login_shared_secret_map:
+     secrets:
        your.domain: "as_token:meow"
      ...
    ```
+   **N.B.** For old bridges, the map is `bridge` -> `login_shared_secret_map`.
 
 If you set up double puppeting for multiple bridges, you can safely reuse the
 same registration by just setting the same token in the config of each bridge
 (i.e. no need to create a new double puppeting registration for each bridge).
 
 This method works for other homeservers too, you just have to create a new
-registration file for each server, add the token to `login_shared_secret_map`,
-and also add the server address to `double_puppet_server_map` (for the bridge
-server, adding to the server map is not necessary as it defaults to using the
-one configured in `homeserver` -> `address`).
+registration file for each server, add the token to `secrets`, and also add
+the server address to the `servers` map (for the bridge server, adding to the
+server map is not necessary as it defaults to using the one configured in
+`homeserver` -> `address`).
 
 [Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
-
-<details>
-<summary><h3>Shared secret method (deprecated, synapse-only)</h3></summary>
-
-0. Set up [matrix-synapse-shared-secret-auth] on your Synapse.
-   * Make sure you set `m_login_password_support_enabled` to `true` in the config.
-   * You should also set `com_devture_shared_secret_auth_support_enabled` to
-     `false` as having that option enabled breaks user-interactive auth in some
-     clients (e.g. you won't be able to sign out other devices or reset
-     cross-signing in Element).
-1. Add the login shared secret to `bridge` → `login_shared_secret_map` in the
-   config file under the correct server name.
-   * In mautrix-imessage and in past versions of other bridges, the field is
-     called `login_shared_secret`, as double puppeting was only supported for
-     local users.
-2. The bridge will now automatically enable double puppeting for all users on
-   servers with a shared secret set when they log into the bridge.
-
-[matrix-synapse-shared-secret-auth]: https://github.com/devture/matrix-synapse-shared-secret-auth
-
-</details>
-<details>
-<summary><h3>Appservice method (deprecated)</h3></summary>
-
-**This method is not recommended.** Doing this causes all events from rooms
-your user is in to be pushed to the bridge, which then makes the bridge bot
-join the rooms (as the bridge assumes it only receives events meant for it).
-
-Additionally, it only works for users who are on the same homeserver as the
-bridge, it can't be used with other homeservers at all (even with admin access).
-
-1. Modify the registration file to add a user namespace covering all users
-   in addition to the `bridge_.+` and `bridgebot` regexes. Make sure you set
-   `exclusive: false` for the new regex.
-
-   ```yaml
-   namespaces:
-     users:
-     - ...existing regexes...
-     - regex: '@.*:your\.domain'
-       exclusive: false
-   ```
-
-   Restart the homeserver after modifying the registration.
-
-2. Set the shared secret in the bridge config to `appservice`:
-   ```yaml
-   bridge:
-     ...
-     login_shared_secret_map:
-       your.domain: appservice
-     ...
-   ```
-3. The bridge will now use appservice login enable double puppeting for all
-   local users when they log into the bridge.
-
-</details>
 
 ## Manually
 Double puppeting can only be enabled after logging into the bridge. As with
