@@ -92,7 +92,7 @@ server map is not necessary as it defaults to using the one configured in
 Double puppeting can only be enabled after logging into the bridge. As with
 the normal login, you must do this in a private chat with the bridge bot.
 
-**N.B.** This method is not currently supported in mautrix-imessage and mautrix-slack.
+**N.B.** This method is not currently supported in mautrix-imessage.
 
 1. Log in on the homeserver to get an access token, for example with the command
    ```shell
