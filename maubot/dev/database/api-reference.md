@@ -18,7 +18,7 @@ The class also contains `execute`, `executemany`, `fetch`, `fetchrow`,
 connection and run the single method using it (see reference below).
 
 ## `Connection`
-Records returned by the fetch methods are either `asyncpg.Record or the stdlib's
+Records returned by the fetch methods are either `asyncpg.Record` or the stdlib's
 `sqlite3.Row`. Both work mostly the same way (can access fields by both
 column index and name).
 
