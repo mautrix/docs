@@ -251,19 +251,19 @@ field, you must configure a public address in the `public_address` field.
 
 ## Media bridging: `GET /_matrix/client/v1/media/download/...: M_UNRECOGNIZED`
 The July 2024 releases of all mautrix bridges added support for authenticated
-media. It is automatically enabled based on the server advertising support,
-which means Synapse v1.111 or higher. However, servers with workers may have
-the media repo worker incorrectly configured, which will lead to the new
-endpoints being unrecognized and therefore media bridging failing.
+media. The September 2024 releases additionally require authenticated media
+without checking server support, so they require Synapse v1.111 or higher.
+Even up-to-date servers may have the media endpoints incorrectly configured,
+which will lead to the new endpoints being unrecognized and therefore media
+bridging failing.
 
 1. Make sure your reverse proxy routes `/_matrix/client/v1/media/*` and
    `/_matrix/federation/v1/media/*` to the appropriate worker (same one as
    `/_matrix/media/v3/*` in the past).
-2. If using a Synapse media worker (as opposed to matrix-media-repo), make sure
+2. ~~If using a Synapse media worker (as opposed to matrix-media-repo), make sure
    the `listeners` section in the worker config has the `client` and
-   `federation` resources.
-   * Requiring the new resources may be a bug:
-     <https://github.com/element-hq/synapse/issues/17473>.
+   `federation` resources.~~ Fixed in Synapse 1.114
+   <https://github.com/element-hq/synapse/issues/17473>.
 3. If using matrix-media-repo, make sure the media repo is up to date, as it's
    the main homeserver that advertises versions used to detect support
    (v1.3.5 or higher is required).
