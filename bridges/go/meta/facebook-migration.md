@@ -1,4 +1,7 @@
 # Migrating from mautrix-facebook
+**Migration from mautrix-facebook was removed in v0.4.0.**
+v0.3.2 is the last version that can be used to migrate from mautrix-facebook.
+
 0. Either create a new database for mautrix-meta, or rename the old one and
    create a new one with the original name.
 1. Configure mautrix-meta normally. You must use the same bot username and
