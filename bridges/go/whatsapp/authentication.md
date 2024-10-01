@@ -1,10 +1,10 @@
 # Authentication
 0. Open a private chat with the bridge bot. Usually `@whatsappbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
-1. Send `login` to start the login.
-   * _New in version 0.10.1:_ To log in by entering a 8-letter code on your
-     phone instead of scanning the QR code, pass your phone number after the
-     command, e.g. `login +123456789`.
+1. Send `login qr` to start the login.
+   * To log in by entering a 8-letter code on your phone instead of scanning
+     the QR code, use `login phone` instead and send your phone number when
+     prompted.
 2. Log in by scanning the QR code or entering the pairing code. If the code
    expires before you scan it, the bridge will send an error to notify you.
    1. Open WhatsApp on your phone.
@@ -19,10 +19,8 @@
      is to create portals for all chats from WhatsApp and backfill 50 messages
      in recent chats.
 
-Please note that the bridge uses the web API. Prior to v0.2.0 and the multidevice
-update, your phone had to be connected to the internet for the bridge to work.
-After v0.2.0, it's enough if the phone is connected at least once every 2 weeks.
-If the phone is offline for >2 weeks, linked devices will become disconnected:
+Please note that the bridge uses the web API. If the phone is offline for >2
+weeks, linked devices will become disconnected:
 <https://faq.whatsapp.com/general/download-and-installation/about-linked-devices>.
 The bridge will warn you if it doesn't receive any data from the phone in over
 12 days.

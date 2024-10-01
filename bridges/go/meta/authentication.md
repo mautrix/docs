@@ -7,6 +7,8 @@ to mess with browser devtools.
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Send `login` to the bridge bot. The bot should ask you to paste cookies,
    which will happen in step 6.
+   * If the bridge is *not* configured with a specific `mode`, then you also
+     have to specify the mode here (facebook, messenger or instagram).
 2. Open the website in a private window (facebook.com, messenger.com or
    instagram.com, depending on what you configured the bridge to use).
 3. Open browser devtools and go to the network tab.
