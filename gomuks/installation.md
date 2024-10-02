@@ -24,6 +24,7 @@ you've made a new distro package, please add it to the list below.
 * NixOS: [gomuks](https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/instant-messengers/gomuks/default.nix)
 * OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
 * Alpine Linux: [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks)
+* Debian GNU/Linux: [gomuks](https://tracker.debian.org/pkg/gomuks)
 * macOS (Homebrew Tap): [aaronraimist/tap/gomuks](https://github.com/aaronraimist/homebrew-tap)
 * macOS (MacPorts): [gomuks](https://ports.macports.org/port/gomuks)
 * Windows (scoop): [gomuks](https://github.com/TheLastZombie/scoop-bucket/blob/master/bucket/gomuks.json)
