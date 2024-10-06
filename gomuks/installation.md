@@ -30,9 +30,8 @@ you've made a new distro package, please add it to the list below.
 
 ## Compiling from source
 
-0. Install [Go](https://go.dev/doc/install) 1.20 or higher.
-   * If you want end-to-end encryption, also install `libolm-dev`
-     (3.x required, 2.x won't work) and C/C++ compilers.
+0. Install [Go](https://go.dev/doc/install) 1.21 or higher.
+   * If you want end-to-end encryption, also install `libolm-dev`.
    * If you don't want encryption, disable CGO with `export CGO_ENABLED=0`.
 1. Clone the repo: `git clone https://github.com/tulir/gomuks.git && cd gomuks`
 2. Build: `./build.sh`
