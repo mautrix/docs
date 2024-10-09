@@ -130,3 +130,7 @@ if (selector) {
 
     updateBridgeSelection()
 }
+
+const sheet = new CSSStyleSheet()
+sheet.replaceSync(".noscript { display: none; }")
+document.adoptedStyleSheets.push(sheet)
