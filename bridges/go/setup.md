@@ -40,6 +40,8 @@ their documentation to find support rooms.
 * <span class="bridge-filter" bridges="discord">**mautrix-discord**: </span>
   [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
   to receive animated stickers.
+* <span class="bridge-filter" bridges="gvoice">**mautrix-gvoice**: </span>
+  electron with an attached display in order to send messages to rooms from matrix (physical or virtual displays work).
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 
