@@ -63,10 +63,3 @@ pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projec
 | pip extra name      | Required packages | Description                                                          |
 |---------------------|-------------------|----------------------------------------------------------------------|
 | `imageconvert`      | Pillow            | Convert images from Matrix into JPEG so Instagram would accept them. |
-
-### mautrix-signal
-| pip extra name      | Required packages | Description                                                          |
-|---------------------|-------------------|----------------------------------------------------------------------|
-| `formattednumbers`  | phonenumbers      | Format phone numbers nicely before using as displaynames.            |
-| `qrlink`            | qrcode<br>Pillow  | Generate QR codes required for linking as a secondary device.        |
-| `stickers`          | signalstickers-client | Enable bridging of Signal stickers to Matrix.                    |

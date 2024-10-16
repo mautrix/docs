@@ -10,9 +10,8 @@ This page contains instructions for setting up the bridge in a virtualenv.
 You may also want to look at other ways to run the bridge:
 
 * [Docker](../general/docker-setup.md)
-* <span class="bridge-filter" bridges="telegram,signal,facebook"></span> YunoHost:
+* <span class="bridge-filter" bridges="telegram,facebook"></span> YunoHost:
   <a href="https://github.com/YunoHost-Apps/mautrix_telegram_ynh">mautrix_telegram_ynh<span class="bridge-filter" bridges="telegram">,</span></a>
-  <a href="https://github.com/YunoHost-Apps/mautrix_signal_ynh">mautrix_signal_ynh<span class="bridge-filter" bridges="signal">,</span></a>
   <a href="https://github.com/YunoHost-Apps/mautrix_facebook_ynh">mautrix_facebook_ynh<span class="bridge-filter" bridges="facebook"></span></a>
 * [systemd service](#systemd-service) (at the bottom of this page)
 
@@ -40,10 +39,8 @@ their documentation to find support rooms.
 * <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
   [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
   animated stickers to be converted to something viewable on Matrix.
-* <span class="bridge-filter" bridges="telegram,signal,facebook,instagram">**Bridges with voice messages**: </span>
+* <span class="bridge-filter" bridges="telegram,facebook,instagram">**Bridges with voice messages**: </span>
   [ffmpeg](https://ffmpeg.org/) to transcode audio files (just install it with your system package manager).
-* <span class="bridge-filter" bridges="signal">**mautrix-signal (legacy)**: </span>
-  An instance of [signald](https://gitlab.com/signald/signald).
 
 ## Production setup
 Don't use `sudo` for any of these steps (and preferably don't use the root user either).
