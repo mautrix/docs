@@ -80,7 +80,3 @@ Native Signal clients don't support any sort of history transfer (yes, the UX
 of their official desktop app is horrible). Eventually, the bridge may add an
 option to import backup files from Signal Android, but that is not supported
 yet.
-
-### Slack
-The Slack bridge does not support traditional backfill currently, it only
-supports the Beeper flavor of MSC2716.
