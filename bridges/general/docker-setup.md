@@ -31,7 +31,7 @@ their documentation to find support rooms.
 Docker images are hosted on dock.mau.dev. Available docker tags are generally
 `:latest`, `:git tag`, `:git commit-amd64` and `:git commit-arm64`. The latest
 and git tag specific docker tags are manifests that contain both amd64 and
-arm64 images.
+arm64 images. `:latest` points at the latest commit, not the latest release.
 
 0. Create a directory for the bridge and cd into it: `mkdir mautrix-$bridge && cd mautrix-$bridge`.  
    **N.B.** The docker image will `chown` its `/data` directory to UID 1337.
