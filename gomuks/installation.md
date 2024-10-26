@@ -16,18 +16,18 @@ same directory as the `gomuks` binary.
 
 Direct links to latest CI binaries:
 
-* gomuks legacy
-  * linux/amd64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Famd64>
-  * linux/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm64>
-  * linux/arm: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm>
-  * macos/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64>
-* gomuks web
-  * linux/amd64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Famd64>
-  * linux/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm64>
-  * linux/arm: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm>
-  * macos/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=macos%2Farm64>
+* gomuks legacy:
+  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm),
+  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
+* gomuks web:
+  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm),
+  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=macos%2Farm64)
 
-There are also community maintained packages for several distributions. If
+There are also community maintained packages for several distributions (gomuks legacy only). If
 you've made a new distro package, please add it to the list below.
 
 * Arch Linux (AUR): [gomuks](https://aur.archlinux.org/packages/gomuks),
@@ -36,9 +36,9 @@ you've made a new distro package, please add it to the list below.
 * NixOS: [gomuks](https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/instant-messengers/gomuks/default.nix)
 * OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
 * Alpine Linux: [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks)
+* Debian: [gomuks](https://tracker.debian.org/pkg/gomuks)
 * macOS (Homebrew Tap): [aaronraimist/tap/gomuks](https://github.com/aaronraimist/homebrew-tap)
 * macOS (MacPorts): [gomuks](https://ports.macports.org/port/gomuks)
-* Windows (scoop): [gomuks](https://github.com/TheLastZombie/scoop-bucket/blob/master/bucket/gomuks.json)
 
 ## Compiling from source
 
@@ -64,3 +64,11 @@ Simply pull changes (`git pull`) and run `./build.sh` again to update.
 * `//go:build comment without // +build comment` means your Go version is slightly outdated.
 * `cannot load embed: malformed module path "embed"` or `package embed is not in GOROOT` means your Go version is very outdated.
 * `cannot find package "maunium.net/go/gomuks/..." in any of:` usually means your Go version is extremely outdated.
+
+## Docker (gomuks web)
+The backend for gomuks web can also run in Docker. Docker images are available
+at `dock.mau.dev/tulir/gomuks:webmuks` (the tag will change to `:latest` when
+web is merged to main).
+
+Keep in mind that the backend has all your encryption keys, which means it must
+be ran in a secure location.
