@@ -1,4 +1,6 @@
 # Shortcuts
+This page only applies to gomuks legacy.
+
 ### Keyboard
 <kbd>Ctrl</kbd> and <kbd>Alt</kbd> are interchangeable in most keybindings, but
 the other one may not work depending on your terminal emulator.

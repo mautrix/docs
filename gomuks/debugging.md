@@ -1,4 +1,6 @@
 # Debugging
+This page only applies to gomuks legacy.
+
 If something doesn't work but it doesn't crash, check the
 `/tmp/gomuks/debug.log` file for any errors. You can override the location of
 this file with the `DEBUG_DIR` environment variable.

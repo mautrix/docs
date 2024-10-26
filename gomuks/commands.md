@@ -1,4 +1,5 @@
 # Commands
+This page only applies to gomuks legacy.
 
 ### General
 * `/help` - View command list.

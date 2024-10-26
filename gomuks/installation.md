@@ -7,13 +7,25 @@ packages: <https://github.com/tulir/gomuks/releases>
 
 GitLab CI builds binaries for each
 commit: <https://mau.dev/tulir/gomuks/-/pipelines> (currently available for
-linux/amd64, linux/arm, linux/arm64, darwin/amd64, darwin/arm64 and
-windows/amd64).
+linux/amd64, linux/arm, linux/arm64, darwin/amd64, darwin/arm64).
 
-The release and CI binaries for Linux and Windows are statically built and have
-no dependencies at all. The binaries for macOS require installing libolm, either
+The release and CI binaries for Linux are statically built and have no
+dependencies at all. The binaries for macOS require installing libolm, either
 with `brew install libolm` or by placing `libolm.3.dylib` from the CI in the
 same directory as the `gomuks` binary.
+
+Direct links to latest CI binaries:
+
+* gomuks legacy
+  * linux/amd64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Famd64>
+  * linux/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm64>
+  * linux/arm: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm>
+  * macos/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64>
+* gomuks web
+  * linux/amd64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Famd64>
+  * linux/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm64>
+  * linux/arm: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm>
+  * macos/arm64: <https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=macos%2Farm64>
 
 There are also community maintained packages for several distributions. If
 you've made a new distro package, please add it to the list below.
@@ -33,12 +45,14 @@ you've made a new distro package, please add it to the list below.
 0. Install [Go](https://go.dev/doc/install) 1.21 or higher.
    * If you want end-to-end encryption, also install `libolm-dev`.
    * If you don't want encryption, disable CGO with `export CGO_ENABLED=0`.
+   * gomuks web requires Go 1.23 or higher and does not support disabling encryption.
 1. Clone the repo: `git clone https://github.com/tulir/gomuks.git && cd gomuks`
+   * To get gomuks web, run `git checkout webmuks` after cd.
 2. Build: `./build.sh`
    ([build.sh] will simply call go build with some additional flags).
 
 [build.sh]: https://github.com/tulir/gomuks/blob/master/build.sh
-Simply pull changes (`git pull`) and run `go build` again to update.
+Simply pull changes (`git pull`) and run `./build.sh` again to update.
 
 ### Common compilation issues
 * `fatal error: olm/olm.h: No such file or directory` means you forgot to install libolm-dev,

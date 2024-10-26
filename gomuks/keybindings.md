@@ -1,4 +1,6 @@
 # Customizing keybindings
+This page only applies to gomuks legacy.
+
 Keybindings can be customized to some extent by creating a file called
 `keybindings.yaml` in the config directory (see the [FAQ] for the location of
 the config directory).
