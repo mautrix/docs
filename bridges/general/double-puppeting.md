@@ -91,8 +91,13 @@ server map is not necessary as it defaults to using the one configured in
 [Registering appservices]: https://docs.mau.fi/bridges/general/registering-appservices.html
 
 ## Manually
-Double puppeting can only be enabled after logging into the bridge. As with
-the normal login, you must do this in a private chat with the bridge bot.
+Double puppeting with the manual method can only be enabled after logging into
+the bridge. As with the normal login, you must do this in a private chat with
+the bridge bot.
+
+Automatic double puppeting is recommended. This method is mostly a fallback in
+case your account is on a different server where you can't use automatic double
+puppeting.
 
 **N.B.** This method is not currently supported in mautrix-imessage.
 

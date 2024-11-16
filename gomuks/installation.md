@@ -69,8 +69,7 @@ Simply pull changes (`git pull`) and run `./build.sh` again to update.
 
 ## Docker (gomuks web)
 The backend for gomuks web can also run in Docker. Docker images are available
-at `dock.mau.dev/tulir/gomuks:webmuks` (the tag will change to `:latest` when
-web is merged to main).
+at `dock.mau.dev/tulir/gomuks`.
 
 Keep in mind that the backend has all your encryption keys, which means it must
 be ran in a secure location.
