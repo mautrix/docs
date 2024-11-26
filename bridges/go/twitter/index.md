@@ -2,7 +2,7 @@
 Welcome to the mautrix-twitter docs!
 
 Use the sidebar to find the relevant pages. Things that are the same for all
-bridges, like setting up the bridge, are right below the "Python-based bridges"
+bridges, like setting up the bridge, are right below the "Go-based bridges"
 header. Things specific to mautrix-twitter are under this page.
 
 These docs are mostly targeted towards people who are hosting the bridge

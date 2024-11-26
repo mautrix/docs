@@ -31,6 +31,8 @@ theme = "../theme/bridges"
 "/python/signal/index.html" = "../../go/signal/index.html"
 "/python/signal/authentication.html" = "../../go/signal/authentication.html"
 "/python/signal/docker-setup.html" = "../../general/docker-setup.html?bridge=signal"
+"/python/twitter/index.html" = "../../go/twitter/index.html"
+"/python/twitter/authentication.html" = "../../go/twitter/authentication.html"
 
 [output.linkcheck]
 optional = true
