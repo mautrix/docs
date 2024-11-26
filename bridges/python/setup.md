@@ -2,17 +2,12 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="facebook,instagram" bridge-no-generic style="display: none">
-  <strong>The old Facebook and Instagram bridges are deprecated. The Meta bridge is recommended instead.</strong>
-</p>
-
 This page contains instructions for setting up the bridge in a virtualenv.
 You may also want to look at other ways to run the bridge:
 
 * [Docker](../general/docker-setup.md)
-* <span class="bridge-filter" bridges="telegram,facebook"></span> YunoHost:
+* <span class="bridge-filter" bridges="telegram"></span> YunoHost:
   <a href="https://github.com/YunoHost-Apps/mautrix_telegram_ynh">mautrix_telegram_ynh<span class="bridge-filter" bridges="telegram">,</span></a>
-  <a href="https://github.com/YunoHost-Apps/mautrix_facebook_ynh">mautrix_facebook_ynh<span class="bridge-filter" bridges="facebook"></span></a>
 * [systemd service](#systemd-service) (at the bottom of this page)
 
 Please note that everything in these docs are meant for server admins who want
@@ -39,7 +34,7 @@ their documentation to find support rooms.
 * <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
   [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
   animated stickers to be converted to something viewable on Matrix.
-* <span class="bridge-filter" bridges="telegram,facebook,instagram">**Bridges with voice messages**: </span>
+* <span class="bridge-filter" bridges="telegram">**Bridges with voice messages**: </span>
   [ffmpeg](https://ffmpeg.org/) to transcode audio files (just install it with your system package manager).
 
 ## Production setup

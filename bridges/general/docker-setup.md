@@ -2,10 +2,6 @@
 
 {{ #include ../selector.html }}
 
-<p class="bridge-filter" bridges="facebook,instagram" bridge-no-generic style="display: none">
-  <strong>The old Facebook and Instagram bridges are deprecated. The Meta bridge is recommended instead.</strong>
-</p>
-
 This page contains instructions for setting up the bridge in Docker. To set up
 the bridge outside of Docker, see the language-specific instructions:
 [Python](../python/setup.md), [Go](../go/setup.md)

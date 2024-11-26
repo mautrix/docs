@@ -52,14 +52,3 @@ pip install python-olm --extra-index-url https://gitlab.matrix.org/api/v4/projec
 | `speedups`          | cryptg<br>cchardet<br>aiodns<br>brotli | Speed up some things, e.g. by using native crypto code. |
 | `qr_login`          | qrcode<br>Pillow  | Telegram login by scanning a QR code from another device.          |
 | `formattednumbers`  | phonenumbers      | Format phone numbers nicely in contact share messages              |
-
-### mautrix-facebook
-| pip extra name      | Required packages | Description                                                        |
-|---------------------|-------------------|--------------------------------------------------------------------|
-| `animated_stickers` | Pillow            | Finds the dimensions of stickers bridged from Facebook.            |
-| †`proxy`     | pysocks<br>aiohttp-socks | Support for proxying all Facebook traffic through a SOCKS5 proxy.  |
-
-### mautrix-instagram
-| pip extra name      | Required packages | Description                                                          |
-|---------------------|-------------------|----------------------------------------------------------------------|
-| `imageconvert`      | Pillow            | Convert images from Matrix into JPEG so Instagram would accept them. |

@@ -27,13 +27,8 @@
   - [Provisioning API](./python/telegram/provisioning-api.md)
   - [Migrating from Telematrix](./python/telegram/migrating-from-telematrix.md)
   - [DBMS migration](./python/telegram/dbms-migration.md)
-- [mautrix-facebook](./python/facebook/index.md)
-  - [Authentication](./python/facebook/authentication.md)
-  - [Upgrading to v0.2.0](./python/facebook/upgrading-to-v0.2.0.md)
 - [mautrix-googlechat](./python/googlechat/index.md)
   - [Authentication](./python/googlechat/authentication.md)
-- [mautrix-instagram](./python/instagram/index.md)
-  - [Authentication](./python/instagram/authentication.md)
 
 # Go-based bridges
 - [Bridge setup](./go/setup.md)
