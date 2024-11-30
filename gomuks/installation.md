@@ -22,10 +22,10 @@ Direct links to latest CI binaries:
   [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm),
   [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
 * gomuks web:
-  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Famd64),
-  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm64),
-  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=linux%2Farm),
-  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/webmuks/download?job=macos%2Farm64)
+  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=linux%2Farm),
+  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64)
 
 There are also community maintained packages for several distributions (gomuks legacy only). If
 you've made a new distro package, please add it to the list below.
