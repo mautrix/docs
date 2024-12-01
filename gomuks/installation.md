@@ -42,18 +42,16 @@ you've made a new distro package, please add it to the list below.
 
 ## Compiling from source
 
-0. Install [Go](https://go.dev/doc/install) 1.21 or higher.
-   * If you want end-to-end encryption, also install `libolm-dev`.
-   * If you don't want encryption, disable CGO with `export CGO_ENABLED=0`.
-   * gomuks web requires Go 1.23 or higher and does not support disabling encryption.
+0. Install [Go](https://go.dev/doc/install) 1.23 or higher.
    * Compiling the frontend for gomuks web also requires the latest LTS of
      Node.js or higher (currently v20).
+   * `libolm-dev` must also be installed for end-to-end encryption.
 1. Clone the repo: `git clone https://github.com/tulir/gomuks.git && cd gomuks`
-   * To get gomuks web, run `git checkout webmuks` after cd.
+   * To get legacy gomuks terminal, run `git checkout master` after cd.
 2. Build: `./build.sh`
    ([build.sh] will simply call go build with some additional flags).
 
-[build.sh]: https://github.com/tulir/gomuks/blob/master/build.sh
+[build.sh]: https://github.com/tulir/gomuks/blob/main/build.sh
 Simply pull changes (`git pull`) and run `./build.sh` again to update.
 
 ### Common compilation issues
