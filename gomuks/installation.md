@@ -71,3 +71,31 @@ at `dock.mau.dev/tulir/gomuks`.
 
 Keep in mind that the backend has all your encryption keys, which means it must
 be ran in a secure location.
+
+This example mirrors the port and locations used when running the binary directly:
+```yaml:docker-compose.yml
+services:
+  gomuks:
+    image: dock.mau.dev/tulir/gomuks:latest
+    restart: unless-stopped
+    ports:
+      - "29325:29325"
+    volumes:
+      - "$HOME/gomuks:/data"
+```
+
+On the first run, launch interactively to generate the config files:
+```bash
+docker compose run -it gomuks
+```
+
+Or use Docker Run:
+```bash
+docker run -it --rm \
+  -p 29325:29325 \
+  -v $HOME/gomuks:/data \
+  dock.mau.dev/tulir/gomuks:latest
+```
+
+Once configured, remove the `-it` and use `-d` to have gomuks daemonize, then
+access the web interface at `http://localhost:29325`.
