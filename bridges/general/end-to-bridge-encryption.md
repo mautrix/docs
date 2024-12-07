@@ -15,6 +15,10 @@ to hide messages from the homeserver. The use cases for this are:
     a local raspberry pi or similar to ensure your cloud provider can't see
     messages.
 
+Traffic from the bridge to remote network always follows the remote protocol
+as if the bridge was a native client. For example, messages sent to Signal are
+always encrypted between the bridge and Signal clients.
+
 ## Basic usage
 
 To enable it, you must install the bridge with dependencies:
