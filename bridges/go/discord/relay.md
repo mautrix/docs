@@ -35,3 +35,9 @@ rooms](./bridging-rooms.md) page for more info.
     a private room (and avoid leaking the webhook secret to everyone else in
     the room being bridged), e.g.
     `!discord set-relay !26DmcJd3cQ...:example.com --url https://discord.com/...`
+
+To get avatars to show up, you must set the `public_address` field in the
+`bridge` section to a public https address that Discord can use to reach the
+bridge (the same server as defined in the `appservice` section). Discord will
+use the `/mautrix-discord/avatar/{server}/{id}/{hash}` endpoint on the provided
+address to download avatars.
