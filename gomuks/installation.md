@@ -10,9 +10,12 @@ commit: <https://mau.dev/tulir/gomuks/-/pipelines> (currently available for
 linux/amd64, linux/arm, linux/arm64, darwin/amd64, darwin/arm64).
 
 The release and CI binaries for Linux are statically built and have no
-dependencies at all. The binaries for macOS require installing libolm, either
+hard dependencies. The binaries for macOS require installing libolm, either
 with `brew install libolm` or by placing `libolm.3.dylib` from the CI in the
 same directory as the `gomuks` binary.
+
+gomuks web requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
+metadata when sending video files.
 
 Direct links to latest CI binaries:
 
