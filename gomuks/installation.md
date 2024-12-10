@@ -20,14 +20,14 @@ metadata when sending video files.
 Direct links to latest CI binaries:
 
 * gomuks legacy:
-  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Famd64),
-  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm64),
-  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=linux%2Farm),
+  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm),
   [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
 * gomuks web:
-  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=linux%2Famd64),
-  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=linux%2Farm64),
-  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=linux%2Farm),
+  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm),
   [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64)
 
 There are also community maintained packages for several distributions (gomuks legacy only). If
