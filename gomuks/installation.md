@@ -28,7 +28,8 @@ Direct links to latest CI binaries:
   [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
   [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
   [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm),
-  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64)
+  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64),
+  [windows/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=windows%2Famd64)
 
 There are also community maintained packages for several distributions (gomuks legacy only). If
 you've made a new distro package, please add it to the list below.
