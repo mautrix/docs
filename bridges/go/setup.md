@@ -142,7 +142,9 @@ Finally, start the bridge again.
    # Optional hardening to improve security
    ReadWritePaths=/opt/mautrix-$bridge
    NoNewPrivileges=yes
-   MemoryDenyWriteExecute=true
+   # This may cause issues with libsignal.
+   # Should be safe for other bridges
+   #MemoryDenyWriteExecute=true
    PrivateDevices=yes
    PrivateTmp=yes
    ProtectHome=yes
