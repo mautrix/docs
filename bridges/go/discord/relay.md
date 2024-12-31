@@ -41,3 +41,29 @@ To get avatars to show up, you must set the `public_address` field in the
 bridge (the same server as defined in the `appservice` section). Discord will
 use the `/mautrix-discord/avatar/{server}/{id}/{hash}` endpoint on the provided
 address to download avatars.
+
+## In-depth explanation of bridging modes
+The bridge has two ways of bridging messages to Discord:
+
+* Messages from users who have logged in (i.e. ran the `login` command
+  successfully) will be bridged through the account they logged in with.
+  It makes no difference whether the account is a bot or a real user.
+  * Bots and users can't change their profile info per message on Discord.
+    They always use the profile set for the bot or user.
+* Messages from users who have not logged in will be bridged through the webhook
+  set for the portal, if there is one. If not, those messages will not be
+  bridged at all.
+  * Webhooks can change their profile info per message on Discord, so the bridge
+    will send the Matrix user's profile info for each message.
+
+If you run `login bot <bot token>` using your main Matrix account, then your
+messages will be bridged through the bot (with the bot's default name/avatar),
+not through the webhook with a custom name/avatar. Therefore, if you want your
+messages to be bridged through the webhook, don't run the command on your main
+account. Instead, you should make a separate Matrix account just for logging
+into the bridge as the Discord bot.
+
+The bridge has no special features when logging in with a bot token. If one or
+more users log in with their real Discord accounts, there is no benefit to
+having a bot too. A webhook is sufficient for bridging messages from Matrix
+users who haven't logged in.
