@@ -61,6 +61,16 @@ clients or servers.
 [double puppeting]: ./double-puppeting.md
 [MSC2199]: https://github.com/matrix-org/matrix-spec-proposals/pull/2199
 
+## Why is the bridge bot in direct chats?
+The bridge bot is necessary when using end-to-bridge encryption, and to keep
+things more consistent, it's included even in unencrypted rooms.
+
+The bridge will send member hints to the room to tell clients to ignore the
+bridge bot when calculating the room name. However, if you use a client that
+doesn't support [MSC4171](https://github.com/matrix-org/matrix-spec-proposals/pull/4171),
+you can enable `private_chat_portal_meta` in the bridge config to tell it to
+explicitly set the room name and avatar.
+
 ## Why do I see the bridge as an unverified session in my device list?
 When using old methods for double puppeting, the bridge will have an access
 token for your account, and therefore show up as a session. However, double
