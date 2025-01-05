@@ -15,7 +15,7 @@ their documentation to find support rooms.
 
 ## Requirements
 * Docker
-* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse))
+* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/element-hq/synapse))
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
   A WhatsApp client running on a phone or in an emulated Android VM.

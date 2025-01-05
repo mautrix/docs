@@ -23,7 +23,7 @@ their documentation to find support rooms.
 
 ## Requirements
 * Python 3.10 or higher with `pip` and `virtualenv`.
-* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/matrix-org/synapse)).
+* A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/element-hq/synapse)).
   You need access to register an appservice, which usually involves editing the homeserver config file.
 * A PostgreSQL server, v10 or higher (which you should already have for Synapse).
   * Make sure you don't share databases between unrelated programs.
