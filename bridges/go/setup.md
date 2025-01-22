@@ -40,6 +40,9 @@ their documentation to find support rooms.
 * <span class="bridge-filter" bridges="discord">**mautrix-discord**: </span>
   [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
   to receive animated stickers.
+* <span class="bridge-filter" bridges="gvoice">**mautrix-gvoice**: </span>
+  Sending messages with non-workspace accounts requires having Electron installed,
+  such that the bridge can run the `electron` binary in headless mode.
 
 If you want to compile the bridge manually (which is not required), you'll also need:
 

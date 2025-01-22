@@ -154,6 +154,14 @@ Matrix users with the same people in their contact lists.
 
 If the bridge only has one user, then contact list names should be safe to enable.
 
+## mautrix-gvoice: `unexpected status code 429 (electron status: unavailable)`
+This error usually happens for non-workspace accounts when trying to send a
+message. As mentioned in the setup instructions, mautrix-gvoice requires having
+access to the `electron` binary, which is not available in Docker.
+
+If the error says `electron status: ok` instead of `unavailable`, then there's
+something else wrong.
+
 ## `pip` failed building wheel for python-olm
 
 #### `fatal error: olm/olm.h: no such file or directory`
