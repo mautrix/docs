@@ -76,7 +76,14 @@ initial backfill, or when receiving a message in a very old chat that wasn't
 included in the initial history sync blob.
 
 ### Signal
-Native Signal clients don't support any sort of history transfer (yes, the UX
-of their official desktop app is horrible). Eventually, the bridge may add an
-option to import backup files from Signal Android, but that is not supported
-yet.
+Similar to WhatsApp, Signal does a one-time history transfer from the primary
+device to the bridge after linking. Signal's history transfer feature is very
+recent. If both your Signal app and the bridge are up-to-date, the app will ask
+whether you want to transfer history immediately after scanning the QR code. If
+you choose to transfer history, the bridge will download the blob, store it in
+the database temporarily and send them over to Matrix.
+
+The history transfer includes all messages, but media will only work if it was
+sent in the past 45 days. In the future, Signal may add paid plans to preserve
+media for longer on the server and/or a way to request media from the phone on
+demand.
