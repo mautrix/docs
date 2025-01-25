@@ -42,6 +42,12 @@ decentralized, which means there's no such thing as the server that "hosts"
 a room. If you find a bridge that you're allowed to use, you can add it to any
 existing room.
 
+Your own account also doesn't need to be on the same server as the bridge, so
+while you can't connect self-hosted bridges to public servers like matrix.org,
+you can have your account on matrix.org while hosting a homeserver with a bridge
+on another domain. However, if you host a homeserver for a bridge, you may as
+well use it for your main account too, it'll probably be faster than matrix.org.
+
 After you have a bridge, you simply need to use it.
 
 * For puppeting bridges, you should usually navigate to the "Authentication"
