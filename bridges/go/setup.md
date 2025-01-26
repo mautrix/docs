@@ -99,9 +99,10 @@ nor libolm installed.
 [`build.sh`]: https://github.com/mautrix/$bridge/blob/main/build.sh
 
 ## Step 2: Configuring and running
-1. Copy `example-config.yaml` to `config.yaml`.
-   For v2 bridges using the megabridge architecture, use `./mautrix-$bridge -e`
-   to generate the example config and save it to `config.yaml`.
+1. Use `./mautrix-$bridge -e` to generate an example config and save it to
+   `config.yaml`.
+   * Discord is still using the legacy architecture which doesn't have the `-e`
+     flag, so just manually copy `example-config.yaml` from the repo to `config.yaml`.
 2. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
    page for recommendations.
 3. Generate the appservice registration file by running `./mautrix-$bridge -g`.
