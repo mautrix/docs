@@ -66,7 +66,7 @@ requests: web clients request 3 months, while desktop clients request 1 year.
 The amount requested by the bridge can be configured using the
 `request_full_sync` and `full_sync_config` config options. Note that the full
 sync fields do not affect how much is actually backfilled: if you want more
-messages, you must also change the `message_count` option.
+messages, you must also change the `max_initial_messages` option.
 
 More recently, WhatsApp has also added on-demand history syncs, but those are
 not yet implemented in the bridge. On-demand history sync wouldn't be
