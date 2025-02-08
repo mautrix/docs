@@ -204,14 +204,22 @@ copy of the `docker-run.sh` script (which can be found in the bridge repo), or
 just the startup command (`python3 -m mautrix_$bridge -c /data/config.yaml --flags`).
 
 ## The `as_token` was not accepted
-This error means you either:
+The error means the bridge was able to connect to the configured homeserver, but
+the homeserver rejected the bridge's token. A few different ways the tokens
+might be wrong:
 
-* didn't add the path to the registration file to the homeserver config,
-* didn't restart the homeserver after adding the path to the config, or
-* modified the tokens somewhere and didn't copy them to the other file
-
-Make sure the tokens match everywhere, that you're looking at the right files,
-and that everything has been restarted.
+* The registration file wasn't added to the homeserver config.
+* The homeserver wasn't restarted after adding the registration file.
+* The tokens were modified (in either of the files) and weren't copied to the
+  other file, or either side wasn't restarted after modification.
+  * Generating a new registration file always modifies the tokens.
+  * When using Docker, the container will generate a new registration on startup
+    if the file doesn't already exist (the container won't check the file
+    contents, just the existence).
+* The homeserver URL is wrong and the bridge is connecting to an entirely
+  different server than where the registration is.
+* You're looking at the wrong files and didn't actually make changes to the
+  correct ones.
 
 ## The `as_token` was accepted, but the `/register` request was not
 This error can happen through a few different misconfigurations.
