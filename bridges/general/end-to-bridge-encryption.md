@@ -53,6 +53,9 @@ experimental_features:
   msc3202_device_masquerading: true
 ```
 
+You don't actually need to use next-gen auth to use MSC4190, so you can enable
+it already before migrating to MAS to make sure bridges keep working.
+
 ## Additional security
 
 The bridges contain various additional options to configure how keys are handled.
