@@ -13,8 +13,6 @@ rooms.
 * [beeper.com](https://www.beeper.com/)
 * [tchncs.de](https://tchncs.de/matrix)
   / [#tchncs:tchncs.de](https://matrix.to/#/#tchncs:tchncs.de)
-* [one.ems.host](https://element.io/element-one)
-  / [#one:element.io](https://matrix.to/#/#one:element.io)
 
 If you run a public instance and wish to list it here, please [make a pull request](https://github.com/mautrix/docs/blob/master/bridges/go/signal/index.md).
 
