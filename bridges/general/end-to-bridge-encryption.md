@@ -41,6 +41,18 @@ encryption by default, the bridge will not find out that encryption was enabled.
 You should **not** set `appservice: true` at the moment, as the Synapse
 implementation is still incomplete and has not been tested with the bridges.
 
+## Use with next-gen auth (MAS, MSC4190)
+
+The `encryption` -> `msc4190` config option must be set to true. After that,
+you can either regenerate the registration, or manually add the required field:
+`io.element.msc4190: true`. Finally, MSC3202 device masquerading must be enabled
+on the server side, which means the following Synapse config:
+
+```yaml
+experimental_features:
+  msc3202_device_masquerading: true
+```
+
 ## Additional security
 
 The bridges contain various additional options to configure how keys are handled.
