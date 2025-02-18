@@ -40,17 +40,17 @@ errors in logs.
 
 ### Bridge-specific mandatory fields
 #### mautrix-telegram
-The Telegram bridge requires that you create an "app" at <https://my.telegram.org/apps>
-in order to obtain an `api_id` and `api_hash` to be placed in the bridge config file.
-The app will be bound to an existing Telegram account, and therefore you will need to
-login with the phone number of an account that you can use for receiving a message.
-Then you are asked some data about your new app, where you can choose any name
+The Telegram bridge needs a Telegram `api_id` and `api_hash` placed in its config file.
+For obtaining these values, Telegram requires creating at <https://my.telegram.org/apps>
+an "app" that will be bound to an existing Telegram account. Therefore you need to
+login using the phone number related to that account. After confirmation with a web token
+you will be asked to fill in some data about your new app, where you can choose any name
 that is not already taken. The URL and the description can be left empty.
-The process may result in "ERROR" unless you choose 'iOS' as the platform.
-After successful app creation, you will be provided the `api_id`, `api_hash`,
-and other data. These credentials do no grant access to any Telegram account,
+The process may result in an unspecified error unless 'iOS' is chosen as the platform.\
+After successful app creation, you will be provided with the `api_id`, `api_hash`,
+and some other data. These credentials do no grant access to any Telegram account,
 they are just required to connect to the API in the first place.
-Login to accounts to be bridged happens later, using bridge commands.
+Login to Telegram accounts to be bridged happens later, using bridge commands.
 
 #### mautrix-meta
 The Meta bridge is effectively two bridges in one codebase: Facebook Messenger
