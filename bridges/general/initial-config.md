@@ -41,9 +41,15 @@ errors in logs.
 ### Bridge-specific mandatory fields
 #### mautrix-telegram
 The Telegram bridge requires that you create an "app" at <https://my.telegram.org/apps>
-and provide the `api_id` and `api_hash` in the config. API keys don't grant
-access to any Telegram account, they're just required to connect to the API
-in the first place. Login happens afterwards using bridge commands.
+and provide the `api_id` and `api_hash` in the config. Telegram is often picky
+about the details you provide and will just give a generic `ERROR` popup. If
+that happens, try changing the values around until it works. URL and description
+seem to be optional, names probably work best if they don't include `telegram`.
+
+API keys don't grant access to any Telegram account, they're just required to
+connect to the API in the first place. Login happens afterwards using bridge
+commands. The bridge can be used to log into any account regardless of whose
+account the API keys were created on.
 
 #### mautrix-meta
 The Meta bridge is effectively two bridges in one codebase: Facebook Messenger
