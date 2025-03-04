@@ -26,6 +26,7 @@ Direct links to latest CI binaries:
   [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm64),
   [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm),
   [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
+  [windows/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks.exe?job=windows%2Famd64)
 * gomuks web:
   [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
   [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
