@@ -1,7 +1,8 @@
 # Bridging rooms
 By default, the bridge will create portals for a few recent direct messages
 after logging in. The `startup_private_channel_create_limit` option in the
-config defines the number of chats.
+config defines the number of chats. More DMs are bridged as you receive messages
+in them.
 
 Entire guilds can be bridged using the `guilds` command. Use `guilds status` to
 view the list of guilds and get their IDs, then use `guilds bridge <id>` to
