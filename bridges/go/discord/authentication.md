@@ -51,6 +51,8 @@ If you don't want to use a real account, you can also log in as a bot.
    be used to add the bot to a guild.
    * At least "Send Messages", "Create Public Threads", "Send Messages in
      Threads", "Read Message History" and "Add Reactions" are recommended.
+     "Manage Webhooks" is also useful if you want to use the
+     `!discord set-relay --create` command.
    * If you're the guild admin, you can just choose "Administrator" for the
      bot and not worry about exact permissions.
 
