@@ -31,6 +31,7 @@ a bridge. There are a few different options:
 * Pay someone to host it for you.
   * Hosting providers like etke.cc will set up bridges for you on request.
 * Find a public instance
+  * Beeper offers hosted instances of all of these bridges (except iMessage).
   * Some bridges have public instances which anyone can use.
   * Not all public instances allow all modes of bridging. For example, t2bot
     is only for relaying, while Beeper is only for puppeting.
