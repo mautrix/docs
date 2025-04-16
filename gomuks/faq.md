@@ -71,6 +71,8 @@ with a few exceptions:
 * Data also contains message history and other Matrix state, not only
   encryption keys (but media is still in cache).
 * Logs can be redirected using `GOMUKS_LOG_HOME` instead of `DEBUG_DIR`.
+* Environment variables are read on every startup, the paths aren't baked into
+  the config file, except for the log path.
 
 ### System-specific defaults
 These are the base directories for each OS, data will be stored in the `gomuks`
