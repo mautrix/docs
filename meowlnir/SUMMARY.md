@@ -2,12 +2,12 @@
 
 - [Introduction](./index.md)
 
-## Installation
+# Installation
 
 - [Setup](./setup-manual.md)
   - [with Docker](./setup-docker.md)
 
-## Configuration
+# Configuration
 
 - [System configuration](./config.md)
   - [Reverse proxy configuration](./reverse-proxy.md)
