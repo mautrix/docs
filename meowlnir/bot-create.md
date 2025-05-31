@@ -1,4 +1,4 @@
-### Creating bots
+# Creating bots
 You may have noticed that the config file doesn't have anything about the bot
 username or management rooms. This is because the bots and management rooms can
 be created dynamically at runtime and are saved in the database. The management
