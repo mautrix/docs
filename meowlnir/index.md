@@ -2,7 +2,12 @@
 
 Welcome to the Meowlnir docs!
 
-These docs don't exist yet. Please refer to the readme on GitHub for now.
+This book contains usage and developer documentation for [Meowlnir]. The book is
+built using [mdBook]. The source code is available in the [mautrix/docs] repo.
+
+[Meowlnir]: https://github.com/maunium/meowlnir
+[mdBook]: https://github.com/rust-lang/mdBook
+[mautrix/docs]: https://github.com/mautrix/docs
 
 ## Discussion
 

@@ -24,7 +24,8 @@ their documentation to find support rooms.
 
 ## Step 0: Requirements
 * A Matrix homeserver that supports application services (e.g. [Synapse](https://github.com/element-hq/synapse)).
-  You need access to register an appservice, which usually involves editing the homeserver config file.
+  You need access to register an appservice, which usually involves editing the
+  homeserver config file.
 * A PostgreSQL server, v10 or higher (which you should already have for Synapse).
   * Make sure you don't share databases between unrelated programs.
     Shared postgres instance is fine, but shared database is not.
