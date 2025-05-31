@@ -28,11 +28,11 @@ take action based on those).
 			"room_id": "!fTjMjIzNKEsFlUIiru:neko.dev",
 			"shortcode": "cme"
 		},
-    {
-      "name": "Cat's Active Threats",
-      "room_id": "!QJKZNWnsItkUuthamp:feline.support",
-      "shortcode": "cat"
-    },
+		{
+			"name": "Cat's Active Threats",
+			"room_id": "!QJKZNWnsItkUuthamp:feline.support",
+			"shortcode": "cat"
+		},
 		{
 			"auto_unban": true,
 			"dont_apply": true,
