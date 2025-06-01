@@ -51,6 +51,13 @@ take action based on those).
 }
 ```
 
+The aliases for the policy lists referenced above are:
+
+* [#community-moderation-effort-bl:neko.dev](https://matrix.to/#/#community-moderation-effort-bl:neko.dev)
+* [#huginn-muminn-active-threats:feline.support](https://matrix.to/#/#huginn-muminn-active-threats:feline.support)
+* [#matrix-org-coc-bl:matrix.org](https://matrix.to/#/#matrix-org-coc-bl:matrix.org)
+* [#matrix-org-hs-tos-bl:matrix.org](https://matrix.to/#/#matrix-org-hs-tos-bl:matrix.org)
+
 When you send the event adding a new watched list, Meowlnir will confirm it was
 successful by sending a message. If you added a list and no message was sent,
 you probably did something wrong.
