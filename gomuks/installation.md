@@ -3,12 +3,12 @@
 ## Installing a package
 
 The releases on GitHub contain binaries and debian
-packages: <https://github.com/tulir/gomuks/releases>
+packages: <https://github.com/gomuks/gomuks/releases>
 
 gomuks web doesn't have releases yet, only CI binaries are available.
 
 GitLab CI builds binaries for each
-commit: <https://mau.dev/tulir/gomuks/-/pipelines> (currently available for
+commit: <https://mau.dev/gomuks/gomuks/-/pipelines> (currently available for
 linux/amd64, linux/arm, linux/arm64, darwin/amd64, darwin/arm64).
 
 The release and CI binaries for Linux are statically built and have no
@@ -22,16 +22,16 @@ metadata when sending video files.
 Direct links to latest CI binaries:
 
 * gomuks legacy:
-  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Famd64),
-  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm64),
-  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm),
-  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
+  [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm),
+  [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
 * gomuks web:
-  [linux/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
-  [linux/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
-  [linux/arm](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm),
-  [macos/arm64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64),
-  [windows/amd64](https://mau.dev/tulir/gomuks/-/jobs/artifacts/main/raw/gomuks.exe?job=windows%2Famd64)
+  [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm),
+  [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64),
+  [windows/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks.exe?job=windows%2Famd64)
 
 There are also community maintained packages for several distributions (gomuks legacy only). If
 you've made a new distro package, please add it to the list below.
@@ -52,12 +52,12 @@ you've made a new distro package, please add it to the list below.
    * Compiling the frontend for gomuks web also requires the latest LTS of
      Node.js or higher (currently v20).
    * `libolm-dev` must also be installed for end-to-end encryption.
-1. Clone the repo: `git clone https://github.com/tulir/gomuks.git && cd gomuks`
+1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
    * To get legacy gomuks terminal, run `git checkout master` after cd.
 2. Build: `./build.sh`
    ([build.sh] will simply call go build with some additional flags).
 
-[build.sh]: https://github.com/tulir/gomuks/blob/main/build.sh
+[build.sh]: https://github.com/gomuks/gomuks/blob/main/build.sh
 Simply pull changes (`git pull`) and run `./build.sh` again to update.
 
 ### Common compilation issues
@@ -73,7 +73,7 @@ Simply pull changes (`git pull`) and run `./build.sh` again to update.
 
 ## Docker (gomuks web)
 The backend for gomuks web can also run in Docker. Docker images are available
-at `dock.mau.dev/tulir/gomuks`.
+at `dock.mau.dev/gomuks/gomuks`.
 
 Keep in mind that the backend has all your encryption keys, which means it must
 be ran in a secure location.

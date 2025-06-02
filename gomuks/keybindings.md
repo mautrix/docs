@@ -9,7 +9,7 @@ The file should have the same format as the [default keybindings.yaml] file,
 but you only need to specify the bindings you want to override.
 
 [FAQ]: https://docs.mau.fi/gomuks/faq.html#system-specific-defaults
-[default keybindings.yaml]: https://github.com/tulir/gomuks/blob/master/config/keybindings.yaml
+[default keybindings.yaml]: https://github.com/gomuks/gomuks/blob/master/config/keybindings.yaml
 
 For example, to use enter for newline, you'd want something like this. Note
 that terminals can't detect shift+enter, and usually only either ctrl or alt
