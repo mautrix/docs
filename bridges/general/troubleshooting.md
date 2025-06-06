@@ -129,8 +129,7 @@ in Synapse.
 
 On the bridge side, the config field is `appservice` -> `ephemeral_events`.
 The registration file given to the homeserver must also have the
-`de.sorunome.msc2409.push_ephemeral` field set to true. After MSC2409 is
-approved, the registration file field will be called `push_ephemeral` with no
+`de.sorunome.msc2409.push_ephemeral` field set to true. For servers implementing the final spec, the registration file field will be called `receive_ephemeral` with no
 prefix. If it's not set, you can either set it manually, or regenerate the
 registration after setting `ephemeral_events` to true in the bridge config.
 Remember to restart the homeserver after modifying the registration file.
