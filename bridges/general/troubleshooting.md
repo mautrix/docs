@@ -82,6 +82,8 @@ The new appservice method for double puppeting does not create devices, and
 will therefore not cause false positives even in buggy clients.
 
 ## Why are messages showing up as "Encrypted by a deleted session"
+(or "Encrypted by a device not verified by its owner" depending on client)
+
 All messages sent by the bridge are encrypted using the bridge bot's session
 even though they're sent with different accounts, which may confuse some clients.
 The warnings are harmless, so you should just ignore them.
