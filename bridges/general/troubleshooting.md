@@ -29,6 +29,8 @@ There are a few potential reasons this can happen:
   off. The homeserver should retry after some time. If it still doesn't work
   after an hour or so (exact backoff depends on how long the bridge was down),
   check the homeserver logs.
+  * Starting with Synapse 1.132, the ping mechanism should reset the backoff,
+    so this problem should also go away.
 * You started a chat with the wrong user ID. The user specified in `appservice`
   -> `bot` -> `username` is the only one that will accept invites.
 
