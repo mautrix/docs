@@ -29,6 +29,8 @@ There are a few potential reasons this can happen:
   off. The homeserver should retry after some time. If it still doesn't work
   after an hour or so (exact backoff depends on how long the bridge was down),
   check the homeserver logs.
+* You started a chat with the wrong user ID. The user specified in `appservice`
+  -> `bot` -> `username` is the only one that will accept invites.
 
 ## The bot accepted the invite, but I don't see any responses from the bridge bot in Matrix
 Check the bridge logs to see if the bridge is receiving the messages and
