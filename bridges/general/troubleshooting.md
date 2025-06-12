@@ -273,3 +273,19 @@ Anything older than the latest release is completely unsupported and there
 won't be any patches even for security issues.
 
 Python bridges do not have a release cycle, releases will happen randomly.
+
+## the supplied account key is invalid
+This error means that the `pickle_key` specified in the config is incorrect.
+Old versions of bridges used to have a hardcoded key, but new versions generate
+a random one and save it in the config.
+
+If you're upgrading from an old version, the legacy migration should
+automatically copy the old hardcoded key into the config file. However, if you
+prevented the migration from writing the config, you may need to manually set
+it. You can find the correct old key in the `legacymigrate.go` file under the
+`cmd` directory in each bridge.
+
+If you get the error even though you set up the bridge recently and didn't
+migrate from an old pre-megabridge version, it's likely you prevented the bridge
+from writing to the config and didn't set a random key yourself. If the pickle
+key is lost, the database will have to be reset.
