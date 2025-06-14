@@ -24,6 +24,7 @@ take action based on those).
 	"lists": [
 		{
 			"auto_unban": true,
+			"auto_suspend": true,
 			"name": "CME bans",
 			"room_id": "!fTjMjIzNKEsFlUIiru:neko.dev",
 			"shortcode": "cme"
