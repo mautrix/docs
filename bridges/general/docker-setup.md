@@ -135,7 +135,9 @@ you should note if you want to run the bridges in k8s or similar systems:
   and other such things. The bridge also doesn't need the registration file at
   all when doing this, only the config file is needed.
   * You can also add `--no-update` to the command to tell the bridge to not try
-    to write the config to disk.
+    to write the config to disk. When preventing writing the config, make sure
+    you don't leave any `generate` values in the config, as otherwise they'll
+    be randomized on every startup and will cause unexpected behavior.
 * A `StatefulSet` is likely the best way to run the bridge, because only one
   container can be running at a time. Multiple containers even briefly are
   extremely unsupported and may cause your server to explode.
