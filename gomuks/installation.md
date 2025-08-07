@@ -19,6 +19,10 @@ same directory as the `gomuks` binary.
 gomuks web requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
 metadata when sending video files.
 
+The Android wrapper does not currently come with the backend, which means you
+have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
+(or another Wireguard solution) for external connectivity usually works nicely.
+
 Direct links to latest CI binaries:
 
 * gomuks legacy:
@@ -32,6 +36,9 @@ Direct links to latest CI binaries:
   [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm),
   [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64),
   [windows/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks.exe?job=windows%2Famd64)
+* gomuks android:
+  [arm64-v8a.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-arm64-v8a.apk?job=build)
+  [x86_64.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-x86_64.apk?job=build)
 
 There are also community maintained packages for several distributions (gomuks legacy only). If
 you've made a new distro package, please add it to the list below.
