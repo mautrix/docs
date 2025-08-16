@@ -23,6 +23,10 @@ The Android wrapper does not currently come with the backend, which means you
 have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
 (or another Wireguard solution) for external connectivity usually works nicely.
 
+There is a demo instance of gomuks web compiled to wasm available at <https://demo.gomuks.app>.
+However, the performance is significantly worse than with a native backend,
+so the demo is only meant for testing with a small account.
+
 Direct links to latest CI binaries:
 
 * gomuks legacy:
