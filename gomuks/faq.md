@@ -6,7 +6,7 @@ To self-sign the device using your security key, use `/cs fetch`, enter your
 security key in the dialog that appears, then use `/cs self-sign`.
 
 Alternatively, get your fingerprint and device ID from `/fingerprint` and pass
-'them to the `/verify` command in an up-to-date Element Web or Desktop to do
+them to the `/verify` command in an up-to-date Element Web or Desktop to do
 manual verification.
 
 ## Why are old messages undecryptable?
