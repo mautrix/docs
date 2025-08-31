@@ -5,11 +5,9 @@
 To self-sign the device using your security key, use `/cs fetch`, enter your
 security key in the dialog that appears, then use `/cs self-sign`.
 
-Alternatively, find yourself in the user list on Element Web or Desktop, click
-on "X sessions", click on the gomuks session and use "Manually verify by text",
-then compare the fingerprint to what gomuks outputs with the `/fingerprint`
-command. Note that the text verification option is not available in the
-security & privacy settings, it's only in the right panel user list.
+Alternatively, get your fingerprint and device ID from `/fingerprint` and pass
+'them to the `/verify` command in an up-to-date Element Web or Desktop to do
+manual verification.
 
 ## Why are old messages undecryptable?
 gomuks currently doesn't support key backup and doesn't request keys
