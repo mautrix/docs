@@ -159,6 +159,25 @@ Matrix users with the same people in their contact lists.
 
 If the bridge only has one user, then contact list names should be safe to enable.
 
+## mautrix-whatsapp: Messages in some groups are no longer bridged
+...even though it worked before. The logs say
+`M_EXCLUSIVE (HTTP 400): Invalid user localpart for this application service`
+
+This happens to bridges that were set up before the v0.5.0 release due to
+WhatsApp's migration away from phone numbers as the primary internal identifier.
+
+Instead of `@whatsapp_<phonenumber>:example.com`, user IDs will take the form
+`@whatsapp_lid-<randomnumber>:example.com`. However, prior to v0.5.0, the bridge
+would generate registrations where the user ID regex was `@whatsapp_[0-9]+`,
+which doesn't allow the new format. To make the bridge work in groups that
+WhatsApp has migrated to LIDs, you must ensure that `registration.yaml` has
+`.+` or `.*` in the regex, not `[0-9]+`.
+
+When editing the registration file, make sure you edit the file that your
+homeserver is reading, as you may have copied the file from the bridge's data
+directory to the homeserver's. The bridge itself never reads the registration
+file, so updating the wrong file will do nothing.
+
 ## mautrix-gvoice: `unexpected status code 429 (electron status: unavailable)`
 This error usually happens for non-workspace accounts when trying to send a
 message. As mentioned in the setup instructions, mautrix-gvoice requires having
