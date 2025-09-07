@@ -178,6 +178,10 @@ homeserver is reading, as you may have copied the file from the bridge's data
 directory to the homeserver's. The bridge itself never reads the registration
 file, so updating the wrong file will do nothing.
 
+After updating the registration and restarting your homeserver, messages in
+groups should start working immediately. You can also use the `!wa sync groups`
+command to fix group member lists immediately.
+
 ## mautrix-gvoice: `unexpected status code 429 (electron status: unavailable)`
 This error usually happens for non-workspace accounts when trying to send a
 message. As mentioned in the setup instructions, mautrix-gvoice requires having
