@@ -81,7 +81,7 @@ app_service_api:
 ```
 
 ## Conduit
-Also applies to Conduit-based servers such as continuwuity
+Also applies to Conduit-based servers such as continuwuity, tuwunel and grapevine.
 
 Conduit doesn't use a config file, instead it has an admin command for
 registering appservices. Go to the admin room (which is created automatically
