@@ -34,7 +34,7 @@ apply the relevant changes). The config fields that affect the registration are:
 * `bridge` -> `username_template`
 * `bridge` -> `alias_template` (Telegram only)
 
-[Application Service API]: https://spec.matrix.org/v1.2/application-service-api/
+[Application Service API]: https://spec.matrix.org/v1.15/application-service-api/
 
 ## Synapse
 If necessary, copy the registration file somewhere where Synapse can read it.
@@ -59,17 +59,18 @@ Some things to keep in mind:
 * If Synapse is running through systemd, the service file might have security
   hardening features that block access to certain paths.
 
-[`app_service_config_files`]: https://github.com/matrix-org/synapse/blob/v1.51.0/docs/sample_config.yaml#L1514-L1518
+[`app_service_config_files`]: https://element-hq.github.io/synapse/v1.138/usage/configuration/config_documentation.html#app_service_config_files
 
 ## Beeper
 Follow the instructions at [github.com/beeper/bridge-manager](https://github.com/beeper/bridge-manager).
 
 ## Dendrite
 **N.B.** Dendrite is not a supported environment, as it often has serious bugs.
-It is strongly recommended to use Synapse or Conduit instead.
+It is strongly recommended to use Synapse instead. Conduit-based servers like
+continuwuity are also fine.
 
 Dendrite works the same way as Synapse, except the relevant config field is
-[`config_files` under `app_service_api`](https://github.com/matrix-org/dendrite/blob/v0.6.0/dendrite-config.yaml#L130-L131)
+[`config_files` under `app_service_api`](https://github.com/element-hq/dendrite/blob/v0.15.2/dendrite-sample.yaml#L164-L166)
 (and the config file is usually called `dendrite.yaml` rather than `homeserver.yaml`):
 
 ```yaml
@@ -80,6 +81,8 @@ app_service_api:
 ```
 
 ## Conduit
+Also applies to Conduit-based servers such as continuwuity
+
 Conduit doesn't use a config file, instead it has an admin command for
 registering appservices. Go to the admin room (which is created automatically
 when the first user is registered on the server), copy the contents of the
@@ -103,42 +106,3 @@ show the `id` field of the just registered appservice):
 ```
 
 See also: <https://gitlab.com/famedly/conduit/-/blob/next/APPSERVICES.md>
-
-## Construct
-
-1. Review the following to tweak your registration.yaml:
-
-    - Add the prefix "bridge_" to the `as_token`. Example: `as_token: bridge_1m9jt3xt6qdb4...`
-
-    - The bridge `id` and the `sender_localpart` have to match. Choose a simple name such as the service being bridged.
-
-    > A bridge user and room will be created automatically based on the `id` (e.g. `!id:localhost`). It is also okay if these already exist.
-
-
-2. Convert the `registration.yaml` to `registration.json` using a yaml2json converter such as `reserialize` or a website.
-
-    ```
-    apt-get -y install reserialize
-    reserialize yaml2json registration.yaml > registration.json
-    ```
-
-3. Use the [console](https://github.com/matrix-construct/construct/wiki/Useful-console-command-examples) to enter the command:
-
-    ```
-    bridge set /path/to/registration.json
-    ```
-
-    > If the bridge has already been registered before then the prior configuration will be overwritten.
-
- 	> The registration will take effect immediately without restarting the server or reloading the bridge module.
-
-    > The console command `bridge` will list all bridges by ID. `bridge <id>` will confirm the configuration for the bridge.
-
-	The following are all functionally equivalent:
-	- With terminal access strike `ctrl-c` and enter `bridge set /path/to/registration.json` at the prompt.
-	- Operator sends message `bridge set /path/to/registration.json` to the `!control` room.
-	- Operator sends server-side private-command prefix `\\control bridge set /path/to/registration.json` (any client, any room).
-	- Non-interactive registration add the argument `-execute "bridge set /path/to/registration.json"` when running the server.
-	- Non-interactive registration for multiple bridges: use multiple `-execute` arguments: `-execute "bridge set registration1.json" -execute "bridge set registration2.json"`
-
-See also: <https://github.com/matrix-construct/construct/wiki/Bridges>
