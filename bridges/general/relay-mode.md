@@ -1,12 +1,15 @@
 # Relay mode
-**N.B.** This page has not been updated for Megabridges yet.
-
-Some of the bridges here support relaying messages for unauthenticated users
-through the account that another Matrix user is logged in as.
+All megabridges support relay mode with the same mechanism: a specific login
+can be designated as a relay, which will be used for bridging messages from
+users who haven't logged into the bridge.
 
 0. Enable relay mode by setting `bridge` → `relay` → `enabled` to `true` in the
    bridge config. Also make sure that the users you want to invite have at
    least the `relay` level in the `permissions` section.
+   * By default, `admin_only` is true, which means only bridge admins (as
+     defined by the `permissions` section) can set a relay. If you want room
+     admins to also be able to set themselves as a relay, set `admin_only` to
+     `false`.
 1. Log into the bridge normally using the relaybot account.
    * If you want a separate remote account for the relaybot while using your
      own account for your own Matrix user, you should make a dedicated Matrix
@@ -15,9 +18,14 @@ through the account that another Matrix user is logged in as.
    * Using the same dedicated account for multiple bridges is fine, so you can
      have a server-wide "relay" account that acts as the relay for all the
      bridges.
-2. Run `!prefix set-relay` in the chats where you want to use the relaybot.
-   (replace `!prefix` with the appropriate command prefix for the bridge,
-   like `!signal` or `!wa`)
+   * By default, admins can set any login as a relay, while non-admins can only
+     set themselves as a relay. If you want to set up a shared relay account
+     that anyone can enable, add the login ID (from `list-logins`) to the
+     `default_relays` list in the config after logging in.
+2. Run `!prefix set-relay` in the chats where you want to use the relaybot,
+   replacing `!prefix` with the appropriate command prefix for the bridge,
+   like `!signal` or `!wa`. You can also use `set-relay <login ID>` to choose
+   a specific login to be the relay (use `list-logins` to find login IDs).
 3. Use `!prefix set-pl 100` to be able to modify room settings and invite
    others.
 
@@ -28,26 +36,12 @@ Note that reactions from relayed users will not be bridged at all, because the
 bot wouldn't be able to bridge sender info nor multiple reactions of the same
 emoji.
 
-## Support table
-Minimum bridge versions that support the relay system documented above.
+## Legacy bridges
+Some of the legacy bridges that haven't been rewritten as Megabridges yet have
+slightly different system. In particular
 
-| Bridge          | Version                                               |
-|-----------------|-------------------------------------------------------|
-| Telegram        | [Different system](../python/telegram/relay-bot.html) |
-| WhatsApp        | 0.2.0                                                 |
-| Signal          | 0.2.0                                                 |
-| Instagram       | 0.1.2                                                 |
-| Facebook        | 0.3.3                                                 |
-| Meta            | 0.1.0                                                 |
-| Google Chat     | not yet supported                                     |
-| Twitter         | not yet supported                                     |
-| Google Messages | not yet supported                                     |
-| iMessage        | †0.1.0/[3df789e2]                                     |
-| Discord         | [Different system](../go/discord/relay.md)            |
-| Slack           | not yet supported (will likely use different system)  |
-
-† iMessage doesn't require `set-relay`, relay mode is enabled in all chats
-  automatically if enabled in the config. The `permissions` section is replaced
-  with `relay` -> `whitelist`.
-
-[3df789e2]: https://github.com/mautrix/imessage/commit/3df789e24b8500d95a53d5417aca6e59bedf7efd
+* Telegram has [relay bots](../python/telegram/relay-bot.html)
+* Discord has [relay webhooks](../go/discord/relay.md)
+* iMessage doesn't require using `set-relay`, enabling it in the config will
+  enable relay in all chats.
+* Google Chat doesn't support relay mode at all
