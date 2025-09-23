@@ -102,6 +102,11 @@ nor libolm installed.
 ## Step 2: Configuring and running
 1. Use `./mautrix-$bridge -e` to generate an example config and save it to
    `config.yaml`.
+   * Alternatively, you can combine the [bridgev2 example config](https://github.com/mautrix/go/blob/main/bridgev2/matrix/mxmain/example-config.yaml)
+     and the [network-specific example config](https://github.com/mautrix/$bridge/blob/main/pkg/connector/example-config.yaml)
+     yourself, but it's better to let the bridge do the combining. The bridgev2
+     example config includes some `$<<...>>` placeholders that the `-e` flag
+     will fill.
    * Discord is still using the legacy architecture which doesn't have the `-e`
      flag, so just manually copy `example-config.yaml` from the repo to `config.yaml`.
 2. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
