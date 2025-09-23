@@ -5,8 +5,6 @@
    * To log in by entering a 8-letter code on your phone instead of scanning
      the QR code, use `login phone` instead and send your phone number when
      prompted.
-   * In old versions of the bridge, just use `login` instead of `login qr`
-     (and `login +123456789` for phone code login).
 2. Log in by scanning the QR code or entering the pairing code. If the code
    expires before you scan it, the bridge will send an error to notify you.
    1. Open WhatsApp on your phone.
