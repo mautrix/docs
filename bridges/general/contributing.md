@@ -38,9 +38,10 @@ See <https://beeper.notion.site/Beeper-Go-Guidelines-ae943532d96f4ad6a614baf836c
 Updating the changelog file is not necessary when making a pull request. That
 will be done separately when a release is being made.
 
-If you're planning on making bigger changes, you should join the Matrix room
-linked in the project readme and briefly explain your plan to confirm that it
-makes sense and is wanted.
+For any non-trivial changes, you should join the Matrix room linked in the
+project readme and briefly explain your plan to confirm that it makes sense
+and is wanted. The Matrix room is also preferred in case discussion about the
+contribution beyond basic code review is necessary.
 
 Pull requests may be missed and/or forgotten for extended periods of time,
 especially if they involve more complicated changes. Feel free to remind us in
