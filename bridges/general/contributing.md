@@ -34,6 +34,16 @@ Beeper servers (there's a convenient `--local-dev` flag for `bbctl run`).
 ## Code style
 See <https://beeper.notion.site/Beeper-Go-Guidelines-ae943532d96f4ad6a614baf836c073eb>
 
+## Use of AI
+In general, you can use AI to help with contributions. However, you should make
+sure you understand all the changes that were made, and you need to test them
+yourself. AI can't do testing for you, if you ask it'll most likely just make
+up nonsense.
+
+Also, don't use AI for generating pull request descriptions. AI-generated
+descriptions are long and usually have zero useful information. Even an empty
+description is better than a long and useless one.
+
 ## Making pull requests
 Updating the changelog file is not necessary when making a pull request. That
 will be done separately when a release is being made.
