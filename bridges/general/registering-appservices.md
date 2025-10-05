@@ -106,3 +106,7 @@ show the `id` field of the just registered appservice):
 ```
 
 See also: <https://gitlab.com/famedly/conduit/-/blob/next/APPSERVICES.md>
+
+**N.B.** Due to some spec ambiguities, you have to register the bridge bot
+account manually when using Python-based bridges (Telegram or Google Chat)
+with Conduit-based servers. Go bridges do not require this extra step.
