@@ -1,5 +1,10 @@
 # Commands
-This page only applies to gomuks legacy.
+Most gomuks web commands can be discovered using autocompletion, with the
+exception of a few special-cased commands: `/plain`, `/me`, `/notice`,
+`/rainbow`, `/html` and `/unencrypted` will work even though they don't show
+up in autocomplete.
+
+The rest of this page only applies to gomuks legacy.
 
 ### General
 * `/help` - View command list.
