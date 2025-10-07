@@ -1,15 +1,20 @@
 # Installation
 
+There is a demo instance of gomuks web compiled to wasm available at <https://demo.gomuks.app>.
+However, the performance is significantly worse than with a native backend,
+so the demo is only meant for testing with a small account.
+
+The Android wrapper does not currently come with the backend, which means you
+have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
+(or another Wireguard solution) for external connectivity usually works nicely.
+
 ## Installing a package
 
 The releases on GitHub contain binaries and debian
-packages: <https://github.com/gomuks/gomuks/releases>
-
+packages for legacy gomuks terminal: <https://github.com/gomuks/gomuks/releases>.
 gomuks web doesn't have releases yet, only CI binaries are available.
 
-GitLab CI builds binaries for each
-commit: <https://mau.dev/gomuks/gomuks/-/pipelines> (currently available for
-linux/amd64, linux/arm, linux/arm64, darwin/amd64, darwin/arm64).
+GitLab CI builds binaries for each commit: <https://mau.dev/gomuks/gomuks/-/pipelines>
 
 The release and CI binaries for Linux are statically built and have no
 hard dependencies. The binaries for macOS require installing libolm, either
@@ -18,14 +23,6 @@ same directory as the `gomuks` binary.
 
 gomuks web requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
 metadata when sending video files.
-
-The Android wrapper does not currently come with the backend, which means you
-have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
-(or another Wireguard solution) for external connectivity usually works nicely.
-
-There is a demo instance of gomuks web compiled to wasm available at <https://demo.gomuks.app>.
-However, the performance is significantly worse than with a native backend,
-so the demo is only meant for testing with a small account.
 
 Direct links to latest CI binaries:
 
@@ -61,7 +58,7 @@ you've made a new distro package, please add it to the list below.
 
 0. Install [Go](https://go.dev/doc/install) 1.24 or higher.
    * Compiling the frontend for gomuks web also requires the latest LTS of
-     Node.js or higher (currently v20).
+     Node.js or higher (currently v22).
    * `libolm-dev` must also be installed for end-to-end encryption.
 1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
    * To get legacy gomuks terminal, run `git checkout master` after cd.
