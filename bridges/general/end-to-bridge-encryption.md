@@ -56,6 +56,10 @@ experimental_features:
 You don't actually need to use next-gen auth to use MSC4190, so you can enable
 it already before migrating to MAS to make sure bridges keep working.
 
+Note: on Synapse 1.141 and higher, the `msc3202_device_masquerading` and
+`io.element.msc4190` flags are no longer necessary. However, you must still set
+`msc4190: true` in the bridge config.
+
 ## Additional security
 
 The bridges contain various additional options to configure how keys are handled.
