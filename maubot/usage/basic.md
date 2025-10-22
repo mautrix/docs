@@ -32,9 +32,9 @@ different purposes. To create a client, click the `+` button next to the
 * The access token and device ID are acquired by logging into the account.
   There are several ways to do that, including the [`mbc auth`] command included
   in maubot.
-  * Note that encryption won't work if you reuse the token from an e2ee-capable
-    client like Element, so make sure you get a fresh token if you want to use
-    the bot in encrypted rooms.
+  * Reusing tokens from other clients is strongly discouraged. You should always
+    make a fresh token. Reusing tokens will break encryption entirely and can
+    cause other issues as well.
 * The avatar URL can be left empty, you can upload an image after creating the
   client.
 * Both the display name and avatar URL can be set to `disable` if you don't want
