@@ -21,8 +21,11 @@ hard dependencies. The binaries for macOS require installing libolm, either
 with `brew install libolm` or by placing `libolm.3.dylib` from the CI in the
 same directory as the `gomuks` binary.
 
-gomuks web requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
+The gomuks backend requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
 metadata when sending video files.
+
+New gomuks terminal currently requires the backend to be running separately.
+An embedded backend mode will be added later.
 
 Direct links to latest CI binaries:
 
@@ -31,12 +34,17 @@ Direct links to latest CI binaries:
   [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm64),
   [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm),
   [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
-* gomuks web:
+* gomuks backend (includes web frontend):
   [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
   [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
   [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm),
   [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/download?job=macos%2Farm64),
   [windows/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks.exe?job=windows%2Famd64)
+* gomuks terminal (frontend only):
+  [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=linux%2Famd64),
+  [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=linux%2Farm64),
+  [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=linux%2Farm),
+  [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=macos%2Farm64)
 * gomuks android:
   [arm64-v8a.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-arm64-v8a.apk?job=build),
   [x86_64.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-x86_64.apk?job=build)
