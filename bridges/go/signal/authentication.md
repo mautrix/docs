@@ -41,5 +41,8 @@ those, [signal-cli] works quite well too.
 8. The bot should inform you of a successful login.
 9. Run `signal-cli -u +123456789 receive` occasionally to make sure the
    registration remains active.
+   * Optionally use the `-t -1` flag to make it run in the background. However,
+     it needs occasional updating and it might also crash randomly, so you
+     shouldn't leave it completely unattended.
 
 </details>
