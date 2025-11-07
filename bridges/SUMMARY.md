@@ -60,6 +60,8 @@
   - [Authentication](./go/linkedin/authentication.md)
 - [mautrix-zulip](./go/zulip/index.md)
   - [Authentication](./go/zulip/authentication.md)
+- [mautrix-irc](./go/irc/index.md)
+  - [Authentication](./go/irc/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
   - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)
