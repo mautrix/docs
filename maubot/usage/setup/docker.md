@@ -2,8 +2,11 @@
 Docker images are hosted on [dock.mau.dev](https://mau.dev/maubot/maubot/container_registry)
 
 0. Create a directory (`mkdir maubot`) and enter it (`cd maubot`).
+   **N.B.** The docker image will `chown` its `/data` directory to UID 1337.
+   The commands below mount the working directory as `/data`, so make sure you
+   always run them in the correct directory.
 1. Pull the docker image with `docker pull dock.mau.dev/maubot/maubot:<version>`.
-   Replace `<version>` with the version you want to run (e.g. `latest`)
+   Replace `<version>` with the version you want to run (e.g. `latest` or `v0.6.0`).
 2. Run the container for the first time, so it can create a config file for you:
    ```
    docker run --rm -v $PWD:/data:z dock.mau.dev/maubot/maubot:<version>

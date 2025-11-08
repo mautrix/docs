@@ -39,7 +39,7 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    The commands below mount the working directory as `/data`, so make sure you
    always run them in the correct directory.
 1. Pull the docker image with `docker pull dock.mau.dev/mautrix/$bridge:<version>`.
-   Replace `<version>` with the version you want to run (e.g. `latest` or `v0.6.0`).
+   Replace `<version>` with the version you want to run (e.g. `latest` or `v25.11`).
 2. Run the container for the first time, so it can create a config file for you:
    ```
    docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
