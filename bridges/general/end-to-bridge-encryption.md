@@ -38,8 +38,19 @@ must also set `default: true` in the bridge config. Force-enabling encryption
 on the server side will not notify the bridge, so unless the bridge enables
 encryption by default, the bridge will not find out that encryption was enabled.
 
-You should **not** set `appservice: true` at the moment, as the Synapse
-implementation is still incomplete and has not been tested with the bridges.
+## Appservice (/sync-less) mode
+
+Setting `appservice: true` is not recommended, but should work as long as you're
+using Synapse 1.141 or higher v25.10 or higher of the bridge, and have enabled
+the relevant experimental features in the homeserver config and appservice
+registration. The registration flag is `org.matrix.msc3202: true` and the
+Synapse experimental features are:
+
+```yaml
+experimental_features:
+  msc3202_transaction_extensions: true
+  msc2409_to_device_messages_enabled: true
+```
 
 ## Use with next-gen auth (MAS, MSC4190)
 

@@ -109,7 +109,10 @@ It's unfortunately quite easy to misconfigure things in a way that prevents
 the bridge from decrypting messages. Places to start troubleshooting:
 
 * Make sure `appservice` is set to `false` in the encryption config
-  (unless you're connecting to Beeper servers).
+  unless you have configured the appropriate experimental features and
+  registration flags (or are connecting to Beeper servers).
+* When using next-gen auth/MAS, enabling `msc4190` in the bridge config is
+  mandatory.
 * Check the logs to ensure the bridge bot syncs are successful. It should log
   a sync request every 30 seconds on the debug level even if there's no
   activity, and the status code should always be `200`.
@@ -118,6 +121,9 @@ the bridge from decrypting messages. Places to start troubleshooting:
     to get the latest `since`/`next_batch` token (e.g. from your own client,
     they're global) and insert it into the `crypto_account` table in the bridge
     database.
+  * When using appservice mode, there won't be any `/sync` requests. Instead
+    you should see `Starting handling of transaction` logs with
+    `unstable_to_device` or `device_changes` keys.
 * Make sure you haven't enabled "Never send encrypted messages to unverified
   sessions" or similar options in your client. The options usually exist both
   in global settings and in room settings.
