@@ -7,7 +7,7 @@ having multiple management rooms.
 
 In the future, there will be commands for managing all the state events, but for
 now you need to send some of them manually (e.g. via `/devtools` -> "Explore
-room state" -> "Send custom state event" in Element Web).
+room state" -> "Send custom state event" in Element Web/Desktop).
 
 ## Subscribing to policy lists
 The `fi.mau.meowlnir.watched_lists` state event is used to subscribe to policy
