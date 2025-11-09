@@ -63,7 +63,10 @@ When you send the event adding a new watched list, Meowlnir will confirm it was
 successful by sending a message. If you added a list and no message was sent,
 you probably did something wrong.
 
-To make the bot join a policy list, use the `!join <room ID or alias>` command.
+In addition to configuring watched lists, you'll need to tell the bot to join
+the policy list rooms you want to watch. The `!join <room ID or alias>` command
+can be used to tell the bot to join any room. The command on its own will not do
+anything else than join the room.
 
 Available extra flags:
 
