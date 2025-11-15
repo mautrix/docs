@@ -86,23 +86,36 @@ The new appservice method for double puppeting does not create devices, and
 will therefore not cause false positives even in buggy clients.
 
 ## Why are messages showing up as "Encrypted by a deleted session"
-(or "Encrypted by a device not verified by its owner" depending on client)
+Also:
+
+* "Encrypted by a device not verified by its owner"
+* "The sender of the event does not match the owner of the device that sent it"
+* possibly other similar warnings
 
 All messages sent by the bridge are encrypted using the bridge bot's session
 even though they're sent with different accounts, which may confuse some clients.
-The warnings are harmless, so you should just ignore them.
+
+As long as you've enabled the `self_sign` option under `encryption`, the bridge
+bot should be verified, so it'll keep receiving messages even after clients stop
+encrypting for unverified devices in April 2026.
 
 The bridge could technically create a separate e2ee session for each ghost user
 to avoid the warning, but that would be ridiculously inefficient, so it won't
-happen. In the future, there may be a proper way to define that the ghost users
-are delegating e2ee handling to the bridge bot.
+happen. In the future, there will be a proper way to define that the ghost users
+are delegating e2ee handling to the bridge bot, which will allow clients to
+remove the warnings. See [MSC4350] for more info.
+
+[MSC4350]: https://github.com/matrix-org/matrix-spec-proposals/pull/4350
 
 ## Can I verify the bridge e2ee session?
-Bridges don't currently support interactive verification nor cross-signing, so
-you can't verify the bot user using the usual user verification flow. You can
-use the "Manually verify by text" option to verify the bridge bot's device, but
-it won't make any of the warnings mentioned above go away, so there isn't
-really any reason to do it.
+The bridge can verify itself if you enable the `self_sign` option in the config.
+You should set it to ensure that the bridge keeps working after clients stop
+encrypting messages for unverified devices in April 2026. However, setting it is
+not expected to remove the warnings mentioned in the section above.
+
+Interactive verification is not supported, so you can't verify the bot's
+cross-signing keys from your own account, you can only have the bridge verify
+itself.
 
 ## The bridge can't decrypt my messages!
 It's unfortunately quite easy to misconfigure things in a way that prevents
