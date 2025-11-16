@@ -8,6 +8,11 @@ The Android wrapper does not currently come with the backend, which means you
 have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
 (or another Wireguard solution) for external connectivity usually works nicely.
 
+New gomuks terminal currently requires the backend to be running separately.
+An embedded backend mode will be added later. It also doesn't support Matrix
+login yet, so the backend must be set up using the web frontend before the
+terminal frontend can be used.
+
 ## Installing a package
 
 The releases on GitHub contain binaries and debian
@@ -23,9 +28,6 @@ same directory as the `gomuks` binary.
 
 The gomuks backend requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
 metadata when sending video files.
-
-New gomuks terminal currently requires the backend to be running separately.
-An embedded backend mode will be added later.
 
 Direct links to latest CI binaries:
 
