@@ -93,5 +93,8 @@ Simply pull changes (`git pull`) and run `./build.sh` again to update.
 The backend for gomuks web can also run in Docker. Docker images are available
 at `dock.mau.dev/gomuks/gomuks`.
 
+On first run, gomuks will interactively ask for basic auth credentials, so you
+have to either run it with the `-it` flags, or create the config file yourself.
+
 Keep in mind that the backend has all your encryption keys, which means it must
 be ran in a secure location.
