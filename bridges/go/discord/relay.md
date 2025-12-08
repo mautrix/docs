@@ -4,15 +4,19 @@ _New in version 0.2.0_
 The bridge supports using Discord's webhook feature to relay messages from
 Matrix users who haven't logged into the bridge.
 
-Webhook relays can be used regardless of how you logged into Discord, a bot is
-not required. However, in the future the bridge may include additional relay
-integration using a bot.
+Even when using webhooks to relay messages from non-logged-in users, there must
+still be at least one user who is logged into the bridge somehow, either with a
+bot or a real user account. The bridge itself is never logged in, there's no
+special "bridge bot" account on Discord. Webhooks can be used regardless of
+which type of login you use, a bot is not required. However, in the future the
+bridge may include additional relay integration using a bot.
 
 If you want to use the bridge for relaying only and don't want to log in with
 your real Discord account, it is recommended to have a dedicated Matrix account
-to log in as the bot user. If you log in on your main Matrix account, your
-messages will be sent through the bot rather than through the webhook with
-custom profiles.
+to log in as the bot user. This is the closest way to emulate the experience of
+having a special "bridge bot" on Discord. If you log in on your main Matrix
+account, your messages will be sent through the bot rather than through the
+webhook with custom profiles.
 
 ## Setup
 To enable relaying in a room, use `!discord set-relay`. The command requires a
