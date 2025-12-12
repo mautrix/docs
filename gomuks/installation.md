@@ -31,11 +31,6 @@ metadata when sending video files.
 
 Direct links to latest CI binaries:
 
-* gomuks legacy:
-  [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Famd64),
-  [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm64),
-  [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/raw/gomuks?job=linux%2Farm),
-  [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/master/download?job=macos%2Farm64)
 * gomuks backend (includes web frontend):
   [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Famd64),
   [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks?job=linux%2Farm64),
@@ -47,7 +42,7 @@ Direct links to latest CI binaries:
   [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=linux%2Farm64),
   [linux/arm](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=linux%2Farm),
   [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/raw/gomuks-terminal?job=macos%2Farm64)
-* gomuks android:
+* gomuks android (currently frontend wrapper only):
   [arm64-v8a.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-arm64-v8a.apk?job=build),
   [x86_64.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-x86_64.apk?job=build)
 
