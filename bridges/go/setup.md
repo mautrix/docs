@@ -117,6 +117,8 @@ nor libolm installed.
      `registration.yaml` respectively.
 4. Register the bridge on your homeserver (see [Registering appservices]).
 5. Run the bridge with `./mautrix-$bridge`.
+6. After the bridge is running, refer to the bridge-specific Authentication page
+   to start using it.
 
 [Registering appservices]: ../general/registering-appservices.md
 

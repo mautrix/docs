@@ -62,6 +62,8 @@ Don't use `sudo` for any of these steps (and preferably don't use the root user 
    respectively.
 6. Register the bridge on your homeserver (see [Registering appservices]).
 7. Run the bridge `python -m mautrix_$bridge`.
+8. After the bridge is running, refer to the bridge-specific Authentication page
+   to start using it.
 
 [Registering appservices]: ../general/registering-appservices.md
 

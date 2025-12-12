@@ -63,6 +63,8 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    Synapse with `--network=synapsenet` (when both are running in Docker), or
    expose the correct port with `-p $bridgeport:$bridgeport` (when the
    homeserver is outside Docker).
+7. After the bridge is running, refer to the bridge-specific Authentication page
+   to start using it.
 
 [Registering appservices]: ./registering-appservices.md
 
