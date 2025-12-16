@@ -112,8 +112,9 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
 
    ```
 2. Follow the rest of the Docker setup, but use compose commands instead of the
-   raw `docker` commands: `docker-compose up -d` to start, `docker-compose stop`
-   to stop and `docker-compose pull` to update.
+   raw `docker` commands: `docker compose up -d` to start, `docker compose stop`
+   to stop and `docker compose pull` to update. Keep in mind that `docker compose restart`
+   will **not** update containers after pulling, only `up` will work for that.
 
 If you want to set it up in an existing docker-compose file instead of a new
 dedicated one, simply adjust the `volumes` section to mount a subdirectory
