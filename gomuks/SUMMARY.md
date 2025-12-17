@@ -13,3 +13,8 @@
 - [Shortcuts](./shortcuts.md)
 - [Keybindings](./keybindings.md)
 - [Debugging](./debugging.md)
+
+# API
+
+- [RPC API](./api/rpc.md)
+- [HTTP API](./api/http.md)
