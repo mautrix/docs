@@ -127,8 +127,6 @@ manually.
   - `device_id` (string, optional)
   - `homeserver_url` (string, optional)
 
----
-
 ### `cancel`
 
 Cancel an in-flight request.
@@ -139,8 +137,6 @@ Cancel an in-flight request.
 - **Response data:** `bool`
   - `true` if a request with that ID was found and cancellation was triggered.
   - `false` if no in-flight request with that ID exists.
-
----
 
 ### `send_message`
 
@@ -161,8 +157,6 @@ Send a Matrix message into a room. This is a higher-level helper around sending 
   - `url_previews` (array): Beeper link preview objects (MSC4095).
 - **Response data:** [`database.Event`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event)
 
----
-
 ### `send_event`
 
 Send an arbitrary event into a room.
@@ -177,8 +171,6 @@ Send an arbitrary event into a room.
     (returned DB event will have the event ID set, unless the send fails).
 - **Response data:** [`database.Event`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event)
 
----
-
 ### `resend_event`
 
 Retry sending a previously failed outgoing event.
@@ -186,8 +178,6 @@ Retry sending a previously failed outgoing event.
 - **Request data:**
   - `transaction_id` (string, required)
 - **Response data:** [`database.Event`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event)
-
----
 
 ### `report_event`
 
@@ -199,8 +189,6 @@ Report an event to the homeserver.
   - `reason` (string)
 - **Response data:** N/A
 
----
-
 ### `redact_event`
 
 Redact an event.
@@ -210,8 +198,6 @@ Redact an event.
   - `event_id` (string, required)
   - `reason` (string)
 - **Response data:** [`mautrix.RespSendEvent`](https://pkg.go.dev/maunium.net/go/mautrix#RespSendEvent)
-
----
 
 ### `set_state`
 
@@ -225,8 +211,6 @@ Send a state event into a room.
   - `delay_ms` (int): optional unstable delayed-event send (milliseconds).
 - **Response data:** `event_id` (string)
 
----
-
 ### `update_delayed_event`
 
 Update or cancel an unstable delayed event (MSC4140/unstable delay API).
@@ -235,8 +219,6 @@ Update or cancel an unstable delayed event (MSC4140/unstable delay API).
   - `delay_id` (string, required)
   - `action` (string, required)
 - **Response data:** [`mautrix.RespUpdateDelayedEvent`](https://pkg.go.dev/maunium.net/go/mautrix#RespUpdateDelayedEvent)
-
----
 
 ### `set_membership`
 
@@ -251,8 +233,6 @@ Invite, kick, ban or unban a user.
     suggest that clients hide all the user's messages.
 - **Response data:** empty object
 
----
-
 ### `set_account_data`
 
 Set global or per-room account data.
@@ -262,8 +242,6 @@ Set global or per-room account data.
   - `type` (string, required)
   - `content` (object, required)
 - **Response data:** N/A
-
----
 
 ### `mark_read`
 
@@ -275,8 +253,6 @@ Send a read receipt / mark room as read.
   - `receipt_type` (string, required): Matrix receipt type (e.g. `m.read`).
 - **Response data:** N/A
 
----
-
 ### `set_typing`
 
 Set typing notification state.
@@ -286,8 +262,6 @@ Set typing notification state.
   - `timeout` (int): typing timeout in milliseconds. Set to 0 to stop typing.
 - **Response data:** N/A
 
----
-
 ### `get_profile`
 
 Fetch a Matrix user profile.
@@ -295,8 +269,6 @@ Fetch a Matrix user profile.
 - **Request data:**
   - `user_id` (string, required)
 - **Response data:** The raw profile data of the user.
-
----
 
 ### `set_profile_field`
 
@@ -307,8 +279,6 @@ Set one profile field for the current user.
   - `value` (any, required)
 - **Response data:** N/A
 
----
-
 ### `get_mutual_rooms`
 
 Get rooms shared with a user.
@@ -316,8 +286,6 @@ Get rooms shared with a user.
 - **Request data:**
   - `user_id` (string, required)
 - **Response data:** `string[]` (array of room IDs)
-
----
 
 ### `track_user_devices`
 
@@ -327,8 +295,6 @@ encryption info (same result as `get_profile_encryption_info`).
 - **Request data:**
   - `user_id` (string, required)
 - **Response data:** [`ProfileEncryptionInfo`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/jsoncmd#ProfileEncryptionInfo)
-
----
 
 ### `get_profile_encryption_info`
 
@@ -350,8 +316,6 @@ Get the device list and trust state information for a user.
   - `user_trusted` (bool)
   - `errors` (string[])
 
----
-
 ### `get_event`
 
 Fetch an event from a room.
@@ -362,8 +326,6 @@ Fetch an event from a room.
   - `unredact` (bool): if true, fetch an unredacted copy when possible.
 - **Response data:** [`database.Event`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event)
 
----
-
 ### `get_related_events`
 
 Get events related to a given event (e.g. reactions, edits, replies depending on relation type).
@@ -373,8 +335,6 @@ Get events related to a given event (e.g. reactions, edits, replies depending on
   - `event_id` (string, required)
   - `relation_type` (string, required)
 - **Response data:** `database.Event[]` (array of events)
-
----
 
 ### `get_event_context`
 
@@ -394,8 +354,6 @@ implemented as a separate view.
   - `after` (`database.Event[]`)
   - `event` (`database.Event`)
 
----
-
 ### `paginate_manual`
 
 Manually paginate messages from the homeserver using a pagination token. This is
@@ -413,8 +371,6 @@ for normal pagination in the thread view.
   - `events` (`database.Event[]`)
   - `next_batch` (string)
 
----
-
 ### `get_room_state`
 
 Get room state, optionally after fetching it from the homeserver.
@@ -430,8 +386,6 @@ Get room state, optionally after fetching it from the homeserver.
     in the background rather than waiting for it.
 - **Response data:** `database.Event[]` (array of state events)
 
----
-
 ### `get_specific_room_state`
 
 Get specific state events by database GUID keys.
@@ -443,8 +397,6 @@ Get specific state events by database GUID keys.
     - `state_key` (string)
 - **Response data:** `database.Event[]` (array of state events)
 
----
-
 ### `get_receipts`
 
 Get cached read receipts for a set of event IDs.
@@ -455,9 +407,7 @@ Get cached read receipts for a set of event IDs.
 - **Response data:** map `event_id → Receipt[]`
 
 
----
-
-AI SLOP HAS BEEN REVIEWED UP TO HERE
+## AI SLOP HAS BEEN REVIEWED UP TO HERE
 
 ### `paginate`
 
@@ -477,8 +427,6 @@ Paginate locally stored timeline history.
 - `has_more` (bool)
 - `from_server` (bool)
 
----
-
 ### `get_room_summary`
 
 Fetch a room summary (typically for room previews).
@@ -488,8 +436,6 @@ Fetch a room summary (typically for room previews).
   - `via` (string[], optional)
   - `reason` (string, optional)
 - **Response data:** `mautrix.RespRoomSummary`
-
----
 
 ### `get_space_hierarchy`
 
@@ -503,8 +449,6 @@ Fetch a space hierarchy.
   - `suggested_only` (bool)
 - **Response data:** `mautrix.RespHierarchy`
 
----
-
 ### `join_room`
 
 Join a room by room ID or alias.
@@ -515,8 +459,6 @@ Join a room by room ID or alias.
   - `reason` (string)
 - **Response data:** `mautrix.RespJoinRoom`
 
----
-
 ### `knock_room`
 
 Knock on a room by room ID or alias.
@@ -526,8 +468,6 @@ Knock on a room by room ID or alias.
   - `via` (string[])
   - `reason` (string)
 - **Response data:** `mautrix.RespKnockRoom`
-
----
 
 ### `leave_room`
 
@@ -540,16 +480,12 @@ Leave a room.
 
 Note: leaving may also clear local invite state even for certain “already left” errors.
 
----
-
 ### `create_room`
 
 Create a new room.
 
 - **Request data:** `mautrix.ReqCreateRoom` (Matrix create-room JSON).
 - **Response data:** `mautrix.RespCreateRoom`
-
----
 
 ### `mute_room`
 
@@ -562,8 +498,6 @@ Mute or unmute a room by manipulating push rules.
 
 Note: the current implementation returns `true` when muting succeeds and `false` when unmuting succeeds.
 
----
-
 ### `ensure_group_session_shared`
 
 Ensure the encryption group session for a room has been shared to devices.
@@ -571,8 +505,6 @@ Ensure the encryption group session for a room has been shared to devices.
 - **Request data:**
   - `room_id` (string)
 - **Response data:** `bool` (always `true` on success)
-
----
 
 ### `send_to_device`
 
@@ -587,8 +519,6 @@ Send a to-device event.
 
 - **Response data:** `mautrix.RespSendToDevice`
 
----
-
 ### `resolve_alias`
 
 Resolve a room alias.
@@ -597,8 +527,6 @@ Resolve a room alias.
   - `alias` (string)
 - **Response data:** `mautrix.RespAliasResolve`
 
----
-
 ### `request_openid_token`
 
 Request an OpenID token from the homeserver.
@@ -606,16 +534,12 @@ Request an OpenID token from the homeserver.
 - **Request data:** `{}`
 - **Response data:** `mautrix.RespOpenIDToken`
 
----
-
 ### `logout`
 
 Log out the current session (if supported by the embedding).
 
 - **Request data:** `{}`
 - **Response data:** `bool` (always `true` on success)
-
----
 
 ### `login`
 
@@ -627,8 +551,6 @@ Log in using a homeserver URL, username, and password.
   - `password` (string)
 - **Response data:** `bool` (always `true` on success)
 
----
-
 ### `login_custom`
 
 Log in using a fully custom Matrix login request object.
@@ -638,8 +560,6 @@ Log in using a fully custom Matrix login request object.
   - `request` (object): `mautrix.ReqLogin` JSON.
 - **Response data:** `bool` (always `true` on success)
 
----
-
 ### `verify`
 
 Verify the session using a recovery key.
@@ -647,8 +567,6 @@ Verify the session using a recovery key.
 - **Request data:**
   - `recovery_key` (string)
 - **Response data:** `bool` (always `true` on success)
-
----
 
 ### `discover_homeserver`
 
@@ -658,8 +576,6 @@ Discover homeserver URL using `.well-known` based on a Matrix user ID.
   - `user_id` (string)
 - **Response data:** `mautrix.ClientWellKnown`
 
----
-
 ### `get_login_flows`
 
 Fetch supported login flows from a homeserver URL.
@@ -668,16 +584,12 @@ Fetch supported login flows from a homeserver URL.
   - `homeserver_url` (string)
 - **Response data:** `mautrix.RespLoginFlows`
 
----
-
 ### `register_push`
 
 Register (store) push configuration in gomuks’ local database.
 
 - **Request data:** `database.PushRegistration`
 - **Response data:** `bool` (always `true` on success)
-
----
 
 ### `listen_to_device`
 
@@ -686,8 +598,6 @@ Enable or disable including to-device messages in sync data.
 - **Request data:** `bool`
 - **Response data:** `bool` (previous value before this request)
 
----
-
 ### `get_turn_servers`
 
 Fetch TURN server configuration.
@@ -695,16 +605,12 @@ Fetch TURN server configuration.
 - **Request data:** `{}`
 - **Response data:** TURN server response from mautrix (`/voip/turnServer`).
 
----
-
 ### `get_media_config`
 
 Fetch media repository configuration.
 
 - **Request data:** `{}`
 - **Response data:** media config response from mautrix (`/config`).
-
----
 
 ### `calculate_room_id`
 
