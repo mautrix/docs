@@ -140,7 +140,10 @@ Cancel an in-flight request.
 
 ### `send_message`
 
-Send a Matrix message into a room. This is a higher-level helper around sending `m.room.message` (and related) content.
+Send a Matrix message into a room. This is a higher-level helper around sending
+`m.room.message` (and related) content. This will always perform an asynchronous
+send, which means the returned event won't have an ID yet. Listen for the
+`send_complete` event to get the final result.
 
 - **Request data:**
   - `room_id` (string, required)
