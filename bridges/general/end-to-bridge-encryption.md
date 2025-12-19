@@ -58,7 +58,9 @@ The `encryption` -> `msc4190` config option must be set to true for encryption
 to work if you use MAS.
 
 You don't actually need to use next-gen auth to use MSC4190, so you can enable
-it already before migrating to MAS to make sure bridges keep working.
+it already before migrating to MAS to make sure bridges keep working. Enabling
+MSC4190 is also recommended if you use the `self_sign` option, as it allows the
+bridge to reset its cross-signing keys.
 
 <details>
 <summary>Instructions for legacy Synapses (pre-v1.141)</summary>
