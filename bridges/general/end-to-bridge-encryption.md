@@ -41,7 +41,7 @@ encryption by default, the bridge will not find out that encryption was enabled.
 ## Appservice (/sync-less) mode
 
 Setting `appservice: true` is not recommended, but should work as long as you're
-using Synapse 1.141 or higher v25.10 or higher of the bridge, and have enabled
+using Synapse 1.141 or higher, v25.10 or higher of the bridge, and have enabled
 the relevant experimental features in the homeserver config and appservice
 registration. The registration flag is `org.matrix.msc3202: true` and the
 Synapse experimental features are:
