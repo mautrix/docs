@@ -54,22 +54,25 @@ experimental_features:
 
 ## Use with next-gen auth (MAS, MSC4190)
 
-The `encryption` -> `msc4190` config option must be set to true. After that,
-you can either regenerate the registration, or manually add the required field:
-`io.element.msc4190: true`. Finally, MSC3202 device masquerading must be enabled
-on the server side, which means the following Synapse config:
+The `encryption` -> `msc4190` config option must be set to true for encryption
+to work if you use MAS.
+
+You don't actually need to use next-gen auth to use MSC4190, so you can enable
+it already before migrating to MAS to make sure bridges keep working.
+
+<details>
+<summary>Instructions for legacy Synapses (pre-v1.141)</summary>
+
+For Synapse versions prior to 1.141, you also need to set `io.element.msc4190: true`
+in the bridge `registration.yaml` file, as well as enable the MSC3202 device
+masquerading experimental feature:
 
 ```yaml
 experimental_features:
   msc3202_device_masquerading: true
 ```
 
-You don't actually need to use next-gen auth to use MSC4190, so you can enable
-it already before migrating to MAS to make sure bridges keep working.
-
-Note: on Synapse 1.141 and higher, the `msc3202_device_masquerading` and
-`io.element.msc4190` flags are no longer necessary. However, you must still set
-`msc4190: true` in the bridge config.
+</details>
 
 ## Additional security
 
