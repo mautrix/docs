@@ -104,12 +104,6 @@ Response:
 }
 ```
 
-## Type notes
-
-- `room_id`, `event_id`, `user_id`, etc are Matrix IDs (strings) in JSON.
-- Many responses reference gomuks DB types (e.g. `database.Event`). Treat them as JSON objects; structure is defined by gomuks’ API and may evolve.
-- Some request fields are raw JSON blobs (e.g. `content`) that must match the Matrix spec for the given event type.
-
 ## Commands
 
 ### `get_state`
