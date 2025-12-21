@@ -655,16 +655,82 @@ IDs will always be negative. The client MUST NOT respond to events.
 A sync batch has been fully processed and stored. This is also used for sending
 the room list to the client when first connecting.
 
-- **Event data:** `SyncComplete`
-  - `since` (string)
-  - `clear_state` (bool)
-  - `account_data` (map)
-  - `rooms` (map `room_id → SyncRoom`)
-  - `left_rooms` (string[])
-  - `invited_rooms` (array)
-  - `space_edges` (map)
-  - `top_level_spaces` (string[])
-  - `to_device` (array)
+- **Event data:** [`SyncComplete`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/jsoncmd#SyncComplete)
+  - `since` (string): The Matrix sync token. Not particularly relevant.
+  - `clear_state` (bool): If set, the frontend should clear all local state
+    before applying the sync. This is only set for the very first sync payload
+    after connecting if resuming didn't succeed.
+  - `account_data` (map `type` → [`DBAccountData`][DBAccountData])
+  - `rooms` (map `room_id` → `SyncRoom`)
+  - `left_rooms` (string[]): List of room IDs that the user is not in anymore.
+    The frontend should delete the rooms from its store.
+  - `invited_rooms` ([`DBInvitedRoom[]`][DBInvitedRoom]): List of new invites to
+    rooms.
+  - `space_edges` (map room_id -> [`DBSpaceEdge[]`][DBSpaceEdge])
+  - `top_level_spaces` (string[]): List of room IDs that should be considered
+    top-level spaces. The frontend should replace the entire list when this
+    field is set.
+  - `to_device` (object[]): List of new to-device events. Only sent if opted in
+    with `listen_to_device`. Only relevant for widgets.
+
+[`SyncRoom`][SyncRoom]:
+- `meta` (DBRoom): Room metadata. If set, the frontend should replace the entire
+  cached metadata object with the one sent here.
+- `events` ([`DBEvent[]`][DBEvent]): events that the frontend needs to process
+  the new data in the `state` and `timeline` fields. Note that this is just raw
+  events and may include old events as well. The frontend should just put these
+  in its event cache.
+- `state` (map event type -> state key -> event row ID): new state events for
+  the room. This map should be merged with the existing cached state.
+- `timeline` ([`TimelineRowTuple[]`][TimelineRowTuple]):
+  a list of event row IDs that should be appended to the timeline.
+  - `timeline_rowid` (int64): timeline row ID to sort the timeline.
+  - `event_rowid` (int64): event row ID to look up the event.
+- `reset` (boolean): If true, the cached timeline should be reset before the new
+  timeline is appended.
+- `receipts` (map `event_id` → [`DBReceipt[]`][DBReceipt]): new read receipts.
+- `dismiss_notifications` (boolean): if true, the frontend should clear all
+  notifications that were previously emitted for the room.
+- `notifications` (`SyncNotification[]`): list of new notifications for the room.
+  - `event_rowid` (int64)
+  - `sound` (boolean)
+  - `highlight` (boolean)
+
+[`DBAccountData`][DBAccountData]:
+- `user_id` (string): the current user's ID.
+- `room_id` (string): if present, this is per-room account data.
+- `type` (string): the account data type.
+- `content` (object): the raw account data content.
+
+[`DBInvitedRoom`][DBInvitedRoom]:
+- `room_id` (string): Room ID of the invited room.
+- `created_at` (int64, unix ms): Timestamp when the invite was sent, or if the
+  invite timestamp is missing, then the time when the invite was received.
+- `invite_state` (object[]): List of state events in the invite.
+
+[`DBSpaceEdge`][DBSpaceEdge]:
+- `space_id` (string): Room ID of the space.
+- `child_id` (string): Room ID of the child room.
+- `child_event_rowid` (int64): Event row ID of the `m.space.child` event.
+- `order` (string): Order string from the `m.space.child` event.
+- `suggested` (boolean): Whether the child is suggested by the space.
+- `parent_event_rowid` (int64): Event row ID of the `m.space.parent` event.
+- `canonical` (boolean): Whether the parent is the canonical parent of the room.
+
+[`DBReceipt`][DBReceipt]:
+* `user_id` (string): User ID of the user who sent the receipt.
+* `receipt_type` (string): Receipt type, e.g. `m.read`.
+* `thread_id` (string): Thread root event ID if the receipt is for a thread.
+* `event_id` (string): Event ID the receipt is for.
+* `timestamp` (int64, unix ms): Timestamp of the receipt.
+
+[DBInvitedRoom]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#InvitedRoom
+[TimelineRowTuple]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#TimelineRowTuple
+[DBEvent]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event
+[DBSpaceEdge]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#SpaceEdge
+[DBAccountData]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#AccountData
+[DBReceipt]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Receipt
+[DBEvent]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event
 
 ### `sync_status`
 
