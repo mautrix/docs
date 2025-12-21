@@ -674,7 +674,7 @@ the room list to the client when first connecting.
     with `listen_to_device`. Only relevant for widgets.
 
 [`SyncRoom`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/jsoncmd#SyncRoom):
-- `meta` (DBRoom): Room metadata. If set, the frontend should replace the entire
+- `meta` ([DBRoom]): Room metadata. If set, the frontend should replace the entire
   cached metadata object with the one sent here.
 - `events` ([`DBEvent[]`][DBEvent]): events that the frontend needs to process
   the new data in the `state` and `timeline` fields. Note that this is just raw
@@ -724,6 +724,7 @@ the room list to the client when first connecting.
 * `event_id` (string): Event ID the receipt is for.
 * `timestamp` (int64, unix ms): Timestamp of the receipt.
 
+[DBRoom]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Room
 [DBInvitedRoom]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#InvitedRoom
 [TimelineRowTuple]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#TimelineRowTuple
 [DBEvent]: https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#Event
