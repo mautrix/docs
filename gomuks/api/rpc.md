@@ -673,7 +673,7 @@ the room list to the client when first connecting.
   - `to_device` (object[]): List of new to-device events. Only sent if opted in
     with `listen_to_device`. Only relevant for widgets.
 
-[`SyncRoom`][SyncRoom]:
+[`SyncRoom`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/jsoncmd#SyncRoom):
 - `meta` (DBRoom): Room metadata. If set, the frontend should replace the entire
   cached metadata object with the one sent here.
 - `events` ([`DBEvent[]`][DBEvent]): events that the frontend needs to process
