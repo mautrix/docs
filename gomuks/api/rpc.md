@@ -409,194 +409,219 @@ Get cached read receipts for a set of event IDs.
   - `event_ids` (string[], required)
 - **Response data:** map `event_id → Receipt[]`
 
-
-## AI SLOP HAS BEEN REVIEWED UP TO HERE
-
 ### `paginate`
 
-Paginate locally stored timeline history.
+Paginate up in the timeline. This will return locally cached timelines if
+available and fetch more from the homeserver if needed.
 
 - **Request data:**
-  - `room_id` (string)
-  - `max_timeline_id` (number): maximum timeline row ID to start from.
+  - `room_id` (string, required)
+  - `max_timeline_id` (number): the oldest known timeline row ID.
+    All returned values will be lower than this (hence max ID).
   - `limit` (int)
-  - `reset` (bool): reset pagination state.
-- **Response data:** `PaginationResponse`
-
-`PaginationResponse`:
-- `events` (`database.Event[]`)
-- `receipts` (map `event_id → Receipt[]`)
-- `related_events` (`database.Event[]`)
-- `has_more` (bool)
-- `from_server` (bool)
-
-### `get_room_summary`
-
-Fetch a room summary (typically for room previews).
-
-- **Request data:**
-  - `room_id_or_alias` (string)
-  - `via` (string[], optional)
-  - `reason` (string, optional)
-- **Response data:** `mautrix.RespRoomSummary`
+  - `reset` (bool): if true, the backend will throw away any locally cached
+    timeline state and reload it from the server.
+- **Response data:** [`PaginationResponse`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/jsoncmd#PaginationResponse)
+  - `events` (`database.Event[]`)
+  - `receipts` (map `event_id → Receipt[]`)
+  - `related_events` (`database.Event[]`)
+  - `has_more` (bool)
+  - `from_server` (bool)
 
 ### `get_space_hierarchy`
 
-Fetch a space hierarchy.
+Fetch a space hierarchy, which may include rooms the user isn't in yet. This
+should only be used for rendering the space index page. For the room list,
+space edge information is automatically pushed in syncs.
 
 - **Request data:**
-  - `room_id` (string)
+  - `room_id` (string, required)
   - `from` (string)
   - `limit` (int)
   - `max_depth` (int|null)
   - `suggested_only` (bool)
-- **Response data:** `mautrix.RespHierarchy`
+- **Response data:** [`mautrix.RespHierarchy`](https://pkg.go.dev/maunium.net/go/mautrix#RespHierarchy)
+
+### `get_room_summary`
+
+Fetch the basic metadata of a room, such as name, topic, avatar and member count.
+This should be used for previewing rooms before joining. For joined rooms,
+metadata is automatically pushed in the sync payloads.
+
+- **Request data:**
+  - `room_id_or_alias` (string, required)
+  - `via` (string[])
+- **Response data:** [`mautrix.RespRoomSummary`](https://pkg.go.dev/maunium.net/go/mautrix#RespRoomSummary)
 
 ### `join_room`
 
 Join a room by room ID or alias.
 
 - **Request data:**
-  - `room_id_or_alias` (string)
+  - `room_id_or_alias` (string, required)
   - `via` (string[])
   - `reason` (string)
-- **Response data:** `mautrix.RespJoinRoom`
+- **Response data:** [`mautrix.RespJoinRoom`](https://pkg.go.dev/maunium.net/go/mautrix#RespJoinRoom)
+  - `room_id` (string)
 
 ### `knock_room`
 
 Knock on a room by room ID or alias.
 
 - **Request data:**
-  - `room_id_or_alias` (string)
+  - `room_id_or_alias` (string, required)
   - `via` (string[])
   - `reason` (string)
-- **Response data:** `mautrix.RespKnockRoom`
+- **Response data:** [`mautrix.RespKnockRoom`](https://pkg.go.dev/maunium.net/go/mautrix#RespKnockRoom)
+  - `room_id` (string)
 
 ### `leave_room`
 
-Leave a room.
+Leave a room or reject an invite.
 
 - **Request data:**
-  - `room_id` (string)
+  - `room_id` (string, required)
   - `reason` (string)
-- **Response data:** `mautrix.RespLeaveRoom`
-
-Note: leaving may also clear local invite state even for certain “already left” errors.
+- **Response data:** empty object
 
 ### `create_room`
 
 Create a new room.
 
-- **Request data:** `mautrix.ReqCreateRoom` (Matrix create-room JSON).
-- **Response data:** `mautrix.RespCreateRoom`
+- **Request data:** [`mautrix.ReqCreateRoom`](https://pkg.go.dev/maunium.net/go/mautrix#ReqCreateRoom)
+- **Response data:** [`mautrix.RespCreateRoom`](https://pkg.go.dev/maunium.net/go/mautrix#RespCreateRoom)
+  - `room_id` (string)
 
 ### `mute_room`
 
 Mute or unmute a room by manipulating push rules.
 
 - **Request data:**
-  - `room_id` (string)
+  - `room_id` (string, required)
   - `muted` (bool)
-- **Response data:** `bool`
-
-Note: the current implementation returns `true` when muting succeeds and `false` when unmuting succeeds.
+- **Response data:** N/A
 
 ### `ensure_group_session_shared`
 
 Ensure the encryption group session for a room has been shared to devices.
+This should be called when the user first starts typing to make sending more
+efficient.
 
 - **Request data:**
-  - `room_id` (string)
-- **Response data:** `bool` (always `true` on success)
+  - `room_id` (string, required)
+- **Response data:** N/A
 
 ### `send_to_device`
 
-Send a to-device event.
-
-- **Request data:**
-  - `event_type` (string): Matrix to-device event type.
-  - `messages` (object): from `mautrix.ReqSendToDevice` (map of user→device→content).
-  - `encrypted` (bool): whether the provided payload is already encrypted.
-
-(Other `mautrix.ReqSendToDevice` fields may also be accepted.)
-
-- **Response data:** `mautrix.RespSendToDevice`
+Send an arbitrary to-device event. Meant for widgets, not needed otherwise.
 
 ### `resolve_alias`
 
 Resolve a room alias.
 
 - **Request data:**
-  - `alias` (string)
-- **Response data:** `mautrix.RespAliasResolve`
+  - `alias` (string, required)
+- **Response data:** [`mautrix.RespAliasResolve`](https://pkg.go.dev/maunium.net/go/mautrix#RespAliasResolve)
+  - `room_id` (string)
+  - `servers` (string[])
 
 ### `request_openid_token`
 
-Request an OpenID token from the homeserver.
+Request an OpenID token from the homeserver. OpenID tokens are used to
+authenticate with various external services. Widgets also need this method.
 
-- **Request data:** `{}`
-- **Response data:** `mautrix.RespOpenIDToken`
+To log into css.gomuks.app, use the response data to form the following URL and
+open it in a browser: `https://css.gomuks.app/login?token=${access_token}&server_name=${matrix_server_name}`
 
-### `logout`
+- **Request data:** N/A
+- **Response data:** [`mautrix.RespOpenIDToken`](https://pkg.go.dev/maunium.net/go/mautrix#RespOpenIDToken)
+  - `access_token` (string)
+  - `expires_in` (int)
+  - `matrix_server_name` (string)
+  - `token_type` (string)
 
-Log out the current session (if supported by the embedding).
+### `discover_homeserver`
 
-- **Request data:** `{}`
-- **Response data:** `bool` (always `true` on success)
+Discover the homeserver URL from a Matrix user ID using `.well-known` delegation.
+
+- **Request data:**
+  - `user_id` (string, required)
+- **Response data:** [`mautrix.ClientWellKnown`](https://pkg.go.dev/maunium.net/go/mautrix#ClientWellKnown)
+
+### `get_login_flows`
+
+Fetch supported login flows from a homeserver.
+
+- **Request data:**
+  - `homeserver_url` (string, required)
+- **Response data:** [`mautrix.RespLoginFlows`](https://pkg.go.dev/maunium.net/go/mautrix#RespLoginFlows)
 
 ### `login`
 
-Log in using a homeserver URL, username, and password.
+Log in using a homeserver URL, username, and password. After a successful login,
+the `client_state` event will be dispatched. The frontend should use the event
+rather than the response to update its state.
 
 - **Request data:**
-  - `homeserver_url` (string)
-  - `username` (string)
-  - `password` (string)
-- **Response data:** `bool` (always `true` on success)
+  - `homeserver_url` (string, required)
+  - `username` (string, required)
+  - `password` (string, required)
+- **Response data:** N/A
 
 ### `login_custom`
 
 Log in using a fully custom Matrix login request object.
 
 - **Request data:**
-  - `homeserver_url` (string)
-  - `request` (object): `mautrix.ReqLogin` JSON.
+  - `homeserver_url` (string, required)
+  - `request` (object, [`mautrix.ReqLogin`](https://pkg.go.dev/maunium.net/go/mautrix#ReqLogin), required)
 - **Response data:** `bool` (always `true` on success)
 
 ### `verify`
 
-Verify the session using a recovery key.
+Verify the session using a recovery key or recovery phrase. Like login, the
+frontend should update its state based on the `client_state` event rather than
+the response here.
 
 - **Request data:**
-  - `recovery_key` (string)
-- **Response data:** `bool` (always `true` on success)
+  - `recovery_key` (string, required)
+- **Response data:** N/A
 
-### `discover_homeserver`
+### `logout`
 
-Discover homeserver URL using `.well-known` based on a Matrix user ID.
+Log out the current session.
 
-- **Request data:**
-  - `user_id` (string)
-- **Response data:** `mautrix.ClientWellKnown`
-
-### `get_login_flows`
-
-Fetch supported login flows from a homeserver URL.
-
-- **Request data:**
-  - `homeserver_url` (string)
-- **Response data:** `mautrix.RespLoginFlows`
+- **Request data:** N/A
+- **Response data:** N/A
 
 ### `register_push`
 
+Register a gomuks-specific pusher
 Register (store) push configuration in gomuks’ local database.
 
-- **Request data:** `database.PushRegistration`
-- **Response data:** `bool` (always `true` on success)
+- **Request data:** [`database.PushRegistration`](https://pkg.go.dev/go.mau.fi/gomuks/pkg/hicli/database#PushRegistration)
+  - `device_id` (string, required): An arbitrary (but stable) device identifier.
+  - `type` (string, required): One of `web`, `fcm`.
+  - `data` (any, required): Type-specific data.
+    - If `type` is `fcm`, `data` is a string containing the FCM push token.
+    - If `type` is `web`, `data` is an object with the following fields:
+      - `endpoint` (string, required)
+      - `keys` (object, required)
+        - `p256dh` (base64 string, required)
+        - `auth` (base64 string, required)
+  - `encryption` (object): An optional gomuks-specific encryption configuration.
+    Mostly relevant for FCM (and APNs in the future), as web push has built-in
+    encryption.
+    - `key` (base64 string): 32 random bytes used as the static AES-GCM key.
+  - `expiration` (int64, required): Unix timestamp (seconds) when the
+    registration should be considered stale. The frontend should re-register
+    well before this time.
+- **Response data:** N/A
 
 ### `listen_to_device`
 
 Enable or disable including to-device messages in sync data.
+Only relevant for widgets.
 
 - **Request data:** `bool`
 - **Response data:** `bool` (previous value before this request)
@@ -605,24 +630,26 @@ Enable or disable including to-device messages in sync data.
 
 Fetch TURN server configuration.
 
-- **Request data:** `{}`
-- **Response data:** TURN server response from mautrix (`/voip/turnServer`).
+- **Request data:** N/A
+- **Response data:** [`mautrix.RespTurnServer`](https://pkg.go.dev/maunium.net/go/mautrix#RespTurnServer)
 
 ### `get_media_config`
 
 Fetch media repository configuration.
 
-- **Request data:** `{}`
-- **Response data:** media config response from mautrix (`/config`).
+- **Request data:** N/A
+- **Response data:** [`mautrix.RespMediaConfig`](https://pkg.go.dev/maunium.net/go/mautrix#RespMediaConfig)
 
 ### `calculate_room_id`
 
-Calculate a room ID locally from a timestamp and creation content.
+Calculate a room ID locally from a timestamp and creation content. This is only
+relevant when creating v12+ rooms with the `fi.mau.origin_server_ts` extension
+that allows the client to pre-calculate the room ID.
 
 - **Request data:**
-  - `timestamp` (int64)
-  - `content` (object): room creation content JSON.
-- **Response data:** `room_id` (string)
+  - `timestamp` (int64, required)
+  - `content` (object, required): room creation content JSON.
+- **Response data:** string
 
 ## Events (backend → client)
 
