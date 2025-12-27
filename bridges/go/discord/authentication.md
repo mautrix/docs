@@ -55,6 +55,9 @@ If you don't want to use a real account, you can also log in as a bot.
      `!discord set-relay --create` command.
    * If you're the guild admin, you can just choose "Administrator" for the
      bot and not worry about exact permissions.
+   * **N.B.** Don't select any scopes other than `bot`, otherwise it will
+     require you to specify a redirect URI. As long as `bot` is the only scope,
+     a redirect URI is not required.
 
 ---
 
