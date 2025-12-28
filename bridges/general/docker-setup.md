@@ -141,6 +141,9 @@ you should note if you want to run the bridges in k8s or similar systems:
     to write the config to disk. When preventing writing the config, make sure
     you don't leave any `generate` values in the config, as otherwise they'll
     be randomized on every startup and will cause unexpected behavior.
+  * When bypassing the startup script and using `--no-update`, the config file
+    (and entire `/data` directory) can be read-only. Keep in mind that preventing
+    the bridge writing means you sometimes have to manually update the config.
 * A `StatefulSet` is likely the best way to run the bridge, because only one
   container can be running at a time. Multiple containers even briefly are
   extremely unsupported and may cause your server to explode.
