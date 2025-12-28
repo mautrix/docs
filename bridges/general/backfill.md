@@ -5,8 +5,8 @@ between bridges.
 
 In general, backfill happens automatically, and the recommended way to do
 backfilling is to configure the bridge the way you want before starting to use
-it. Some bridges also have a `backfill` command, but automatic backfill is
-better due to the Matrix limitations mentioned in the section below.
+it. Some legacy bridges also have a `backfill` command, but automatic backfill
+is better due to the Matrix limitations mentioned in the section below.
 
 ## How backfilling works
 Bridges can set the timestamp of each message they send, which is the basic
