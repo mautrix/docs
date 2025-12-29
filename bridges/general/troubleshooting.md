@@ -41,6 +41,13 @@ whether it's responding to them or just not handling them at all.
 If there's nothing in the logs, then the homeserver may have backed off on
 sending transactions as per the above entry.
 
+If there are incoming transactions in the bridge logs, but no response, it might
+mean you sent an unprefixed command to a non-management room. If you started the
+chat in a non-standard way instead of just creating a DM, the chat may not be
+registered as your management room. In non-management rooms, commands have to be
+prefixed by the command prefix defined in the config (e.g. `!wa login` instead
+of `login`).
+
 ## I don't see any responses from the bridge bot in Matrix, but the responses are visible in the bridge logs
 Make sure you didn't ignore the bot.
 
