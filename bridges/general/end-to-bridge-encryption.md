@@ -88,6 +88,12 @@ For maximum security, you should set:
 * All fields under `verification_levels` to `cross-signed-tofu`. This means
   only devices with valid cross-signing verification can use the bridge.
 
+Note that the `delete_keys` options may cause issues if your client is buggy.
+In particular, if a client either uses an old megolm session after sharing a new
+one or uses a megolm session past its expiry, the bridge will throw an error
+saying `your client used an outdated encryption session`. If you want to use
+such buggy clients, you should not enable any of the options under `delete_keys`.
+
 ## Legacy instructions
 
 <details>
