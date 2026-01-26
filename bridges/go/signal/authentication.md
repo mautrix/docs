@@ -6,11 +6,12 @@
 1. Go to "Linked Devices" in the Signal app settings and add a new device.
 2. Send `login` to the bridge bot.
 3. Scan the QR code the bridge sends you.
-4. Finally, the bot should inform you of a successful login.
-   * Chats will not be immediately bridged currently, they will be bridged
-     as you receive messages.
-   * Signal does not support any kind of message history (even on official apps),
-     so the bridge won't backfill any messages.
+4. If backfill is enabled in the bridge config, Signal will ask whether you want
+   to transfer message history. You can choose whichever option you want.
+5. Finally, the bot should inform you of a successful login.
+   * If you chose to transfer history, recent chats should be created and
+     backfilled automatically. If not, chats will be bridged when you receive
+     new messages
 
 ## Registering as the primary device
 Registering as the primary device is no longer supported directly in the bridge.
