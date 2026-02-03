@@ -35,10 +35,13 @@ Beeper servers (there's a convenient `--local-dev` flag for `bbctl run`).
 See <https://beeper.notion.site/Beeper-Go-Guidelines-ae943532d96f4ad6a614baf836c073eb>
 
 ## Use of AI
-In general, you can use AI to help with contributions. However, you should make
-sure you understand all the changes that were made, and you need to test them
-yourself. AI can't do testing for you, if you ask it'll most likely just make
-up nonsense.
+In general, you can use AI to help with contributions. However, you must
+understand all the changes that were made. If you submit PRs that are full of
+nonsense, they will most likely be closed immediately.
+
+All changes need to be tested manually. AI can't do testing for you, if you ask
+it'll most likely just make up nonsense about how the change is 100% correct
+without actually testing anything.
 
 Also, don't use AI for generating pull request descriptions. AI-generated
 descriptions are long and usually have zero useful information. Even an empty
