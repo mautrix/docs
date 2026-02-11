@@ -48,9 +48,8 @@ Direct links to latest CI binaries:
 
 There are also community maintained packages for several distributions (gomuks legacy only). If
 you've made a new distro package, please add it to the list below.
-
-* Arch Linux (AUR): [gomuks](https://aur.archlinux.org/packages/gomuks),
-  [gomuks-bin](https://aur.archlinux.org/packages/gomuks-bin/), and
+* Arch Linux : [gomuks](https://archlinux.org/packages/extra/x86_64/gomuks/)
+* Arch Linux (AUR): [gomuks-bin](https://aur.archlinux.org/packages/gomuks-bin/) and
   [gomuks-git](https://aur.archlinux.org/packages/gomuks-git)
 * NixOS: [gomuks](https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/instant-messengers/gomuks/default.nix)
 * OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
