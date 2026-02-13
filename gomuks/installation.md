@@ -61,9 +61,9 @@ you've made a new distro package, please add it to the list below.
 
 ## Compiling from source
 
-0. Install [Go](https://go.dev/doc/install) 1.24 or higher.
+0. Install [Go](https://go.dev/doc/install) 1.25 or higher.
    * Compiling the frontend for gomuks web also requires the latest LTS of
-     Node.js or higher (currently v22).
+     Node.js or higher (currently v24).
    * `libolm-dev` must also be installed for end-to-end encryption.
 1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
    * To get legacy gomuks terminal, run `git checkout master` after cd.

@@ -7,7 +7,7 @@
 
 If you want to compile Meowlnir manually (which is not required), you'll also need:
 
-* Go 1.24+ (download & installation instructions at <https://go.dev/doc/install>).
+* Go 1.25+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want encryption support).
 
 ## Installation
