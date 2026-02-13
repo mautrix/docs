@@ -5,15 +5,14 @@ protect and which policy lists to watch. All such configuration is stored in
 room state events, which is what allows you to have different sets of configs by
 having multiple management rooms.
 
-In the future, there will be commands for managing all the state events, but for
-now you need to send some of them manually (e.g. via `/devtools` -> "Explore
-room state" -> "Send custom state event" in Element Web/Desktop).
-
 ## Subscribing to policy lists
 The `fi.mau.meowlnir.watched_lists` state event is used to subscribe to policy
 lists. The state key must be empty and the content must have a `lists` key,
 which is a list of objects. Each object must contain `room_id`, `shortcode` and
 `name`, and may specify certain extra flags (documented below).
+
+You can also use the `!lists subscribe <room ID or alias> [shortcode]` command
+instead of sending the state event manually.
 
 For example, the event below will apply CME bans and Cat's Active Threats to
 protected rooms, as well as watch matrix.org's lists without applying them to
