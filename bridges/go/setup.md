@@ -50,7 +50,7 @@ If you want to compile the bridge manually (which is not required), you'll also 
 * Go 1.25+ (download & installation instructions at <https://go.dev/doc/install>).
 * libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
-  Rust, Cargo, libclang-dev and protoc (if you want to compile libsignal yourself).
+  Rust, Cargo, libclang-dev and protoc+libprotobuf-dev (if you want to compile libsignal yourself).
 
 ## Step 1: Installation
 You may either compile the bridge manually or download a prebuilt executable
