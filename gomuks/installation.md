@@ -15,11 +15,8 @@ terminal frontend can be used.
 
 ## Installing a package
 
-The releases on GitHub contain binaries and debian
-packages for legacy gomuks terminal: <https://github.com/gomuks/gomuks/releases>.
-gomuks web doesn't have releases yet, only CI binaries are available.
-
-GitLab CI builds binaries for each commit: <https://mau.dev/gomuks/gomuks/-/pipelines>
+Prebuilt binaries can be found in GitHub releases <https://github.com/gomuks/gomuks/releases>
+or GitLab CI where every commit is built <https://mau.dev/gomuks/gomuks/-/pipelines>
 
 The release and CI binaries for Linux are statically built and have no
 hard dependencies. The binaries for macOS require installing libolm, either
