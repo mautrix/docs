@@ -322,7 +322,9 @@ If you're upgrading from an old version, the legacy migration should
 automatically copy the old hardcoded key into the config file. However, if you
 prevented the migration from writing the config, you may need to manually set
 it. You can find the correct old key in the `legacymigrate.go` file under the
-`cmd` directory in each bridge.
+`cmd` directory in each bridge. Newer releases of some bridges have already
+removed the legacy migration support, so you may need to check older releases
+for it.
 
 If you get the error even though you set up the bridge recently and didn't
 migrate from an old pre-megabridge version, it's likely you prevented the bridge
