@@ -14,6 +14,9 @@ Benefits of double puppeting:
 * Optionally sync some details like low priority, favorites, mute status
   and [direct chat status](https://docs.mau.fi/bridges/general/troubleshooting.html#why-are-direct-messages-showing-up-under-rooms-instead-of-people).
 
+Using double puppeting (specifically the automatic method) is recommended
+whenever possible.
+
 ## Automatically
 Instead of requiring everyone to manually enable double puppeting, you can give
 the bridge access to enable double puppeting automatically. This makes the
