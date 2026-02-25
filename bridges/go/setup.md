@@ -64,7 +64,7 @@ nor libolm installed.
    * linux/arm64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm64>
    * linux/arm: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm>
      <span class="bridge-filter" bridges="all,!signal"></span>
-   * or find it yourself on <https://mau.dev/mautrix/$bridge/-/pipelines>
+   * or find it yourself on <https://mau.dev/mautrix/$bridge/-/pipelines?ref=main>
 2. Extract the downloaded zip file into a new directory.
 
 ### Option 2: Downloading a release

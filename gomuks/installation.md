@@ -15,8 +15,8 @@ terminal frontend can be used.
 
 ## Installing a package
 
-Prebuilt binaries can be found in GitHub releases <https://github.com/gomuks/gomuks/releases>
-or GitLab CI where every commit is built <https://mau.dev/gomuks/gomuks/-/pipelines>
+Prebuilt binaries can be found in [GitHub releases](https://github.com/gomuks/gomuks/releases)
+or [GitLab CI](https://mau.dev/gomuks/gomuks/-/pipelines?ref=main) where every commit is built.
 
 The release and CI binaries for Linux are statically built and have no
 hard dependencies. The binaries for macOS require installing libolm, either
