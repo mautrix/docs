@@ -306,7 +306,8 @@ reported on the main branch.
 New releases for Go bridges happen on the 16th of each month. Sometimes
 releases may be skipped if there's something blocking the release or if nothing
 relevant has changed since the last one. Releases outside of the standard cycle
-only happen if there are severe security issues that must be fixed immediately.
+only happen if there are severe security issues that must be fixed immediately,
+or in some cases if the remote network has made significant breaking changes.
 
 Anything older than the latest release is completely unsupported and there
 won't be any patches even for security issues.
