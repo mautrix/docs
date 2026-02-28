@@ -44,6 +44,9 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    ```
    docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
+   `` `pwd` `` will mount the working directory as `/data`. Make sure you always
+   run the command in the directory you created, or alternatively use an absolute
+   path instead of pwd, e.g. `-v /path/to/mautrix-$bridge:/data`.
 3. Update the config to your liking. See the [initial bridge config](../general/initial-config.md)
    page for recommendations.
    * Keep in mind that `localhost` is not the correct address inside Docker
