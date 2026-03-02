@@ -43,19 +43,6 @@ Direct links to latest CI binaries:
   [arm64-v8a.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-arm64-v8a.apk?job=build),
   [x86_64.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-x86_64.apk?job=build)
 
-There are also community maintained packages for several distributions (gomuks legacy only). If
-you've made a new distro package, please add it to the list below.
-
-* Arch Linux (AUR): [gomuks](https://aur.archlinux.org/packages/gomuks),
-  [gomuks-bin](https://aur.archlinux.org/packages/gomuks-bin/), and
-  [gomuks-git](https://aur.archlinux.org/packages/gomuks-git)
-* NixOS: [gomuks](https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/instant-messengers/gomuks/default.nix)
-* OpenSUSE (OBS): [home:albino:matrix/gomuks](https://build.opensuse.org/package/show/home:albino:matrix/gomuks)
-* Alpine Linux: [gomuks](https://pkgs.alpinelinux.org/packages?name=gomuks)
-* Debian: [gomuks](https://tracker.debian.org/pkg/gomuks)
-* macOS (Homebrew Tap): [aaronraimist/tap/gomuks](https://github.com/aaronraimist/homebrew-tap)
-* macOS (MacPorts): [gomuks](https://ports.macports.org/port/gomuks)
-
 ## Compiling from source
 
 0. Install [Go](https://go.dev/doc/install) 1.25 or higher.
