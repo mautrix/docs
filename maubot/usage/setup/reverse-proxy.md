@@ -9,7 +9,7 @@ Caddy 2 supports websockets out of the box with no additional configuration.
 
 ```Caddyfile
 example.com {
-    reverse_proxy /_matrix/maubot http://localhost:29316
+    reverse_proxy /_matrix/maubot/* http://localhost:29316
 }
 ```
 
