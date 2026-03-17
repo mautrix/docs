@@ -8,7 +8,8 @@ proxy.
 
 If you really don't want to use TLS, you'll have to set `insecure_cookies` in
 the config to allow connecting from an insecure context. By default, the auth
-cookie will only work on localhost and https sites.
+cookie will only work on localhost and https sites. `listen_address` also has
+to be changed to allow direct non-localhost connections.
 
 ## Can I run the backend behind a reverse proxy?
 Yes, you just need to adjust `origin_patterns` and possibly `listen_address`
