@@ -1,5 +1,15 @@
 # FAQ
 
+## Can I connect to a remote gomuks backend?
+Yes, the recommended way to do it is to run the backend behind a reverse proxy
+(see entry below). It is possible to connect directly without a reverse proxy,
+but LANs are dangerous, so using TLS is recommended, which requires a reverse
+proxy.
+
+If you really don't want to use TLS, you'll have to set `insecure_cookies` in
+the config to allow connecting from an insecure context. By default, the auth
+cookie will only work on localhost and https sites.
+
 ## Can I run the backend behind a reverse proxy?
 Yes, you just need to adjust `origin_patterns` and possibly `listen_address`
 in the config file.
@@ -10,16 +20,6 @@ to disable auth entirely in the backend. When disabling auth, you need to be
 extra careful not to allow untrusted requests to the backend.
 
 [secret config option]: https://github.com/gomuks/gomuks/blob/v0.2603.0/pkg/gomuks/config.go#L70
-
-## Can I connect to a remote gomuks backend?
-Yes, the recommended way to do it is to run the backend behind a reverse proxy
-as mentioned above. It is possible to connect directly without a reverse proxy,
-but LANs are dangerous, so using TLS is recommended, which requires a reverse
-proxy.
-
-If you really don't want to use TLS, you'll have to set `insecure_cookies` in
-the config to allow connecting from an insecure context. By default, the auth
-cookie will only work on localhost and https sites.
 
 ## Can I use gomuks with multiple accounts?
 gomuks currently only supports one account at a time, but you can run multiple
