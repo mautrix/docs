@@ -13,6 +13,16 @@ An embedded backend mode will be added later. It also doesn't support Matrix
 login yet, so the backend must be set up using the web frontend before the
 terminal frontend can be used.
 
+## Setup steps
+1. Acquire a binary using the instructions below
+   (either installing a package or compiling from source)
+2. Run the binary. It'll prompt you to create basic auth credentials on the
+   first run. They're not your Matrix credentials.
+3. Open the web interface (at <http://localhost:29325> by default)
+
+If you want to have gomuks behind a reverse proxy, you'll need to adjust
+`listen_address` and `origin_patterns` in the config file.
+
 ## Installing a package
 
 Prebuilt binaries can be found in [GitHub releases](https://github.com/gomuks/gomuks/releases)

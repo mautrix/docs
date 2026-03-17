@@ -1,42 +1,26 @@
 # FAQ
-**N.B.** These only apply to gomuks legacy unless otherwise noted.
 
-## How do I verify the gomuks session?
-To self-sign the device using your security key, use `/cs fetch`, enter your
-security key in the dialog that appears, then use `/cs self-sign`.
+## Can I run the backend behind a reverse proxy?
+Yes, you just need to adjust `listen_address` and `origin_patterns` in the
+config file.
 
-Alternatively, get your fingerprint and device ID from `/fingerprint` and pass
-them to the `/verify` command in an up-to-date Element Web or Desktop to do
-manual verification.
+If you want to use custom auth instead of the standard basic auth, you can
+either have your reverse proxy inject it, or use the [secret config option]
+to disable auth entirely in the backend. When disabling auth, you need to be
+extra careful not to allow untrusted requests to the backend.
 
-## Why are old messages undecryptable?
-gomuks currently doesn't support key backup and doesn't request keys
-automatically, so only messages sent after initial login will be decryptable.
-To see older messages, export keys to file from another client and use the
-`/import` command. After importing keys, you need to clear cache to have gomuks
-retry decrypting old messages.
-
-## How do I use a proxy?
-Go's HTTP library reads the `https_proxy` environment variable by default
-(see <https://pkg.go.dev/net/http#ProxyFromEnvironment> for more info).
-
-## How do I copy text from gomuks?
-Most terminals allow selecting text even when mouse mode is enabled by using
-shift+drag. However, that way doesn't work for copying multiline text, so you
-may prefer the `/copy` command for copying a single message, or
-<kbd>Ctrl</kbd>+<kbd>L</kbd> to enter plaintext mode where you can copy
-whatever you want.
+[secret config option]: https://github.com/gomuks/gomuks/blob/v0.2603.0/pkg/gomuks/config.go#L70
 
 ## Can I use gomuks with multiple accounts?
 gomuks currently only supports one account at a time, but you can run multiple
 instances of gomuks with different data directories. See the entry below for
 details.
 
-## Debug logs
-To get debug logs from gomuks, launch it with `DEBUG=1` in the environment.
-Logs will be stored in `~/.local/state/gomuks` by default. Prior to v0.3.1,
-the default path was `/tmp/gomuks`. The path can be changed using the `DEBUG_DIR`
-environment variable.
+If you aren't using a reverse proxy, you'll have to use different ports and
+localhosts to access the gomukses to avoid cookie conflicts. The port can be
+changed in the config. All modern browsers should force `anything.localhost`
+to connect to localhost, so you could use `http://main.localhost:8000` and
+`http://anotheraccount.localhost:8001` for example.
 
 ## Where does gomuks store data?
 By default, data is stored in the default config/cache/data directories using
@@ -46,31 +30,30 @@ the `GOMUKS_ROOT` environment variable.
 You can also override individual directories using `GOMUKS_THING_HOME` (where
 `THING` is `CONFIG`, `DATA` or `CACHE`).
 
-* Config contains the main local config file.
-* Data contains encryption keys.
-* Cache contains things that can be refetched from the server: message history,
-  room state, automatically downloaded files, preferences that are synced to
-  the server, etc.
+* Config contains the config file with things like listen address,
+  basic auth credentials and log config.
+* Data contains all persistent data (messages, encryption keys, etc).
+  Deleting the data directory will log you out.
+* Cache contains media and can be safely deleted at any time. The cache is
+  content-addressed, so it can also be shared between multiple gomuks instances.
 
-The default directory for manual file downloads (using the `/download` command)
-is the same on all systems: `$GOMUKS_DOWNLOAD_HOME`, `$(xdg-user-dir DOWNLOAD)`,
+`GOMUKS_LOG_HOME` can also be used to redirect logs, but the variable is only
+read on first startup and then baked into the config file.
+
+### Legacy gomuks
+In legacy gomuks, data only contains encryption keys and everything else is in
+the cache directory. Clearing the cache directory will resync everything from
+the server.
+
+Legacy gomuks also has a download directory, for the `/download` command. It's
+the same on all systems: `$GOMUKS_DOWNLOAD_HOME`, `$(xdg-user-dir DOWNLOAD)`,
 or `$HOME/Downloads`.
 
-Note that the environment variables only take effect before first startup.
-After first startup, everything except the config path is saved to the config
-and will be read from there. To move existing gomuks data to a different path,
-you must change the paths in the config file.
+After first startup on legacy gomuks, everything except the config path is saved
+to the config and will be read from there. To move existing gomuks data to a
+different path, you must change the paths in the config file.
 
-### Storage in gomuks web
-The `GOMUKS_*` environment variables work mostly the same way as gomuks legacy,
-with a few exceptions:
-
-* There's no /download command and therefore no DOWNLOAD_HOME
-* Data also contains message history and other Matrix state, not only
-  encryption keys (but media is still in cache).
-* Logs can be redirected using `GOMUKS_LOG_HOME` instead of `DEBUG_DIR`.
-* Environment variables are read on every startup, the paths aren't baked into
-  the config file, except for the log path.
+Logs on legacy gomuks are stored in `DEBUG_DIR` rather than `GOMUKS_LOG_HOME`.
 
 ### System-specific defaults
 These are the base directories for each OS, data will be stored in the `gomuks`
@@ -91,3 +74,38 @@ directory inside each base directory.
 * Config & Data: `%AppData%`
 * Cache: `%LocalAppData%`
 * Logs: `%LocalAppData%`
+
+## How do I use a proxy?
+Go's HTTP library reads the `https_proxy` environment variable by default
+(see <https://pkg.go.dev/net/http#ProxyFromEnvironment> for more info).
+
+---
+The FAQ entries below only apply to legacy gomuks
+
+## How do I verify the gomuks session?
+To self-sign the device using your security key, use `/cs fetch`, enter your
+security key in the dialog that appears, then use `/cs self-sign`.
+
+Alternatively, get your fingerprint and device ID from `/fingerprint` and pass
+them to the `/verify` command in an up-to-date Element Web or Desktop to do
+manual verification.
+
+## Why are old messages undecryptable?
+gomuks currently doesn't support key backup and doesn't request keys
+automatically, so only messages sent after initial login will be decryptable.
+To see older messages, export keys to file from another client and use the
+`/import` command. After importing keys, you need to clear cache to have gomuks
+retry decrypting old messages.
+
+## How do I copy text from gomuks?
+Most terminals allow selecting text even when mouse mode is enabled by using
+shift+drag. However, that way doesn't work for copying multiline text, so you
+may prefer the `/copy` command for copying a single message, or
+<kbd>Ctrl</kbd>+<kbd>L</kbd> to enter plaintext mode where you can copy
+whatever you want.
+
+## Debug logs
+To get debug logs from gomuks, launch it with `DEBUG=1` in the environment.
+Logs will be stored in `~/.local/state/gomuks` by default. Prior to v0.3.1,
+the default path was `/tmp/gomuks`. The path can be changed using the `DEBUG_DIR`
+environment variable.
