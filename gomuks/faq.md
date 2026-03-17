@@ -8,12 +8,15 @@ proxy.
 
 If you really don't want to use TLS, you'll have to set `insecure_cookies` in
 the config to allow connecting from an insecure context. By default, the auth
-cookie will only work on localhost and https sites. `listen_address` also has
-to be changed to allow direct non-localhost connections.
+cookie will only work on localhost and https sites.
+
+`listen_address` and `origin_patterns` have to be changed to allow connecting
+from non-localhost addresses.
 
 ## Can I run the backend behind a reverse proxy?
-Yes, you just need to adjust `origin_patterns` and possibly `listen_address`
-in the config file.
+Yes, `origin_patterns` just needs to be changed to match what the client will
+use to connect to. `listen_address` may also need to be changed if using
+something like Docker where the reverse proxy can't connect using localhost.
 
 If you want to use custom auth instead of the standard basic auth, you can
 either have your reverse proxy inject it, or use the [secret config option]
