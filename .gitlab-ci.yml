@@ -9,6 +9,17 @@
   - mdbook build gomuks && rsync -rcthvl --delete dist/gomuks/html/ $TARGET/gomuks/
   - mdbook build meowlnir && rsync -rcthvl --delete dist/meowlnir/html/ $TARGET/meowlnir/
 
+configrenderer:
+  image: golang:1-alpine
+  tags: [webdeploy]
+  variables:
+    CGO_ENABLED: 0
+  script:
+  - cd configrender && go build -o /srv/web/docs.mau.fi/configs/configrender
+  rules:
+  - changes:
+    - configrender
+
 master:
   <<: *deploy
   variables:
