@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"path"
 	"strings"
 
 	"github.com/alecthomas/chroma/v2"
@@ -25,6 +26,9 @@ body {
 .chroma a.name-link {
   text-decoration: none;
 }
+p {
+  margin: 8px 8px 0;
+}
 @media (prefers-color-scheme: light) {
   %[1]s
   .chroma .line:target, .chroma .name-link:target {
@@ -33,6 +37,9 @@ body {
   }
   body {
 	%[3]s
+  }
+  body > p > a {
+    color: #0a3069;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -43,6 +50,9 @@ body {
   }
   body {
 	%[6]s
+  }
+  body > p > a {
+    color: #a5d6ff;
   }
 }
 `
@@ -59,6 +69,7 @@ const htmlTemplate = `<!DOCTYPE html>
 </head>
 <body>
   %[3]s
+  %[4]s
 </body>
 </html>
 `
@@ -91,10 +102,24 @@ func main() {
 	input := exerrors.Must(os.ReadFile(inputFile))
 	iter := exerrors.Must(lexers.Get("yaml").Tokenise(nil, string(input)))
 	exerrors.PanicIfNotNil(hfmt.Format(&buf, styles.Fallback, iter))
+	var releases string
+	if strings.HasSuffix(inputFile, "latest.yaml") {
+		var releaseList []string
+		dirName := path.Dir(inputFile)
+		for _, file := range exerrors.Must(os.ReadDir(dirName)) {
+			name := file.Name()
+			if strings.HasPrefix(name, "v") && strings.HasSuffix(name, ".yaml") {
+				releaseList = append(releaseList, fmt.Sprintf(`<a href="%[1]s.html">%[1]s</a>`, strings.TrimSuffix(name, ".yaml")))
+			}
+		}
+
+		releases = fmt.Sprintf(`<p>Releases: %s</p>`, strings.Join(releaseList, ", "))
+	}
 	exerrors.PanicIfNotNil(os.WriteFile(outputFile, []byte(fmt.Sprintf(
 		htmlTemplate,
 		inputFile,
 		fullCSS,
+		releases,
 		buf.String(),
 	)), 0644))
 }
