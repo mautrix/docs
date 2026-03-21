@@ -63,6 +63,8 @@ const htmlTemplate = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bridges/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/bridges/favicon.png" type="image/png">
   <title>%[1]s</title>
   <style>
   %[2]s
@@ -115,7 +117,7 @@ func main() {
 	if len(releaseList) > 0 {
 		slices.Sort(releaseList)
 		slices.Reverse(releaseList)
-		releases += fmt.Sprintf(`- Releases: <a href="latest">latest</a>, %s`, strings.Join(releaseList, ", "))
+		releases += fmt.Sprintf(` - Releases: <a href="latest">latest</a>, %s`, strings.Join(releaseList, ", "))
 	}
 	exerrors.PanicIfNotNil(os.WriteFile(outputFile, []byte(fmt.Sprintf(
 		htmlTemplate,
