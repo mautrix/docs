@@ -1,8 +1,6 @@
 # Configuring Meowlnir
 Like bridges, the example config can be generated with `./meowlnir -e`.
-Alternatively, you can find it in the repository in [./config/example-config.yaml].
-
-[./config/example-config.yaml]: https://github.com/maunium/meowlnir/blob/main/config/example-config.yaml
+Alternatively, you can find it at <https://docs.mau.fi/configs/meowlnir/latest>.
 
 Most of the config is self-documenting via comments. After filling out the config,
 refer to the appservice registration section below.
