@@ -10,13 +10,13 @@ also keep it up to date by rewriting the config on every startup by default.
 If you disable the config rewriting, you can also find the example configs here:
 
 * [mautrix-gmessages](https://docs.mau.fi/configs/mautrix-gmessages/latest)
-* [mautrix-telegram](https://docs.mau.fi/configs/mautrix-telegram/latest) (go rewrite only)
 * [mautrix-whatsapp](https://docs.mau.fi/configs/mautrix-whatsapp/latest)
+* [mautrix-telegram](https://docs.mau.fi/configs/mautrix-telegram/latest) (go rewrite only)
 * [mautrix-linkedin](https://docs.mau.fi/configs/mautrix-linkedin/latest)
 * [mautrix-bluesky](https://docs.mau.fi/configs/mautrix-bluesky/latest)
 * [mautrix-twitter](https://docs.mau.fi/configs/mautrix-twitter/latest)
-* [mautrix-signal](https://docs.mau.fi/configs/mautrix-signal/latest)
 * [mautrix-gvoice](https://docs.mau.fi/configs/mautrix-gvoice/latest)
+* [mautrix-signal](https://docs.mau.fi/configs/mautrix-signal/latest)
 * [mautrix-slack](https://docs.mau.fi/configs/mautrix-slack/latest)
 * [mautrix-zulip](https://docs.mau.fi/configs/mautrix-zulip/latest)
 * [mautrix-meta](https://docs.mau.fi/configs/mautrix-meta/latest)
