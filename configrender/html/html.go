@@ -2,15 +2,16 @@ package html
 
 import (
 	"fmt"
-	"go.mau.fi/util/exerrors"
 	"html"
 	"io"
-	"mvdan.cc/xurls/v2"
 	"regexp"
 	"sort"
 	"strconv"
 	"strings"
 	"sync"
+
+	"go.mau.fi/util/exerrors"
+	"mvdan.cc/xurls/v2"
 
 	"github.com/alecthomas/chroma/v2"
 )
