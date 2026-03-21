@@ -9,7 +9,7 @@
   - mdbook build gomuks && rsync -rcthvl --delete dist/gomuks/html/ $TARGET/gomuks/
   - mdbook build meowlnir && rsync -rcthvl --delete dist/meowlnir/html/ $TARGET/meowlnir/
 
-configrenderer:
+build config renderer:
   image: golang:1-alpine
   tags: [webdeploy]
   variables:
