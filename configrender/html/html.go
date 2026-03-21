@@ -107,9 +107,10 @@ func BaseLineNumber(n int) Option {
 // New HTML formatter.
 func New(options ...Option) *Formatter {
 	f := &Formatter{
-		baseLineNumber:   1,
-		preWrapper:       defaultPreWrapper,
-		writeCSSComments: true,
+		baseLineNumber:      1,
+		preWrapper:          defaultPreWrapper,
+		writeCSSComments:    true,
+		lineNumbersIDPrefix: "L",
 	}
 	f.styleCache = newStyleCache(f)
 	for _, option := range options {
