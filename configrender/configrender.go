@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"slices"
 	"strings"
 
 	"github.com/alecthomas/chroma/v2"
@@ -112,7 +113,8 @@ func main() {
 				releaseList = append(releaseList, fmt.Sprintf(`<a href="%[1]s.html">%[1]s</a>`, strings.TrimSuffix(name, ".yaml")))
 			}
 		}
-
+		slices.Sort(releaseList)
+		slices.Reverse(releaseList)
 		releases = fmt.Sprintf(`<p>Releases: %s</p>`, strings.Join(releaseList, ", "))
 	}
 	exerrors.PanicIfNotNil(os.WriteFile(outputFile, []byte(fmt.Sprintf(
