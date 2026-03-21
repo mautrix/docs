@@ -69,7 +69,7 @@ const htmlTemplate = `<!DOCTYPE html>
   </style>
 </head>
 <body>
-  %[3]s
+  <p>%[3]s</p>
   %[4]s
 </body>
 </html>
@@ -103,7 +103,7 @@ func main() {
 	input := exerrors.Must(os.ReadFile(inputFile))
 	iter := exerrors.Must(lexers.Get("yaml").Tokenise(nil, string(input)))
 	exerrors.PanicIfNotNil(hfmt.Format(&buf, styles.Fallback, iter))
-	var releases string
+	releases := fmt.Sprintf(`<a href="%s">Raw YAML</a>`, path.Base(inputFile))
 	var releaseList []string
 	dirName := path.Dir(inputFile)
 	for _, file := range exerrors.Must(os.ReadDir(dirName)) {
@@ -115,7 +115,7 @@ func main() {
 	if len(releaseList) > 0 {
 		slices.Sort(releaseList)
 		slices.Reverse(releaseList)
-		releases = fmt.Sprintf(`<p>Releases: <a href="latest">latest</a>, %s</p>`, strings.Join(releaseList, ", "))
+		releases += fmt.Sprintf(`- Releases: <a href="latest">latest</a>, %s`, strings.Join(releaseList, ", "))
 	}
 	exerrors.PanicIfNotNil(os.WriteFile(outputFile, []byte(fmt.Sprintf(
 		htmlTemplate,
