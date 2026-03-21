@@ -104,18 +104,18 @@ func main() {
 	iter := exerrors.Must(lexers.Get("yaml").Tokenise(nil, string(input)))
 	exerrors.PanicIfNotNil(hfmt.Format(&buf, styles.Fallback, iter))
 	var releases string
-	if strings.HasSuffix(inputFile, "latest.yaml") {
-		var releaseList []string
-		dirName := path.Dir(inputFile)
-		for _, file := range exerrors.Must(os.ReadDir(dirName)) {
-			name := file.Name()
-			if strings.HasPrefix(name, "v") && strings.HasSuffix(name, ".yaml") {
-				releaseList = append(releaseList, fmt.Sprintf(`<a href="%[1]s.html">%[1]s</a>`, strings.TrimSuffix(name, ".yaml")))
-			}
+	var releaseList []string
+	dirName := path.Dir(inputFile)
+	for _, file := range exerrors.Must(os.ReadDir(dirName)) {
+		name := file.Name()
+		if strings.HasPrefix(name, "v") && strings.HasSuffix(name, ".yaml") {
+			releaseList = append(releaseList, fmt.Sprintf(`<a href="%[1]s.html">%[1]s</a>`, strings.TrimSuffix(name, ".yaml")))
 		}
+	}
+	if len(releaseList) > 0 {
 		slices.Sort(releaseList)
 		slices.Reverse(releaseList)
-		releases = fmt.Sprintf(`<p>Releases: %s</p>`, strings.Join(releaseList, ", "))
+		releases = fmt.Sprintf(`<p>Releases: <a href="latest">latest</a>, %s</p>`, strings.Join(releaseList, ", "))
 	}
 	exerrors.PanicIfNotNil(os.WriteFile(outputFile, []byte(fmt.Sprintf(
 		htmlTemplate,
