@@ -19,7 +19,6 @@ build config renderer:
   rules:
   - changes:
     - configrender/**/*
-    - .gitlab-ci.yml
 
 master:
   <<: *deploy
