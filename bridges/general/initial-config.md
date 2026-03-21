@@ -1,9 +1,26 @@
 # Initial bridge config
-**N.B.** This page has not been updated for Megabridges yet.
-
 These bridges contain quite a lot of configuration options. This page is meant
 to help with finding the important ones that must be changed when setting up
 a bridge, as well as highlight some options that are usually useful.
+
+For information about fields not mentioned here, refer to the comments in the
+config itself. The config is designed to be self-documenting and the bridge will
+also keep it up to date by rewriting the config on every startup by default.
+
+If you disable the config rewriting, you can also find the example configs here:
+
+* [mautrix-gmessages](https://docs.mau.fi/configs/mautrix-gmessages/latest)
+* [mautrix-telegram](https://docs.mau.fi/configs/mautrix-telegram/latest) (go rewrite only)
+* [mautrix-whatsapp](https://docs.mau.fi/configs/mautrix-whatsapp/latest)
+* [mautrix-linkedin](https://docs.mau.fi/configs/mautrix-linkedin/latest)
+* [mautrix-bluesky](https://docs.mau.fi/configs/mautrix-bluesky/latest)
+* [mautrix-twitter](https://docs.mau.fi/configs/mautrix-twitter/latest)
+* [mautrix-signal](https://docs.mau.fi/configs/mautrix-signal/latest)
+* [mautrix-gvoice](https://docs.mau.fi/configs/mautrix-gvoice/latest)
+* [mautrix-slack](https://docs.mau.fi/configs/mautrix-slack/latest)
+* [mautrix-zulip](https://docs.mau.fi/configs/mautrix-zulip/latest)
+* [mautrix-meta](https://docs.mau.fi/configs/mautrix-meta/latest)
+* [mautrix-irc](https://docs.mau.fi/configs/mautrix-irc/latest)
 
 ## Mandatory fields
 When setting up a bridge, some fields have default example values, and must be
@@ -35,8 +52,8 @@ errors in logs.
   * Never point the bridge at another program's (like synapse's) database.
     When using Postgres, you can create a new database in an existing Postgres
     instance.
-* Way below in `bridge` -> `permissions`, you'll have to change the examples
-  to match your server.
+* In `bridge` -> `permissions`, you'll have to change the examples to match
+  your server.
 
 ### Bridge-specific mandatory fields
 #### mautrix-telegram
@@ -53,19 +70,16 @@ account the API keys were created on.
 
 #### mautrix-meta
 The Meta bridge is effectively two bridges in one codebase: Facebook Messenger
-and Instagram DMs. However, it can't handle both types of accounts with one
-instance. Instead it has a config option (`meta` -> `mode`) to choose which
-service to connect to.
-
-When changing the service, you'll also need to change a bunch of other fields,
-or otherwise it'll look like an Instagram bot connecting to Messenger. The
-fields to change listed below. For most fields, you can just replace
-"instagram" with "facebook".
+and Instagram DMs. By default, it'll let you log into any type of account.
+Optionally, you can limit it to a single type to have separate bridges for
+Messenger and Instagram. If doing so, you might also want to change the fields
+listed below to customize the bridge bot appropriately for the service you're
+using.
 
 <details>
 <summary>List of fields</summary>
 
-* `meta` -> `mode` (duh)
+* `network` -> `mode`
 * `appservice` -> `id`
 * `appservice` -> `bot` -> `username`
 * `appservice` -> `bot` -> `displayname`
@@ -73,8 +87,7 @@ fields to change listed below. For most fields, you can just replace
   * Instagram: `mxc://maunium.net/JxjlbZUlCPULEeHZSwleUXQv`
   * Messenger: `mxc://maunium.net/ygtkteZsXnGJLJHRchUwYWak`
   * Facebook: `mxc://maunium.net/uvPDxOQGCvGbPsYDiuHlNiiE`
-* `bridge` -> `username_template`
-* `bridge` -> `management_room_text` -> `welcome`
+* `appservice` -> `username_template`
 
 If you're duplicating an already-working bridge config, also remember to change
 the appservice port and database URI (you can't share one database for two
@@ -86,21 +99,18 @@ a new registration.
 ## Other useful things
 
 * Setting up [double puppeting] is strongly recommended. The relevant config
-  field for automatic double puppeting is `bridge` -> `login_shared_secret_map`.
+  field for automatic double puppeting is `double_puppet` -> `secrets`.
   * If you only set it up for your own server, you don't need to touch
-    `double_puppet_server_map`, that's only for remote servers.
-  * For the bridges that sync favorite/pin/archive/mute status, you can enable
-    that part with the `pinned_tag`/`archive_tag`/`mute_bridging` config options.
+    the `servers` map, that's only for remote servers.
 * [End-to-bridge encryption] works best if set up before logging into the
   bridge, because there's currently no proper way to enable encryption in
   existing rooms.
 * Most bridges have some automatic portal creation and [message backfill],
-  so checking the `backfill` or `history_sync` config section under `bridge`
-  is recommended. Backfilling after creating rooms is not possible, so it has
-  to be configured to your liking before logging in.
+  so checking the `backfill` section is recommended. Backfilling after creating
+  rooms is not possible, so it has to be configured to your liking before
+  logging in.
   * Related to backfill, most bridges also have options to specify how many
-    chats to backfill initially. Those options may be under backfill config,
-    or separately inside the bridge section.
+    chats to backfill initially. Those options are under the `network` section.
 
 [double puppeting]: https://docs.mau.fi/bridges/general/double-puppeting.html
 [End-to-bridge encryption]: https://docs.mau.fi/bridges/general/end-to-bridge-encryption.html
