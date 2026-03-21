@@ -31,12 +31,18 @@ body {
     scroll-margin-top: 20vh;
     %[2]s
   }
+  body {
+	%[3]s
+  }
 }
 @media (prefers-color-scheme: dark) {
-  %[3]s
+  %[4]s
   .chroma .line:target, .chroma .name-link:target {
 	scroll-margin-top: 20vh;
-	%[4]s
+	%[5]s
+  }
+  body {
+	%[6]s
   }
 }
 `
@@ -71,10 +77,15 @@ func main() {
 	buf.Reset()
 	fullCSS := fmt.Sprintf(
 		cssTemplate,
-		ghCSS, html.StyleEntryToCSS(gh.Get(chroma.LineHighlight)),
-		ghDarkCSS, html.StyleEntryToCSS(ghDark.Get(chroma.LineHighlight)),
+		ghCSS,
+		html.StyleEntryToCSS(gh.Get(chroma.LineHighlight)),
+		html.StyleEntryToCSS(gh.Get(chroma.Background)),
+		ghDarkCSS,
+		html.StyleEntryToCSS(ghDark.Get(chroma.LineHighlight)),
+		html.StyleEntryToCSS(ghDark.Get(chroma.Background)),
 	)
 
+	fmt.Println("Rendering", os.Args[1], "into", os.Args[2])
 	input := exerrors.Must(os.ReadFile(os.Args[1]))
 	iter := exerrors.Must(lexers.Get("yaml").Tokenise(nil, string(input)))
 	exerrors.PanicIfNotNil(hfmt.Format(&buf, styles.Fallback, iter))
