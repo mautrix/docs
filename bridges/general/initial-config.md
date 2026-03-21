@@ -106,9 +106,9 @@ a new registration.
   bridge, because there's currently no proper way to enable encryption in
   existing rooms.
 * Most bridges have some automatic portal creation and [message backfill],
-  so checking the `backfill` section is recommended. Backfilling after creating
-  rooms is not possible, so it has to be configured to your liking before
-  logging in.
+  so checking the `bridge` -> `backfill` section is recommended. Backfilling
+  after creating rooms is not possible, so it has to be configured to your
+  liking before logging in.
   * Related to backfill, most bridges also have options to specify how many
     chats to backfill initially. Those options are under the `network` section.
 
