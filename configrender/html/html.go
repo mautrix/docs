@@ -2,8 +2,11 @@ package html
 
 import (
 	"fmt"
+	"go.mau.fi/util/exerrors"
 	"html"
 	"io"
+	"mvdan.cc/xurls/v2"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -246,6 +249,9 @@ func (f *Formatter) writeHTML(w io.Writer, style *chroma.Style, tokens []chroma.
 
 		for i, token := range tokens {
 			html := html.EscapeString(token.String())
+			if token.Type == chroma.Comment {
+				html = linkify(html)
+			}
 			attr := f.styleAttr(css, token.Type)
 			if attr != "" {
 				html = fmt.Sprintf("<span%s>%s</span>", attr, html)
@@ -266,6 +272,15 @@ func (f *Formatter) writeHTML(w io.Writer, style *chroma.Style, tokens []chroma.
 	fmt.Fprintf(w, "%s", f.preWrapper.End(true))
 
 	return nil
+}
+
+var mscRegex = regexp.MustCompile(`MSC(\d{3,6})`)
+var urlRegex = exerrors.Must(xurls.StrictMatchingScheme("https"))
+
+func linkify(html string) string {
+	html = urlRegex.ReplaceAllString(html, `<a class="linkify https sx" href="$0">$0</a>`)
+	html = mscRegex.ReplaceAllString(html, `<a class="linkify msc sx" href="https://github.com/matrix-org/matrix-spec-proposals/pull/$1">MSC$1</a>`)
+	return html
 }
 
 func (f *Formatter) lineIDAttribute(line int) string {
