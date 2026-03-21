@@ -19,7 +19,7 @@ body {
   padding: 0;
 }
 .chroma {
-  padding: 8px 0;
+  padding: 8px 0 80px;
   margin: 0;
 }
 .chroma a.name-link {
