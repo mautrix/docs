@@ -18,7 +18,8 @@ configrenderer:
   - cd configrender && go build -o /srv/web/docs.mau.fi/configs/configrender
   rules:
   - changes:
-    - configrender
+    - configrender/**/*
+    - .gitlab-ci.yml
 
 master:
   <<: *deploy
