@@ -15,7 +15,13 @@ build config renderer:
   variables:
     CGO_ENABLED: 0
   script:
-  - cd configrender && go build -o /srv/web/docs.mau.fi/configs/configrender
+  - cd configrender
+  - go build -o /srv/web/docs.mau.fi/configs/configrender
+  - cd /srv/web/docs.mau.fi/configs
+  - |
+    for f in */*.yaml; do
+      ./configrender "$f" "${f%.yaml}.html"
+    done
   rules:
   - changes:
     - configrender/**/*
