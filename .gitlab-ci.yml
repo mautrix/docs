@@ -20,7 +20,7 @@ build config renderer:
   - cd /srv/web/docs.mau.fi/configs
   - |
     for f in */*.yaml; do
-      ./configrender "$f" "${f%.yaml}.html"
+      ./configrender "$f"
     done
   rules:
   - changes:

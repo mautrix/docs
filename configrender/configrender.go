@@ -85,13 +85,15 @@ func main() {
 		html.StyleEntryToCSS(ghDark.Get(chroma.Background)),
 	)
 
-	fmt.Println("Rendering", os.Args[1], "into", os.Args[2])
-	input := exerrors.Must(os.ReadFile(os.Args[1]))
+	inputFile := os.Args[1]
+	outputFile := strings.Replace(inputFile, ".yaml", ".html", 1)
+	fmt.Println("Rendering", inputFile, "into", outputFile)
+	input := exerrors.Must(os.ReadFile(inputFile))
 	iter := exerrors.Must(lexers.Get("yaml").Tokenise(nil, string(input)))
 	exerrors.PanicIfNotNil(hfmt.Format(&buf, styles.Fallback, iter))
-	exerrors.PanicIfNotNil(os.WriteFile(os.Args[2], []byte(fmt.Sprintf(
+	exerrors.PanicIfNotNil(os.WriteFile(outputFile, []byte(fmt.Sprintf(
 		htmlTemplate,
-		os.Args[1],
+		inputFile,
 		fullCSS,
 		buf.String(),
 	)), 0644))
