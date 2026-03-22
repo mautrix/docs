@@ -29,12 +29,26 @@ users who haven't logged into the bridge.
 3. Use `!prefix set-pl 100` to be able to modify room settings and invite
    others.
 
-If you want to bridge existing rooms, you'll have to manually update the `mxid`
-column in the `portal` table to point to the room you want bridged.
-
 Note that reactions from relayed users will not be bridged at all, because the
 bot wouldn't be able to bridge sender info nor multiple reactions of the same
 emoji.
+
+## Bridging existing rooms
+If you want to bridge existing rooms, you can use the `!prefix bridge` command
+in v26.04 and up. You may also want to add the relay login IDs to `bridge` →
+`portal_create_filter` → `always_deny_from_login` in order to prevent automatic
+portal room creation.
+
+The `bridge` command takes one or two parameters: first optionally the login ID
+to use and second the internal chat ID on the remote network. If a login ID is
+not provided, the command will use either the sender's default login, or the
+first valid login in the `default_relays` config.
+
+When the command is used with a login listed in `default_relays`, it will
+automatically apply `set-relay` as well.
+
+Note: if `relay` → `allow_bridge` is set to `false`, then default relays will
+not be used.
 
 ## Legacy bridges
 Some of the legacy bridges that haven't been rewritten as Megabridges yet have
