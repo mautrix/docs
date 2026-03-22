@@ -35,14 +35,17 @@ emoji.
 
 ## Bridging existing rooms
 If you want to bridge existing rooms, you can use the `!prefix bridge` command
-in v26.04 and up. You may also want to add the relay login IDs to `bridge` →
-`portal_create_filter` → `always_deny_from_login` in order to prevent automatic
-portal room creation.
+in v26.04 and up.
 
 The `bridge` command takes one or two parameters: first optionally the login ID
 to use and second the internal chat ID on the remote network. If a login ID is
 not provided, the command will use either the sender's default login, or the
 first valid login in the `default_relays` config.
+
+You may also want to add the relay login IDs to `bridge` → `portal_create_filter`
+→ `always_deny_from_login` in order to prevent automatic portal room creation.
+If a portal room is already created, a bridge admin or room admin in the existing
+portal is required to unbridge it.
 
 When the command is used with a login listed in `default_relays`, it will
 automatically apply `set-relay` as well.
