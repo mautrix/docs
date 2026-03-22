@@ -60,7 +60,7 @@ Direct links to latest CI binaries:
      Node.js or higher (currently v24).
    * `libolm-dev` must also be installed for end-to-end encryption.
 1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
-   * To get legacy gomuks terminal, run `git checkout master` after cd.
+   * To get legacy gomuks terminal, run `git checkout v0.3.1` after cd.
 2. Build: `./build.sh`
    ([build.sh] will simply call go build with some additional flags).
 
