@@ -3,9 +3,8 @@
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 
 ## QR login
-This is the recommended method, as it's much easier to set up. If you switched
-to Google account pairing, you can switch back by unpairing all devices and
-then clicking the switch to QR pairing button that appears.
+This method is much easier to set up, but Google is planning on killing it, so
+the Google account option below is likely going to be the only option long-term.
 
 1. Send `login qr` to start the login.
 2. Log in by scanning the QR code. If the code expires before you scan it, the
