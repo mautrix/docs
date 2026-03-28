@@ -57,7 +57,7 @@ not be used.
 Some of the legacy bridges that haven't been rewritten as Megabridges yet have
 slightly different system. In particular
 
-* Telegram has [relay bots](../python/telegram/relay-bot.html)
+* Telegram's Python version (pre-v26.04) has [relay bots](https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/relay-bot.md)
 * Discord has [relay webhooks](../go/discord/relay.md)
 * iMessage doesn't require using `set-relay`, enabling it in the config will
   enable relay in all chats.
