@@ -19,20 +19,14 @@
 - [Optional dependencies](./python/optional-dependencies.md)
 - [Manhole](./python/manhole.md)
 ---
-- [mautrix-telegram](./python/telegram/index.md)
-  - [Authentication](./python/telegram/authentication.md)
-  - [Creating and managing chats](./python/telegram/creating-and-managing-chats.md)
-  - [Management commands](./python/telegram/management-commands.md)
-  - [Relay bot](./python/telegram/relay-bot.md)
-  - [Provisioning API](./python/telegram/provisioning-api.md)
-  - [Migrating from Telematrix](./python/telegram/migrating-from-telematrix.md)
-  - [DBMS migration](./python/telegram/dbms-migration.md)
 - [mautrix-googlechat](./python/googlechat/index.md)
   - [Authentication](./python/googlechat/authentication.md)
 
 # Go-based bridges
 - [Bridge setup](./go/setup.md)
 ---
+- [mautrix-telegram](./go/telegram/index.md)
+  - [Authentication](./go/telegram/authentication.md)
 - [mautrix-whatsapp](./go/whatsapp/index.md)
   - [Android VM setup](./go/whatsapp/android-vm-setup.md)
   - [Authentication](./go/whatsapp/authentication.md)
