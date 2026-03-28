@@ -60,9 +60,9 @@ nor libolm installed.
 
 ### Option 1: Downloading a prebuilt executable from CI
 1. Download the relevant artifacts:
-   * linux/amd64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20amd64>
-   * linux/arm64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm64>
-   * linux/arm: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/$main_branch/download?job=build%20arm>
+   * linux/amd64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/main/download?job=build%20amd64>
+   * linux/arm64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/main/download?job=build%20arm64>
+   * linux/arm: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/main/download?job=build%20arm>
      <span class="bridge-filter" bridges="all,!signal"></span>
    * or find it yourself on <https://mau.dev/mautrix/$bridge/-/pipelines?ref=main>
 2. Extract the downloaded zip file into a new directory.
