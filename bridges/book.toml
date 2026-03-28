@@ -33,6 +33,14 @@ theme = "../theme/bridges"
 "/python/signal/docker-setup.html" = "../../general/docker-setup.html?bridge=signal"
 "/python/twitter/index.html" = "../../go/twitter/index.html"
 "/python/twitter/authentication.html" = "../../go/twitter/authentication.html"
+"/python/telegram/index.html" = "../../go/telegram/index.html"
+"/python/telegram/authentication.html" = "../../go/telegram/authentication.html"
+"/python/telegram/creating-and-managing.chats" = "https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/creating-and-managing-chats.md"
+"/python/telegram/management-commands.html" = "https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/management-commands.md"
+"/python/telegram/relay-bot.html" = "../../general/relay-mode.html"
+"/python/telegram/provisioning-api" = "https://spec.mau.fi/megabridge/"
+"/python/telegram/migrating-from-telematrix.html" = "https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/migrating-from-telematrix.md"
+"/python/telegram/dbms-migration.html" = "https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/dbms-migration.md"
 
 [output.linkcheck]
 optional = true

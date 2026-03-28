@@ -6,8 +6,6 @@ This page contains instructions for setting up the bridge in a virtualenv.
 You may also want to look at other ways to run the bridge:
 
 * [Docker](../general/docker-setup.md)
-* <span class="bridge-filter" bridges="telegram"></span> YunoHost:
-  <a href="https://github.com/YunoHost-Apps/mautrix_telegram_ynh">mautrix_telegram_ynh<span class="bridge-filter" bridges="telegram">,</span></a>
 * [systemd service](#systemd-service) (at the bottom of this page)
 
 Please note that everything in these docs are meant for server admins who want
