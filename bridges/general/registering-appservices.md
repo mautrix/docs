@@ -31,10 +31,10 @@ apply the relevant changes). The config fields that affect the registration are:
 * `appservice` -> `id`
 * `appservice` -> `as_token`
 * `appservice` -> `hs_token`
-* `bridge` -> `username_template`
-* `bridge` -> `alias_template` (Telegram only)
+* `appservice` -> `username_template`
+* `encryption` -> `appservice`
 
-[Application Service API]: https://spec.matrix.org/v1.15/application-service-api/
+[Application Service API]: https://spec.matrix.org/v1.18/application-service-api/
 
 ## Synapse
 If necessary, copy the registration file somewhere where Synapse can read it.
@@ -81,7 +81,7 @@ app_service_api:
 ```
 
 ## Conduit
-Also applies to Conduit-based servers such as continuwuity, tuwunel and grapevine.
+Also applies to Conduit-based servers such as continuwuity.
 
 Conduit doesn't use a config file, instead it has an admin command for
 registering appservices. Go to the admin room (which is created automatically
@@ -108,5 +108,5 @@ show the `id` field of the just registered appservice):
 See also: <https://gitlab.com/famedly/conduit/-/blob/next/APPSERVICES.md>
 
 **N.B.** Due to some spec ambiguities, you have to register the bridge bot
-account manually when using Python-based bridges (Telegram or Google Chat)
-with Conduit-based servers. Go bridges do not require this extra step.
+account manually when using Python-based bridges (Google Chat) with
+Conduit-based servers. Go bridges do not require this extra step.

@@ -11,7 +11,7 @@ If you disable the config rewriting, you can also find the example configs here:
 
 * [mautrix-gmessages](https://docs.mau.fi/configs/mautrix-gmessages/latest)
 * [mautrix-whatsapp](https://docs.mau.fi/configs/mautrix-whatsapp/latest)
-* [mautrix-telegram](https://docs.mau.fi/configs/mautrix-telegram/latest) (go rewrite only)
+* [mautrix-telegram](https://docs.mau.fi/configs/mautrix-telegram/latest)
 * [mautrix-linkedin](https://docs.mau.fi/configs/mautrix-linkedin/latest)
 * [mautrix-bluesky](https://docs.mau.fi/configs/mautrix-bluesky/latest)
 * [mautrix-twitter](https://docs.mau.fi/configs/mautrix-twitter/latest)
