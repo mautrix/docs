@@ -1,4 +1,6 @@
 # Contributing guidelines
+These guidelines apply to all mautrix bridges, as well as other associated
+projects like the mautrix libraries, meowlnir, and gomuks.
 
 ## Making pull requests
 For any non-trivial changes (more than a few lines), you should join the Matrix
