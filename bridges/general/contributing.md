@@ -1,14 +1,29 @@
 # Contributing guidelines
 
+## Making pull requests
+For any non-trivial changes (more than a few lines), you should join the Matrix
+room linked in the project readme and briefly explain your plan to confirm that
+it makes sense and is wanted. Failure to do so may result the PRs in being
+ignored and/or closed without further comment. The Matrix room is also preferred
+in case discussion about the contribution beyond basic code review is necessary.
+
+Updating the changelog file is not necessary when making a pull request. That
+will be done separately when a release is being made.
+
+Pull requests may be missed and/or forgotten for extended periods of time,
+especially if they involve more complicated changes. Feel free to remind us in
+the appropriate Matrix room if it seems like nothing is happening. Pinging on
+GitHub is **not** recommended.
+
 ## Development instructions
-The latest version of Go is recommended for developing Go bridges, but using
-the previous version is fine too. Go only supports the last two releases, so
+The latest version of Go is recommended, but using the previous version is fine
+too. Go only supports the last two releases, so
 anything older than that is [EOL](https://endoflife.date/go) and will not work.
 
-Since the bridges use cgo, you'll also need a C compiler and libolm-dev installed.
-For Signal, you can either install Rust, or just download `libsignal_ffi.a`
-from the CI to avoid the Rust dependency (see [normal Signal setup instructions]
-for that).
+Since the bridges use cgo, you'll also need a C compiler and libolm-dev installed
+(though libolm-dev can be bypassed by using `-tags goolm`). For Signal, you can
+either install Rust, or just download `libsignal_ffi.a` from the CI to avoid the
+Rust dependency (see [normal Signal setup instructions] for that).
 
 [normal Signal setup instructions]: https://docs.mau.fi/bridges/go/setup.html?bridge=signal#option-3-compiling-manually
 
@@ -37,7 +52,7 @@ See <https://beeper.notion.site/Beeper-Go-Guidelines-ae943532d96f4ad6a614baf836c
 ## Use of AI
 In general, you can use AI to help with contributions. However, you must
 understand all the changes that were made. If you submit PRs that are full of
-nonsense, they will most likely be closed immediately.
+nonsense, they will be closed immediately.
 
 All changes need to be tested manually. AI can't do testing for you, if you ask
 it'll most likely just make up nonsense about how the change is 100% correct
@@ -46,17 +61,3 @@ without actually testing anything.
 Also, don't use AI for generating pull request descriptions. AI-generated
 descriptions are long and usually have zero useful information. Even an empty
 description is better than a long and useless one.
-
-## Making pull requests
-Updating the changelog file is not necessary when making a pull request. That
-will be done separately when a release is being made.
-
-For any non-trivial changes, you should join the Matrix room linked in the
-project readme and briefly explain your plan to confirm that it makes sense
-and is wanted. The Matrix room is also preferred in case discussion about the
-contribution beyond basic code review is necessary.
-
-Pull requests may be missed and/or forgotten for extended periods of time,
-especially if they involve more complicated changes. Feel free to remind us in
-the appropriate Matrix room if it seems like nothing is happening. Pinging on
-GitHub is **not** recommended.
