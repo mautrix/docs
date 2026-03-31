@@ -4,6 +4,10 @@ There is a demo instance of gomuks web compiled to wasm available at <https://de
 However, the performance is significantly worse than with a native backend,
 so the demo is only meant for testing with a small account.
 
+A desktop wrapper using [Wails](https://v3alpha.wails.io/) also exists, which
+includes the backend. However, Wails uses webkitgtk on Linux, which is much
+worse than Firefox or Chromium-based browsers.
+
 The Android wrapper does not currently come with the backend, which means you
 have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
 (or another Wireguard solution) for external connectivity usually works nicely.
