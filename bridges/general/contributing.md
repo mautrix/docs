@@ -17,6 +17,9 @@ especially if they involve more complicated changes. Feel free to remind us in
 the appropriate Matrix room if it seems like nothing is happening. Pinging on
 GitHub is **not** recommended.
 
+In case a PR has too many things to fix, it may be rewritten instead of
+reviewed. If that is something which would offend you, please don't open a PR.
+
 ## Development instructions
 The latest version of Go is recommended, but using the previous version is fine
 too. Go only supports the last two releases, so
@@ -54,7 +57,9 @@ See <https://beeper.notion.site/Beeper-Go-Guidelines-ae943532d96f4ad6a614baf836c
 ## Use of AI
 In general, you can use AI to help with contributions. However, you must
 understand all the changes that were made. If you submit PRs that are full of
-nonsense, they will be closed immediately.
+nonsense, they will be closed immediately. All PRs are held to the same
+(relatively high) standards for code quality, architecture, etc regardless of
+whether AI is used.
 
 All changes need to be tested manually. AI can't do testing for you, if you ask
 it'll most likely just make up nonsense about how the change is 100% correct
