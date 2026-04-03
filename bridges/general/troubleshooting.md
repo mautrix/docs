@@ -278,6 +278,12 @@ The possible misconfigurations are:
 * having another appservice registration exclusively claiming the same
   namespace.
 
+## Invalid user localpart for this application service
+
+This error can happen when the bridge configuration and the namespaces in registration
+do not match, often as a result of modifying one or the other.
+It can also happen if the configuration conflicts with another bridge.
+
 ## Homeserver -> bridge connection is not working
 At startup, the bridge will ask the homeserver to check that it can reach the
 bridge. If the homeserver reports an error, the bridge will log the error and
