@@ -94,7 +94,7 @@ even though they're sent with different accounts, which may confuse some clients
 
 As long as you've enabled the `self_sign` option under `encryption`, the bridge
 bot should be verified, so it'll keep receiving messages even after clients stop
-encrypting for unverified devices in April 2026.
+encrypting for unverified devices in October 2026.
 
 The bridge could technically create a separate e2ee session for each ghost user
 to avoid the warning, but that would be ridiculously inefficient, so it won't
