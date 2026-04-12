@@ -13,9 +13,8 @@ common types are puppeting and relaying.
   want to bridge individual community rooms so users can choose which side they
   want to be on.
 
-mautrix bridges are primarily meant for puppeting, but some of them also have
-[relay mode] (or a different equivalent system in the case of Telegram and
-Discord).
+mautrix bridges are primarily meant for puppeting, but [relay mode] exists too
+(or a different equivalent system in the case of Discord and old versions of Telegram).
 
 [relay mode]: https://docs.mau.fi/bridges/general/relay-mode.html
 
