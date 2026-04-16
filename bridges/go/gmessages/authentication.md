@@ -2,33 +2,7 @@
 0. Open a private chat with the bridge bot. Usually `@gmessagesbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 
-## QR login
-This method is much easier to set up, but Google is planning on killing it, so
-the Google account option below is likely going to be the only option long-term.
-
-1. Send `login qr` to start the login.
-2. Log in by scanning the QR code. If the code expires before you scan it, the
-   bridge will send an error to notify you.
-   1. On your phone, open <img src="./messages.svg" class="gm-icon" alt="" />
-      Messages by Google.
-   2. Tap Menu <img src="./menu.svg" class="gm-icon" alt="" />
-      from your conversation list and select **Device pairing**.
-   3. Tap **QR code scanner** and point your phone at the image sent by the bot.
-3. Finally, the bot should inform you of a successful login.
-   * The bridge will create portal rooms for recent chats. The number is
-     configurable and defaults to 25 chats with 50 messages backfilled in each
-     chat.
-
-As all messages are proxied through the app, your phone must be connected to
-the internet for the bridge to work.
-
 ## Google account login
-_New in version 0.3.0_
-
-This method is available as a fallback, it's not recommended since it's more
-difficult. This method still proxies everything through your phone, it just
-pairs in a different way.
-
 You may want to use [mautrix-manager](https://github.com/mautrix/manager)
 instead of bot commands if you want to do Google login. It will automate
 extracting cookies so you don't need to mess with browser devtools.
@@ -52,6 +26,30 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
 4. Send the JSON object to the bot.
 5. Open Google Messages on your phone and tap on the emoji the bridge bot sent.
 6. Finally, the bot should inform you of a successful login.
+
+## QR login
+This method was much easier to set up, but it appears Google has killed it :(
+
+<details>
+<summary>Old instructions</summary>
+
+1. Send `login qr` to start the login.
+2. Log in by scanning the QR code. If the code expires before you scan it, the
+   bridge will send an error to notify you.
+   1. On your phone, open <img src="./messages.svg" class="gm-icon" alt="" />
+      Messages by Google.
+   2. Tap Menu <img src="./menu.svg" class="gm-icon" alt="" />
+      from your conversation list and select **Device pairing**.
+   3. Tap **QR code scanner** and point your phone at the image sent by the bot.
+3. Finally, the bot should inform you of a successful login.
+   * The bridge will create portal rooms for recent chats. The number is
+     configurable and defaults to 25 chats with 50 messages backfilled in each
+     chat.
+
+As all messages are proxied through the app, your phone must be connected to
+the internet for the bridge to work.
+
+</details>
 
 ## Logging out
 Simply run the `logout` management command.
