@@ -11,17 +11,9 @@ users who haven't logged into the bridge.
      admins to also be able to set themselves as a relay, set `admin_only` to
      `false`.
 1. Log into the bridge normally using the relaybot account.
-   * If you want a separate remote account for the relaybot while using your
-     own account for your own Matrix user, you should make a dedicated Matrix
-     account for the relaybot. If you do this, make sure to run the next
-     command using the new Matrix account too.
-   * Using the same dedicated account for multiple bridges is fine, so you can
-     have a server-wide "relay" account that acts as the relay for all the
-     bridges.
-   * By default, admins can set any login as a relay, while non-admins can only
-     set themselves as a relay. If you want to set up a shared relay account
-     that anyone can enable, add the login ID (from `list-logins`) to the
-     `default_relays` list in the config after logging in.
+   * For most use cases, you will want a dedicated Matrix account for the login
+     rather than doing it on your main account. See the "Shared relays" section
+     below for details.
 2. Run `!prefix set-relay` in the chats where you want to use the relaybot,
    replacing `!prefix` with the appropriate command prefix for the bridge,
    like `!signal` or `!wa`. You can also use `set-relay <login ID>` to choose
@@ -32,6 +24,24 @@ users who haven't logged into the bridge.
 Note that reactions from relayed users will not be bridged at all, because the
 bot wouldn't be able to bridge sender info nor multiple reactions of the same
 emoji.
+
+## Shared relays
+Relays are only used for users who have *not* logged into the bridge (or whose
+logins are not present in the room). This means that the user who is marked as
+a relay won't use the relay themselves. Instead, their messages will be sent
+without the displayname prefix that relayed users get.
+
+If you want everyone to be relayed, you should make a dedicated Matrix account
+that will run the `login` command. A dedicated Matrix account in this context
+means a normal new Matrix user. It is not related to the bridge bot or any other
+bridge-managed account in any way. If you want relay bridges to multiple
+different chat networks, you can safely share the dedicated relay account
+between all bridges.
+
+By default, only admins can set relays. If you want to set up a shared relay
+account that anyone can enable, add the login ID (from `list-logins`) to the
+`default_relays` list in the config after logging in. Alternatively, you can
+set `admin_only` to `false` to allow anyone to set themselves as a relay.
 
 ## Bridging existing rooms
 If you want to bridge existing rooms, you can use the `!prefix bridge` command
