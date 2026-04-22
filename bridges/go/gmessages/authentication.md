@@ -13,10 +13,11 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
 
 1. Send `login google` to start the login.
 2. Log into <https://accounts.google.com/AccountChooser?continue=https://messages.google.com/web/config>
-   with your Google account.
-   * Using a private window is recommended to ensure the cookies don't get
+   with your Google account in a private window.
+   * Using a private window is required to ensure the cookies don't get
      rotated by the bridge, and because the bridge doesn't support cookies
-     linked to multiple accounts.
+     linked to multiple accounts. If you don't use a private window, you'll
+     likely get randomly logged out within an hour.
    * The `continue` URL in the link is chosen so that it would only log into
      your Google account and not try to pair the browser.
 3. Make a key-value JSON object containing at least the `SID`, `HSID`, `SSID`,
