@@ -15,7 +15,7 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
 2. Log into <https://accounts.google.com/AccountChooser?continue=https://messages.google.com/web/config>
    with your Google account in a private window.
    * Using a private window is required to ensure the cookies don't get
-     rotated by the bridge, and because the bridge doesn't support cookies
+     rotated by the browser, and because the bridge doesn't support cookies
      linked to multiple accounts. If you don't use a private window, you'll
      likely get randomly logged out within an hour.
    * The `continue` URL in the link is chosen so that it would only log into
