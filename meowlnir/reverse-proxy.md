@@ -8,8 +8,7 @@ Meowlnir can handle the following endpoints:
     if using [invite blocking](./invite-blocking.md).
 * The standard `/_matrix/app/*` endpoints used by appservices.
   Only your homeserver needs to be able to reach them.
-* `/_matrix/policy/unstable/org.matrix.msc4284/event/{eventID}/check`
-  (or just `/_matrix/policy/*`) if using Meowlnir as a policy server ([MSC4284]).
+* `/_matrix/policy/*` if using Meowlnir as a policy server ([MSC4284]).
 * Reporting endpoints for [report interception](./report-interception.md):
   * `/_matrix/client/v3/rooms/{roomID}/report`
   * `/_matrix/client/v3/rooms/{roomID}/report/{eventID}`
