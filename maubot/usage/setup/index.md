@@ -14,6 +14,8 @@
         the environment.
    2. Activate with `source ./bin/activate`
 3. Install with `pip install --upgrade maubot`
+   * Note: If libolm fails to build due to your cmake version being too new, run
+     `export CMAKE_POLICY_VERSION_MINIMUM=3.5` before `pip install`.
 4. Copy `example-config.yaml` to `config.yaml` and update to your liking.
 5. Create the log directory and all directories used in `plugin_directories`
    (usually `mkdir plugins trash logs`).
