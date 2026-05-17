@@ -4,9 +4,7 @@ There is a demo instance of gomuks web compiled to wasm available at <https://de
 However, the performance is significantly worse than with a native backend,
 so the demo is only meant for testing with a small account.
 
-A desktop wrapper using [Wails](https://v3alpha.wails.io/) also exists, which
-includes the backend. However, Wails uses webkitgtk on Linux, which is much
-worse than Firefox or Chromium-based browsers.
+An Electron wrapper is also available, which includes the backend.
 
 The Android wrapper does not currently come with the backend, which means you
 have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
@@ -56,6 +54,11 @@ Direct links to latest CI binaries:
 * gomuks android (currently frontend wrapper only):
   [arm64-v8a.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-arm64-v8a.apk?job=build),
   [x86_64.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-x86_64.apk?job=build)
+* gomuks desktop (indirect link):
+  [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Flinux%2Famd64),
+  [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Flinux%2Farm64),
+  [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Fmacos%2Farm64),
+  [windows/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Fwindows%2Famd64)
 
 ## Compiling from source
 
