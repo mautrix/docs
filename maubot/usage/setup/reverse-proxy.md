@@ -28,6 +28,7 @@ server {
 
     location /_matrix/maubot {
         proxy_pass http://localhost:29316;
+        proxy_http_version 1.1;
         proxy_set_header X-Forwarded-For $remote_addr;
     }
     ...
