@@ -54,11 +54,11 @@ Direct links to latest CI binaries:
 * gomuks android (currently frontend wrapper only):
   [arm64-v8a.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-arm64-v8a.apk?job=build),
   [x86_64.apk](https://mau.dev/gomuks/android/-/jobs/artifacts/main/raw/gomuks-android-x86_64.apk?job=build)
-* gomuks desktop (indirect link):
-  [linux/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Flinux%2Famd64),
-  [linux/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Flinux%2Farm64),
-  [macos/arm64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Fmacos%2Farm64),
-  [windows/amd64](https://mau.dev/gomuks/gomuks/-/jobs/artifacts/main/browse?job=desktop%2Fwindows%2Famd64)
+* gomuks desktop:
+  [debian/amd64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-linux-amd64.deb),
+  [debian/arm64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-linux-arm64.deb),
+  [macos/arm64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-macos-arm64.dmg),
+  [windows/amd64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-windows-amd64.exe)
 
 ## Compiling from source
 
