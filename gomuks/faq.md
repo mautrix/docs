@@ -51,8 +51,15 @@ You can also override individual directories using `GOMUKS_THING_HOME` (where
 * Cache contains media and can be safely deleted at any time. The cache is
   content-addressed, so it can also be shared between multiple gomuks instances.
 
-`GOMUKS_LOG_HOME` can also be used to redirect logs, but the variable is only
+`GOMUKS_LOGS_HOME` can also be used to redirect logs, but the variable is only
 read on first startup and then baked into the config file.
+
+### Electron wrapper
+The Electron gomuks desktop stores backend data under the default Electron
+session data directory, which means `~/.config/gomuks-desktop` on Linux and
+`~/Library/Application Support/gomuks-desktop` on macOS. Each backend has its
+own subdirectory with the same name as the configured backend name. The media
+cache is shared by all backends and will be in the `gomuks-cache` subdirectory.
 
 ### Legacy gomuks
 In legacy gomuks, data only contains encryption keys and everything else is in
