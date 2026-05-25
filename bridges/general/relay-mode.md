@@ -50,7 +50,9 @@ in v26.04 and up.
 The `bridge` command takes one or two parameters: first optionally the login ID
 to use and second the internal chat ID on the remote network. If a login ID is
 not provided, the command will use either the sender's default login, or the
-first valid login in the `default_relays` config.
+first valid login in the `default_relays` config. Internal chat IDs can be found
+with `!prefix id` in existing portal rooms, or by looking at the `portal` table
+in the database.
 
 You may also want to add the relay login IDs to `bridge` → `portal_create_filter`
 → `always_deny_from_login` in order to prevent automatic portal room creation.
@@ -62,6 +64,20 @@ automatically apply `set-relay` as well.
 
 Note: if `relay` → `allow_bridge` is set to `false`, then default relays will
 not be used.
+
+## Bridge-specific notes
+
+### Telegram
+Telegram minigroup portals can't be shared between multiple Matrix users, which
+means if you use both a relay bot and real user logins, they'll have different
+Matrix rooms for the same minigroup. If you want the portal to be shared,
+upgrade the group to a supergroup using `!tg upgrade` (or toggle one of the
+settings on the Telegram side which require a supergroup).
+
+Internal chat IDs have the format `<peer type>:<id>`, where peer type is `user`,
+`chat` or `channel`. Supergroups are channels, `chat` is only for minigroups.
+The `<id>` part is the plain ID, **without** bot API prefixes like `-100`. IDs
+are always positive integers.
 
 ## Legacy bridges
 Some of the legacy bridges that haven't been rewritten as Megabridges yet have
