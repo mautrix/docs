@@ -17,6 +17,10 @@ git-repository-icon = "fa-github"
 additional-css = ["../bridges/additional.css"]
 theme = "../theme/gomuks"
 
+[output.html.redirect]
+"/api/http.html" = "https://spec.mau.fi/gomuks/http.html"
+"/api/rpc.html" = "https://spec.mau.fi/gomuks/rpc.html"
+
 [output.linkcheck]
 optional = true
 user-agent = "Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"

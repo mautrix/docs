@@ -16,5 +16,5 @@
 
 # API
 
-- [RPC API](./api/rpc.md)
-- [HTTP API](./api/http.md)
+- [RPC API](https://spec.mau.fi/gomuks/rpc.html)
+- [HTTP API](https://spec.mau.fi/gomuks/http.html)
