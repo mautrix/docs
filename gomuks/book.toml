@@ -20,6 +20,10 @@ theme = "../theme/gomuks"
 [output.html.redirect]
 "/api/http.html" = "https://spec.mau.fi/gomuks/http.html"
 "/api/rpc.html" = "https://spec.mau.fi/gomuks/rpc.html"
+"/commands.html" = "https://github.com/mautrix/docs/blob/a904952822e967c3f71c2a75d1e2bf904f167db2/gomuks/commands.md"
+"/debugging.html" = "https://github.com/mautrix/docs/blob/a904952822e967c3f71c2a75d1e2bf904f167db2/gomuks/debugging.md"
+"/keybindings.html" = "https://github.com/mautrix/docs/blob/a904952822e967c3f71c2a75d1e2bf904f167db2/gomuks/keybindings.md"
+"/shortcuts.html" = "https://github.com/mautrix/docs/blob/a904952822e967c3f71c2a75d1e2bf904f167db2/gomuks/shortcuts.md"
 
 [output.linkcheck]
 optional = true

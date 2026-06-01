@@ -4,7 +4,9 @@ There is a demo instance of gomuks web compiled to wasm available at <https://de
 However, the performance is significantly worse than with a native backend,
 so the demo is only meant for testing with a small account.
 
-An Electron wrapper is also available, which includes the backend.
+An Electron wrapper is also available, which includes the backend. The setup
+steps below can be ignored when using the desktop app. Just install the app and
+open it.
 
 The Android wrapper does not currently come with the backend, which means you
 have to run the backend elsewhere. Something like a Raspberry Pi plus Tailscale
@@ -67,19 +69,20 @@ Direct links to latest CI binaries:
      Node.js or higher (currently v24).
    * `libolm-dev` must also be installed for end-to-end encryption.
 1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
-   * To get legacy gomuks terminal, run `git checkout v0.3.1` after cd.
 2. Build: `./build.sh`
    ([build.sh] will simply call go build with some additional flags).
 
 [build.sh]: https://github.com/gomuks/gomuks/blob/main/build.sh
 Simply pull changes (`git pull`) and run `./build.sh` again to update.
 
+To build the terminal frontend, use `./build-terminal.sh`. The backend and
+terminal frontend are separate binaries for now.
+
 ### Common compilation issues
 * `fatal error: olm/olm.h: No such file or directory` means you forgot to install libolm-dev,
   or that you installed it in a weird place which isn't in your default library lookup path.
   * In the latter case, set the `LIBRARY_PATH` and `CPATH` environment variables,
     e.g. `export LIBRARY_PATH=/usr/local/lib CPATH=/usr/local/include`.
-* `fatal error: olm/pk.h: No such file or directory` means you installed libolm2 instead of libolm3.
 * `cgo: C compiler "gcc" not found: exec: "gcc": executable file not found in $PATH` means you forgot to install C/C++ compilers.
 * `//go:build comment without // +build comment` means your Go version is slightly outdated.
 * `cannot load embed: malformed module path "embed"` or `package embed is not in GOROOT` means your Go version is very outdated.

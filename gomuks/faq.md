@@ -61,21 +61,6 @@ session data directory, which means `~/.config/gomuks-desktop` on Linux and
 own subdirectory with the same name as the configured backend name. The media
 cache is shared by all backends and will be in the `gomuks-cache` subdirectory.
 
-### Legacy gomuks
-In legacy gomuks, data only contains encryption keys and everything else is in
-the cache directory. Clearing the cache directory will resync everything from
-the server.
-
-Legacy gomuks also has a download directory, for the `/download` command. It's
-the same on all systems: `$GOMUKS_DOWNLOAD_HOME`, `$(xdg-user-dir DOWNLOAD)`,
-or `$HOME/Downloads`.
-
-After first startup on legacy gomuks, everything except the config path is saved
-to the config and will be read from there. To move existing gomuks data to a
-different path, you must change the paths in the config file.
-
-Logs on legacy gomuks are stored in `DEBUG_DIR` rather than `GOMUKS_LOG_HOME`.
-
 ### System-specific defaults
 These are the base directories for each OS, data will be stored in the `gomuks`
 directory inside each base directory.
@@ -100,33 +85,7 @@ directory inside each base directory.
 Go's HTTP library reads the `https_proxy` environment variable by default
 (see <https://pkg.go.dev/net/http#ProxyFromEnvironment> for more info).
 
----
-The FAQ entries below only apply to legacy gomuks
-
-## How do I verify the gomuks session?
-To self-sign the device using your security key, use `/cs fetch`, enter your
-security key in the dialog that appears, then use `/cs self-sign`.
-
-Alternatively, get your fingerprint and device ID from `/fingerprint` and pass
-them to the `/verify` command in an up-to-date Element Web or Desktop to do
-manual verification.
-
-## Why are old messages undecryptable?
-gomuks currently doesn't support key backup and doesn't request keys
-automatically, so only messages sent after initial login will be decryptable.
-To see older messages, export keys to file from another client and use the
-`/import` command. After importing keys, you need to clear cache to have gomuks
-retry decrypting old messages.
-
-## How do I copy text from gomuks?
-Most terminals allow selecting text even when mouse mode is enabled by using
-shift+drag. However, that way doesn't work for copying multiline text, so you
-may prefer the `/copy` command for copying a single message, or
-<kbd>Ctrl</kbd>+<kbd>L</kbd> to enter plaintext mode where you can copy
-whatever you want.
-
-## Debug logs
-To get debug logs from gomuks, launch it with `DEBUG=1` in the environment.
-Logs will be stored in `~/.local/state/gomuks` by default. Prior to v0.3.1,
-the default path was `/tmp/gomuks`. The path can be changed using the `DEBUG_DIR`
-environment variable.
+## Where are the legacy gomuks docs
+Legacy gomuks is no longer supported. You can find the old docs in the git
+history of the mautrix/docs repo:
+<https://github.com/mautrix/docs/tree/a904952822e967c3f71c2a75d1e2bf904f167db2/gomuks>
