@@ -146,15 +146,15 @@ the bridge from decrypting messages. Places to start troubleshooting:
 The bridges use [MSC2409] to receive ephemeral events (EDUs) from the Matrix
 homeserver and bridge them to the remote network. It is enabled by default in
 new bridge instances, but old ones may need to update the bridge config and/or
-registration file manually. Additionally, MSC2409 is currently only supported
-in Synapse.
+registration file manually.
 
 On the bridge side, the config field is `appservice` -> `ephemeral_events`.
 The registration file given to the homeserver must also have the
-`de.sorunome.msc2409.push_ephemeral` field set to true. For servers implementing the final spec, the registration file field will be called `receive_ephemeral` with no
-prefix. If it's not set, you can either set it manually, or regenerate the
-registration after setting `ephemeral_events` to true in the bridge config.
-Remember to restart the homeserver after modifying the registration file.
+`receive_ephemeral` field set to true (or if the server implements the pre-spec
+version, `de.sorunome.msc2409.push_ephemeral`). If it's not set, you can either
+set it manually, or regenerate the registration after setting `ephemeral_events`
+to true in the bridge config. Remember to restart the homeserver after modifying
+the registration file.
 
 Previously there was an option to use `/sync` with [double puppeting] to receive
 ephemeral events without MSC2409 support. However, that option is being phased
