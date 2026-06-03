@@ -57,9 +57,17 @@ read on first startup and then baked into the config file.
 ### Electron wrapper
 The Electron gomuks desktop stores backend data under the default Electron
 session data directory, which means `~/.config/gomuks-desktop` on Linux and
-`~/Library/Application Support/gomuks-desktop` on macOS. Each backend has its
-own subdirectory with the same name as the configured backend name. The media
-cache is shared by all backends and will be in the `gomuks-cache` subdirectory.
+`~/Library/Application Support/gomuks-desktop` on macOS.
+
+The config for the Electron side is in `gomuks-desktop.json`, which is where
+backends are defined. All backend entries must have `type` (`embedded` or
+`remote`) and a unique `name`. Remote backends must also have `address`
+and optionally `username` and `password`. All backends can have `displayname`
+to use in the account picker.
+
+Each embedded backend has its own subdirectory named after the `name` field in
+the config. The media cache is shared by all backends and will be in the
+`gomuks-cache` subdirectory.
 
 ### System-specific defaults
 These are the base directories for each OS, data will be stored in the `gomuks`
