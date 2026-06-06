@@ -67,10 +67,13 @@ Direct links to latest CI binaries:
 0. Install [Go](https://go.dev/doc/install) 1.25 or higher.
    * Compiling the frontend for gomuks web also requires the latest LTS of
      Node.js or higher (currently v24).
-   * `libolm-dev` must also be installed for end-to-end encryption.
+   * `libolm-dev` must also be installed for end-to-end encryption, unless you
+     opt to use goolm.
 1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
 2. Build: `./build.sh`
    ([build.sh] will simply call go build with some additional flags).
+   * To add custom build tags, such as `goolm`, set them in the `GO_BUILD_TAGS`
+     environment variable, which the build script will read.
 
 [build.sh]: https://github.com/gomuks/gomuks/blob/main/build.sh
 Simply pull changes (`git pull`) and run `./build.sh` again to update.
@@ -83,6 +86,7 @@ terminal frontend are separate binaries for now.
   or that you installed it in a weird place which isn't in your default library lookup path.
   * In the latter case, set the `LIBRARY_PATH` and `CPATH` environment variables,
     e.g. `export LIBRARY_PATH=/usr/local/lib CPATH=/usr/local/include`.
+  * Alternatively, build with goolm to avoid the libolm dependency entirely.
 * `cgo: C compiler "gcc" not found: exec: "gcc": executable file not found in $PATH` means you forgot to install C/C++ compilers.
 * `//go:build comment without // +build comment` means your Go version is slightly outdated.
 * `cannot load embed: malformed module path "embed"` or `package embed is not in GOROOT` means your Go version is very outdated.
