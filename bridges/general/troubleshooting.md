@@ -131,6 +131,9 @@ the bridge from decrypting messages. Places to start troubleshooting:
     to get the latest `since`/`next_batch` token (e.g. from your own client,
     they're global) and insert it into the `crypto_account` table in the bridge
     database.
+  * If you get HTTP 500 or 501 errors on a brand new bridge and you created the
+    registration file manually, you likely did it wrong. See the [e2be docs](https://docs.mau.fi/bridges/general/end-to-bridge-encryption.html#legacy--manual-registration-instructions)
+    or regenerate the file using the bridge.
   * When using appservice mode, there won't be any `/sync` requests. Instead
     you should see `Starting handling of transaction` logs with
     `unstable_to_device` or `device_changes` keys.
