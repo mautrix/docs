@@ -16,8 +16,10 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
    with your Google account in a private window.
    * Using a private window is required to ensure the cookies don't get
      rotated by the browser, and because the bridge doesn't support cookies
-     linked to multiple accounts. If you don't use a private window, you'll
-     likely get randomly logged out within an hour.
+     linked to multiple accounts.
+   * You also can't use a browser with Device Bound Session Credentials enabled.
+     Firefox hasn't implemented that at all and should work, Chrome also allows
+     disabling the feature via flags. mautrix-manager will always work.
    * The `continue` URL in the link is chosen so that it would only log into
      your Google account and not try to pair the browser. Make sure you don't
      navigate anywhere else inside the private window.

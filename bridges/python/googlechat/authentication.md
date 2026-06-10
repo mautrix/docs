@@ -27,3 +27,8 @@
 2. Send `login-cookie {the json object}` to the bot.
 3. Recent chats should now get portals automatically. Other chats will get
    portals as you receive messages.
+
+Note that you can't use a browser with Device Bound Session Credentials enabled.
+Firefox hasn't implemented that at all and should work, Chrome also allows
+disabling the feature via flags. Once the bridge is rewritten to use the bridgev2
+architecture, mautrix-manager will also work.

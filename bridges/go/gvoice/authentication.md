@@ -7,9 +7,12 @@ to mess with browser devtools.
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
 1. Send `login` to start the login.
 2. Log into <https://voice.google.com> with your Google account.
-   * Using a private window is recommended to ensure the cookies don't get
-     rotated by the bridge, and because the bridge doesn't support cookies
+   * Using a private window is required to ensure the cookies don't get
+     rotated by the browser, and because the bridge doesn't support cookies
      linked to multiple accounts.
+   * You also can't use a browser with Device Bound Session Credentials enabled.
+     Firefox hasn't implemented that at all and should work, Chrome also allows
+     disabling the feature via flags. mautrix-manager will always work.
 3. Make a key-value JSON object containing at least the `SID`, `HSID`, `SSID`,
    `OSID`, `APISID` and `SAPISID` cookies. Sometimes Google also requires
    `__Secure-1PSIDTS` to be included. Alternatively, you can copy a request
