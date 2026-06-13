@@ -30,6 +30,11 @@ gomuks currently only supports one account at a time, but you can run multiple
 instances of gomuks with different data directories. See the entry below for
 details.
 
+When using the Electron wrapper, you can have the wrapper run multiple backends
+internally and display an in-app switcher for them. There's no UI for adding
+accounts yet though, so you have to define them manually in the config file
+(again, see the entry below).
+
 If you aren't using a reverse proxy, you'll have to use different ports and
 localhosts to access the gomukses to avoid cookie conflicts. The port can be
 changed in the config. All modern browsers should force `anything.localhost`
