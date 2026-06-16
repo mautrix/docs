@@ -94,6 +94,12 @@ one or uses a megolm session past its expiry, the bridge will throw an error
 saying `your client used an outdated encryption session`. If you want to use
 such buggy clients, you should not enable any of the options under `delete_keys`.
 
+When using `cross-signed-tofu` as the verification level, users who change their
+cross-signing keys will no longer be able to interact with the bridge. You can
+either set `first_seen_key=key` in the `crypto_cross_signing_keys` table for that
+user, or use `cross-signed-unverified` instead of `-tofu` to trust the keys
+automatically.
+
 ## Legacy / manual registration instructions
 If you want to use encryption in the standard /sync mode (as opposed to the
 experimental appservice mode) and your registration file is extremely old
