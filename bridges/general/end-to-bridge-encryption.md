@@ -97,7 +97,7 @@ such buggy clients, you should not enable any of the options under `delete_keys`
 When using `cross-signed-tofu` as the verification level, users who change their
 cross-signing keys will no longer be able to interact with the bridge. You can
 either set `first_seen_key=key` in the `crypto_cross_signing_keys` table for that
-user, or use `cross-signed-unverified` instead of `-tofu` to trust the keys
+user, or use `cross-signed-untrusted` instead of `-tofu` to trust the keys
 automatically.
 
 ## Legacy / manual registration instructions
