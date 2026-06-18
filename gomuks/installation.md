@@ -70,8 +70,8 @@ Direct links to latest CI binaries:
    * `libolm-dev` must also be installed for end-to-end encryption, unless you
      opt to use goolm.
 1. Clone the repo: `git clone https://github.com/gomuks/gomuks.git && cd gomuks`
-2. Build: `./build.sh`
-   ([build.sh] will simply call go build with some additional flags).
+2. Build: `./build.sh` ([build.sh] will build the frontend with npm, followed by
+   running go build with some additional flags).
    * To add custom build tags, such as `goolm`, set them in the `GO_BUILD_TAGS`
      environment variable, which the build script will read.
 
