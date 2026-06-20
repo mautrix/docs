@@ -27,13 +27,6 @@ their documentation to find support rooms.
   * Make sure you don't share databases between unrelated programs.
     Shared postgres instance is fine, but shared database is not.
 * If installing optional dependencies, see the [optional dependencies](./optional-dependencies.md) page.
-* <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
-  Telegram app ID and hash (get from [my.telegram.org](https://my.telegram.org/apps)).
-* <span class="bridge-filter" bridges="telegram">**mautrix-telegram**: </span>
-  [LottieConverter](https://github.com/sot-tech/LottieConverter) if you want
-  animated stickers to be converted to something viewable on Matrix.
-* <span class="bridge-filter" bridges="telegram">**Bridges with voice messages**: </span>
-  [ffmpeg](https://ffmpeg.org/) to transcode audio files (just install it with your system package manager).
 
 ## Production setup
 Don't use `sudo` for any of these steps (and preferably don't use the root user either).
