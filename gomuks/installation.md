@@ -62,6 +62,11 @@ Direct links to latest CI binaries:
   [macos/arm64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-macos-arm64.dmg),
   [windows/amd64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-windows-amd64.exe)
 
+There are also some community-maintained distro packages.
+If you've made a new package, please add it to the list below.
+
+* Void Linux: [gomuks](https://github.com/void-linux/void-packages/tree/master/srcpkgs/gomuks)
+
 ## Compiling from source
 
 0. Install [Go](https://go.dev/doc/install) 1.25 or higher.
