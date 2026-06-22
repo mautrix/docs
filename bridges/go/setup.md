@@ -34,10 +34,8 @@ their documentation to find support rooms.
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   A Signal client that can add linked devices (both official mobile apps and
   some unofficial clients like signal-cli work).
-* <span class="bridge-filter" bridges="signal,meta">**mautrix-{signal,meta}**: </span>
-  ffmpeg (if you want to send/receive voice messages).
-* <span class="bridge-filter" bridges="whatsapp">**mautrix-whatsapp**: </span>
-  ffmpeg (if you want to send gifs from Matrix).
+* ffmpeg for converting things like voice messages and gifs
+  (whether it's actually required depends on the bridge).
 * <span class="bridge-filter" bridges="discord,telegram,whatsapp">**mautrix-{discord,telegram,whatsapp}**: </span>
   [LottieConverter](https://github.com/sot-tech/LottieConverter) (and ffmpeg) if you want
   to receive animated stickers.
