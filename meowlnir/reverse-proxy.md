@@ -35,3 +35,20 @@ matrix-federation.example.com {
     }
 }
 ```
+
+### Nginx
+```nginx
+server {
+    server_name matrix-client.example.com;
+    location ~ ^/_matrix/client/v3/(rooms|users)/report {
+        proxy_pass http://localhost:29339;
+    }
+}
+
+server {
+    server_name matrix-federation.example.com;
+    location ~ ^/_matrix/policy/ {
+        proxy_pass http://localhost:29339;
+    }
+}
+```
