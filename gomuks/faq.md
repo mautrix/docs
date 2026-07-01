@@ -11,7 +11,10 @@ the config to allow connecting from an insecure context. By default, the auth
 cookie will only work on localhost and https sites.
 
 `listen_address` and `origin_patterns` have to be changed to allow connecting
-from non-localhost addresses.
+from non-localhost addresses. `0.0.0.0:port` is the way to listen on all
+interfaces, which is what you likely want on Docker. `origin_patterns` should
+include the URL you enter in your browser, including explicit ports, but
+excluding the protocol (`https://`).
 
 ## Can I run the backend behind a reverse proxy?
 Yes, `origin_patterns` just needs to be changed to match what the client will

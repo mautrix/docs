@@ -103,6 +103,11 @@ at `dock.mau.dev/gomuks/gomuks`.
 
 On first run, gomuks will interactively ask for basic auth credentials, so you
 have to either run it with the `-it` flags, or create the config file yourself.
+You'll likely also have to follow the instructions for connecting to a remote
+backend in the FAQ.
+
+The docker image defaults to `GOMUKS_ROOT=/data`, so remember to persist `/data`
+appropriately (e.g. by mounting a host directory there).
 
 Keep in mind that the backend has all your encryption keys, which means it must
 be ran in a secure location.
