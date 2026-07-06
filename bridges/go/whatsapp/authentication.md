@@ -13,7 +13,12 @@
       and select Linked devices.
    3. Point your phone at the image sent by the bot to capture the code.
       * If logging in with pairing code, tap "Link with a phone number instead".
-3. Finally, the bot should inform you of a successful login.
+3. For some users, WhatsApp may require additional verification using a passkey.
+   You can either follow the bot's instructions using browser devtools, or
+   alternatively use [mautrix-manager](https://github.com/mautrix/manager).
+   * Note that on Linux, only Chrome-based browsers support generating QR codes
+     to use a passkey from another device. Firefox only supports local passkeys.
+4. Finally, the bot should inform you of a successful login.
    * The bridge will start creating portal rooms approximately a minute after
      login. The amount of backfill can be configured before login, the default
      is to create portals for all chats from WhatsApp and backfill 50 messages

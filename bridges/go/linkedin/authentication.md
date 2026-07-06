@@ -10,6 +10,7 @@ to mess with browser devtools.
    * Note: you should either use Chrome or at least change your user agent to
      match the one used by the bridge (<https://github.com/mautrix/linkedin/blob/main/pkg/linkedingo/client.go#L30>),
      as LinkedIn doesn't like cookies being used by different user agents.
+     mautrix-manager should automatically use the correct user agent.
 3. Open browser devtools, go to the network tab, select "XHR" as the request
    type and search for `graphql`. Right click one of the requests and choose
    "Copy", then "Copy as cURL".
