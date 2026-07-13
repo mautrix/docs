@@ -22,8 +22,8 @@ reviewed. If that is something which would offend you, please don't open a PR.
 
 ## Development instructions
 The latest version of Go is recommended, but using the previous version is fine
-too. Go only supports the last two releases, so
-anything older than that is [EOL](https://endoflife.date/go) and will not work.
+too. Go only supports the last two releases, so anything older than that is
+[EOL](https://endoflife.date/go) and will not work.
 
 Since the bridges use cgo, you'll also need a C compiler and libolm-dev installed
 (though libolm-dev can be bypassed by using `-tags goolm`). For Signal, you can
@@ -61,10 +61,8 @@ nonsense, they will be closed immediately. All PRs are held to the same
 (relatively high) standards for code quality, architecture, etc regardless of
 whether AI is used.
 
-All changes need to be tested manually. AI can't do testing for you, if you ask
-it'll most likely just make up nonsense about how the change is 100% correct
-without actually testing anything.
+PR authors are expected to test their changes (if applicable). Understanding
+changes generally means testing it yourself, not asking AI to do it.
 
-Also, don't use AI for generating pull request descriptions. AI-generated
-descriptions are long and usually have zero useful information. Even an empty
-description is better than a long and useless one.
+Avoid using AI for generating pull request descriptions. AI-generated
+descriptions are long and usually have very little useful information.
