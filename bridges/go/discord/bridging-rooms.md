@@ -13,3 +13,7 @@ to the bridge command to immediately create all rooms.
 If you want to manually bridge channels, invite the bot to the room you want to
 bridge and run `!discord bridge <channel ID>` to bridge the room. After that,
 you can also use `!discord set-relay` to set up [relaying with webhooks](./relay.md).
+
+To obtain a discord <channel ID>: from the Discord app, you might need to 
+enable dev mode, and then right click on the channel name and select 
+"copy channel ID".
