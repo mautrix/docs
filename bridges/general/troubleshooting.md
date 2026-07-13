@@ -145,6 +145,13 @@ the bridge from decrypting messages. Places to start troubleshooting:
   (the client will share a new megolm session, which should show up in the
   logs).
 
+## The bridge doesn't start after I enabled next-gen auth (OAuth/MAS)
+With `failed to get supported login flows` or `homeserver does not support
+appservice login` as the error message.
+
+As mentioned in both the config comments and the [e2be docs](https://docs.mau.fi/bridges/general/end-to-bridge-encryption.html),
+you have to enable MSC4190 mode if the homeserver is using next-gen auth.
+
 ## How do I bridge typing notifications and read receipts?
 The bridges use [MSC2409] to receive ephemeral events (EDUs) from the Matrix
 homeserver and bridge them to the remote network. It is enabled by default in

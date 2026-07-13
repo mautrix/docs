@@ -52,10 +52,9 @@ experimental_features:
   msc2409_to_device_messages_enabled: true
 ```
 
-## Use with next-gen auth (MAS, MSC4190)
-
+## Use with next-gen auth (OAuth, MAS, MSC4190)
 The `encryption` -> `msc4190` config option must be set to true for encryption
-to work if you use MAS.
+to work if you use next-gen auth.
 
 You don't actually need to use next-gen auth to use MSC4190, so you can enable
 it already before migrating to MAS to make sure bridges keep working. Enabling
