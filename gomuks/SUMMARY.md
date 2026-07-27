@@ -8,3 +8,4 @@
 
 - [RPC API ↗](https://spec.mau.fi/gomuks/rpc.html)
 - [HTTP API ↗](https://spec.mau.fi/gomuks/http.html)
+- [C FFI](./ffi.md)
