@@ -104,6 +104,11 @@ remove the warnings. See [MSC4350] for more info.
 
 [MSC4350]: https://github.com/matrix-org/matrix-spec-proposals/pull/4350
 
+The last bullet point in the [invisible crypto spec] has an explicit carve-out
+for bridges until MSC4350 is implemented.
+
+[invisible crypto spec]: https://spec.matrix.org/v1.19/client-server-api/#recommended-client-behaviour
+
 ## Can I verify the bridge e2ee session?
 The bridge can verify itself if you enable the `self_sign` option in the config.
 You should set it to ensure that the bridge keeps working after clients stop

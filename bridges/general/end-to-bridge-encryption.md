@@ -38,22 +38,21 @@ must also set `default: true` in the bridge config. Force-enabling encryption
 on the server side will not notify the bridge, so unless the bridge enables
 encryption by default, the bridge will not find out that encryption was enabled.
 
-## Appservice (/sync-less) mode
+## Use with invisible crypto
+To use end-to-bridge encryption with clients that don't share keys to unverified
+devices, you must set `encryption` → `self_sign` to true. Your client also needs
+to ignore the fact that the messages sent by ghost users are encrypted by the
+bridge bot (see the last bullet point in the [invisible crypto spec] for more
+details).
 
-Setting `appservice: true` is not recommended, but should work as long as you're
-using Synapse 1.141 or higher, v25.10 or higher of the bridge, and have enabled
-the relevant experimental features in the homeserver config and appservice
-registration. The registration flag is `org.matrix.msc3202: true` and the
-Synapse experimental features are:
+[invisible crypto spec]: https://spec.matrix.org/v1.19/client-server-api/#recommended-client-behaviour
 
-```yaml
-experimental_features:
-  msc3202_transaction_extensions: true
-  msc2409_to_device_messages_enabled: true
-```
+Note that clients like Element will still display warnings on messages from
+ghost users even when invisible crypto is enabled. See the [FAQ](https://docs.mau.fi/bridges/general/troubleshooting.html#why-are-messages-showing-up-as-encrypted-by-a-deleted-session)
+for more details on that.
 
 ## Use with next-gen auth (OAuth, MAS, MSC4190)
-The `encryption` -> `msc4190` config option must be set to true for encryption
+The `encryption` → `msc4190` config option must be set to true for encryption
 to work if you use next-gen auth.
 
 You don't actually need to use next-gen auth to use MSC4190, so you can enable
@@ -74,6 +73,20 @@ experimental_features:
 ```
 
 </details>
+
+## Appservice (/sync-less) mode
+
+Setting `appservice: true` is not recommended, but should work as long as you're
+using Synapse 1.141 or higher, v25.10 or higher of the bridge, and have enabled
+the relevant experimental features in the homeserver config and appservice
+registration. The registration flag is `org.matrix.msc3202: true` and the
+Synapse experimental features are:
+
+```yaml
+experimental_features:
+  msc3202_transaction_extensions: true
+  msc2409_to_device_messages_enabled: true
+```
 
 ## Additional security
 
