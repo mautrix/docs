@@ -10,6 +10,7 @@ also keep it up to date by rewriting the config on every startup by default.
 If you disable the config rewriting, you can also find the example configs here:
 
 * [mautrix-gmessages](https://docs.mau.fi/configs/mautrix-gmessages/latest)
+* [mautrix-instagram](https://docs.mau.fi/configs/mautrix-instagram/latest)
 * [mautrix-whatsapp](https://docs.mau.fi/configs/mautrix-whatsapp/latest)
 * [mautrix-telegram](https://docs.mau.fi/configs/mautrix-telegram/latest)
 * [mautrix-linkedin](https://docs.mau.fi/configs/mautrix-linkedin/latest)
@@ -69,6 +70,13 @@ commands. The bridge can be used to log into any account regardless of whose
 account the API keys were created on.
 
 #### mautrix-meta
+mautrix-meta was previously two bridges in one, but after v26.07, Instagram was
+split out as the protocol changed completely. The instructions hidden below
+were for configuring mautrix-meta for a specific mode.
+
+<details>
+<summary>No longer applicable</summary>
+
 The Meta bridge is effectively two bridges in one codebase: Facebook Messenger
 and Instagram DMs. By default, it'll let you log into any type of account.
 Optionally, you can limit it to a single type to have separate bridges for
@@ -76,8 +84,7 @@ Messenger and Instagram. If doing so, you might also want to change the fields
 listed below to customize the bridge bot appropriately for the service you're
 using.
 
-<details>
-<summary>List of fields</summary>
+List of fields
 
 * `network` -> `mode`
 * `appservice` -> `id`

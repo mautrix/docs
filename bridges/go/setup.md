@@ -52,29 +52,31 @@ If you want to compile the bridge manually (which is not required), you'll also 
 
 ## Step 1: Installation
 You may either compile the bridge manually or download a prebuilt executable
-from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridge/releases).
+from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridgerepo/releases).
 Prebuilt executables are the simplest option, as they don't require having Go
 nor libolm installed.
 
 ### Option 1: Downloading a prebuilt executable from CI
 1. Download the relevant artifacts:
-   * linux/amd64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/main/download?job=build%20amd64>
-   * linux/arm64: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/main/download?job=build%20arm64>
-   * linux/arm: <https://mau.dev/mautrix/$bridge/-/jobs/artifacts/main/download?job=build%20arm>
+   * linux/amd64: <https://mau.dev/mautrix/$bridgerepo/-/jobs/artifacts/main/raw/mautrix-$bridge?job=build%20amd64>
+   * linux/arm64: <https://mau.dev/mautrix/$bridgerepo/-/jobs/artifacts/main/raw/mautrix-$bridge?job=build%20arm64>
+   * linux/arm: <https://mau.dev/mautrix/$bridgerepo/-/jobs/artifacts/main/raw/mautrix-$bridge?job=build%20arm>
      <span class="bridge-filter" bridges="all,!signal"></span>
-   * or find it yourself on <https://mau.dev/mautrix/$bridge/-/pipelines?ref=main>
+   * or find it yourself on <https://mau.dev/mautrix/$bridgerepo/-/pipelines?ref=main>
 2. Extract the downloaded zip file into a new directory.
 
 ### Option 2: Downloading a release
-1. Go to <https://github.com/mautrix/$bridge/releases>
+1. Go to <https://github.com/mautrix/$bridgerepo/releases>
 2. Download the binary for the architecture you want and save it in a new
    directory.
 
 ### Option 3: Compiling manually
-1. Clone the repo with `git clone https://github.com/mautrix/$bridge.git mautrix-$bridge`
+1. Clone the repo with `git clone https://github.com/mautrix/$bridgerepo.git mautrix-$bridge`
 2. Enter the directory (`cd mautrix-$bridge`)
 3. Run `./build.sh` to fetch Go dependencies and compile
    ([`build.sh`] will simply call `go build` with some additional flags).
+   * To build the Instagram bridge in the mautrix-meta repo, use `./build-ig.sh`
+     instead. <span class="bridge-filter" bridges="instagram"></span>
    * If you want end-to-bridge encryption, make sure you have a C/C++ compiler
      and the Olm dev headers (`libolm-dev` on debian-based distros) installed.
    * If not, use `./build.sh -tags nocrypto` to disable encryption.
@@ -95,13 +97,13 @@ nor libolm installed.
 
 </div>
 
-[`build.sh`]: https://github.com/mautrix/$bridge/blob/main/build.sh
+[`build.sh`]: https://github.com/mautrix/$bridgerepo/blob/main/build.sh
 
 ## Step 2: Configuring and running
 1. Use `./mautrix-$bridge -e` to generate an example config and save it to
    `config.yaml`.
    * Alternatively, you can find pregenerated examples at
-     <https://docs.mau.fi/configs/mautrix-$bridge/latest> (remember to choose
+     <https://docs.mau.fi/configs/mautrix-$bridgerepo/latest> (remember to choose
      the appropriate version at the top if you're not using latest).
    * Discord is still using the legacy architecture which doesn't have the `-e`
      flag, so just manually copy `example-config.yaml` from the repo to `config.yaml`.

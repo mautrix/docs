@@ -40,6 +40,8 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    always run them in the correct directory.
 1. Pull the docker image with `docker pull dock.mau.dev/mautrix/$bridge:<version>`.
    Replace `<version>` with the version you want to run (e.g. `latest` or `v25.11`).
+   * **N.B.** The Instagram bridge is at `meta:ig-<version>` instead of `instagram:<version>`.
+     <span class="bridge-filter" bridges="instagram"></span>
 2. Run the container for the first time, so it can create a config file for you:
    ```
    docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
@@ -114,6 +116,8 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    #      name: synapsenet
 
    ```
+   * **N.B.** The Instagram bridge is at `meta:ig-<version>` instead of `instagram:<version>`.
+     <span class="bridge-filter" bridges="instagram"></span>
 2. Follow the rest of the Docker setup, but use compose commands instead of the
    raw `docker` commands: `docker compose up -d` to start, `docker compose stop`
    to stop and `docker compose pull` to update. Keep in mind that `docker compose restart`

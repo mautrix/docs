@@ -1,12 +1,11 @@
 const pythonBridges = ["googlechat"]
-const goBridges = ["telegram", "whatsapp", "discord", "slack", "gmessages", "signal", "meta", "gvoice", "twitter", "bluesky", "linkedin", "zulip", "irc"]
+const goBridges = ["telegram", "whatsapp", "discord", "slack", "gmessages", "signal", "meta", "instagram", "gvoice", "twitter", "bluesky", "linkedin", "zulip", "irc"]
 let allowedBridges = ["$bridge"]
 
 const bridgePorts = {
     "$bridge": "$bridgeport",
     "telegram": "29317",
     "whatsapp": "29318",
-    "facebook": "29319",
     "meta": "29319",
     "googlechat": "29320",
     "twitter": "29327",
@@ -20,6 +19,10 @@ const bridgePorts = {
     "linkedin": "29341",
     "zulip": "29342",
     "irc": "29343",
+}
+
+const bridgeRepos = {
+    "instagram": "meta",
 }
 
 if (window.location.pathname.endsWith("docker-setup.html")) {
@@ -41,6 +44,9 @@ const updateBridgeSelection = () => {
 
     for (const elem of document.getElementsByClassName("bridge-port")) {
         elem.innerText = bridgePorts[selector.value]
+    }
+    for (const elem of document.getElementsByClassName("bridge-repo")) {
+        elem.innerText = bridgeRepos[selector.value] ?? selector.value
     }
     for (const elem of document.getElementsByClassName("bridge-type")) {
         elem.innerText = selector.value
@@ -101,6 +107,7 @@ if (selector) {
     for (const node of document.getElementsByTagName("code")) {
         node.innerHTML = node.innerHTML
             .replaceAll("$bridgeport", `<span class="bridge-port">$bridgeport</span>`)
+            .replaceAll("$bridgerepo", `<span class="bridge-repo">$bridgerepo</span>`)
             .replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
     }
     for (const node of document.getElementsByTagName("a")) {
@@ -108,6 +115,7 @@ if (selector) {
             node.setAttribute("data-href-template", node.href)
             node.classList.add("bridge-link")
             node.innerHTML = node.innerHTML
+                .replaceAll("$bridgerepo", `<span class="bridge-repo">$bridgerepo</span>`)
                 .replaceAll("$bridge", `<span class="bridge-type">$bridge</span>`)
         }
     }
