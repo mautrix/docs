@@ -59,6 +59,8 @@ Direct links to latest CI binaries:
 * gomuks desktop:
   [debian/amd64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-linux-amd64.deb),
   [debian/arm64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-linux-arm64.deb),
+  [linux/amd64 (zip)](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-linux-amd64.zip),
+  [linux/arm64 (zip)](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-linux-arm64.zip),
   [macos/arm64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-macos-arm64.dmg),
   [windows/amd64](https://update.gomuks.app/desktop-nightly/latest/gomuks-desktop-windows-amd64.exe)
 
