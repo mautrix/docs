@@ -55,8 +55,9 @@ const updateBridgeSelection = () => {
         elem.innerText = mainBranch[selector.value]
     }
     for (const elem of document.getElementsByClassName("bridge-link")) {
-        elem.href = elem.getAttribute("data-href-template").
-            replace("$bridge", selector.value)
+        elem.href = elem.getAttribute("data-href-template")
+            .replaceAll("$bridgerepo", bridgeRepos[selector.value] ?? selector.value)
+            .replaceAll("$bridge", selector.value)
     }
 
     const url = new URL(window.location)
