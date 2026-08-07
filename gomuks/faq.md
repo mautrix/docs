@@ -34,9 +34,8 @@ instances of gomuks with different data directories. See the entry below for
 details.
 
 When using the Electron wrapper, you can have the wrapper run multiple backends
-internally and display an in-app switcher for them. There's no UI for adding
-accounts yet though, so you have to define them manually in the config file
-(again, see the entry below).
+internally and display an in-app switcher for them. Use the backend manager tab
+in settings to add more backends.
 
 If you aren't using a reverse proxy, you'll have to use different ports and
 localhosts to access the gomukses to avoid cookie conflicts. The port can be
