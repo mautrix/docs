@@ -7,3 +7,6 @@ These docs are mostly targeted towards people who want to run bridges themselves
 If you don't want to self-host, some bridges have public instances available
 (listed on the page of each bridge). [Beeper](https://www.beeper.com/) also
 offers all of these bridges as a service.
+
+Some of the pages here (particularly the ones under the "Projects in general"
+header) also apply to some non-bridge projects.

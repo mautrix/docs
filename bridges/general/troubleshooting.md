@@ -312,23 +312,6 @@ bridge config field is just copied to the registration when the registration
 is generated. If you change the value, you can either manually update the
 registration, or regenerate it completely.
 
-## Why is the latest release old?
-When bridges are being actively developed, releases are effectively always
-outdated. The main branch is generally stable and safe to use in production,
-although automatic unattended upgrades are not recommended. Bugs should only be
-reported on the main branch.
-
-New releases for Go bridges happen on the 16th of each month. Sometimes
-releases may be skipped if there's something blocking the release or if nothing
-relevant has changed since the last one. Releases outside of the standard cycle
-only happen if there are severe security issues that must be fixed immediately,
-or in some cases if the remote network has made significant breaking changes.
-
-Anything older than the latest release is completely unsupported and there
-won't be any patches even for security issues.
-
-Python bridges do not have a release cycle, releases will happen randomly.
-
 ## the supplied account key is invalid
 This error means that the `pickle_key` specified in the config is incorrect.
 Old versions of bridges used to have a hardcoded key, but new versions generate
@@ -346,3 +329,6 @@ If you get the error even though you set up the bridge recently and didn't
 migrate from an old pre-megabridge version, it's likely you prevented the bridge
 from writing to the config and didn't set a random key yourself. If the pickle
 key is lost, the database will have to be reset.
+
+## Why is the latest release old?
+See the [release schedule](./releases.md) for more information.
