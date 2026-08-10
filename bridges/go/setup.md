@@ -63,7 +63,7 @@ nor libolm installed.
    * linux/arm: <https://mau.dev/mautrix/$bridgerepo/-/jobs/artifacts/main/raw/mautrix-$bridge?job=build%20arm>
      <span class="bridge-filter" bridges="all,!signal"></span>
    * or find it yourself on <https://mau.dev/mautrix/$bridgerepo/-/pipelines?ref=main>
-2. Extract the downloaded zip file into a new directory.
+2. Put the downloaded binary in a new directory.
 
 ### Option 2: Downloading a release
 1. Go to <https://github.com/mautrix/$bridgerepo/releases>
