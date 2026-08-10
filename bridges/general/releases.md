@@ -1,8 +1,10 @@
 # Release schedule
 When software is being actively developed, releases are effectively always
 outdated. The main branch is generally stable and safe to use in production,
-although automatic unattended upgrades are not recommended. Bugs should only be
-reported on the main branch.
+although automatic unattended upgrades are not recommended. The CI builds
+binaries and docker images for every commit, so you don't need to compile
+yourself to use the main branch (see the setup docs for details). Bugs should
+only be reported on the main branch.
 
 The standard release day is the 16th of each month. New releases may be skipped
 if there's something blocking the release, or if nothing relevant has changed
