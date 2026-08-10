@@ -1,6 +1,6 @@
 # Contributing guidelines
 These guidelines apply to all mautrix bridges, as well as other associated
-projects like the mautrix libraries, meowlnir, and gomuks.
+projects like the mautrix libraries, whatsmeow, meowlnir, and gomuks.
 
 ## Making pull requests
 For any non-trivial changes (more than a few lines), you should join the Matrix
@@ -19,6 +19,20 @@ GitHub is **not** recommended.
 
 In case a PR has too many things to fix, it may be rewritten instead of
 reviewed. If that is something which would offend you, please don't open a PR.
+
+## Use of AI
+In general, you can use AI to help with contributions. However, AI slop is not
+accepted.
+
+The author is accountable for the code. You must understand all changes that
+were made. Authors are also expected to test their changes (if applicable), and
+understanding changes generally means testing them yourself, not asking AI to do
+it. All PRs are held to the same (relatively high) standards for code quality,
+architecture, etc regardless of whether AI is used.
+
+AI should not be used for communicating with humans. This means things like
+issues, pull request descriptions and comments should be written by yourself,
+not an AI.
 
 ## Development instructions
 The latest version of Go is recommended, but using the previous version is fine
@@ -53,16 +67,3 @@ Beeper servers (there's a convenient `--local-dev` flag for `bbctl run`).
 
 ## Code style
 See <https://beeper.notion.site/Beeper-Go-Guidelines-ae943532d96f4ad6a614baf836c073eb>
-
-## Use of AI
-In general, you can use AI to help with contributions. However, you must
-understand all the changes that were made. If you submit PRs that are full of
-nonsense, they will be closed immediately. All PRs are held to the same
-(relatively high) standards for code quality, architecture, etc regardless of
-whether AI is used.
-
-PR authors are expected to test their changes (if applicable). Understanding
-changes generally means testing it yourself, not asking AI to do it.
-
-Avoid using AI for generating pull request descriptions. AI-generated
-descriptions are long and usually have very little useful information.
