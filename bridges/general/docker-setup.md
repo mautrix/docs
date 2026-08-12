@@ -44,7 +44,7 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
      <span class="bridge-filter" bridges="instagram"></span>
 2. Run the container for the first time, so it can create a config file for you:
    ```
-   docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
+   docker run --rm --env UID=$(id -u) --env GID=$(id -g) -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
    ```
    `` `pwd` `` will mount the working directory as `/data`. Make sure you always
    run the command in the directory you created, or alternatively use an absolute
