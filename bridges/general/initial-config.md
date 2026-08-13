@@ -3,9 +3,10 @@ These bridges contain quite a lot of configuration options. This page is meant
 to help with finding the important ones that must be changed when setting up
 a bridge, as well as highlight some options that are usually useful.
 
-For information about fields not mentioned here, refer to the comments in the
-config itself. The config is designed to be self-documenting and the bridge will
-also keep it up to date by rewriting the config on every startup by default.
+This page is not intended to have precise documentation of the config, just
+general pointers on which fields to check. You must also read the comments in
+the config itself. It's designed to be self-documenting and the bridge will
+keep it up to date by rewriting the config on every startup by default.
 
 If you disable the config rewriting, you can also find the example configs here:
 
