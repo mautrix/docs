@@ -50,13 +50,14 @@ ratelimiting for double puppeted messages.
    # The URL is intentionally left empty (null), as the homeserver shouldn't
    # push events anywhere for this extra appservice. If you use a
    # non-spec-compliant server, you may need to put some fake URL here.
+   # The field must be present; omitting the field is not the same as null.
    url:
    # Generate random strings for these three fields. Only the as_token really
    # matters, hs_token is never used because there's no url, and the default
    # user (sender_localpart) is never used either.
-   as_token: random string
-   hs_token: random string
-   sender_localpart: random string
+   as_token: meow
+   hs_token: woof
+   sender_localpart: mrrp
    # Bridges don't like ratelimiting. This should only apply when using the
    # as_token, normal user tokens will still be ratelimited.
    rate_limited: false
@@ -67,11 +68,12 @@ ratelimiting for double puppeted messages.
        # This must be false so the appservice doesn't take over all users completely.
        exclusive: false
    ```
-2. Install the new registration file the usual way
+2. Install the new registration file on your homeserver
    (see [Registering appservices]).
 3. Finally set `as_token:...` as the secret in `double_puppet` -> `secrets`
-   (e.g. if you have `as_token: meow` in the registration created above, set
-   `as_token:meow` as the secret value in the bridge config).
+   with the random string you generated above for the `as_token` field
+   (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
+   in the bridge config).
    ```yaml
    double_puppet:
      ...
