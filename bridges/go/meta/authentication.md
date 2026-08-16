@@ -5,10 +5,11 @@ to mess with browser devtools.
 
 0. Open a private chat with the bridge bot. Usually `@instagrambot:your.server` or `@facebookbot:your.server`
    * If the bot doesn't accept the invite, see the [troubleshooting page](../../general/troubleshooting.md)
-1. Send `login` to the bridge bot. The bot should ask you to paste cookies,
+1. Send `login <mode>` to the bridge bot. The bot should ask you to paste cookies,
    which will happen in step 6.
-   * If the bridge is *not* configured with a specific `mode`, then you also
-     have to specify the mode here (facebook, messenger or instagram).
+   * You can choose `facebook` or `messenger` to use cookies as described below,
+     or `messenger-lite` to use username/password auth. For Instagram, only
+     cookies using the `instagram` mode are supported.
 2. Open the website in a private window (facebook.com, messenger.com or
    instagram.com, depending on what you configured the bridge to use).
 3. Open browser devtools and go to the network tab.

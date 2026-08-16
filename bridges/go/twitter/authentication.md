@@ -10,7 +10,7 @@ to mess with browser devtools.
    2. Select the "Application" (Chrome) or "Storage" (Firefox) tab.
    3. In the sidebar, expand "Cookies" and select `https://twitter.com`.
    4. In the cookie list, find the values for `ct0` and `auth_token`.
-2. Send `login ct0 auth` to the bot (replacing `ct0` and `auth` with the
+2. Send `login cookies ct0 auth` to the bot (replacing `ct0` and `auth` with the
    respective values).
 3. Recent chats should now get portals automatically. Other chats will get
    portals as you receive messages.
