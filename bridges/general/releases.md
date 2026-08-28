@@ -31,3 +31,22 @@ This includes:
 * mautrix-python
 * maubot and official plugins
 * whatsmeow
+
+## Versioning
+Most software following the release schedule also uses [calendar versioning],
+which was first announced with the [October 2025 releases].
+
+The format is `vYY.0M.patch`, but due to restrictions from Go modules, the
+actual git tags follow [0ver](https://0ver.org/) and are formatted as
+`v0.YY0M.patch` instead. Docker tags are available in both formats.
+
+For example, the August 2026 releases had `v26.08` as their version and
+`v0.2608.0` as the git tags. Patch releases are very uncommon, but if one
+happened, it would be `v26.08.1` and `v0.2608.1` respectively.
+
+mautrix-go and go-util do not use calver, they are still semver/0ver where the
+major version is always zero, minor version gets bumped for bigger changes and
+patch version gets bumped by default.
+
+[calendar versioning]: https://calver.org/
+[October 2025 releases]: https://mau.fi/blog/2025-10-mautrix-release/
