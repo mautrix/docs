@@ -38,13 +38,13 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    **N.B.** The docker image will `chown` its `/data` directory to UID 1337.
    The commands below mount the working directory as `/data`, so make sure you
    always run them in the correct directory.
-1. Pull the docker image with `docker pull dock.mau.dev/mautrix/$bridge:<version>`.
+1. Pull the docker image with `docker pull dock.mau.dev/mautrix/$bridgerepo:<version>`.
    Replace `<version>` with the version you want to run (e.g. `latest` or `v25.11`).
-   * **N.B.** The Instagram bridge is at `meta:ig-<version>` instead of `instagram:<version>`.
+   * **N.B.** The Instagram bridge has an `ig-` prefix in the Docker tags, e.g. `:ig-latest` or `ig-v26.08`.
      <span class="bridge-filter" bridges="instagram"></span>
 2. Run the container for the first time, so it can create a config file for you:
    ```
-   docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
+   docker run --rm -v `pwd`:/data:z dock.mau.dev/mautrix/$bridgerepo:<version>
    ```
    `` `pwd` `` will mount the working directory as `/data`. Make sure you always
    run the command in the directory you created, or alternatively use an absolute
@@ -62,7 +62,7 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
 5. Register the bridge on your homeserver (see [Registering appservices]).
 6. Run the bridge:
    ```
-   docker run --restart unless-stopped -v `pwd`:/data:z dock.mau.dev/mautrix/$bridge:<version>
+   docker run --restart unless-stopped -v `pwd`:/data:z dock.mau.dev/mautrix/$bridgerepo:<version>
    ```
    Additionally, you should either add the bridge to the same Docker network as
    Synapse with `--network=synapsenet` (when both are running in Docker), or
@@ -87,7 +87,7 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    services:
      mautrix-$bridge:
        container_name: mautrix-$bridge
-       image: dock.mau.dev/mautrix/$bridge:<version>
+       image: dock.mau.dev/mautrix/$bridgerepo:<version>
        restart: unless-stopped
        volumes:
        - .:/data
