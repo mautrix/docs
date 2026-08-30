@@ -40,7 +40,7 @@ arm64 images. `:latest` points at the latest commit, not the latest release.
    always run them in the correct directory.
 1. Pull the docker image with `docker pull dock.mau.dev/mautrix/$bridgerepo:<version>`.
    Replace `<version>` with the version you want to run (e.g. `latest` or `v25.11`).
-   * **N.B.** The Instagram bridge has an `ig-` prefix in the Docker tags, e.g. `:ig-latest` or `ig-v26.08`.
+   * **N.B.** The Instagram bridge has an `ig-` prefix in the Docker tags, e.g. `ig-latest` or `ig-v26.08`.
      <span class="bridge-filter" bridges="instagram,meta"></span>
 2. Run the container for the first time, so it can create a config file for you:
    ```
