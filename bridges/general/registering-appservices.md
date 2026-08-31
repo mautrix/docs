@@ -64,29 +64,14 @@ Some things to keep in mind:
 ## Beeper
 Follow the instructions at [github.com/beeper/bridge-manager](https://github.com/beeper/bridge-manager).
 
-## Dendrite
-**N.B.** Dendrite is not a supported environment, as it often has serious bugs.
-It is strongly recommended to use Synapse instead. Conduit-based servers like
-continuwuity are also fine.
+## Continuwuity
+Also applies to Conduit and other Conduit-based servers.
 
-Dendrite works the same way as Synapse, except the relevant config field is
-[`config_files` under `app_service_api`](https://github.com/element-hq/dendrite/blob/v0.15.2/dendrite-sample.yaml#L164-L166)
-(and the config file is usually called `dendrite.yaml` rather than `homeserver.yaml`):
-
-```yaml
-app_service_api:
-    ...
-    config_files:
-    - /data/mautrix-telegram-registration.yaml
-```
-
-## Conduit
-Also applies to Conduit-based servers such as continuwuity.
-
-Conduit doesn't use a config file, instead it has an admin command for
-registering appservices. Go to the admin room (which is created automatically
-when the first user is registered on the server), copy the contents of the
-registration YAML file, then send a `register_appservice` command:
+Conduit-based servers don't use a config file, instead they have an admin
+command for registering appservices. Go to the admin room (which is created
+automatically when the first user is registered on the server), copy the
+contents of the registration YAML file, then send a `register_appservice`
+command:
 
 ~~~
 @conduit:your.server.name: register_appservice
@@ -105,8 +90,26 @@ show the `id` field of the just registered appservice):
 @conduit:your.server.name: list_appservices
 ```
 
-See also: <https://gitlab.com/famedly/conduit/-/blob/next/APPSERVICES.md>
+See also: <https://continuwuity.org/appservices.html>
 
 **N.B.** Due to some spec ambiguities, you have to register the bridge bot
 account manually when using Python-based bridges (Google Chat) with
 Conduit-based servers. Go bridges do not require this extra step.
+
+## Dendrite
+**N.B.** Dendrite is not a supported environment, as it often has serious bugs.
+It is strongly recommended to use Synapse instead. Conduit-based servers like
+continuwuity are also fine.
+
+Also applies to Zendrite.
+
+Dendrite works the same way as Synapse, except the relevant config field is
+[`config_files` under `app_service_api`](https://github.com/element-hq/dendrite/blob/v0.15.2/dendrite-sample.yaml#L164-L166)
+(and the config file is usually called `dendrite.yaml` rather than `homeserver.yaml`):
+
+```yaml
+app_service_api:
+    ...
+    config_files:
+    - /data/mautrix-telegram-registration.yaml
+```
