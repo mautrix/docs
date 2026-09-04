@@ -71,9 +71,9 @@ ratelimiting for double puppeted messages.
 2. Install the new registration file on your homeserver
    (see [Registering appservices]).
 3. Finally set `as_token:...` as the secret in `double_puppet` -> `secrets`
-   with the random string you generated above for the `as_token` field
-   (e.g. if you have `as_token: meow` in the registration, set `as_token:meow`
-   in the bridge config).
+   in the bridge config with the random string you generated above for the
+   `as_token` field (e.g. if you have `as_token: meow` in the registration,
+   set `as_token:meow` in the config).
    ```yaml
    double_puppet:
      ...
