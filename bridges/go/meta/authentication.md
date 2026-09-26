@@ -8,8 +8,9 @@ to mess with browser devtools.
 1. Send `login <mode>` to the bridge bot. The bot should ask you to paste cookies,
    which will happen in step 6.
    * You can choose `facebook` or `messenger` to use cookies as described below,
-     or `messenger-lite` to use username/password auth. For Instagram, only
-     cookies using the `instagram` mode are supported.
+     or `messenger-lite` to use username/password auth.
+   * For Instagram, you can choose `instagram` for cookies, or `android` for
+     username/password auth if you're on v26.10 or higher.
 2. Open the website in a private window (facebook.com, messenger.com or
    instagram.com, depending on what you configured the bridge to use).
 3. Open browser devtools and go to the network tab.
