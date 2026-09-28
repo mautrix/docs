@@ -3,7 +3,7 @@ These guidelines apply to all mautrix bridges, as well as other associated
 projects like the mautrix libraries, whatsmeow, meowlnir, and gomuks.
 
 ## Making pull requests
-For any non-trivial changes (more than a few lines), you should join the Matrix
+For any non-trivial changes (more than a few lines), you must join the Matrix
 room linked in the project readme and briefly explain your plan to confirm that
 it makes sense and is wanted. Failure to do so may result the PRs in being
 ignored and/or closed without further comment. The Matrix room is also preferred
@@ -32,7 +32,8 @@ architecture, etc regardless of whether AI is used.
 
 AI should not be used for communicating with humans. This means things like
 issues, pull request descriptions and comments should be written by yourself,
-not an AI.
+not an AI. Code comments are also meant for humans. The kind of redundant
+comments that some LLMs love generating are not permitted.
 
 ## Development instructions
 The latest version of Go is recommended, but using the previous version is fine
