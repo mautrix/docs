@@ -11,6 +11,8 @@ to mess with browser devtools.
      or `messenger-lite` to use username/password auth.
    * For Instagram, you can choose `instagram` for cookies, or `android` for
      username/password auth if you're on v26.10 or higher.
+   * When choosing username/password auth, ignore the rest of this page and just
+     follow the instructions from the bot instead.
 2. Open the website in a private window (facebook.com, messenger.com or
    instagram.com, depending on what you configured the bridge to use).
 3. Open browser devtools and go to the network tab.
