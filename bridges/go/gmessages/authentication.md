@@ -17,7 +17,7 @@ where RCS chats are available (option 1 in <https://support.google.com/fi/answer
    * Using a private window is required to ensure the cookies don't get
      rotated by the browser, and because the bridge doesn't support cookies
      linked to multiple accounts.
-   * You also can't use a browser with Device Bound Session Credentials enabled.
+   * **You also can't use a browser with Device Bound Session Credentials enabled.**
      Firefox hasn't implemented that at all and should work, Chrome also allows
      disabling the feature via flags. mautrix-manager will always work.
    * The `continue` URL in the link is chosen so that it would only log into
