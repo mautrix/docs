@@ -221,23 +221,15 @@ access to the `electron` binary, which is not available in Docker.
 If the error says `electron status: ok` instead of `unavailable`, then there's
 something else wrong.
 
-## `pip` failed building wheel for python-olm
+## `fatal error: olm/olm.h: no such file or directory`
+When building with end-to-bridge encryption, you must have a C compiler and
+libolm3 with dev headers installed. Alternatively, you can choose one of:
 
-#### `fatal error: olm/olm.h: no such file or directory`
-When building with end-to-bridge encryption, you must have a C compiler,
-python3 dev headers and libolm3 with dev headers installed.
-
-If you want to build without encryption:
-* For Python bridges, don't install the `e2be`
-  [optional dependency](../python/optional-dependencies.md).
-* For Go bridges, either build with `-tags nocrypto` or disable cgo with the
-  `CGO_ENABLED=0` env var.
-
-#### `fatal error: olm/pk.h: no such file or directory`
-libolm2 is too old, you need libolm3.
-
-#### `fatal error: pyconfig.h: no such file or directory`
-python3-dev is required.
+* Pass `-tags goolm` to use a pure Go implementation
+* Pass `-tags nocrypto` to compile without encryption
+* Set `CGO_ENABLED=0` in environment to disable cgo entirely
+  * This will also disable SQLite support
+* Use the prebuilt binaries which don't have any dependencies
 
 #### `error: command 'gcc' failed: No such file or directory`
 build-essential is required.
