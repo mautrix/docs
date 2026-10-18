@@ -71,7 +71,7 @@ If you've made a new package, please add it to the list below.
 
 ## Compiling from source
 
-0. Install [Go](https://go.dev/doc/install) 1.25 or higher.
+0. Install [Go](https://go.dev/doc/install) 1.26 or higher.
    * Compiling the frontend for gomuks web also requires the latest LTS of
      Node.js or higher (currently v24).
    * `libolm-dev` must also be installed for end-to-end encryption, unless you
