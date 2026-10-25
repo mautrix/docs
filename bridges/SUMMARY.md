@@ -11,23 +11,15 @@
 - [Backfilling messages](./general/backfill.md)
 - [Initial bridge config](./general/initial-config.md)
 - [Relay mode](./general/relay-mode.md)
+- [Provisioning API ↗](https://spec.mau.fi/megabridge/)
+- [Bridge setup](./go/setup.md)
 - [Bridge setup with Docker](./general/docker-setup.md)
 
 # Projects in general
 - [Contributing guidelines](./general/contributing.md)
 - [Release schedule](./general/releases.md)
 
-# Python-based bridges
-- [Bridge setup](./python/setup.md)
-- [Optional dependencies](./python/optional-dependencies.md)
-- [Manhole](./python/manhole.md)
----
-- [mautrix-googlechat](./python/googlechat/index.md)
-  - [Authentication](./python/googlechat/authentication.md)
-
-# Go-based bridges
-- [Bridge setup](./go/setup.md)
----
+# Bridge-specific docs
 - [mautrix-telegram](./go/telegram/index.md)
   - [Authentication](./go/telegram/authentication.md)
 - [mautrix-whatsapp](./go/whatsapp/index.md)
@@ -59,6 +51,13 @@
   - [Authentication](./go/zulip/authentication.md)
 - [mautrix-irc](./go/irc/index.md)
   - [Authentication](./go/irc/authentication.md)
+
+# Legacy bridges
+- [Python bridge setup](./python/setup.md)
+- [Optional dependencies](./python/optional-dependencies.md)
+- [Manhole](./python/manhole.md)
+- [mautrix-googlechat](./python/googlechat/index.md)
+  - [Authentication](./python/googlechat/authentication.md)
 - [mautrix-imessage](./go/imessage/index.md)
   - [Bridge setup (macOS)](./go/imessage/mac/setup.md)
   - [Bridge setup (macOS without SIP)](./go/imessage/mac-nosip/setup.md)
