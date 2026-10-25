@@ -41,6 +41,7 @@ theme = "../theme/bridges"
 "/python/telegram/provisioning-api.html" = "https://spec.mau.fi/megabridge/"
 "/python/telegram/migrating-from-telematrix.html" = "https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/migrating-from-telematrix.md"
 "/python/telegram/dbms-migration.html" = "https://github.com/mautrix/docs/blob/95395dff46e6468750c1625cbb741c866f0d98a2/bridges/python/telegram/dbms-migration.md"
+"/go/meta/facebook-migration.html" = "https://github.com/mautrix/docs/blob/f0fc1006a0766562eb055f5b07859b7b6753f669/bridges/go/meta/facebook-migration.md"
 
 [output.linkcheck]
 optional = true

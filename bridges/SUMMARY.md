@@ -40,7 +40,6 @@
   - [Authentication](./go/signal/authentication.md)
 - [mautrix-meta](./go/meta/index.md)
   - [Authentication](./go/meta/authentication.md)
-  - [Migrating from mautrix-facebook](./go/meta/facebook-migration.md)
 - [mautrix-twitter](./go/twitter/index.md)
   - [Authentication](./go/twitter/authentication.md)
 - [mautrix-bluesky](./go/bluesky/index.md)
