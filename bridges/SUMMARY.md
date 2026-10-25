@@ -11,7 +11,7 @@
 - [Backfilling messages](./general/backfill.md)
 - [Initial bridge config](./general/initial-config.md)
 - [Relay mode](./general/relay-mode.md)
-- [Provisioning API ↗](https://spec.mau.fi/megabridge/)
+- [Provisioning API ↗](https://spec.mau.fi/megabridge/index.html)
 - [Bridge setup](./go/setup.md)
 - [Bridge setup with Docker](./general/docker-setup.md)
 
