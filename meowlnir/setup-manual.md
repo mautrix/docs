@@ -41,6 +41,8 @@ nor libolm installed.
     Go reimplementation of libolm. Encryption can be supported without a C
     compiler or Olm dev headers with this method.
 
+[`build.sh`]: https://github.com/maunium/meowlnir/blob/main/build.sh
+
 ## Configuring and running
 1. Follow the [configuration instructions](./config.md) to create a config file
    and registration.
