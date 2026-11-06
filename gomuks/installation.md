@@ -68,6 +68,9 @@ There are also some community-maintained distro packages.
 If you've made a new package, please add it to the list below.
 
 * Void Linux: [gomuks](https://github.com/void-linux/void-packages/tree/master/srcpkgs/gomuks)
+* Nix/NixOS:
+  [gomuks-web](https://search.nixos.org/packages?channel=unstable#show=gomuks-web),
+  [gomuks-desktop](https://search.nixos.org/packages?channel=unstable#show=gomuks-desktop)
 
 ## Compiling from source
 
