@@ -8,13 +8,12 @@
 If you want to compile Meowlnir manually (which is not required), you'll also need:
 
 * Go 1.26+ (download & installation instructions at <https://go.dev/doc/install>).
-* libolm3 with dev headers and a C/C++ compiler (if you want encryption support).
 
 ## Installation
 You may either compile Meowlnir manually or download a prebuilt executable from
 the mau.dev CI or [GitHub releases](https://github.com/maunium/meowlnir/releases).
 Prebuilt executables are the simplest option, as they don't require having Go
-nor libolm installed.
+installed.
 
 ### Option 1: Downloading a prebuilt executable from CI
 1. Download the relevant artifacts:
@@ -34,12 +33,6 @@ nor libolm installed.
 2. Enter the directory (`cd meowlnir`)
 3. Run `./build.sh` to fetch Go dependencies and compile
    ([`build.sh`] will simply call `go build` with some additional flags).
-  * If you want encryption support, make sure you have a C/C++ compiler and the
-    Olm dev headers (`libolm-dev` on debian-based distros) installed.
-  * If not, use `./build.sh -tags nocrypto` to disable encryption.
-  * As an experimental feature, you can also use `-tags goolm` to use a pure
-    Go reimplementation of libolm. Encryption can be supported without a C
-    compiler or Olm dev headers with this method.
 
 [`build.sh`]: https://github.com/maunium/meowlnir/blob/main/build.sh
 

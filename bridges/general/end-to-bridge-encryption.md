@@ -23,9 +23,8 @@ always encrypted between the bridge and Signal clients.
 
 To enable it, you must install the bridge with dependencies:
 * For Python-based bridges, install the `e2be` [optional dependency](../python/optional-dependencies.md).
-* For Go-based bridges, make sure the bridge is built with libolm.
-  * CI binaries from mau.dev and release binaries on GitHub are always built with libolm.
-* Docker images for all bridges always support encryption and don't need any special build flags.
+* For Go-based bridges, goolm is enabled by default as long as they're not built with the `nocrypto` tag.
+* Docker images for all bridges always support encryption.
 
 After that, simply enable the option in the config (top-level `encryption` in
 new bridges, `bridge` → `encryption` in old ones). If you only set `allow: true`,

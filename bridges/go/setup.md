@@ -46,7 +46,6 @@ their documentation to find support rooms.
 If you want to compile the bridge manually (which is not required), you'll also need:
 
 * Go 1.26+ (download & installation instructions at <https://go.dev/doc/install>).
-* libolm3 with dev headers and a C/C++ compiler (if you want end-to-bridge encryption).
 * <span class="bridge-filter" bridges="signal">**mautrix-signal**: </span>
   Rust, Cargo, libclang-dev and protoc+libprotobuf-dev (if you want to compile libsignal yourself).
 
@@ -54,7 +53,7 @@ If you want to compile the bridge manually (which is not required), you'll also 
 You may either compile the bridge manually or download a prebuilt executable
 from the mau.dev CI or [GitHub releases](https://github.com/mautrix/$bridgerepo/releases).
 Prebuilt executables are the simplest option, as they don't require having Go
-nor libolm installed.
+installed (nor anything else; they're static binaries).
 
 ### Option 1: Downloading a prebuilt executable from CI
 1. Download the relevant artifacts:
@@ -77,14 +76,6 @@ nor libolm installed.
    ([`build.sh`] will simply call `go build` with some additional flags).
    * To build the Instagram bridge in the mautrix-meta repo, use `./build-ig.sh`
      instead. <span class="bridge-filter" bridges="instagram"></span>
-   * If you want end-to-bridge encryption, make sure you have a C/C++ compiler
-     and the Olm dev headers (`libolm-dev` on debian-based distros) installed.
-   * If not, use `./build.sh -tags nocrypto` to disable encryption.
-     * Note: signal's build.sh script doesn't support extra arguments yet,
-       so you have to use build-go.sh manually after building libsignal-ffi.a.
-   * As an experimental feature, you can also use `-tags goolm` to use a pure
-     Go reimplementation of libolm. Encryption can be supported without a C
-     compiler or Olm dev headers with this method.
 
 <div class="bridge-filter" bridges="signal">
 

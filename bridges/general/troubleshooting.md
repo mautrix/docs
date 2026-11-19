@@ -222,6 +222,11 @@ If the error says `electron status: ok` instead of `unavailable`, then there's
 something else wrong.
 
 ## `fatal error: olm/olm.h: no such file or directory`
+This error won't happen anymore, as bridges default to goolm now.
+
+<details>
+<summary>Old instructions</summary>
+
 When building with end-to-bridge encryption, you must have a C compiler and
 libolm3 with dev headers installed. Alternatively, you can choose one of:
 
@@ -230,6 +235,8 @@ libolm3 with dev headers installed. Alternatively, you can choose one of:
 * Set `CGO_ENABLED=0` in environment to disable cgo entirely
   * This will also disable SQLite support
 * Use the prebuilt binaries which don't have any dependencies
+
+</details>
 
 #### `error: command 'gcc' failed: No such file or directory`
 build-essential is required.

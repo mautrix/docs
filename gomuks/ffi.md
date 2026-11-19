@@ -18,8 +18,8 @@ If you want to cross-compile using the build script, use `TARGET_GOOS` and
 plain variables will make `go tool` compile maubuild for the target instead of
 the host and then fail to execute it.
 
-Additional build tags (like goolm) can be set in the `GO_BUILD_TAGS` environment
-variable. If you want a static archive (`.a`) instead of a dynamic library, set
+Additional build tags can be set in the `GO_BUILD_TAGS` environment variable.
+If you want a static archive (`.a`) instead of a dynamic library, set
 `MAU_STATIC_BUILD=true` in environment.
 
 ### Building manually
