@@ -53,6 +53,14 @@ before pushing to lint everything. Finally, you can let GitHub actions run the
 linters for you after pushing, but it's usually more effort to go back and fix
 things at that point.
 
+Running the pre-commit checks locally requires some tools to be installed:
+
+```
+go install golang.org/x/tools/cmd/goimports@latest
+go install honnef.co/go/tools/cmd/staticcheck@latest
+go install github.com/beeper/pre-commit-go/bridgelint@latest
+```
+
 [pre-commit]: https://pre-commit.com/
 
 Using Linux or macOS is recommended for development. Windows is generally not a
