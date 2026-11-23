@@ -31,14 +31,12 @@ If you want to have gomuks behind a reverse proxy, you'll need to adjust
 
 Prebuilt binaries can be found in [GitHub releases](https://github.com/gomuks/gomuks/releases)
 or [GitLab CI](https://mau.dev/gomuks/gomuks/-/pipelines?ref=main) where every commit is built.
+Desktop builds are stored on [update.gomuks.app](https://update.gomuks.app/desktop-nightly/latest/)
+rather than GitLab artifacts.
 
-The release and CI binaries for Linux are statically built and have no
-hard dependencies. The binaries for macOS require installing libolm, either
-with `brew install libolm` or by placing `libolm.3.dylib` from the CI in the
-same directory as the `gomuks` binary.
-
-The gomuks backend requires having `ffmpeg` and `ffprobe` in `$PATH` to generate
-metadata when sending video files.
+The release and CI binaries are statically built and have no hard dependencies.
+However, the gomuks backend requires having `ffmpeg` and `ffprobe` in `$PATH`
+to generate metadata when sending video files.
 
 Direct links to latest CI binaries:
 
